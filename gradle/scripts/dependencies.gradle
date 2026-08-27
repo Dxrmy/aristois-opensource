@@ -1,0 +1,30 @@
+ext {
+    // Download required dependency jars from verified mirrors
+    // These are NOT bundled in the repo — fetched at build time
+    aristois_deps = [
+        'https://repo1.maven.org/maven2/org/jetbrains/annotations/24.1.0/annotations-24.1.0.jar',
+        'https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar'
+    ]
+
+    aristois_libs_dir = file('libs')
+}
+
+task downloadDependencies() {
+    doLast {
+        aristois_libs_dir.mkdirs()
+        aristois_deps.each { url ->
+            def filename = url.tokenize('/').last()
+            def target = new File(aristois_libs_dir, filename)
+            if (!target.exists()) {
+                logger.lifecycle("Downloading ${filename}...")
+                new URL(url).withInputStream { input ->
+                    target.withOutputStream { output ->
+                        output << input
+                    }
+                }
+            }
+        }
+    }
+}
+
+build.dependsOn downloadDependencies

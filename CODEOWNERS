@@ -1,0 +1,5 @@
+# These owners will be requested for reviews on any PR
+# touching the mapping files
+
+mappings/aristois-mappings.tiny @community-maintainers
+scripts/deobfuscate.py @community-maintainers
