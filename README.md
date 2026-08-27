@@ -1,58 +1,70 @@
-# Aristois Community Edition
+# Aristois Open-Source Project
 
-> *Keeping the client alive, for the players.*
-> Original Aristois development ceased June 2025 after ~9 years. This is a community-driven revival.
+> *Community reconstruction of Aristois Minecraft utility client from available artifacts.*
 
----
+## Current Status
 
-## What This Is
+**Framework decompiled ✓** — The EMC-Framework-v2 (446 classes) that Aristois ran on top of has been successfully decompiled and reconstructed.
 
-Deobfuscated, open-source, paywall-free continuation of the Aristois Minecraft utility client. All premium/licensing code stripped. No API key servers. No license validation. Just the client, compiled from source, maintained by the community.
+**Client modules missing ✗** — The actual Aristois client modules (hacks, click GUI, module system) were stored at `maven.aristois.net` which is now defunct. The original devs did not publish the client source code before shutdown.
 
-## What This Isn't
+**Available artifacts:**
+- `libs/EMC-F-v2-1.21.4.jar` — Full EMC framework, 446 classes → **decompiled** to `src/main/java/`
+- `libs/weaver-1.0.2.jar` — Weaver mod loader → **decompiled** to `src/main/java/me/deftware/weaver/`
+- `libs/integrations-1.21.4.jar` — OptiFine/Sodium compat → **decompiled**
 
-- Not affiliated with the original Aristois team
-- Not a fork — this is reconstructed from the latest public release with all proprietary/obfuscated layers removed
-- Not monetized — no ads, no paywalls, no premium tiers
+**What's needed from the community:**
+- Reconstruct the actual Aristois client modules from scratch using the EMC Framework API
+- Submit pull requests with module implementations (KillAura, Scaffold, ESP, ClickGUI, etc.)
+- Contribute to the deobfuscation mapping file at `mappings/aristois-mappings.tiny`
 
 ## Building
 
 ```bash
-# Prerequisites: JDK 17+, Git
-git clone https://github.com/your-org/aristois-opensource.git
-cd aristois-opensource
+# Requires: JDK 17+, Minecraft 1.21.4 client jar
 ./gradlew build
 ```
 
-The output JAR will be in `build/libs/`.
+## Repository Structure
 
-## Deobfuscation Pipeline
-
-If you have the original Aristois JAR and want to contribute improved mappings:
-
-```bash
-python scripts/deobfuscate.py --jar aristois-latest.jar
+```
+aristois-opensource/
+├── build.gradle
+├── settings.gradle
+├── src/main/java/me/deftware/  ← decompiled framework source
+│   ├── client/framework/       ← EMC Framework (270+ classes)
+│   ├── weaver/                 ← Mod loader
+│   └── integrations/           ← OptiFine/Sodium compat
+├── libs/                       ← Original JARs (for reference)
+├── mappings/                   ← Deobfuscation mappings (community contributed)
+├── scripts/
+│   ├── deobfuscate.py          ← Pipeline for processing Aristois JARs
+│   └── check_mappings.py       ← Mapping validation utility
+└── tools/
+    └── cfr-0.152.jar           ← Decompiler
 ```
 
-This will:
-1. Decompile the JAR using CFR
-2. Apply current mappings from `mappings/aristois-mappings.tiny`
-3. Strip all paywall/license validation code
-4. Output clean source to `src/main/java/`
+## How to Contribute
 
-## Contributing
+### If you have an Aristois client JAR backup
+Run the decompile pipeline:
+```bash
+python scripts/deobfuscate.py --jar path/to/aristois-client.jar
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Mappings are the hardest part — every class, field, and method rename accepted. If you recognize a class from the original client, submit a PR to `mappings/aristois-mappings.tiny`.
-
-## Credits
-
-- **Original Aristois Team** — 9 years of development. This revival exists because of their work.
-- **Community Contributors** — Everyone submitting mappings, fixes, and ports.
-- **CFR** — Decompiler that made this possible.
-- **Fabric Loom** — Build tooling.
+### If you want to help rebuild the client
+Study the EMC Framework API in `src/main/java/me/deftware/client/framework/` and implement:
+- Module system hooks (event based)
+- GUI screens using NanoVG
+- Network packet interception
+- World rendering modifications
 
 ## License
 
-MIT — do what you want, just credit the original work.
+MIT — This project is a community reconstruction. The original Aristois team retains rights to their work. This is NOT affiliated with or endorsed by the original Aristois developers.
+
+## Credits
+
+- **Original Aristois Team** (me.deftware) — 9 years of development, EMC Framework
+- **CFR Decompiler** — leibnitz
+- **Community Contributors** — Everyone submitting code, mappings, and fixes

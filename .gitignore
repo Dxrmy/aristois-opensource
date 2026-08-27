@@ -1,0 +1,14 @@
+.gradle/
+build/
+.idea/
+*.iml
+*.class
+*.jar
+!libs/*.jar
+!tools/*.jar
+libs/README.md
+out/
+*.log
+.DS_Store
+Thumbs.db
+gitlab-*

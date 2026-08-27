@@ -1,0 +1,30 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package me.deftware.client.framework.event.events;
+
+import me.deftware.client.framework.event.Event;
+
+public class EventCharacter
+extends Event {
+    private int modifiers;
+    private int keyCode;
+
+    public EventCharacter(int keyCode, int modifiers) {
+        this.modifiers = modifiers;
+        this.keyCode = keyCode;
+    }
+
+    public char getChar() {
+        return (char)this.keyCode;
+    }
+
+    public int getKeyCode() {
+        return this.keyCode;
+    }
+
+    public int getModifiers() {
+        return this.modifiers;
+    }
+}
+
