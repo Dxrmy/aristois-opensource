@@ -1,0 +1,32 @@
+name: release
+
+on:
+  push:
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  client:
+    runs-on: ubuntu-latest
+    # The Loom build is not verified yet; keep the release job non-blocking so a
+    # failed build does not block publishing the source release.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Build community client
+        run: ./gradlew emcClientJar --no-daemon
+
+      - name: Publish community client jar
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/emc/*.jar
+          fail_on_unmatched_files: false

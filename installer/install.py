@@ -14,10 +14,18 @@ mavens (maven.aristois.net, maven.fabricmc.net, Maven Central) so the profile
 works without the original download server being up *at launch time*. The
 vanilla launcher still supplies the Minecraft client jar and assets.
 
+`--client` selects which client jar is placed in the EMC mods directory:
+
+    free       me.deftware:aristois:latest-<mc>    (from the vendor maven)
+    donor      me.deftware:aristois-d:latest-<mc>  (from the vendor maven)
+    community  this project's own MIT client jar, fetched from the latest
+               GitHub release (see .github/workflows/release.yml)
+
 Usage:
     python3 installer/install.py --mc 1.21.4
     python3 installer/install.py --mc 1.21.4 --game-dir "C:/Users/me/AppData/Roaming/.minecraft"
     python3 installer/install.py --mc 1.21.4 --client donor
+    python3 installer/install.py --mc 1.21.4 --client community
     python3 installer/install.py --mc 1.21.4 --verify      # HEAD-check only
 """
 
@@ -32,6 +40,12 @@ import urllib.error
 ARISTOIS_MAVEN = "https://maven.aristois.net/"
 FABRIC_MAVEN = "https://maven.fabricmc.net/"
 CENTRAL_MAVEN = "https://repo.maven.apache.org/maven2/"
+
+GITHUB_OWNER = "Dxrmy"
+GITHUB_REPO = "aristois-opensource"
+COMMUNITY_JAR = "aristois-community-client.jar"
+COMMUNITY_URL = (f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}"
+                 f"/releases/latest/download/{COMMUNITY_JAR}")
 
 # Public maven coordinates. `mc`/`intermediary` are filled from --mc.
 # version format: group:artifact:version
@@ -127,7 +141,10 @@ def main():
     ap = argparse.ArgumentParser(description="Install Aristois for a Minecraft version")
     ap.add_argument("--mc", default="1.21.4", help="Minecraft version (default 1.21.4)")
     ap.add_argument("--game-dir", default=None, help=".minecraft directory")
-    ap.add_argument("--client", choices=["free", "donor"], default="free")
+    ap.add_argument("--client", choices=["free", "donor", "community"],
+                    default="free",
+                    help="client jar: free/donor from the vendor maven, "
+                         "community = this project's MIT client from GitHub releases")
     ap.add_argument("--verify", action="store_true",
                     help="only HEAD-check that every artifact is reachable")
     args = ap.parse_args()
@@ -150,11 +167,16 @@ def main():
         ok &= download(link, dest, args.verify)
 
     # --- client jar into the EMC mods directory ---
-    art = CLIENT_ARTIFACT[args.client]
-    client_coord = f"me.deftware:{art}:latest-{mc}"
-    client_url = f"{ARISTOIS_MAVEN}{coord_path(client_coord)}"
-    client_dest = os.path.join(libraries, "EMC", mc,
-                               f"{art}-latest-{mc}.jar")
+    if args.client == "community":
+        # Our own MIT client, fetched from this repository's latest release.
+        client_url = COMMUNITY_URL
+        client_dest = os.path.join(libraries, "EMC", mc, COMMUNITY_JAR)
+    else:
+        art = CLIENT_ARTIFACT[args.client]
+        client_coord = f"me.deftware:{art}:latest-{mc}"
+        client_url = f"{ARISTOIS_MAVEN}{coord_path(client_coord)}"
+        client_dest = os.path.join(libraries, "EMC", mc,
+                                   f"{art}-latest-{mc}.jar")
     print(f"[*] Client ({args.client})")
     ok &= download(client_url, client_dest, args.verify)
 

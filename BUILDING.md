@@ -22,6 +22,13 @@ Then open the Minecraft launcher, create an installation for
 `1.21.4-Aristois`, and launch. `--game-dir` overrides the target directory and
 `--client donor` selects the donor build.
 
+To install this project's own MIT client instead of the vendor build:
+
+```bash
+python3 installer/install.py --mc 1.21.4 --client community
+# fetches aristois-community-client.jar from the latest GitHub release
+```
+
 ## 2. Build the clean-room client (MIT)
 
 ```bash

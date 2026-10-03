@@ -39,8 +39,18 @@ the live mavens, and drops the client where the EMC framework scans for mods
 The original in-repo installer packages (`libs/1.21.x-Aristois.zip`) still work
 too; `installer/install.py` just makes the process automatic and verifiable.
 
-Options: `--client donor`, `--game-dir <path>`, `--mc <version>`. Full build
-instructions and `make` targets are in [`BUILDING.md`](BUILDING.md).
+Options: `--client free|donor|community`, `--game-dir <path>`, `--mc <version>`.
+`free`/`donor` fetch the vendor client from its own maven; `community` fetches
+this project's MIT client jar from the
+[latest release](https://github.com/Dxrmy/aristois-opensource/releases/latest).
+Full build instructions and `make` targets are in [`BUILDING.md`](BUILDING.md).
+
+## Releases
+
+Source archives are attached to every tag. The `community` client jar is built
+and attached by `.github/workflows/release.yml`. The proprietary Aristois client
+is **not** redistributed here — the installer downloads it from the vendor's
+live maven at install time.
 
 ## Recovering the client source
 
