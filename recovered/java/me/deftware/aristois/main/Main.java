@@ -41,10 +41,10 @@ public class Main extends EMCMod {
                if (screen instanceof C0150) {
                   C0150 builder = (C0150)screen;
 
-                  for (C0163 widget : builder.m_dcccdb46()) {
+                  for (C0163 widget : builder.m_ed46fa58()) {
                      if (widget instanceof C0438) {
                         C0438 consumer = (C0438)widget;
-                        consumer.m_1f87a876(codepoint);
+                        consumer.m_7c7fe86a(codepoint);
                      }
                   }
                }
@@ -52,7 +52,7 @@ public class Main extends EMCMod {
             }
          }
       });
-      if (!C0213.f_57699eb8.m_093ae25a()) {
+      if (!C0213.f_17e12451.m_efa7610e()) {
          this.getResourceManager().setTransformer(this::transform);
       }
 
@@ -132,14 +132,14 @@ public class Main extends EMCMod {
             this.unsupported(clazz + "Modern");
          }
       } else {
-         C0242.m_8f1dc943().m_9a1c80f7();
+         C0242.m_fc1b642c().m_0e265701();
       }
    }
 
    public void onUnload() {
-      C0454 irc = C0242.m_8f1dc943().m_1ad98e94();
-      if (irc != null && irc.m_cd9f89c5()) {
-         irc.m_f378a521();
+      C0454 irc = C0242.m_fc1b642c().m_a88b18cc();
+      if (irc != null && irc.m_8d50206e()) {
+         irc.m_1058ed9a();
       }
    }
 

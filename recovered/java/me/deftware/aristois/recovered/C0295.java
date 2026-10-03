@@ -1,6 +1,7 @@
 package me.deftware.aristois.recovered;
 
 import me.deftware.aristois.modules.AbstractMod;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 @C0422(258)
 public class C0295 extends AbstractMod {
@@ -8,12 +9,12 @@ public class C0295 extends AbstractMod {
       value = "Auto Close",
       description = {"Automatically close the quick menu", "after selecting an item"}
    )
-   private boolean f_c54344d4 = true;
+   private boolean f_b7de55d5 = true;
    @C0098(
       value = "Notification",
       description = {"Send a toast when an action is performed"}
    )
-   private boolean f_15c76960 = true;
+   private boolean f_9cf4528e = true;
    @C0098(
       value = "Max Results",
       description = {"The amount of results to display for a search"},
@@ -22,38 +23,30 @@ public class C0295 extends AbstractMod {
          max = 10.0
       )
    )
-   private int f_e04ff5d6 = 5;
+   private int f_0c6f7780 = 5;
 
    public C0295() {
-      super(
-         C0252.bootstrap<"get",42949672980>(),
-         C0290.f_5fe5d165,
-         C0252.bootstrap<"get",42949672981>(),
-         C0252.bootstrap<"get",42949672982>(),
-         "",
-         C0252.bootstrap<"get",42949672983>(),
-         C0252.bootstrap<"get",42949672984>()
-      );
+      super(C0259.m_b48a8bc4(), C0290.f_020f9141, C0259.m_b886ae1c(), C0259.m_bec91365(), "", C0259.m_79bfaec2(), C0259.m_2e834348());
    }
 
    @Override
    public void onEnable() {
-      if (!(C0114.bootstrap<"call",0,1>().getScreen() instanceof C0429)) {
-         C0114.bootstrap<"call",0,1>().openScreen(new C0429());
+      if (!(Minecraft.getMinecraftGame().getScreen() instanceof C0429)) {
+         Minecraft.getMinecraftGame().openScreen(new C0429());
       }
 
       this.toggle();
    }
 
-   public boolean m_cae89c8a() {
-      return this.f_c54344d4;
+   public boolean m_e0f7c666() {
+      return this.f_b7de55d5;
    }
 
-   public boolean m_6a3a5697() {
-      return this.f_15c76960;
+   public boolean m_275ab222() {
+      return this.f_9cf4528e;
    }
 
-   public int m_fb253b03() {
-      return this.f_e04ff5d6;
+   public int m_597f2e14() {
+      return this.f_0c6f7780;
    }
 }

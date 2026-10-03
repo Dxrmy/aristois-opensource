@@ -5,10 +5,8 @@ import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.nio.file.LinkOption;
-import java.nio.file.OpenOption;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.attribute.FileAttribute;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -17,47 +15,42 @@ import java.util.Map.Entry;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import me.deftware.client.framework.config.Settings;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0449 extends C0448 {
-   public static final int f_8f993a33 = 498465498;
-   public static final Path f_f911bf3c = Settings.configDir.resolve(C0252.bootstrap<"get",60129542199>());
-   private final Map<Long, Set<Integer>> f_74037400 = new HashMap<>();
-   private boolean f_86f95b72 = false;
-   private final Path f_9f1c2f45;
-   private final Path f_11a3779c;
+   public static final int f_aead397a = 498465498;
+   public static final Path f_b877dc05 = Settings.configDir.resolve(C0258.m_23f794da());
+   private final Map<Long, Set<Integer>> f_b0a9aa75 = new HashMap<>();
+   private boolean f_84145127 = false;
+   private final Path f_8bf7094c;
+   private final Path f_0e5b83d2;
 
    public C0449(int var1, int var2, int var3) {
       super(var1, var2, var3);
-      String var4 = C0114.bootstrap<"call",0,1>();
-      this.f_9f1c2f45 = f_f911bf3c.resolve(var4).resolve(C0252.bootstrap<"get",60129542190>());
-      this.f_11a3779c = this.f_9f1c2f45
-         .resolve(
-            C0114.bootstrap<"call",2,1>(
-               C0252.bootstrap<"get",60129542191>(),
-               new Object[]{C0114.bootstrap<"call",1,1>(var1), C0114.bootstrap<"call",1,1>(var2), C0114.bootstrap<"call",1,1>(var3)}
-            )
-         );
+      String var4 = C0451.m_d32ebe65();
+      this.f_8bf7094c = f_b877dc05.resolve(var4).resolve(C0258.m_68957b31());
+      this.f_0e5b83d2 = this.f_8bf7094c.resolve(String.format(C0258.m_4e02e7a9(), var1, var2, var3));
    }
 
-   public void m_bb6c7f0f() {
-      if (C0114.bootstrap<"call",0,1>(this.f_11a3779c, new LinkOption[0])) {
+   public void m_23674f64() {
+      if (Files.exists(this.f_0e5b83d2)) {
          try (
-            InputStream var1 = C0114.bootstrap<"call",1,1>(this.f_11a3779c, new OpenOption[0]);
+            InputStream var1 = Files.newInputStream(this.f_0e5b83d2);
             GZIPInputStream var3 = new GZIPInputStream(var1);
             DataInputStream var5 = new DataInputStream(var3);
          ) {
             int var7 = var5.readInt();
             if (var7 != 498465498) {
-               throw new UnsupportedEncodingException(C0252.bootstrap<"get",60129542192>() + f_f911bf3c + C0252.bootstrap<"get",17179869188>() + var7);
+               throw new UnsupportedEncodingException(C0258.m_7f74d855() + f_b877dc05 + C0261.m_4626ac74() + var7);
             }
 
             int var8 = var5.readInt();
-            if (var8 != C0114.bootstrap<"call",2,1>()) {
-               System.err.println(C0252.bootstrap<"get",60129542193>());
+            if (var8 != Minecraft.getMinecraftProtocolVersion()) {
+               System.err.println(C0258.m_b89b7876());
             }
 
             int var9 = var5.readInt();
-            System.out.println(C0252.bootstrap<"get",60129542194>() + var9 + C0252.bootstrap<"get",60129542195>() + this.f_11a3779c.getFileName());
+            System.out.println(C0258.m_a33fab52() + var9 + C0258.m_73708dd3() + this.f_0e5b83d2.getFileName());
 
             for (int var10 = 0; var10 < var9; var10++) {
                long var11 = var5.readLong();
@@ -66,10 +59,10 @@ public class C0449 extends C0448 {
 
                for (int var15 = 0; var15 < var13; var15++) {
                   int var16 = var5.readInt();
-                  var14.add(C0114.bootstrap<"call",3,1>(var16));
+                  var14.add(var16);
                }
 
-               this.f_74037400.put(C0114.bootstrap<"call",4,1>(var11), var14);
+               this.f_b0a9aa75.put(var11, var14);
             }
          } catch (Exception var68) {
             var68.printStackTrace();
@@ -77,26 +70,26 @@ public class C0449 extends C0448 {
       }
    }
 
-   public void m_33b568ef() {
-      if (this.f_86f95b72) {
+   public void m_f1ec3ae8() {
+      if (this.f_84145127) {
          try {
-            if (!C0114.bootstrap<"call",0,1>(this.f_9f1c2f45, new LinkOption[0])) {
-               C0114.bootstrap<"call",1,1>(this.f_9f1c2f45, new FileAttribute[0]);
+            if (!Files.exists(this.f_8bf7094c)) {
+               Files.createDirectories(this.f_8bf7094c);
             }
 
             int var1 = 0;
-            int var2 = (int)this.f_74037400.values().stream().filter(var0 -> !var0.isEmpty()).count();
+            int var2 = (int)this.f_b0a9aa75.values().stream().filter(var0 -> !var0.isEmpty()).count();
             if (var2 > 0) {
                try (
-                  OutputStream var3 = C0114.bootstrap<"call",2,1>(this.f_11a3779c, new OpenOption[0]);
+                  OutputStream var3 = Files.newOutputStream(this.f_0e5b83d2);
                   GZIPOutputStream var5 = new GZIPOutputStream(var3);
                   DataOutputStream var7 = new DataOutputStream(var5);
                ) {
                   var7.writeInt(498465498);
-                  var7.writeInt(C0114.bootstrap<"call",3,1>());
+                  var7.writeInt(Minecraft.getMinecraftProtocolVersion());
                   var7.writeInt(var2);
 
-                  for (Entry var10 : this.f_74037400.entrySet()) {
+                  for (Entry var10 : this.f_b0a9aa75.entrySet()) {
                      Set var11 = (Set)var10.getValue();
                      if (!var11.isEmpty()) {
                         var7.writeLong((Long)var10.getKey());
@@ -110,15 +103,7 @@ public class C0449 extends C0448 {
                   }
                }
 
-               System.out
-                  .println(
-                     C0252.bootstrap<"get",60129542196>()
-                        + var1
-                        + C0252.bootstrap<"get",60129542197>()
-                        + var2
-                        + C0252.bootstrap<"get",60129542198>()
-                        + this.f_11a3779c.getFileName()
-                  );
+               System.out.println(C0258.m_96ba50d4() + var1 + C0258.m_88726494() + var2 + C0258.m_27479cfa() + this.f_0e5b83d2.getFileName());
             }
          } catch (Exception var65) {
             var65.printStackTrace();
@@ -126,18 +111,18 @@ public class C0449 extends C0448 {
       }
    }
 
-   public void m_e2783c8e() {
-      this.f_86f95b72 = true;
+   public void m_0e389a72() {
+      this.f_84145127 = true;
    }
 
-   public Map<Long, Set<Integer>> m_780133c6() {
-      return this.f_74037400;
+   public Map<Long, Set<Integer>> m_203344cd() {
+      return this.f_b0a9aa75;
    }
 
    static {
-      if (!C0114.bootstrap<"call",0,1>(f_f911bf3c, new LinkOption[0])) {
+      if (!Files.exists(f_b877dc05)) {
          try {
-            C0114.bootstrap<"call",1,1>(f_f911bf3c, new FileAttribute[0]);
+            Files.createDirectories(f_b877dc05);
          } catch (Exception var1) {
             var1.printStackTrace();
          }

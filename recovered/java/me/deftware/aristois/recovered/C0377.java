@@ -12,9 +12,9 @@ public class C0377 extends AbstractMod {
          percentage = true
       )
    )
-   private C0104<Float> f_fb3644ba = new C0104<>(GameKeys.JUMP_HEIGHT, C0114.bootstrap<"call",0,1>(0.8F)).m_958520b0(this);
+   private C0104<Float> f_eb9e8c79 = new C0104<>(GameKeys.JUMP_HEIGHT, 0.8F).m_43d84283(this);
 
    public C0377() {
-      super(C0252.bootstrap<"get",42949673033>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673034>());
+      super(C0259.m_d1f7b79f(), C0290.f_829d9b20, C0259.m_a29090eb());
    }
 }

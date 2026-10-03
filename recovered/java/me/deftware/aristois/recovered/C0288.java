@@ -5,69 +5,69 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public abstract class C0288<T> {
-   protected final List<Consumer<Long>> f_bdab3098 = new ArrayList<>();
-   protected int f_81df9b55 = 0;
-   protected int f_cfea9234 = 0;
-   protected boolean f_53bc5fe8 = false;
-   protected long f_80f0a697;
-   protected long f_87e4da20;
+   protected final List<Consumer<Long>> f_45f14763 = new ArrayList<>();
+   protected int f_671a49fc = 0;
+   protected int f_f89a85bd = 0;
+   protected boolean f_2febc829 = false;
+   protected long f_915721a7;
+   protected long f_ae2cc37b;
 
    public C0288() {
    }
 
-   public abstract boolean m_4babc701();
+   public abstract boolean m_f7b07982();
 
-   public abstract boolean m_3494bce5();
+   public abstract boolean m_9362a920();
 
-   public void m_ea5f0462() {
-      if (this.f_bdab3098.size() > this.f_cfea9234) {
-         if (this.f_80f0a697 + (long)this.f_81df9b55 < C0114.bootstrap<"call",0,1>()) {
-            this.m_860b8f71();
+   public void m_41e83f88() {
+      if (this.f_45f14763.size() > this.f_f89a85bd) {
+         if (this.f_915721a7 + (long)this.f_671a49fc < System.currentTimeMillis()) {
+            this.m_fd4438d8();
          }
       } else {
-         this.f_53bc5fe8 = true;
+         this.f_2febc829 = true;
       }
    }
 
-   private void m_860b8f71() {
-      this.f_bdab3098.get(this.f_cfea9234).accept(C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>() - this.f_87e4da20));
-      this.f_80f0a697 = C0114.bootstrap<"call",0,1>();
-      this.f_cfea9234++;
+   private void m_fd4438d8() {
+      this.f_45f14763.get(this.f_f89a85bd).accept(System.currentTimeMillis() - this.f_ae2cc37b);
+      this.f_915721a7 = System.currentTimeMillis();
+      this.f_f89a85bd++;
    }
 
-   protected void m_588d7d73() {
-      if (this.f_bdab3098.isEmpty()) {
-         this.f_53bc5fe8 = true;
+   protected void m_23674f64() {
+      if (this.f_45f14763.isEmpty()) {
+         this.f_2febc829 = true;
       } else {
-         this.m_860b8f71();
+         this.m_fd4438d8();
       }
    }
 
-   public abstract T m_2c3ee7a1();
+   public abstract T m_7fca7b89();
 
-   public abstract T m_9bdc4dbf();
+   public abstract T m_65556734();
 
-   public abstract T m_07cc3ee6();
+   public abstract T m_ac6eac3b();
 
-   public T m_aab9e66a(Consumer<Long> var1) {
-      this.f_bdab3098.add(var1);
+   public T m_79dad534(Consumer<Long> var1) {
+      this.f_45f14763.add(var1);
       return (T)this;
    }
 
-   public T m_e1118411(Consumer<Long> var1) {
-      this.f_bdab3098.add(0, var1);
+   public T m_dbd72d79(Consumer<Long> var1) {
+      this.f_45f14763.add(0, var1);
       return (T)this;
    }
 
-   public void m_0a515c36(int var1) {
-      this.f_81df9b55 = var1;
+   public void m_46938bdb(int var1) {
+      this.f_671a49fc = var1;
    }
 
-   public void m_7a37774b(int var1) {
-      this.f_cfea9234 = var1;
+   public void m_7c7fe86a(int var1) {
+      this.f_f89a85bd = var1;
    }
 
-   public boolean m_d0c3020f() {
-      return this.f_53bc5fe8;
+   public boolean m_f21a055b() {
+      return this.f_2febc829;
    }
 }

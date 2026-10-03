@@ -13,10 +13,10 @@ public class C0310 extends AbstractMod {
          max = 6.0
       )
    )
-   private C0104<Float> f_3516a579 = new C0104<>(GameKeys.BLOCK_REACH_DISTANCE, C0114.bootstrap<"call",0,1>(5.0F)).m_958520b0(this);
+   private C0104<Float> f_103d716f = new C0104<>(GameKeys.BLOCK_REACH_DISTANCE, 5.0F).m_43d84283(this);
 
    public C0310() {
-      super(C0252.bootstrap<"get",38654705780>(), C0290.f_e2483c18, C0252.bootstrap<"get",38654705781>());
+      super(C0263.m_76700429(), C0290.f_4b7b2d37, C0263.m_8870d2c1());
    }
 
    @Override
@@ -26,6 +26,6 @@ public class C0310 extends AbstractMod {
 
    @Override
    public void onEnable() {
-      GameMap.INSTANCE.put(GameKeys.EXTENDED_REACH, C0114.bootstrap<"call",0,1>(true));
+      GameMap.INSTANCE.put(GameKeys.EXTENDED_REACH, true);
    }
 }

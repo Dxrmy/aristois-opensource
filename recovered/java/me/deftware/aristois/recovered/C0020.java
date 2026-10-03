@@ -1,57 +1,59 @@
 package me.deftware.aristois.recovered;
 
+import com.mojang.brigadier.arguments.DoubleArgumentType;
+import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import java.util.Objects;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.entity.types.EntityPlayer;
-import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0020 extends C0001 {
    public C0020() {
    }
 
-   public static void m_427b4082(double var0, double var2, double var4) {
-      EntityPlayer var6 = (EntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   public static void m_51867dfb(double var0, double var2, double var4) {
+      EntityPlayer var6 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       double var7 = var0 + 0.5 - var6.getPosX();
       double var9 = var2 + 0.5 - (var6.getPosY() + var6.getEyeHeight());
       double var11 = var4 + 0.5 - var6.getPosZ();
-      double var13 = C0114.bootstrap<"call",2,1>(var7 * var7 + var11 * var11);
-      float var15 = (float)C0114.bootstrap<"call",4,1>(C0114.bootstrap<"call",3,1>(var11, var7)) - 90.0F;
-      float var16 = (float)(-C0114.bootstrap<"call",4,1>(C0114.bootstrap<"call",3,1>(var9, var13)));
-      C0114.bootstrap<"call",5,1>(var15, var16);
+      double var13 = Math.sqrt(var7 * var7 + var11 * var11);
+      float var15 = (float)Math.toDegrees(Math.atan2(var11, var7)) - 90.0F;
+      float var16 = (float)(-Math.toDegrees(Math.atan2(var9, var13)));
+      m_35086e37(var15, var16);
    }
 
-   private static void m_15b344e3(float var0, float var1) {
-      EntityPlayer var2 = (EntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   private static void m_35086e37(float var0, float var1) {
+      EntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       var2.setPositionAndRotation(var2.getPosX(), var2.getPosY(), var2.getPosZ(), var0, var1);
    }
 
    public CommandBuilder<?> getCommandBuilder() {
       return new CommandBuilder()
          .set(
-            (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934659>())
+            (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0253.m_9d6ca6d0())
                      .then(
-                        C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934660>())
+                        LiteralArgumentBuilder.literal(C0253.m_87c16989())
                            .then(
-                              C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",8589934661>(), C0114.bootstrap<"call",1,1>())
+                              RequiredArgumentBuilder.argument(C0253.m_b0896de7(), DoubleArgumentType.doubleArg())
                                  .then(
-                                    C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",8589934662>(), C0114.bootstrap<"call",1,1>())
+                                    RequiredArgumentBuilder.argument(C0253.m_593ecbab(), DoubleArgumentType.doubleArg())
                                        .then(
-                                          C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",8589934663>(), C0114.bootstrap<"call",1,1>())
+                                          RequiredArgumentBuilder.argument(C0253.m_17d51275(), DoubleArgumentType.doubleArg())
                                              .executes(
                                                 var0 -> {
-                                                   C0114.bootstrap<"call",1,1>(
-                                                      C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934661>()),
-                                                      C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934662>()),
-                                                      C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934663>())
+                                                   m_51867dfb(
+                                                      DoubleArgumentType.getDouble(var0, C0253.m_b0896de7()),
+                                                      DoubleArgumentType.getDouble(var0, C0253.m_593ecbab()),
+                                                      DoubleArgumentType.getDouble(var0, C0253.m_17d51275())
                                                    );
-                                                   C0114.bootstrap<"call",4,1>(
-                                                      C0114.bootstrap<"call",3,1>(
-                                                         C0252.bootstrap<"get",8589934681>(),
-                                                         new Object[]{
-                                                            C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934661>())),
-                                                            C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934662>())),
-                                                            C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934663>()))
-                                                         }
+                                                   m_a11708c5(
+                                                      String.format(
+                                                         C0253.m_1b17f04f(),
+                                                         DoubleArgumentType.getDouble(var0, C0253.m_b0896de7()),
+                                                         DoubleArgumentType.getDouble(var0, C0253.m_593ecbab()),
+                                                         DoubleArgumentType.getDouble(var0, C0253.m_17d51275())
                                                       )
                                                    );
                                                    return 1;
@@ -62,24 +64,21 @@ public class C0020 extends C0001 {
                            )
                      ))
                   .then(
-                     C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934664>())
+                     LiteralArgumentBuilder.literal(C0253.m_00ba16c2())
                         .then(
-                           C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",8589934665>(), C0114.bootstrap<"call",3,1>())
+                           RequiredArgumentBuilder.argument(C0253.m_d1f7b79f(), FloatArgumentType.floatArg())
                               .then(
-                                 C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",8589934666>(), C0114.bootstrap<"call",3,1>())
+                                 RequiredArgumentBuilder.argument(C0253.m_a29090eb(), FloatArgumentType.floatArg())
                                     .executes(
                                        var0 -> {
-                                          C0114.bootstrap<"call",1,1>(
-                                             C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934665>()),
-                                             C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934666>())
-                                          );
-                                          C0114.bootstrap<"call",2,1>()
-                                             .m_5de8d0b8(
-                                                C0252.bootstrap<"get",8589934680>(),
-                                                C0114.bootstrap<"call",3,1>(C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934665>())),
-                                                C0114.bootstrap<"call",3,1>(C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",8589934666>()))
+                                          m_35086e37(FloatArgumentType.getFloat(var0, C0253.m_d1f7b79f()), FloatArgumentType.getFloat(var0, C0253.m_a29090eb()));
+                                          C0064.m_13c9ffeb()
+                                             .m_ecf8e7ae(
+                                                C0253.m_0425f2ec(),
+                                                FloatArgumentType.getFloat(var0, C0253.m_d1f7b79f()),
+                                                FloatArgumentType.getFloat(var0, C0253.m_a29090eb())
                                              )
-                                             .m_66e721c0();
+                                             .m_1058ed9a();
                                           return 1;
                                        }
                                     )
@@ -87,53 +86,37 @@ public class C0020 extends C0001 {
                         )
                   ))
                .then(
-                  ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(
-                                       C0252.bootstrap<"get",8589934667>()
+                  ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)LiteralArgumentBuilder.literal(
+                                       C0253.m_b2dd5137()
                                     )
-                                    .then(
-                                       C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934668>())
-                                          .executes(
-                                             var0 -> {
-                                                C0114.bootstrap<"call",2,1>(
-                                                   ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer())).getRotationYaw(),
-                                                   90.0F
-                                                );
-                                                C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",8589934679>());
-                                                return 1;
-                                             }
-                                          )
-                                    ))
-                                 .then(
-                                    C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934669>())
-                                       .executes(
-                                          var0 -> {
-                                             C0114.bootstrap<"call",2,1>(
-                                                ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer())).getRotationYaw(),
-                                                -90.0F
-                                             );
-                                             C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",8589934678>());
-                                             return 1;
-                                          }
-                                       )
-                                 ))
-                              .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934670>()).executes(var0 -> {
-                                 C0114.bootstrap<"call",0,1>(90.0F, 0.0F);
-                                 C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934677>());
+                                    .then(LiteralArgumentBuilder.literal(C0253.m_91e95cb4()).executes(var0 -> {
+                                       m_35086e37(Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).getRotationYaw(), 90.0F);
+                                       m_a11708c5(C0253.m_d0da63e8());
+                                       return 1;
+                                    })))
+                                 .then(LiteralArgumentBuilder.literal(C0253.m_1616e137()).executes(var0 -> {
+                                    m_35086e37(Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).getRotationYaw(), -90.0F);
+                                    m_a11708c5(C0253.m_e8fd0250());
+                                    return 1;
+                                 })))
+                              .then(LiteralArgumentBuilder.literal(C0253.m_6dc2a812()).executes(var0 -> {
+                                 m_35086e37(90.0F, 0.0F);
+                                 m_a11708c5(C0253.m_16315846());
                                  return 1;
                               })))
-                           .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934671>()).executes(var0 -> {
-                              C0114.bootstrap<"call",0,1>(-90.0F, 0.0F);
-                              C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934676>());
+                           .then(LiteralArgumentBuilder.literal(C0253.m_e7934778()).executes(var0 -> {
+                              m_35086e37(-90.0F, 0.0F);
+                              m_a11708c5(C0253.m_a55b07ff());
                               return 1;
                            })))
-                        .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934672>()).executes(var0 -> {
-                           C0114.bootstrap<"call",0,1>(-180.0F, 0.0F);
-                           C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934675>());
+                        .then(LiteralArgumentBuilder.literal(C0253.m_d0e43f69()).executes(var0 -> {
+                           m_35086e37(-180.0F, 0.0F);
+                           m_a11708c5(C0253.m_19faa493());
                            return 1;
                         })))
-                     .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934673>()).executes(var0 -> {
-                        C0114.bootstrap<"call",5,1>(0.0F, 0.0F);
-                        C0114.bootstrap<"call",6,1>(C0252.bootstrap<"get",8589934674>());
+                     .then(LiteralArgumentBuilder.literal(C0253.m_812ab029()).executes(var0 -> {
+                        m_35086e37(0.0F, 0.0F);
+                        m_a11708c5(C0253.m_11f0c704());
                         return 1;
                      }))
                )

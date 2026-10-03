@@ -1,0 +1,36 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
+    # The Fabric Loom build pulls and decompiles Minecraft. It is expected to
+    # need dependency fixes; keep it non-blocking until the build is verified.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Gradle build
+        run: ./gradlew build --no-daemon --stacktrace
+
+      - name: Package EMC client jar
+        run: ./gradlew emcClientJar --no-daemon
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jars
+          path: |
+            build/libs/*.jar
+            build/emc/*.jar
+          if-no-files-found: ignore

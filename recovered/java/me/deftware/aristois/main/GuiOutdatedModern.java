@@ -16,11 +16,11 @@ public class GuiOutdatedModern extends GuiScreen {
    public static List<Message> text = Arrays.asList(
       Message.of("Aristois no longer supports this Minecraft version"),
       Message.of("You can reinstall Aristois from aristois.net/download."),
-      C0197.f_716a73fa,
+      C0197.f_9607505d,
       Message.of("If you want to continue using this version"),
       Message.of("you can install the latest major version of"),
       Message.of("Aristois, then install multiconnect in ESC > Addons."),
-      C0197.f_716a73fa,
+      C0197.f_9607505d,
       Message.of("Multiconnect will allow you to join this version of Minecraft"),
       Message.of("with a newer and supported version of Minecraft.")
    );

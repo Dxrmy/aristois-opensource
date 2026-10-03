@@ -1,41 +1,43 @@
 package me.deftware.aristois.recovered;
 
-public enum C0213 {
-   f_2ea70082(107),
-   f_39d70679(315),
-   f_9a8bd5d6(340),
-   f_c979d8a5(477),
-   f_1bc818b5(573),
-   f_84d12c29(575),
-   f_7274839d(578),
-   f_33309411(735),
-   f_86ec272e(736),
-   f_497ec685(751),
-   f_941c135c(753),
-   f_ececefd1(754),
-   f_93534108(754),
-   f_57699eb8(755),
-   f_34d07dde(756),
-   f_f78e7498(757),
-   f_35143dd3(759),
-   f_058f65c6(762),
-   f_a2082a49(C0114.bootstrap<"call",0,1>());
+import me.deftware.client.framework.minecraft.Minecraft;
 
-   private final int f_3cf79f07;
+public enum C0213 {
+   f_3c75609d(107),
+   f_c4accb9e(315),
+   f_c129c8d4(340),
+   f_e71f2438(477),
+   f_203f1aa7(573),
+   f_b3451857(575),
+   f_7f1f73ce(578),
+   f_cb39f22f(735),
+   f_118eb6a4(736),
+   f_89a83e18(751),
+   f_1d2705de(753),
+   f_93b47f2c(754),
+   f_4cee6cd0(754),
+   f_17e12451(755),
+   f_80937a7a(756),
+   f_0f606095(757),
+   f_c4662ff3(759),
+   f_6fbcfa9c(762),
+   f_c90e7d2e(Minecraft.getMinecraftProtocolVersion());
+
+   private final int f_7f838077;
 
    private C0213(int var3) {
-      this.f_3cf79f07 = var3;
+      this.f_7f838077 = var3;
    }
 
-   public boolean m_093ae25a() {
-      return C0114.bootstrap<"call",0,1>() >= this.f_3cf79f07;
+   public boolean m_efa7610e() {
+      return Minecraft.getMinecraftProtocolVersion() >= this.f_7f838077;
    }
 
-   public boolean m_9034104d() {
-      return C0114.bootstrap<"call",0,1>() == this.f_3cf79f07;
+   public boolean m_9362a920() {
+      return Minecraft.getMinecraftProtocolVersion() == this.f_7f838077;
    }
 
-   public int m_f3975c5a() {
-      return this.f_3cf79f07;
+   public int m_037208cc() {
+      return this.f_7f838077;
    }
 }

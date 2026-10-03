@@ -3,6 +3,7 @@ package me.deftware.aristois.recovered;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 @C0421
 public class C0362 extends AbstractMod {
@@ -13,24 +14,24 @@ public class C0362 extends AbstractMod {
          max = 6.0
       )
    )
-   private float f_2dda2390 = 2.0F;
+   private float f_d3af6835 = 2.0F;
    @C0098(
       value = "TPSSync",
       description = {"Sync Timer with Server TPS"}
    )
-   private boolean f_0b3fc060 = false;
+   private boolean f_016e7fcb = false;
 
    public C0362() {
-      super(C0252.bootstrap<"get",51539607607>(), C0290.f_faada303, C0252.bootstrap<"get",51539607608>());
+      super(C0255.m_23f794da(), C0290.f_516f3c47, C0255.m_cc27b633());
    }
 
    @Override
    public void onDisable() {
-      C0114.bootstrap<"call",0,1>().getWorldTimer().setTimerSpeed(1.0F);
+      Minecraft.getMinecraftGame().getWorldTimer().setTimerSpeed(1.0F);
    }
 
    @EventHandler
-   public void m_15eb9ccc(EventUpdate var1) {
-      C0114.bootstrap<"call",0,1>().getWorldTimer().setTimerSpeed(this.f_0b3fc060 ? (float)(C0044.f_35859108.m_b56b2c3d() / 20.0) : this.f_2dda2390);
+   public void m_3072cba8(EventUpdate var1) {
+      Minecraft.getMinecraftGame().getWorldTimer().setTimerSpeed(this.f_016e7fcb ? (float)(C0044.f_7b762377.m_a005efae() / 20.0) : this.f_d3af6835);
    }
 }

@@ -6,42 +6,42 @@ import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.minecraft.GameSetting;
 
 public class C0312 extends AbstractMod {
-   private final GameSetting<Double> f_4e908fe1 = GameSetting.GAMMA;
+   private final GameSetting<Double> f_6e831e3a = GameSetting.GAMMA;
    @C0098(
       value = "Max brightness",
       number = @C0096(
          max = 16.0
       )
    )
-   private double f_196c8080 = 16.0;
-   private double f_4073a75b;
+   private double f_3a4a4986 = 16.0;
+   private double f_30c9165f;
 
    public C0312() {
-      super(C0252.bootstrap<"get",47244640370>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",47244640371>());
+      super(C0260.m_023b99d9(), C0290.f_3210deb7, C0260.m_733bff3d());
       GameSetting.GAMMA = new GameSetting<Double>() {
-         public Double m_48564a4e() {
-            return C0312.this.isEnabled() ? C0114.bootstrap<"call",0,1>(C0312.this.m_d1b614a4()) : (Double)C0114.bootstrap<"call",1,1>(C0312.this).get();
+         public Double m_f45ccc6e() {
+            return C0312.this.isEnabled() ? C0312.this.m_0b5864b1() : (Double)C0312.this.f_6e831e3a.get();
          }
 
-         public void m_a2e3bfbb(Double var1) {
-            C0114.bootstrap<"call",1,1>(C0312.this).set(var1);
+         public void m_cc03d365(Double var1) {
+            C0312.this.f_6e831e3a.set(var1);
          }
       };
    }
 
    @Override
    public void onEnable() {
-      this.f_4073a75b = (Double)this.f_4e908fe1.get();
+      this.f_30c9165f = (Double)this.f_6e831e3a.get();
    }
 
    @EventHandler
-   public void m_c2eb83cc(EventUpdate var1) {
-      if (this.f_4073a75b < this.f_196c8080) {
-         this.f_4073a75b += 0.5;
+   public void m_3072cba8(EventUpdate var1) {
+      if (this.f_30c9165f < this.f_3a4a4986) {
+         this.f_30c9165f += 0.5;
       }
    }
 
-   public double m_d1b614a4() {
-      return this.f_4073a75b;
+   public double m_0b5864b1() {
+      return this.f_30c9165f;
    }
 }

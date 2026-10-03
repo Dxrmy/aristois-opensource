@@ -14,7 +14,7 @@ public class C0370 extends AbstractMod {
          percentage = true
       )
    )
-   private float f_edb25504 = 0.0F;
+   private float f_5afc585d = 0.0F;
    @C0098(
       value = "Vertical",
       description = {"The percentage of knockback you take vertically"},
@@ -24,20 +24,20 @@ public class C0370 extends AbstractMod {
          percentage = true
       )
    )
-   private float f_9c00edd7 = 0.0F;
+   private float f_568795bb = 0.0F;
 
    public C0370() {
-      super(C0252.bootstrap<"get",42949673061>(), C0290.f_cd638c01, C0252.bootstrap<"get",47244640256>());
+      super(C0259.m_0223faff(), C0290.f_829d9b20, C0260.m_44418b5d());
    }
 
    @EventHandler
-   public void m_43d5d43c(EventKnockback var1) {
-      if (this.f_edb25504 == 0.0F && this.f_9c00edd7 == 0.0F) {
+   public void m_7a1f9607(EventKnockback var1) {
+      if (this.f_5afc585d == 0.0F && this.f_568795bb == 0.0F) {
          var1.setCanceled(true);
       } else {
-         var1.setX(var1.getX() * (double)this.f_edb25504);
-         var1.setY(var1.getY() * (double)this.f_9c00edd7);
-         var1.setZ(var1.getZ() * (double)this.f_edb25504);
+         var1.setX(var1.getX() * (double)this.f_5afc585d);
+         var1.setY(var1.getY() * (double)this.f_568795bb);
+         var1.setZ(var1.getZ() * (double)this.f_5afc585d);
       }
    }
 }

@@ -8,7 +8,7 @@ import me.deftware.client.framework.input.MinecraftKeyBind;
 
 public class C0412 extends AbstractMod {
    public C0412() {
-      super(C0252.bootstrap<"get",38654705738>(), C0290.f_dad8467e, C0252.bootstrap<"get",38654705739>());
+      super(C0263.m_a29090eb(), C0290.f_dbc16475, C0263.m_b2dd5137());
    }
 
    @Override
@@ -17,7 +17,7 @@ public class C0412 extends AbstractMod {
    }
 
    @EventHandler
-   public void m_0772bdb7(EventUpdate var1) {
+   public void m_3072cba8(EventUpdate var1) {
       if (!ScreenRegistry.Chat.isOpen()) {
          MinecraftKeyBind.SPRINT.setPressed(true);
       }

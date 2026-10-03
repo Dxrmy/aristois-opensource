@@ -4,6 +4,6 @@ import me.deftware.aristois.modules.AbstractMod;
 
 public class C0339 extends AbstractMod {
    public C0339() {
-      super(C0252.bootstrap<"get",47244640291>(), C0290.f_a5db61fd, C0252.bootstrap<"get",47244640292>());
+      super(C0260.m_8631f87f(), C0290.f_99d080af, C0260.m_818e6498());
    }
 }

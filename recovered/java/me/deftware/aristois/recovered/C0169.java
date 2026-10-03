@@ -1,6 +1,7 @@
 package me.deftware.aristois.recovered;
 
 import me.deftware.client.framework.gui.screens.GenericScreen;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 
@@ -9,25 +10,24 @@ public abstract class C0169 extends C0195 {
       super(var1, var2);
    }
 
-   protected void m_c42948dd() {
+   @Override
+   protected void m_1058ed9a() {
       short var1 = 150;
       byte var2 = 10;
       int var3 = this.getGuiScreenWidth() / 2 - (var1 * 2 + var2) / 2;
-      this.m_2d156f1a(
+      this.m_4f7d4126(
          new C0163[]{
-            this.f_c93198f3 = this.m_4abf49f6(
-               var3, this.getGuiScreenHeight() - 40, (float)var1, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",17179869310>()), this::goBack
-            ),
-            this.m_4abf49f6(
+            this.f_ceb7007c = this.m_79273652(var3, this.getGuiScreenHeight() - 40, (float)var1, Message.of(C0261.m_56c1229f()), this::goBack),
+            this.m_79273652(
                var3 + var1 + var2,
                this.getGuiScreenHeight() - 40,
                (float)var1,
-               C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",4>()).style(C0114.bootstrap<"call",1,1>(DefaultColors.RED)),
-               this::m_f10a9ffc
+               Message.of(C0257.m_4626ac74()).style(Appearance.of(DefaultColors.RED)),
+               this::m_f1ec3ae8
             )
          }
       );
    }
 
-   public abstract void m_f10a9ffc();
+   public abstract void m_f1ec3ae8();
 }

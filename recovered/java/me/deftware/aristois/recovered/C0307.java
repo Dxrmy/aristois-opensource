@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 import me.deftware.aristois.modules.AbstractMod;
@@ -10,8 +11,8 @@ import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.gui.GuiScreen;
 
 public class C0307<T extends AbstractMod> extends AbstractMod {
-   protected long f_c369a341 = C0114.bootstrap<"call",0,1>();
-   private final C0201 f_cc994701;
+   protected long f_3f4fa077 = System.currentTimeMillis();
+   private final C0201 f_6be43f0a;
    @C0098(
       value = "Cooldown",
       description = {"Cooldown threshold before attacking again"},
@@ -20,78 +21,78 @@ public class C0307<T extends AbstractMod> extends AbstractMod {
          max = 1.0
       )
    )
-   protected float f_da2056d1 = 0.9F;
+   protected float f_bc2c3069 = 0.9F;
    @C0098("Attack Mode")
-   public C0102<C0121> f_4cea9760 = new C0102<>(C0121.f_46c8b4fe);
+   public C0102<C0121> f_a495fe5a = new C0102<>(C0121.f_56c93dc6);
    @C0098("Priority")
-   public C0102<C0063> f_08980ed0 = new C0102<>(C0063.f_73d66f71);
+   public C0102<C0063> f_a15fb4a4 = new C0102<>(C0063.f_0c3cee95);
    @C0098(
       value = "Entities",
       description = {"Selected entities for the attack mode"}
    )
-   public final GuiScreen f_c6eb79d3;
-   protected final C0062 f_f023a337;
+   public final GuiScreen f_519d7e39;
+   protected final C0062 f_9ac547b8;
 
    public C0307(String var1, C0290 var2, String... var3) {
       super(var1, var2, var3);
-      this.f_cc994701 = new C0201(this.getModID() + C0252.bootstrap<"get",38654705753>());
-      this.f_c6eb79d3 = C0114.bootstrap<"call",1,1>(null, this.f_cc994701);
-      this.f_f023a337 = this.m_c4696a38();
+      this.f_6be43f0a = new C0201(this.getModID() + C0263.m_1b17f04f());
+      this.f_519d7e39 = C0217.m_c1fb6c03(null, this.f_6be43f0a);
+      this.f_9ac547b8 = this.m_87bbe7cf();
    }
 
-   protected C0062 m_c4696a38() {
+   protected C0062 m_87bbe7cf() {
       return new C0059() {
-         public C0102<C0063> m_3e496b19() {
-            return C0307.this.f_08980ed0;
+         @Override
+         public C0102<C0063> m_0098dd70() {
+            return C0307.this.f_a15fb4a4;
          }
 
-         public Predicate<LivingEntity> m_d445ea61() {
-            return C0307.this.m_6bd0987e(super.m_4dabd50c());
+         @Override
+         public Predicate<LivingEntity> m_c8fd13b8() {
+            return C0307.this.m_c93f572c(super.m_c8fd13b8());
          }
       };
    }
 
-   protected Predicate<LivingEntity> m_6bd0987e(Predicate<LivingEntity> var1) {
-      return var2 -> !var1.test(var2) ? false : this.f_4cea9760.m_e2691446().m_4644494d(var2, this.f_cc994701::m_4fb0d5ef);
+   protected Predicate<LivingEntity> m_c93f572c(Predicate<LivingEntity> var1) {
+      return var2 -> !var1.test(var2) ? false : this.f_a495fe5a.m_284992ec().m_26101566(var2, this.f_6be43f0a::m_97a0a4cb);
    }
 
-   protected void m_e7f92e44() {
-      List var1 = C0114.bootstrap<"call",0,1>(
-         new String[]{C0252.bootstrap<"get",38654705754>(), C0252.bootstrap<"get",38654705755>(), C0252.bootstrap<"get",4294967365>()}
-      );
-      this.getFields().removeIf(var1x -> var1.contains(var1x.m_b5ae4ee3()));
+   protected void m_0e389a72() {
+      List var1 = Arrays.asList(C0263.m_bcef2112(), C0263.m_114677c2(), C0264.m_b0896de7());
+      this.getFields().removeIf(var1x -> var1.contains(var1x.m_6f1f396d()));
    }
 
    @Override
    public void onEnable() {
-      C0289.f_c22b8d7e.m_6c8ca60d(this);
+      C0289.f_85a7343f.m_7a6da287(this);
    }
 
-   protected void m_6a9d16ea() {
-      IStateController var1 = C0114.bootstrap<"call",0,1>();
+   protected void m_58b14343() {
+      IStateController var1 = IStateController.getInstance();
       if (var1 != null && var1.isControlling()) {
          var1.interrupt();
       }
    }
 
-   protected void m_06c94b87(MainEntityPlayer var1, Entity var2) {
-      this.f_c369a341 = C0114.bootstrap<"call",0,1>();
-      C0114.bootstrap<"call",1,1>(var1, var2, () -> var1.attackEntity(var2));
+   protected void m_06f12a65(MainEntityPlayer var1, Entity var2) {
+      this.f_3f4fa077 = System.currentTimeMillis();
+      C0218.m_1878c38f(var1, var2, () -> var1.attackEntity(var2));
    }
 
-   public boolean m_d28c3a6b() {
-      return this.f_c369a341 + 500L < C0114.bootstrap<"call",0,1>();
+   public boolean m_6c9f39f9() {
+      return this.f_3f4fa077 + 500L < System.currentTimeMillis();
    }
 
-   public long m_a5cab9c7() {
-      return this.f_c369a341;
+   public long m_685c7a4a() {
+      return this.f_3f4fa077;
    }
 
-   public C0201 m_f113dbc9() {
-      return this.f_cc994701;
+   public C0201 m_b77b00c6() {
+      return this.f_6be43f0a;
    }
 
-   public C0062 m_13ffd4aa() {
-      return this.f_f023a337;
+   public C0062 m_2c2bde24() {
+      return this.f_9ac547b8;
    }
 }

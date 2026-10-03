@@ -1,27 +1,27 @@
 package me.deftware.aristois.recovered;
 
 public enum C0146 {
-   f_8361b4d7(C0252.bootstrap<"get",4294967325>()),
-   f_c02c60c3(C0252.bootstrap<"get",25769803803>()),
-   f_b974b14d(C0252.bootstrap<"get",51539607631>()),
-   f_8f6d1ed2(f_c02c60c3.m_e3ec6b2f() + C0252.bootstrap<"get",51539607633>()),
-   f_ce6f029b(C0252.bootstrap<"get",51539607635>()),
-   f_c608d0be(C0252.bootstrap<"get",51539607637>()),
-   f_73e544fc(C0252.bootstrap<"get",51539607639>());
+   f_44fd8dce(C0264.m_5f1ab561()),
+   f_36f829be(C0267.m_056a389d()),
+   f_84b3f354(C0255.m_e7934778()),
+   f_ececfba1(f_36f829be.m_8d7dbe31() + C0255.m_812ab029()),
+   f_f7983596(C0255.m_19faa493()),
+   f_3f095d1a(C0255.m_16315846()),
+   f_64ac6f13(C0255.m_d0da63e8());
 
-   private final String f_a7c4d20e;
-   private static final String f_304830e5 = C0252.bootstrap<"get",51539607640>();
+   private final String f_4f563e9e;
+   private static final String f_44742a6c = C0255.m_0425f2ec();
 
    private C0146(String var3) {
-      this.f_a7c4d20e = var3;
+      this.f_4f563e9e = var3;
    }
 
    @Override
    public String toString() {
-      return this.f_a7c4d20e;
+      return this.f_4f563e9e;
    }
 
-   public String m_e3ec6b2f() {
-      return this.f_a7c4d20e;
+   public String m_8d7dbe31() {
+      return this.f_4f563e9e;
    }
 }

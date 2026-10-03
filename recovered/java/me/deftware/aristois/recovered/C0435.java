@@ -4,10 +4,11 @@ import me.deftware.aristois.menu.view.RectTooltip;
 import me.deftware.aristois.menu.view.container.CollapsableContainerWidget;
 import me.deftware.aristois.menu.view.list.ListWidget;
 import me.deftware.aristois.menu.widgets.TextBoxWidget;
+import me.deftware.client.framework.message.Message;
 
 public class C0435 extends CollapsableContainerWidget {
-   protected TextBoxWidget f_52d4516e;
-   protected ListWidget f_a7ece461;
+   protected TextBoxWidget f_3f42ec57;
+   protected ListWidget f_571e47d7;
 
    public C0435(double var1, double var3, double var5, double var7, C0441 var9) {
       super(var1, var3, var5, var7, var9);
@@ -17,18 +18,18 @@ public class C0435 extends CollapsableContainerWidget {
       this.setScissor(true);
    }
 
-   public void m_7d5d6794(C0446 var1) {
-      this.addTitle(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",17179869307>()), var1x -> {
+   public void m_992e0c64(C0446 var1) {
+      this.addTitle(Message.of(C0261.m_62895921()), var1x -> {
          if (var1x == 1 && this.togglePanel(true)) {
-            this.getTitle().getArrow().m_dcc9a738();
+            this.getTitle().getArrow().m_1058ed9a();
          }
       });
       this.title.setDrawIcon(true);
       this.title.setIconU(0);
-      this.title.setIconV(2 * this.title.getAtlas().m_5f2752be());
-      this.setMinHeight(this.title.m_cb4e693c().m_fc7f45bc() * 2.0 + 30.0);
+      this.title.setIconV(2 * this.title.getAtlas().m_5b3d3148());
+      this.setMinHeight(this.title.m_44bb072f().m_d42f3372() * 2.0 + 30.0);
       this.setMaxHeight(800.0);
-      this.f_52d4516e = new TextBoxWidget(this.f_7bd0c585) {
+      this.f_3f42ec57 = new TextBoxWidget(this.f_02ea293d) {
          @Override
          protected void apply(String var1) {
          }
@@ -36,26 +37,26 @@ public class C0435 extends CollapsableContainerWidget {
          @Override
          protected void process() {
             super.process();
-            if (C0435.this.f_a7ece461 != null) {
-               C0435.this.f_a7ece461.setOffset(0.0);
+            if (C0435.this.f_571e47d7 != null) {
+               C0435.this.f_571e47d7.setOffset(0.0);
             }
          }
       };
-      this.f_52d4516e.setShadowText(C0252.bootstrap<"get",25769803853>());
-      this.f_52d4516e.m_4103fcee(new C0426[]{C0426.f_974a55e6});
-      this.f_52d4516e.setTextAlign(C0427.f_f7cee513);
-      this.f_52d4516e.m_bc27aa02().m_1e49f000(0.0, this.getTitle().m_cb4e693c().m_fc7f45bc());
-      this.f_52d4516e.m_e65aeff9(new RectTooltip(this.f_52d4516e, this.f_7bd0c585, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",34359738468>())));
-      this.m_05e2d5ab(new C0163[]{this.f_52d4516e});
-      this.f_a7ece461 = new ListWidget(this.f_7bd0c585);
-      this.f_a7ece461.m_43380922(new C0426[]{C0426.f_974a55e6, C0426.f_eabcfd17});
-      this.f_a7ece461.m_a0d63011().m_1e49f000(0.0, this.getTitle().m_cb4e693c().m_fc7f45bc() + this.f_52d4516e.m_bc27aa02().m_fc7f45bc());
-      this.f_a7ece461.setRenderBackground(false);
-      this.f_a7ece461.setFilter(var1x -> !this.f_52d4516e.getText().isEmpty() && var1x.m_1f0afaa9(this.f_52d4516e.getText()));
-      this.m_05e2d5ab(new C0163[]{this.f_a7ece461});
+      this.f_3f42ec57.setShadowText(C0267.m_1616e137());
+      this.f_3f42ec57.m_ec141b95(new C0426[]{C0426.f_c285454f});
+      this.f_3f42ec57.setTextAlign(C0427.f_26bd24ae);
+      this.f_3f42ec57.m_44bb072f().m_f8b16cfb(0.0, this.getTitle().m_44bb072f().m_d42f3372());
+      this.f_3f42ec57.m_c7a3618c(new RectTooltip(this.f_3f42ec57, this.f_02ea293d, Message.of(C0262.m_8ccfdf29())));
+      this.m_cb54a800(new C0163[]{this.f_3f42ec57});
+      this.f_571e47d7 = new ListWidget(this.f_02ea293d);
+      this.f_571e47d7.m_ec141b95(new C0426[]{C0426.f_c285454f, C0426.f_f7a0f908});
+      this.f_571e47d7.m_44bb072f().m_f8b16cfb(0.0, this.getTitle().m_44bb072f().m_d42f3372() + this.f_3f42ec57.m_44bb072f().m_d42f3372());
+      this.f_571e47d7.setRenderBackground(false);
+      this.f_571e47d7.setFilter(var1x -> !this.f_3f42ec57.getText().isEmpty() && var1x.m_828a75ae(this.f_3f42ec57.getText()));
+      this.m_cb54a800(new C0163[]{this.f_571e47d7});
    }
 
-   public ListWidget m_eaadae0d() {
-      return this.f_a7ece461;
+   public ListWidget m_1375bd37() {
+      return this.f_571e47d7;
    }
 }

@@ -1,10 +1,14 @@
 package me.deftware.aristois.recovered;
 
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import java.util.Objects;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.item.IItem;
 import me.deftware.client.framework.item.ItemStack;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0037 extends C0001 {
    public C0037() {
@@ -13,33 +17,25 @@ public class C0037 extends C0001 {
    public CommandBuilder<?> getCommandBuilder() {
       return new CommandBuilder()
          .set(
-            (LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901945>())
+            (LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0266.m_df6e621c())
                .then(
-                  C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901946>(), new C0008())
-                     .then(
-                        C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901947>(), C0114.bootstrap<"call",2,1>(1, 64))
-                           .executes(
-                              var1 -> {
-                                 this.m_7253704c(
-                                    (IItem)var1.getArgument(C0252.bootstrap<"get",12884901946>(), IItem.class),
-                                    C0114.bootstrap<"call",5,1>(var1, C0252.bootstrap<"get",12884901947>())
-                                 );
-                                 return 1;
-                              }
-                           )
-                     )
+                  RequiredArgumentBuilder.argument(C0266.m_56242a84(), new C0008())
+                     .then(RequiredArgumentBuilder.argument(C0266.m_9e27f038(), IntegerArgumentType.integer(1, 64)).executes(var1 -> {
+                        this.m_b23f7997((IItem)var1.getArgument(C0266.m_56242a84(), IItem.class), IntegerArgumentType.getInteger(var1, C0266.m_9e27f038()));
+                        return 1;
+                     }))
                )
          );
    }
 
-   private void m_7253704c(IItem var1, int var2) {
-      MainEntityPlayer var3 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   private void m_b23f7997(IItem var1, int var2) {
+      MainEntityPlayer var3 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       if (!var3.isCreative()) {
-         C0114.bootstrap<"call",2,1>().m_77a7bc18(C0252.bootstrap<"get",12884901948>()).m_66e721c0();
+         C0064.m_7853c016().m_ee04ba1b(C0266.m_af41331f()).m_1058ed9a();
       } else {
          ItemStack var4 = new ItemStack(var1, var2);
          var3.placeStackInHotbar(var4);
-         C0114.bootstrap<"call",3,1>().m_5de8d0b8(C0252.bootstrap<"get",12884901949>(), C0114.bootstrap<"call",4,1>(var2)).m_66e721c0();
+         C0064.m_13c9ffeb().m_ecf8e7ae(C0266.m_f257bcca(), var2).m_1058ed9a();
       }
    }
 }

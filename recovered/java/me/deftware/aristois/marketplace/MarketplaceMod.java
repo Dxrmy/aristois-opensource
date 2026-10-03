@@ -166,7 +166,7 @@ public class MarketplaceMod implements Runnable, ListItem {
                   this.logger.warn("Unable to delete {}, marking jar for deletion on next startup", new Object[]{file.getName()});
 
                   try {
-                     C0198.m_6efd6053(new JsonObject(), new File(file.getAbsolutePath() + ".delete"));
+                     C0198.m_cc641daf(new JsonObject(), new File(file.getAbsolutePath() + ".delete"));
                   } catch (Exception var4) {
                      var4.printStackTrace();
                   }

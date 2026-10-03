@@ -6,12 +6,12 @@ import me.deftware.client.framework.global.GameMap;
 
 public class C0364 extends AbstractMod {
    public C0364() {
-      super(C0252.bootstrap<"get",51539607576>(), C0290.f_faada303, C0252.bootstrap<"get",51539607577>());
+      super(C0255.m_2e834348(), C0290.f_516f3c47, C0255.m_e07cee76());
    }
 
    @Override
    public void onEnable() {
-      GameMap.INSTANCE.put(GameKeys.FULL_CACTUS_VOXEL, C0114.bootstrap<"call",0,1>(true));
+      GameMap.INSTANCE.put(GameKeys.FULL_CACTUS_VOXEL, true);
    }
 
    @Override

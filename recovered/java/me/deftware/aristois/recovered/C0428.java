@@ -3,89 +3,101 @@ package me.deftware.aristois.recovered;
 import me.deftware.client.framework.render.batching.font.FontRenderStack;
 
 public abstract class C0428 implements C0194, C0445, C0444, C0442, C0441.anonymouscatch, C0443 {
-   protected C0165 f_ecdaef4d;
-   protected C0163 f_a02a43ba;
-   protected C0441 f_8977a028;
-   protected C0425[] f_77aabeb5;
-   protected C0426[] f_d44a9447;
-   protected boolean f_e07dabcf = false;
-   protected C0153 f_65f94d17;
-   protected String f_6b0c86b4;
-   protected C0094<?> f_dfd85aa1 = null;
-   protected FontRenderStack f_a6de628b;
+   protected C0165 f_7fd3d7b7;
+   protected C0163 f_bbba86c8;
+   protected C0441 f_02ea293d;
+   protected C0425[] f_0076d3e2;
+   protected C0426[] f_58772717;
+   protected boolean f_a54daaa0 = false;
+   protected C0153 f_d340a97e;
+   protected String f_8c564866;
+   protected C0094<?> f_2334429f = null;
+   protected FontRenderStack f_360de984;
 
    public C0428(double var1, double var3, double var5, double var7, C0441 var9) {
-      this.f_ecdaef4d = new C0165(var1, var3, var5, var7);
-      this.f_8977a028 = var9;
-      this.f_a6de628b = var9.m_4aa3f6de();
+      this.f_7fd3d7b7 = new C0165(var1, var3, var5, var7);
+      this.f_02ea293d = var9;
+      this.f_360de984 = var9.m_d996e5c5();
    }
 
-   public void m_48b4b9e3(C0163 var1) {
-      this.f_a02a43ba = var1;
-      this.f_ecdaef4d.m_b772f454(var1.m_fd6ca281());
+   @Override
+   public void m_facdcfcf(C0163 var1) {
+      this.f_bbba86c8 = var1;
+      this.f_7fd3d7b7.m_8d8487f4(var1.m_44bb072f());
    }
 
-   public void m_5e8b61b6(C0425... var1) {
-      this.f_77aabeb5 = var1;
+   @Override
+   public void m_e0dc32f6(C0425... var1) {
+      this.f_0076d3e2 = var1;
    }
 
-   public void m_ff5b1808(C0426... var1) {
-      this.f_d44a9447 = var1;
+   @Override
+   public void m_ec141b95(C0426... var1) {
+      this.f_58772717 = var1;
    }
 
-   public C0165 m_64effff1() {
-      return this.f_ecdaef4d;
+   @Override
+   public C0165 m_44bb072f() {
+      return this.f_7fd3d7b7;
    }
 
-   public C0163 m_dc1d6e80() {
-      return this.f_a02a43ba;
+   @Override
+   public C0163 m_4b7a3f6e() {
+      return this.f_bbba86c8;
    }
 
-   public C0441 m_9d182a67() {
-      return this.f_8977a028;
+   @Override
+   public C0441 m_519f75ae() {
+      return this.f_02ea293d;
    }
 
-   public C0425[] m_6688b007() {
-      return this.f_77aabeb5;
+   @Override
+   public C0425[] m_47e0d826() {
+      return this.f_0076d3e2;
    }
 
-   public C0426[] m_a6219bf3() {
-      return this.f_d44a9447;
+   @Override
+   public C0426[] m_15a3a860() {
+      return this.f_58772717;
    }
 
-   public boolean m_43fd3006() {
-      return this.f_e07dabcf;
+   @Override
+   public boolean m_f21a055b() {
+      return this.f_a54daaa0;
    }
 
-   public void m_e307ff31(boolean var1) {
-      this.f_e07dabcf = var1;
+   @Override
+   public void m_d6ac7420(boolean var1) {
+      this.f_a54daaa0 = var1;
    }
 
-   public C0153 m_df23f495() {
-      return this.f_65f94d17;
+   @Override
+   public C0153 m_75885561() {
+      return this.f_d340a97e;
    }
 
-   public void m_1bc7dc2b(C0153 var1) {
-      this.f_65f94d17 = var1;
+   @Override
+   public void m_c7a3618c(C0153 var1) {
+      this.f_d340a97e = var1;
    }
 
-   public String m_e587325e() {
-      return this.f_6b0c86b4;
+   public String m_3d3a8736() {
+      return this.f_8c564866;
    }
 
-   public void m_7d6917ef(String var1) {
-      this.f_6b0c86b4 = var1;
+   public void m_a11708c5(String var1) {
+      this.f_8c564866 = var1;
    }
 
-   public C0094<?> m_4aa13764() {
-      return this.f_dfd85aa1;
+   public C0094<?> m_42d188d9() {
+      return this.f_2334429f;
    }
 
-   public void m_44e91820(C0094<?> var1) {
-      this.f_dfd85aa1 = var1;
+   public void m_876939c7(C0094<?> var1) {
+      this.f_2334429f = var1;
    }
 
-   public void m_d11d9cac(FontRenderStack var1) {
-      this.f_a6de628b = var1;
+   public void m_b3d7bc43(FontRenderStack var1) {
+      this.f_360de984 = var1;
    }
 }

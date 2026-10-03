@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.command.EMCModCommand;
 
@@ -8,6 +9,6 @@ public class C0452 extends EMCModCommand {
    }
 
    public CommandBuilder<?> getCommandBuilder() {
-      return new CommandBuilder().set(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",60129542189>()));
+      return new CommandBuilder().set(LiteralArgumentBuilder.literal(C0258.m_760db7bb()));
    }
 }

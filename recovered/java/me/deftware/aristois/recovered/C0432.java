@@ -1,72 +1,75 @@
 package me.deftware.aristois.recovered;
 
 import java.awt.Color;
+import java.util.Arrays;
+import me.deftware.aristois.main.Main;
 import me.deftware.aristois.modules.AbstractMod;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.font.FontRenderStack;
 
 @C0420
 public class C0432 extends AbstractMod implements C0441 {
-   private final FontRenderStack f_101a8cc7 = new FontRenderStack(C0231.f_70d0cf33);
+   private final FontRenderStack f_cd0de8f8 = new FontRenderStack(C0231.f_9e490562);
    @C0098(
       value = "Active",
       description = {"The active mod color"}
    )
-   private Color f_9b8b850b = new Color(152, 255, 171);
+   private Color f_05fb3c8b = new Color(152, 255, 171);
    @C0098(
       value = "Header",
       description = {"The header color"}
    )
-   private Color f_179267af = Color.white;
+   private Color f_79eb56c5 = Color.white;
    @C0098(
       value = "Disabled",
       description = {"The disabled mod color"}
    )
-   private Color f_fcf9932f = Color.white;
+   private Color f_7c205d38 = Color.white;
    @C0098(
       value = "Color",
       description = {"The background color"}
    )
-   private Color f_09ec4348 = new Color(34, 40, 49);
+   private Color f_3dd36ff3 = new Color(34, 40, 49);
    @C0098(
       value = "Popup",
       description = {"The background color of popup dialogs"}
    )
-   private Color f_b328c9e8 = this.f_09ec4348;
+   private Color f_04ec68dd = this.f_3dd36ff3;
    @C0098(
       value = "Hover",
       description = {"The hover color"}
    )
-   private Color f_a4e8bd44 = new Color(57, 62, 70);
+   private Color f_9aaf3750 = new Color(57, 62, 70);
    @C0098(
       value = "Accent",
       description = {"The accent color of items"}
    )
-   private Color f_871f8f5d = new Color(111, 183, 102);
+   private Color f_c4add2e3 = new Color(111, 183, 102);
    @C0098(
       value = "RGB Accent",
       description = {"RGB accent"}
    )
-   private boolean f_343164d6 = false;
+   private boolean f_62e4c56f = false;
    @C0098(
       value = "Scrollbar",
       description = {"The scrollbar color"}
    )
-   private Color f_5733df6b = new Color(69, 83, 99);
+   private Color f_15c5c423 = new Color(69, 83, 99);
    @C0098(
       value = "Scrollbar Width",
       description = {"The maximum scrollbar width"}
    )
-   private double f_0ca20cbe = 15.0;
+   private double f_10fa5580 = 15.0;
    @C0098(
       value = "Padding",
       description = {"The height of items (requires restart)"}
    )
-   private double f_78b1a20d = 10.0;
+   private double f_5181b105 = 10.0;
    @C0098(
       value = "Tooltips",
       description = {"If tooltips should be rendered"}
    )
-   private boolean f_6c2f699e = true;
+   private boolean f_88dd3a19 = true;
    @C0098(
       value = "Context Items",
       description = {"How many settings will be shown when right clicking a mod"},
@@ -75,18 +78,18 @@ public class C0432 extends AbstractMod implements C0441 {
          max = 10.0
       )
    )
-   private int f_0674bd0b = 5;
+   private int f_d76178ee = 5;
    @C0098(
       value = "Font",
       description = {"The font used in Aristois"}
    )
-   private String f_01dc29ca = C0252.bootstrap<"get",17179869254>();
+   private String f_c3f00a61 = C0261.m_593ecbab();
    @C0098(
       value = "Text Align",
       description = {"Text align of mod buttons"}
    )
-   private C0102<C0427> f_e01117db = new C0102<>(C0427.f_f7cee513);
-   private long f_7794548c = 170L;
+   private C0102<C0427> f_2bcd49f8 = new C0102<>(C0427.f_26bd24ae);
+   private long f_29d84737 = 170L;
    @C0098(
       value = "RGB speed",
       description = {"RGB color speed"},
@@ -97,7 +100,7 @@ public class C0432 extends AbstractMod implements C0441 {
       ),
       id = 0
    )
-   private C0103<Float> f_a063e3b6 = new C0103<>(C0045.f_d228694b::m_03682d2e, C0045.f_d228694b::m_d87ed5e1).m_d66ab8dc();
+   private C0103<Float> f_cdf03390 = new C0103<>(C0045.f_8f480fc4::m_b7fbb877, C0045.f_8f480fc4::m_d881d3e3).m_01388fcf();
    @C0098(
       value = "Font shadow",
       description = {"Font shadow size, set to 0 for none"},
@@ -108,183 +111,211 @@ public class C0432 extends AbstractMod implements C0441 {
       ),
       id = 2
    )
-   private int f_d7175159 = 1;
+   private int f_8b5ea381 = 1;
 
    public C0432() {
-      super(C0252.bootstrap<"get",34359738493>(), C0290.f_5fe5d165, C0252.bootstrap<"get",34359738494>());
+      super(C0262.m_83f6dd00(), C0290.f_020f9141, C0262.m_56c1229f());
    }
 
-   public Color m_604f8702() {
-      return this.f_343164d6 ? C0114.bootstrap<"call",0,1>(C0045.f_d228694b.m_8db20abd() + 0.05F, 1.0F, 1.0F) : this.f_871f8f5d;
+   @Override
+   public Color m_e1729432() {
+      return this.f_62e4c56f ? Color.getHSBColor(C0045.f_8f480fc4.m_796256b9() + 0.05F, 1.0F, 1.0F) : this.f_c4add2e3;
    }
 
    @Override
    public String getDisplayName() {
-      return C0252.bootstrap<"get",34359738495>();
+      return C0262.m_0d6ae39b();
    }
 
    @Override
    public void onPostLoad() {
-      this.f_01dc29ca = C0114.bootstrap<"call",0,1>().getPrimitive(C0252.bootstrap<"get",17179869253>(), C0252.bootstrap<"get",17179869254>());
-      C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",1,1>()).forEach(var1 -> var1.getFont().setShadow(this.f_d7175159));
+      this.f_c3f00a61 = Main.getConfig().getPrimitive(C0261.m_b0896de7(), C0261.m_593ecbab());
+      Arrays.stream(C0231.values()).forEach(var1 -> var1.getFont().setShadow(this.f_8b5ea381));
    }
 
    @Override
    public void onSettingUpdate(C0098 var1) {
-      if (!C0114.bootstrap<"call",0,1>().getPrimitive(C0252.bootstrap<"get",17179869253>(), C0252.bootstrap<"get",17179869254>()).equals(this.f_01dc29ca)) {
-         C0114.bootstrap<"call",0,1>().putPrimitive(C0252.bootstrap<"get",17179869253>(), this.f_01dc29ca);
-         C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",1,1>()).forEach(C0231::m_7a5f945b);
-         if (C0114.bootstrap<"call",3,1>().getScreen() instanceof C0446) {
-            ((C0446)C0114.bootstrap<"call",3,1>().getScreen()).m_ff2cab60(null);
+      if (!Main.getConfig().getPrimitive(C0261.m_b0896de7(), C0261.m_593ecbab()).equals(this.f_c3f00a61)) {
+         Main.getConfig().putPrimitive(C0261.m_b0896de7(), this.f_c3f00a61);
+         Arrays.stream(C0231.values()).forEach(C0231::m_b728afce);
+         if (Minecraft.getMinecraftGame().getScreen() instanceof C0446) {
+            ((C0446)Minecraft.getMinecraftGame().getScreen()).m_c7a3618c(null);
          }
       }
 
       if (var1.id() == 2) {
-         C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",1,1>()).forEach(var1x -> var1x.getFont().setShadow(this.f_d7175159));
+         Arrays.stream(C0231.values()).forEach(var1x -> var1x.getFont().setShadow(this.f_8b5ea381));
       }
    }
 
-   public FontRenderStack m_2b5ffd6d() {
-      return this.f_101a8cc7;
+   @Override
+   public FontRenderStack m_d996e5c5() {
+      return this.f_cd0de8f8;
    }
 
-   public Color m_176689e4() {
-      return this.f_9b8b850b;
+   @Override
+   public Color m_0a0c8c22() {
+      return this.f_05fb3c8b;
    }
 
-   public Color m_8a4b7dc8() {
-      return this.f_179267af;
+   @Override
+   public Color m_f6c8a26c() {
+      return this.f_79eb56c5;
    }
 
-   public Color m_c7f4a69d() {
-      return this.f_fcf9932f;
+   @Override
+   public Color m_303ad3a1() {
+      return this.f_7c205d38;
    }
 
-   public Color m_ffa6b505() {
-      return this.f_09ec4348;
+   @Override
+   public Color m_d812cfb6() {
+      return this.f_3dd36ff3;
    }
 
-   public Color m_549ec60d() {
-      return this.f_b328c9e8;
+   @Override
+   public Color m_ac758c94() {
+      return this.f_04ec68dd;
    }
 
-   public Color m_866af780() {
-      return this.f_a4e8bd44;
+   @Override
+   public Color m_98b03f4f() {
+      return this.f_9aaf3750;
    }
 
-   public boolean m_518c3e79() {
-      return this.f_343164d6;
+   public boolean m_85f6d0f6() {
+      return this.f_62e4c56f;
    }
 
-   public Color m_71b42965() {
-      return this.f_5733df6b;
+   @Override
+   public Color m_4a97268d() {
+      return this.f_15c5c423;
    }
 
-   public double m_6e84df6f() {
-      return this.f_0ca20cbe;
+   @Override
+   public double m_b2213d56() {
+      return this.f_10fa5580;
    }
 
-   public double m_581aafd6() {
-      return this.f_78b1a20d;
+   @Override
+   public double m_036bd5c5() {
+      return this.f_5181b105;
    }
 
-   public boolean m_102f5021() {
-      return this.f_6c2f699e;
+   @Override
+   public boolean m_f7b07982() {
+      return this.f_88dd3a19;
    }
 
-   public int m_4f0c2a7f() {
-      return this.f_0674bd0b;
+   @Override
+   public int m_197b2fc8() {
+      return this.f_d76178ee;
    }
 
-   public String m_062aa38c() {
-      return this.f_01dc29ca;
+   public String m_396f9431() {
+      return this.f_c3f00a61;
    }
 
-   public C0102<C0427> m_6267b7cd() {
-      return this.f_e01117db;
+   @Override
+   public C0102<C0427> m_bfd5e3dd() {
+      return this.f_2bcd49f8;
    }
 
-   public long m_2c5ff8ca() {
-      return this.f_7794548c;
+   @Override
+   public long m_c7c6e660() {
+      return this.f_29d84737;
    }
 
-   public C0103<Float> m_8a89332e() {
-      return this.f_a063e3b6;
+   public C0103<Float> m_567b4bd8() {
+      return this.f_cdf03390;
    }
 
-   public int m_775d0a77() {
-      return this.f_d7175159;
+   public int m_9274e178() {
+      return this.f_8b5ea381;
    }
 
-   public void m_ada89720(Color var1) {
-      this.f_9b8b850b = var1;
+   @Override
+   public void m_6e0baed2(Color var1) {
+      this.f_05fb3c8b = var1;
    }
 
-   public void m_41803336(Color var1) {
-      this.f_179267af = var1;
+   @Override
+   public void m_29e2138c(Color var1) {
+      this.f_79eb56c5 = var1;
    }
 
-   public void m_7312f417(Color var1) {
-      this.f_fcf9932f = var1;
+   @Override
+   public void m_049e1135(Color var1) {
+      this.f_7c205d38 = var1;
    }
 
-   public void m_d9292c39(Color var1) {
-      this.f_09ec4348 = var1;
+   @Override
+   public void m_b2bfc074(Color var1) {
+      this.f_3dd36ff3 = var1;
    }
 
-   public void m_e67b82d4(Color var1) {
-      this.f_b328c9e8 = var1;
+   @Override
+   public void m_78c0cc40(Color var1) {
+      this.f_04ec68dd = var1;
    }
 
-   public void m_f21d197c(Color var1) {
-      this.f_a4e8bd44 = var1;
+   @Override
+   public void m_bc794843(Color var1) {
+      this.f_9aaf3750 = var1;
    }
 
-   public void m_6b6b553d(Color var1) {
-      this.f_871f8f5d = var1;
+   @Override
+   public void m_80c28d0d(Color var1) {
+      this.f_c4add2e3 = var1;
    }
 
-   public void m_b9538cdc(boolean var1) {
-      this.f_343164d6 = var1;
+   public void m_394ecb95(boolean var1) {
+      this.f_62e4c56f = var1;
    }
 
-   public void m_7100de87(Color var1) {
-      this.f_5733df6b = var1;
+   @Override
+   public void m_289e1884(Color var1) {
+      this.f_15c5c423 = var1;
    }
 
-   public void m_b083bb16(double var1) {
-      this.f_0ca20cbe = var1;
+   @Override
+   public void m_4b04f920(double var1) {
+      this.f_10fa5580 = var1;
    }
 
-   public void m_0702a9ca(double var1) {
-      this.f_78b1a20d = var1;
+   @Override
+   public void m_7c9e279f(double var1) {
+      this.f_5181b105 = var1;
    }
 
-   public void m_0bd42af9(boolean var1) {
-      this.f_6c2f699e = var1;
+   @Override
+   public void m_d6ac7420(boolean var1) {
+      this.f_88dd3a19 = var1;
    }
 
-   public void m_68f48085(int var1) {
-      this.f_0674bd0b = var1;
+   @Override
+   public void m_46938bdb(int var1) {
+      this.f_d76178ee = var1;
    }
 
-   public void m_573bfd91(String var1) {
-      this.f_01dc29ca = var1;
+   public void m_256015fc(String var1) {
+      this.f_c3f00a61 = var1;
    }
 
-   public void m_c024f49e(C0102<C0427> var1) {
-      this.f_e01117db = var1;
+   public void m_64c14e2f(C0102<C0427> var1) {
+      this.f_2bcd49f8 = var1;
    }
 
-   public void m_21677bb5(long var1) {
-      this.f_7794548c = var1;
+   @Override
+   public void m_ad6c7e6f(long var1) {
+      this.f_29d84737 = var1;
    }
 
-   public void m_fae30556(C0103<Float> var1) {
-      this.f_a063e3b6 = var1;
+   public void m_ec476b09(C0103<Float> var1) {
+      this.f_cdf03390 = var1;
    }
 
-   public void m_dc3641bd(int var1) {
-      this.f_d7175159 = var1;
+   public void m_7c7fe86a(int var1) {
+      this.f_8b5ea381 = var1;
    }
 }

@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Comparator;
 import java.util.concurrent.ConcurrentHashMap;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.EventListener;
@@ -9,50 +10,50 @@ import me.deftware.client.framework.minecraft.GameSetting;
 import me.deftware.client.framework.render.batching.font.FontRenderStack;
 
 public class C0074 extends EventListener {
-   private static final FontRenderStack f_386a6d0b = (FontRenderStack)new FontRenderStack(C0231.f_9c96dbc0).setScaled(false);
-   public static final C0074 f_c9f3a771 = new C0074();
-   private final ConcurrentHashMap<C0087, C0075[]> f_8239e7ce = new ConcurrentHashMap<>();
+   private static final FontRenderStack f_01229118 = (FontRenderStack)new FontRenderStack(C0231.f_b126585b).setScaled(false);
+   public static final C0074 f_d3f3801b = new C0074();
+   private final ConcurrentHashMap<C0087, C0075[]> f_b876c3d0 = new ConcurrentHashMap<>();
 
    public C0074() {
    }
 
-   public void m_2244f384(boolean var1) {
-      this.f_8239e7ce.clear();
+   public void m_d6ac7420(boolean var1) {
+      this.f_b876c3d0.clear();
 
-      for (C0087 var5 : C0114.bootstrap<"call",0,1>()) {
-         this.f_8239e7ce.put(var5, C0289.f_c22b8d7e.m_ea73e1f0().filter(var0 -> var0 instanceof C0075).map(C0075.class::cast).peek(var1x -> {
+      for (C0087 var5 : C0087.values()) {
+         this.f_b876c3d0.put(var5, C0289.f_85a7343f.m_918b7b9e().filter(var0 -> var0 instanceof C0075).map(C0075.class::cast).peek(var1x -> {
             if (var1) {
-               var1x.m_90da69be();
+               var1x.m_083b6d08();
             }
-         }).filter(var1x -> var1x.m_a1d8aae5() == var5).sorted(C0114.bootstrap<"call",1,1>(C0075::m_d6a53a66)).toArray(C0075[]::new));
+         }).filter(var1x -> var1x.m_a7c622af() == var5).sorted(Comparator.comparingInt(C0075::m_36ffc578)).toArray(C0075[]::new));
       }
    }
 
    @EventHandler
-   public void m_e4886f57(EventWorldLoad var1) {
-      this.m_2244f384(true);
+   public void m_270a7d18(EventWorldLoad var1) {
+      this.m_d6ac7420(true);
    }
 
    @EventHandler
-   public void m_8db7cdb1(EventMatrixRender var1) {
-      if (!((C0297)C0114.bootstrap<"call",2,1>(C0297.class)).m_7458b21f()) {
-         f_386a6d0b.begin();
+   public void m_5d3a4d80(EventMatrixRender var1) {
+      if (!C0289.m_c3a8b502(C0297.class).m_275ab222()) {
+         f_01229118.begin();
 
-         for (C0087 var3 : this.f_8239e7ce.keySet()) {
-            if (!var3.m_45dc3fbf() || !(Boolean)GameSetting.DEBUG_INFO.get()) {
-               var3.m_7feef65d(this.f_8239e7ce.get(var3));
+         for (C0087 var3 : this.f_b876c3d0.keySet()) {
+            if (!var3.m_89e0519f() || !(Boolean)GameSetting.DEBUG_INFO.get()) {
+               var3.m_9fb2cb0e(this.f_b876c3d0.get(var3));
             }
          }
 
-         f_386a6d0b.end();
+         f_01229118.end();
       }
    }
 
-   public static FontRenderStack m_96268ae2() {
-      return f_386a6d0b;
+   public static FontRenderStack m_d996e5c5() {
+      return f_01229118;
    }
 
-   public ConcurrentHashMap<C0087, C0075[]> m_73966da3() {
-      return this.f_8239e7ce;
+   public ConcurrentHashMap<C0087, C0075[]> m_b87e9d34() {
+      return this.f_b876c3d0;
    }
 }

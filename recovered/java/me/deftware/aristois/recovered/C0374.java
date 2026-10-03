@@ -1,18 +1,20 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0374 extends AbstractMod {
    public C0374() {
-      super(C0252.bootstrap<"get",42949673015>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673016>());
+      super(C0259.m_23f794da(), C0290.f_829d9b20, C0259.m_cc27b633());
    }
 
    @EventHandler
-   public void m_9791851f(EventUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   public void m_3072cba8(EventUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       var2.setNoClip(true);
       var2.setFallDistance(0.0F);
       var2.setOnGround(true);

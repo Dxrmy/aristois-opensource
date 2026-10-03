@@ -8,12 +8,12 @@ public class C0201 extends C0219<EntityCapsule> implements C0200<Entity> {
       super(EntityCapsule.class, var1);
    }
 
-   public boolean m_4fb0d5ef(Entity var1) {
-      return this.m_cf9d272b(var1.getEntityTypeName());
+   public boolean m_97a0a4cb(Entity var1) {
+      return this.m_828a75ae(var1.getEntityTypeName());
    }
 
-   public boolean m_cf9d272b(String var1) {
-      for (EntityCapsule var3 : this.f_3ca3db1e) {
+   public boolean m_828a75ae(String var1) {
+      for (EntityCapsule var3 : this.f_2acc0bd9) {
          if (var3.getName().string().equalsIgnoreCase(var1)) {
             return true;
          }

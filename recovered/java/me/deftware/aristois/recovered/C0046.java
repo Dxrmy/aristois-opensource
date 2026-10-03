@@ -1,184 +1,163 @@
 package me.deftware.aristois.recovered;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.concurrent.CompletableFuture;
+import me.deftware.aristois.main.Main;
+import me.deftware.client.framework.command.CommandRegister;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.EventListener;
 import me.deftware.client.framework.event.events.EventScreen;
 import me.deftware.client.framework.event.events.EventScreen.Type;
+import me.deftware.client.framework.gui.GuiScreen;
 import me.deftware.client.framework.gui.ScreenRegistry;
+import me.deftware.client.framework.gui.screens.ConnectingScreen;
 import me.deftware.client.framework.gui.screens.MinecraftScreen;
 import me.deftware.client.framework.gui.widgets.Button;
 import me.deftware.client.framework.gui.widgets.TextField;
+import me.deftware.client.framework.input.Keyboard;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.minecraft.ServerDetails;
 import me.deftware.client.framework.network.PacketRegistry;
 import me.deftware.client.framework.network.SocksProxy;
 
 public final class C0046 extends EventListener implements Runnable {
-   public static final C0046 f_33e1045e = new C0046();
+   public static final C0046 f_3cccbdf2 = new C0046();
 
    public C0046() {
    }
 
    @EventHandler
-   private void m_34ab7acc(EventScreen var1) {
+   private void m_65c92cfe(EventScreen var1) {
       MinecraftScreen var2 = var1.getScreen();
       if (var2.getScreenType() != null) {
          if (var2.getScreenType() == ScreenRegistry.Chat && var1.getType() == Type.Tick) {
-            this.m_380f2924(var2);
+            this.m_175161c6(var2);
          } else if (var1.getType() == Type.Setup) {
             switch (var2.getScreenType()) {
                case Disconnected:
-                  this.m_6cd82145(var2);
+                  this.m_30f30b7c(var2);
                   break;
                case IngameMenu:
-                  this.m_15d6192d(var2);
+                  this.m_47619d64(var2);
                   break;
                case Multiplayer:
-                  this.m_5a7d0af3(var2);
+                  this.m_a5231e0c(var2);
                   break;
                case MainMenu:
-                  if (((C0296)C0114.bootstrap<"call",0,1>(C0296.class)).m_859a7265()) {
-                     C0114.bootstrap<"call",1,1>().openScreen(new C0193());
+                  if (C0289.m_c3a8b502(C0296.class).m_e0f7c666()) {
+                     Minecraft.getMinecraftGame().openScreen(new C0193());
                   }
             }
          }
       }
    }
 
-   private void m_5a7d0af3(MinecraftScreen var1) {
-      this.m_93e01370(var1, 8, 8, 70);
+   private void m_a5231e0c(MinecraftScreen var1) {
+      this.m_f118a79a(var1, 8, 8, 70);
    }
 
-   private void m_380f2924(MinecraftScreen var1) {
+   private void m_175161c6(MinecraftScreen var1) {
       TextField var2 = (TextField)var1.getFirstOfType(TextField.class);
       if (var2 != null) {
-         String var3 = C0114.bootstrap<"call",0,1>().getPrimitive(C0252.bootstrap<"get",8589934652>(), C0252.bootstrap<"get",12884902008>());
-         boolean var4 = var2._getText().isEmpty() && ((C0296)C0114.bootstrap<"call",1,1>(C0296.class)).m_a818a537();
-         var2._setOverlay(var4 ? var3 + C0252.bootstrap<"get",17179869240>() + C0114.bootstrap<"call",2,1>() + C0252.bootstrap<"get",17179869241>() : "");
+         String var3 = Main.getConfig().getPrimitive(C0253.m_af41331f(), C0266.m_f599ae93());
+         boolean var4 = var2._getText().isEmpty() && C0289.m_c3a8b502(C0296.class).m_78cbd705();
+         var2._setOverlay(var4 ? var3 + C0261.m_cc27b633() + CommandRegister.getCommandTrigger() + C0261.m_df6e621c() : "");
       }
    }
 
-   private void m_6cd82145(MinecraftScreen var1) {
-      int var2 = C0114.bootstrap<"call",0,1>() - 50;
-      final C0236 var3 = C0236.f_8b0448cf;
-      if (var3.m_af69325d()) {
-         var1.addScreenComponent(
-            new C0154(C0114.bootstrap<"call",1,1>() / 2 - 100, var2, 200, 20, C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",17179869235>())) {
-               public boolean m_cbf4341a(int var1) {
-                  this.m_5d4ce26e().setComponentLabel(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",17179869233>()));
-                  C0114.bootstrap<"call",1,1>(
-                     () -> {
-                        C0238 var2 = var3.m_d92a89b2();
+   private void m_30f30b7c(MinecraftScreen var1) {
+      int var2 = GuiScreen.getScaledHeight() - 50;
+      final C0236 var3 = C0236.f_758a0b10;
+      if (var3.m_efa7610e()) {
+         var1.addScreenComponent(new C0154(GuiScreen.getScaledWidth() / 2 - 100, var2, 200, 20, Message.of(C0261.m_73708dd3())) {
+            @Override
+            public boolean m_1521b1fa(int var1) {
+               this.m_b1b94a23().setComponentLabel(Message.of(C0261.m_b89b7876()));
+               CompletableFuture.runAsync(() -> {
+                  C0238 var2 = var3.m_702aae34();
 
-                        try {
-                           var2.m_2ca21399();
-                           ServerDetails var3x = C0114.bootstrap<"call",2,1>().getLastConnectedServer();
-                           if (var3x != null) {
-                              C0114.bootstrap<"call",2,1>().runOnRenderThread(() -> C0114.bootstrap<"call",3,1>(var3x));
-                           }
-                        } catch (Exception var4) {
-                           var4.printStackTrace();
-                           ((Button)this.m_5d4ce26e().setComponentLabel(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",17179869234>())))
-                              .resetToAfter(1500, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",17179869235>()));
-                        }
+                  try {
+                     var2.m_f1ec3ae8();
+                     ServerDetails var3x = Minecraft.getMinecraftGame().getLastConnectedServer();
+                     if (var3x != null) {
+                        Minecraft.getMinecraftGame().runOnRenderThread(() -> ConnectingScreen._connect(var3x));
                      }
-                  );
-                  return true;
-               }
+                  } catch (Exception var4) {
+                     var4.printStackTrace();
+                     ((Button)this.m_b1b94a23().setComponentLabel(Message.of(C0261.m_a33fab52()))).resetToAfter(1500, Message.of(C0261.m_73708dd3()));
+                  }
+               });
+               return true;
             }
-         );
+         });
          var2 += 25;
       }
 
-      this.m_93e01370(var1, C0114.bootstrap<"call",1,1>() / 2 - 100, var2, 200);
+      this.m_f118a79a(var1, GuiScreen.getScaledWidth() / 2 - 100, var2, 200);
    }
 
-   private void m_93e01370(final MinecraftScreen var1, int var2, int var3, int var4) {
-      if (C0213.f_9a8bd5d6.m_093ae25a()) {
-         C0154 var5 = new C0154(var2, var3, var4, 20, C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",17179869242>())) {
-            public boolean m_ec495ec6(int var1x) {
-               if (C0114.bootstrap<"call",0,1>()) {
+   private void m_f118a79a(final MinecraftScreen var1, int var2, int var3, int var4) {
+      if (C0213.f_c129c8d4.m_efa7610e()) {
+         C0154 var5 = new C0154(var2, var3, var4, 20, Message.of(C0261.m_56242a84())) {
+            @Override
+            public boolean m_1521b1fa(int var1x) {
+               if (Keyboard.isCtrlPressed()) {
                   PacketRegistry.INSTANCE.setProxy(null);
-                  this.m_4bc31980();
+                  this.m_1058ed9a();
                } else {
-                  C0114.bootstrap<"call",1,1>(var1);
+                  C0143.m_a4e18580(var1);
                }
 
                return true;
             }
 
-            public void m_4bc31980() {
-               this.m_7b8b0488().setComponentLabel(C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",17179869236>()));
-               ArrayList var1x = new ArrayList(
-                  C0114.bootstrap<"call",6,1>(
-                     new Message[]{
-                        C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",17179869237>()),
-                        C0114.bootstrap<"call",2,1>(
-                           C0114.bootstrap<"call",5,1>(
-                              C0252.bootstrap<"get",17179869238>(), new Object[]{C0114.bootstrap<"call",4,1>(C0114.bootstrap<"call",3,1>().size())}
-                           )
-                        )
-                     }
-                  )
+            @Override
+            public void m_1058ed9a() {
+               this.m_b1b94a23().setComponentLabel(Message.of(C0261.m_96ba50d4()));
+               ArrayList var1x = new ArrayList<>(
+                  Arrays.asList(Message.of(C0261.m_88726494()), Message.of(String.format(C0261.m_27479cfa(), C0143.m_39057c01().size())))
                );
                SocksProxy var2 = PacketRegistry.INSTANCE.getProxy();
                if (var2 != null) {
-                  var1x.addAll(
-                     C0114.bootstrap<"call",6,1>(
-                        new Message[]{
-                           C0197.f_716a73fa, C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",17179869239>()), C0114.bootstrap<"call",2,1>(var2.getAddress())
-                        }
-                     )
-                  );
+                  var1x.addAll(Arrays.asList(C0197.f_9607505d, Message.of(C0261.m_23f794da()), Message.of(var2.getAddress())));
                }
 
-               this.m_7b8b0488()._setTooltip(var1x.toArray(new Message[0]));
+               this.m_b1b94a23()._setTooltip(var1x.toArray(new Message[0]));
             }
          };
-         var5.m_a980318c();
+         var5.m_1058ed9a();
          var1.addScreenComponent(var5);
       }
    }
 
-   private void m_15d6192d(final MinecraftScreen var1) {
-      if (((C0296)C0114.bootstrap<"call",0,1>(C0296.class)).m_2b3e6d6e()) {
+   private void m_47619d64(final MinecraftScreen var1) {
+      if (C0289.m_c3a8b502(C0296.class).m_275ab222()) {
          var1.addScreenComponent(
-            new C0154(
-               C0114.bootstrap<"call",1,1>() / 2 - 102,
-               C0114.bootstrap<"call",2,1>() / 4 + 152,
-               98,
-               20,
-               C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",17179869243>())
-            ) {
-               public boolean m_e4469428(int var1x) {
-                  C0114.bootstrap<"call",0,1>().openScreen(new C0177(var1));
+            new C0154(GuiScreen.getScaledWidth() / 2 - 102, GuiScreen.getScaledHeight() / 4 + 152, 98, 20, Message.of(C0261.m_9e27f038())) {
+               @Override
+               public boolean m_1521b1fa(int var1x) {
+                  Minecraft.getMinecraftGame().openScreen(new C0177(var1));
                   return true;
                }
             }
          );
       }
 
-      if (((C0296)C0114.bootstrap<"call",0,1>(C0296.class)).m_4bd179de()) {
-         var1.addScreenComponent(
-            new C0154(
-               C0114.bootstrap<"call",1,1>() / 2 + 4,
-               C0114.bootstrap<"call",2,1>() / 4 + 152,
-               98,
-               20,
-               C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",17179869244>())
-            ) {
-               public boolean m_eedf6dc2(int var1) {
-                  C0149.f_27db095d.m_48c6b1ee();
-                  return true;
-               }
+      if (C0289.m_c3a8b502(C0296.class).m_f21a055b()) {
+         var1.addScreenComponent(new C0154(GuiScreen.getScaledWidth() / 2 + 4, GuiScreen.getScaledHeight() / 4 + 152, 98, 20, Message.of(C0261.m_af41331f())) {
+            @Override
+            public boolean m_1521b1fa(int var1) {
+               C0149.f_9e30b55f.m_1058ed9a();
+               return true;
             }
-         );
+         });
       }
    }
 
    @Override
    public void run() {
-      System.out.println(C0252.bootstrap<"get",17179869245>());
+      System.out.println(C0261.m_f257bcca());
    }
 }

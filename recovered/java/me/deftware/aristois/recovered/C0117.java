@@ -1,56 +1,62 @@
 package me.deftware.aristois.recovered;
 
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import java.util.Collections;
 import java.util.List;
 import me.deftware.aristois.menu.view.RectTooltip;
 import me.deftware.aristois.menu.view.container.ContainerWidget;
 import me.deftware.aristois.menu.widgets.ButtonWidget;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.registry.ItemRegistry;
 
 public class C0117 implements C0112<Item> {
    public C0117() {
    }
 
-   public List<Class<? extends Item>> m_b251c7a2() {
-      return C0114.bootstrap<"call",0,1>(Item.class);
+   @Override
+   public List<Class<? extends Item>> m_350b5ae0() {
+      return Collections.singletonList(Item.class);
    }
 
-   public C0163 m_91cb484c(final C0094<Item> var1, ContainerWidget var2, boolean var3) {
-      ButtonWidget var4 = new ButtonWidget(C0114.bootstrap<"call",1,1>(var1.m_b5ae4ee3()), var2.m_0826645c()) {
+   @Override
+   public C0163 m_5f0a4ee5(final C0094<Item> var1, ContainerWidget var2, boolean var3) {
+      ButtonWidget var4 = new ButtonWidget(Message.of(var1.m_6f1f396d()), var2.m_519f75ae()) {
          @Override
          protected void onClick(int var1x) {
             if (var1x == 0) {
-               C0114.bootstrap<"call",0,1>().openScreen(C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>().getScreen(), null).m_fcbb48eb(var1xxx -> {
-                  var1.m_a8634ed3(var1xxx);
-                  return C0114.bootstrap<"call",1,1>(true);
+               Minecraft.getMinecraftGame().openScreen(C0217.m_81b76da4(Minecraft.getMinecraftGame().getScreen(), null).m_173e187f(var1xxx -> {
+                  var1.m_a32b61ee(var1xxx);
+                  return true;
                }));
             }
          }
 
-         public void m_35596834() {
-            super.m_7a10bd15();
-            this.setLabel(C0114.bootstrap<"call",0,1>(C0117.this, var1));
+         @Override
+         public void m_1058ed9a() {
+            super.m_1058ed9a();
+            this.setLabel(C0117.this.m_08d19569(var1));
          }
       };
-      if (var1.m_50eeaf3d() == null) {
-         var4.m_43533edf(new RectTooltip(var4, (C0441)C0114.bootstrap<"call",2,1>(C0432.class), C0114.bootstrap<"call",1,1>(var1.m_b5ae4ee3())));
+      if (var1.m_b3e55a9d() == null) {
+         var4.m_c7a3618c(new RectTooltip(var4, C0289.m_c3a8b502(C0432.class), Message.of(var1.m_6f1f396d())));
       }
 
-      var4.m_e61ee212(new C0426[]{C0426.f_974a55e6});
+      var4.m_ec141b95(new C0426[]{C0426.f_c285454f});
       return var4;
    }
 
-   private Message m_a8ef7a7d(C0094<Item> var1) {
-      return var1.m_48b16e97() != null ? ((Item)var1.m_48b16e97()).getName() : C0114.bootstrap<"call",0,1>(var1.m_b5ae4ee3());
+   private Message m_08d19569(C0094<Item> var1) {
+      return var1.m_50ca8f08() != null ? ((Item)var1.m_50ca8f08()).getName() : Message.of(var1.m_6f1f396d());
    }
 
-   public Item m_75d210aa(String var1) {
+   public Item m_7ecf9439(String var1) {
       return ItemRegistry.INSTANCE.stream().filter(var1x -> var1x.getName().toString().equalsIgnoreCase(var1)).findFirst().orElse(null);
    }
 
-   public void m_4fda5dce(SuggestionsBuilder var1) {
+   @Override
+   public void m_44a89f72(SuggestionsBuilder var1) {
       ItemRegistry.INSTANCE
          .stream()
          .map(var0 -> var0.getName().toString().toLowerCase())

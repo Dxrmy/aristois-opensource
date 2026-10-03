@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import me.deftware.aristois.main.Main;
 import me.deftware.client.framework.command.CommandBuilder;
 
 public class C0032 extends C0001 {
@@ -7,22 +8,22 @@ public class C0032 extends C0001 {
    }
 
    public CommandBuilder<?> getCommandBuilder() {
-      return new CommandBuilder().addCommand(C0252.bootstrap<"get",8589934715>(), var0 -> {
-         C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934716>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934717>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934718>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934719>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934720>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",8589934721>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901888>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901889>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901890>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901891>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901892>());
-         C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",12884901893>());
-         C0114.bootstrap<"call",2,1>().putPrimitive(C0252.bootstrap<"get",12884901894>(), true);
-         C0114.bootstrap<"call",2,1>().save();
-         C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901895>());
+      return new CommandBuilder().addCommand(C0253.m_62895921(), var0 -> {
+         m_a11708c5(C0253.m_ec4ef19a());
+         m_333019c8(C0253.m_83f6dd00());
+         m_333019c8(C0253.m_56c1229f());
+         m_333019c8(C0253.m_0d6ae39b());
+         m_333019c8(C0253.m_65d43991());
+         m_333019c8(C0253.m_c6614274());
+         m_333019c8(C0266.m_44418b5d());
+         m_333019c8(C0266.m_813e3509());
+         m_333019c8(C0266.m_3855be80());
+         m_333019c8(C0266.m_a9247108());
+         m_333019c8(C0266.m_4626ac74());
+         m_333019c8(C0266.m_c688f8ca());
+         Main.getConfig().putPrimitive(C0266.m_35cdaa1a(), true);
+         Main.getConfig().save();
+         m_a11708c5(C0266.m_624b40d8());
       });
    }
 }

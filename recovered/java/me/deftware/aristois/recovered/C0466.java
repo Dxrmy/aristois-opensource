@@ -1,31 +1,31 @@
 package me.deftware.aristois.recovered;
 
 public class C0466 {
-   public static String f_51129e9d = C0252.bootstrap<"get",30064771166>();
-   public static String f_5474cf9b = C0252.bootstrap<"get",30064771167>();
-   public static String f_e37613c1 = C0252.bootstrap<"get",30064771168>();
-   public static String f_798d7a39 = C0252.bootstrap<"get",30064771169>();
-   public static String f_050740a9 = C0252.bootstrap<"get",30064771170>();
-   public static String f_961c493d = C0252.bootstrap<"get",30064771171>();
-   public static String f_477723f1 = C0252.bootstrap<"get",30064771172>();
-   public static String f_378c17fa = C0252.bootstrap<"get",30064771173>();
-   public static String f_7ee27341 = C0252.bootstrap<"get",30064771174>();
-   public static String f_218b0948 = C0252.bootstrap<"get",30064771175>();
-   public static String f_f629a44a = C0252.bootstrap<"get",30064771176>();
-   public static String f_6a325645 = C0252.bootstrap<"get",30064771177>();
-   public static String f_c7e16bd0 = C0252.bootstrap<"get",30064771178>();
-   public static String f_04bea8ee = C0252.bootstrap<"get",30064771179>();
-   public static String f_0951d4e2 = C0252.bootstrap<"get",30064771180>();
-   public static String f_35fbb2ef = C0252.bootstrap<"get",30064771181>();
-   public static String f_205ffdc3 = C0252.bootstrap<"get",30064771182>();
-   public static String f_e344de00 = C0252.bootstrap<"get",30064771183>();
-   public static String f_4ad3fda0 = C0252.bootstrap<"get",30064771184>();
-   public static String f_64d5189a = C0252.bootstrap<"get",30064771185>();
+   public static String f_a55a75ea = C0265.m_85cd13b4();
+   public static String f_a409d03c = C0265.m_65c7e6e6();
+   public static String f_fd917b96 = C0265.m_a19a564f();
+   public static String f_5c0cb4c3 = C0265.m_03430357();
+   public static String f_9fabfcb0 = C0265.m_ec329d2e();
+   public static String f_aefe3956 = C0265.m_edf5fb69();
+   public static String f_a22a2cbc = C0265.m_8ccfdf29();
+   public static String f_e4c0c1f7 = C0265.m_0223faff();
+   public static String f_c5017e85 = C0265.m_bdbd5e40();
+   public static String f_a75e99f1 = C0265.m_c04d8f6e();
+   public static String f_cb1e3165 = C0265.m_2dc36b02();
+   public static String f_23001150 = C0265.m_4cbaf16f();
+   public static String f_04ac890d = C0265.m_678c4ddb();
+   public static String f_b019e80c = C0265.m_1672ac4d();
+   public static String f_171328e6 = C0265.m_e9a52709();
+   public static String f_a8c80033 = C0265.m_37c08c9d();
+   public static String f_83a661b6 = C0265.m_1472ab32();
+   public static String f_2e73c011 = C0265.m_a5b24d28();
+   public static String f_0fa71afb = C0265.m_a9b6ecd9();
+   public static String f_a54eb795 = C0265.m_09052c0b();
 
    private C0466() {
    }
 
-   public static String m_e95b44fb(String var0) {
+   public static String m_866a453e(String var0) {
       int var1 = var0.length();
       StringBuffer var2 = new StringBuffer();
       int var3 = 0;
@@ -35,10 +35,10 @@ public class C0466 {
          if (var4 == 3) {
             if (++var3 < var1) {
                var4 = var0.charAt(var3);
-               if (C0114.bootstrap<"call",0,1>(var4)) {
+               if (Character.isDigit(var4)) {
                   if (++var3 < var1) {
                      var4 = var0.charAt(var3);
-                     if (C0114.bootstrap<"call",0,1>(var4)) {
+                     if (Character.isDigit(var4)) {
                         var3++;
                      }
                   }
@@ -48,10 +48,10 @@ public class C0466 {
                      if (var4 == ',') {
                         if (++var3 < var1) {
                            var4 = var0.charAt(var3);
-                           if (C0114.bootstrap<"call",0,1>(var4)) {
+                           if (Character.isDigit(var4)) {
                               if (++var3 < var1) {
                                  var4 = var0.charAt(var3);
-                                 if (C0114.bootstrap<"call",0,1>(var4)) {
+                                 if (Character.isDigit(var4)) {
                                     var3++;
                                  }
                               }
@@ -76,7 +76,7 @@ public class C0466 {
       return var2.toString();
    }
 
-   public static String m_145771c0(String var0) {
+   public static String m_d46f830f(String var0) {
       int var1 = var0.length();
       StringBuilder var2 = new StringBuilder();
 
@@ -90,7 +90,7 @@ public class C0466 {
       return var2.toString();
    }
 
-   public static String m_2616ab7a(String var0) {
-      return C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(var0));
+   public static String m_2beb0f7e(String var0) {
+      return m_d46f830f(m_866a453e(var0));
    }
 }

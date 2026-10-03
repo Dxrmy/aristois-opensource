@@ -1,10 +1,14 @@
 package me.deftware.aristois.recovered;
 
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import java.util.Objects;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.entity.types.EntityPlayer;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0036 extends C0001 {
    public C0036() {
@@ -13,21 +17,19 @@ public class C0036 extends C0001 {
    public CommandBuilder<?> getCommandBuilder() {
       return new CommandBuilder()
          .set(
-            (LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901950>())
-               .then(C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",12884901951>(), C0114.bootstrap<"call",1,1>()).executes(var0 -> {
-                  EntityPlayer var1 = (EntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+            (LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0266.m_d9b37a36())
+               .then(RequiredArgumentBuilder.argument(C0266.m_15737526(), StringArgumentType.greedyString()).executes(var0 -> {
+                  EntityPlayer var1 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
                   if (!var1.isCreative()) {
-                     C0114.bootstrap<"call",2,1>().m_77a7bc18(C0252.bootstrap<"get",12884901952>()).m_66e721c0();
+                     C0064.m_7853c016().m_ee04ba1b(C0266.m_6cf615ba()).m_1058ed9a();
                   } else {
-                     Message var2 = C0114.bootstrap<"call",4,1>(
-                        C0114.bootstrap<"call",3,1>(var0, C0252.bootstrap<"get",12884901951>()), C0252.bootstrap<"get",73>()
-                     );
+                     Message var2 = C0197.m_683b6390(StringArgumentType.getString(var0, C0266.m_15737526()), C0257.m_d1f7b79f());
                      ItemStack var3 = var1.getInventory().getHeldItem(false);
                      if (var3 != null && !var3.isEmpty()) {
                         var3.setStackDisplayName(var2);
-                        C0114.bootstrap<"call",5,1>().m_5de8d0b8(C0252.bootstrap<"get",12884901954>(), var2).m_66e721c0();
+                        C0064.m_13c9ffeb().m_ecf8e7ae(C0266.m_b526dd3b(), var2).m_1058ed9a();
                      } else {
-                        C0114.bootstrap<"call",2,1>().m_77a7bc18(C0252.bootstrap<"get",12884901953>()).m_66e721c0();
+                        C0064.m_7853c016().m_ee04ba1b(C0266.m_ecb46027()).m_1058ed9a();
                      }
                   }
 

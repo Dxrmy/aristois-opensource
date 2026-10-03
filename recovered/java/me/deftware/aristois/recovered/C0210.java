@@ -1,25 +1,25 @@
 package me.deftware.aristois.recovered;
 
 public class C0210<T> {
-   private volatile T f_c6798f5a;
+   private volatile T f_f1b84fee;
 
    public C0210(T var1, String var2) {
-      this.f_c6798f5a = (T)var1;
+      this.f_f1b84fee = (T)var1;
    }
 
-   public boolean m_f49c4272(T var1) {
-      return this.f_c6798f5a == var1;
+   public boolean m_22ad6203(T var1) {
+      return this.f_f1b84fee == var1;
    }
 
-   public boolean m_aeff818b() {
-      return this.f_c6798f5a == null || this.f_c6798f5a instanceof String && ((String)this.f_c6798f5a).isEmpty();
+   public boolean m_efa7610e() {
+      return this.f_f1b84fee == null || this.f_f1b84fee instanceof String && ((String)this.f_f1b84fee).isEmpty();
    }
 
-   public synchronized void m_d97b8243(T var1) {
-      this.f_c6798f5a = (T)var1;
+   public synchronized void m_a32b61ee(T var1) {
+      this.f_f1b84fee = (T)var1;
    }
 
-   public T m_fc9f8a69() {
-      return this.f_c6798f5a;
+   public T m_b252dc95() {
+      return this.f_f1b84fee;
    }
 }

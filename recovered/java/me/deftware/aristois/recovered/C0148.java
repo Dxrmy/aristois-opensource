@@ -6,40 +6,42 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
+import javax.imageio.ImageIO;
 import me.deftware.client.framework.render.texture.GlTexture;
 
 public class C0148 extends GlTexture {
-   private final String f_7c8f58bd;
-   protected BufferedImage f_80608b4c;
+   private final String f_fd9a8249;
+   protected BufferedImage f_ab5f2746;
 
    public C0148(String var1) {
-      this.f_7c8f58bd = var1;
-      this.m_ce97ec73();
+      this.f_fd9a8249 = var1;
+      this.m_1058ed9a();
    }
 
    public boolean isReady() {
-      if (this.f_80608b4c != null && this.glId == 0) {
-         this.init(this.f_80608b4c, 9728);
+      if (this.f_ab5f2746 != null && this.glId == 0) {
+         this.init(this.f_ab5f2746, 9728);
       }
 
       return super.isReady();
    }
 
-   protected BufferedImage m_6377554a(InputStream var1) throws IOException {
-      return C0114.bootstrap<"call",0,1>(var1);
+   protected BufferedImage m_d2b23cd4(InputStream var1) throws IOException {
+      return ImageIO.read(var1);
    }
 
-   protected void m_30fe63a0(String var1, Consumer<InputStream> var2) {
+   protected void m_8b8c9021(String var1, Consumer<InputStream> var2) {
       try {
          URLConnection var3 = new URL(var1).openConnection();
-         var3.setRequestProperty(C0252.bootstrap<"get",4294967318>(), C0139.f_be33f283);
+         var3.setRequestProperty(C0264.m_bec91365(), C0139.f_a07ec47b);
          HttpURLConnection var4 = (HttpURLConnection)var3;
          var4.setDoInput(true);
          var4.setDoOutput(false);
          var4.connect();
          if (var4.getResponseCode() / 100 != 2) {
-            throw new IOException(C0252.bootstrap<"get",51539607648>() + var1);
+            throw new IOException(C0255.m_a19a564f() + var1);
          }
 
          try (InputStream var5 = var4.getInputStream()) {
@@ -52,10 +54,10 @@ public class C0148 extends GlTexture {
       }
    }
 
-   private void m_ce97ec73() {
-      C0114.bootstrap<"call",0,1>(() -> this.m_30fe63a0(this.f_7c8f58bd, var1 -> {
+   private void m_1058ed9a() {
+      CompletableFuture.runAsync(() -> this.m_8b8c9021(this.f_fd9a8249, var1 -> {
             try {
-               this.f_80608b4c = this.m_6377554a(var1);
+               this.f_ab5f2746 = this.m_d2b23cd4(var1);
             } catch (Exception var3) {
                var3.printStackTrace();
             }

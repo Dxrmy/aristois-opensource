@@ -1,11 +1,13 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.input.MinecraftKeyBind;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0389 extends AbstractMod {
    @C0098(
@@ -14,7 +16,7 @@ public class C0389 extends AbstractMod {
          min = 0.5
       )
    )
-   public float f_af0c8367 = 5.0F;
+   public float f_071bc97d = 5.0F;
    @C0098(
       value = "Walk speed",
       number = @C0096(
@@ -22,37 +24,37 @@ public class C0389 extends AbstractMod {
          max = 2.0
       )
    )
-   private float f_60606186 = 0.4F;
+   private float f_d376cc8b = 0.4F;
    @C0098("Apply for entities")
-   private boolean f_d9e1b3c1 = true;
+   private boolean f_58a96425 = true;
    @C0098(
       value = "AutoDisable",
       description = {"Automatically pause speed while sneaking"}
    )
-   private boolean f_54e808ef = true;
+   private boolean f_a9ea00eb = true;
 
    public C0389() {
-      super(C0252.bootstrap<"get",30064771078>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673085>());
+      super(C0265.m_35cdaa1a(), C0290.f_829d9b20, C0259.m_83f6dd00());
    }
 
    @EventHandler
-   public void m_a27a7824(EventUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
-      if (!MinecraftKeyBind.SNEAK.isPressed() || this.f_54e808ef) {
-         if (this.f_d9e1b3c1) {
+   public void m_3072cba8(EventUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
+      if (!MinecraftKeyBind.SNEAK.isPressed() || this.f_a9ea00eb) {
+         if (this.f_58a96425) {
             Entity var3 = var2.getVehicle();
             if (var3 != null) {
-               this.m_b23bbfe1(var3, var2, this.f_af0c8367 / 2.0F);
+               this.m_256bea62(var3, var2, this.f_071bc97d / 2.0F);
             }
          }
 
          if (!var2.isRiding()) {
-            this.m_b23bbfe1(var2, var2, this.f_60606186);
+            this.m_256bea62(var2, var2, this.f_d376cc8b);
          }
       }
    }
 
-   private void m_b23bbfe1(Entity var1, MainEntityPlayer var2, float var3) {
+   private void m_256bea62(Entity var1, MainEntityPlayer var2, float var3) {
       float var4 = var2.getRotationYaw();
       double var5 = var2.getForward();
       double var7 = var2.getStrafe();
@@ -75,11 +77,11 @@ public class C0389 extends AbstractMod {
          }
 
          var1.setVelocity(
-            var5 * (double)var3 * C0114.bootstrap<"call",3,1>((double)((float)C0114.bootstrap<"call",2,1>((double)(var4 + 90.0F))))
-               + var7 * (double)var3 * C0114.bootstrap<"call",4,1>((double)((float)C0114.bootstrap<"call",2,1>((double)(var4 + 90.0F)))),
+            var5 * (double)var3 * Math.cos((double)((float)Math.toRadians((double)(var4 + 90.0F))))
+               + var7 * (double)var3 * Math.sin((double)((float)Math.toRadians((double)(var4 + 90.0F)))),
             var1.getVelocity().getY(),
-            var5 * (double)var3 * C0114.bootstrap<"call",4,1>((double)((float)C0114.bootstrap<"call",2,1>((double)(var4 + 90.0F))))
-               - var7 * (double)var3 * C0114.bootstrap<"call",3,1>((double)((float)C0114.bootstrap<"call",2,1>((double)(var4 + 90.0F))))
+            var5 * (double)var3 * Math.sin((double)((float)Math.toRadians((double)(var4 + 90.0F))))
+               - var7 * (double)var3 * Math.cos((double)((float)Math.toRadians((double)(var4 + 90.0F))))
          );
       }
    }

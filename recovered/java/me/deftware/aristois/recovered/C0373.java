@@ -12,29 +12,29 @@ public class C0373 extends AbstractMod {
          max = 4.0
       )
    )
-   private float f_afb8c29b = 0.25F;
+   private float f_1041614b = 0.25F;
 
    public C0373() {
-      super(C0252.bootstrap<"get",42949673048>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673049>());
+      super(C0259.m_0425f2ec(), C0290.f_829d9b20, C0259.m_1b17f04f());
    }
 
    @Override
    public void onSettingUpdate(C0098 var1) {
-      CameraEntityMan.speed = this.f_afb8c29b;
+      CameraEntityMan.speed = this.f_1041614b;
    }
 
    @Override
    public void onPostLoad() {
-      CameraEntityMan.speed = this.f_afb8c29b;
+      CameraEntityMan.speed = this.f_1041614b;
    }
 
    @Override
    public void onDisable() {
-      C0114.bootstrap<"call",0,1>();
+      CameraEntityMan.disable();
    }
 
    @Override
    public void onEnable() {
-      C0114.bootstrap<"call",0,1>();
+      CameraEntityMan.enable();
    }
 }

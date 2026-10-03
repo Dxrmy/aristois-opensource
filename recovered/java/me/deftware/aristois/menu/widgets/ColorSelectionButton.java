@@ -15,11 +15,11 @@ public abstract class ColorSelectionButton extends ButtonWidget implements C0445
    @Override
    protected void drawBackground(double var1, double var3, float var5) {
       super.drawBackground(var1, var3, var5);
-      double var6 = this.f_544fe4da.m_b419df18();
-      double var8 = this.f_96c08c03.m_fc7f45bc() - var6 * 2.0;
-      C0165 var10 = new C0165(this.f_96c08c03.m_14f8bc2c() + this.f_96c08c03.m_830cb294() - var8 - var6 - 5.0, this.f_96c08c03.m_5a998971() + var6, var8, var8);
-      var10.m_79e11f68((QuadRenderStack)this.quadRenderStack.glColor(this.getColor()));
-      var10.m_40710a35((QuadRenderStack)this.quadRenderStack.glColor(Color.gray, 120.0F), 2.0);
+      double var6 = this.f_02ea293d.m_036bd5c5();
+      double var8 = this.f_7fd3d7b7.m_d42f3372() - var6 * 2.0;
+      C0165 var10 = new C0165(this.f_7fd3d7b7.m_a005efae() + this.f_7fd3d7b7.m_4388ac29() - var8 - var6 - 5.0, this.f_7fd3d7b7.m_84808068() + var6, var8, var8);
+      var10.m_4bc1a596((QuadRenderStack)this.quadRenderStack.glColor(this.getColor()));
+      var10.m_d4bfedfc((QuadRenderStack)this.quadRenderStack.glColor(Color.gray, 120.0F), 2.0);
    }
 
    protected abstract Color getColor();

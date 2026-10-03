@@ -1,25 +1,25 @@
 package me.deftware.aristois.recovered;
 
 public enum C0426 {
-   f_e23d4507,
-   f_eabcfd17,
-   f_974a55e6;
+   f_166ad6c3,
+   f_f7a0f908,
+   f_c285454f;
 
    private C0426() {
    }
 
-   public void m_365f77b3(C0163 var1, C0163 var2) {
+   public void m_28c3e3ec(C0163 var1, C0163 var2) {
       switch (this) {
-         case f_e23d4507:
-            var1.m_fd6ca281().m_b9e3750e(var2.m_fd6ca281().m_830cb294());
-            var1.m_fd6ca281().m_5078410c(var2.m_fd6ca281().m_fc7f45bc());
+         case f_166ad6c3:
+            var1.m_44bb072f().m_6fd9bdae(var2.m_44bb072f().m_4388ac29());
+            var1.m_44bb072f().m_61ade8f3(var2.m_44bb072f().m_d42f3372());
             break;
-         case f_974a55e6:
-            var1.m_fd6ca281().m_b9e3750e(var2.m_fd6ca281().m_830cb294());
+         case f_c285454f:
+            var1.m_44bb072f().m_6fd9bdae(var2.m_44bb072f().m_4388ac29());
             break;
-         case f_eabcfd17:
-            double var3 = C0114.bootstrap<"call",0,1>(var2.m_fd6ca281().m_5a998971() - var1.m_fd6ca281().m_5a998971());
-            var1.m_fd6ca281().m_5078410c(var2.m_fd6ca281().m_fc7f45bc() - var3);
+         case f_f7a0f908:
+            double var3 = Math.abs(var2.m_44bb072f().m_84808068() - var1.m_44bb072f().m_84808068());
+            var1.m_44bb072f().m_61ade8f3(var2.m_44bb072f().m_d42f3372() - var3);
       }
    }
 }

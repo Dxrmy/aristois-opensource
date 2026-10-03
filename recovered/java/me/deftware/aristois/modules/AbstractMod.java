@@ -68,11 +68,11 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
       if (!Main.getConfig().hasKey(this.modID)) {
          C0422 defaultMod = this.getClass().isAnnotationPresent(C0422.class) ? this.getClass().getAnnotation(C0422.class) : null;
          if (defaultMod != null) {
-            this.keybind.m_3500412e(defaultMod.value());
-            this.keybind.m_4adc9538(defaultMod.modifier());
+            this.keybind.m_46938bdb(defaultMod.value());
+            this.keybind.m_7c7fe86a(defaultMod.modifier());
          }
 
-         this.modProps.add("keyBind", C0125.f_70947d4f.m_77b61bf9(this.keybind, C0245.class));
+         this.modProps.add("keyBind", C0125.f_94eb86f7.m_a7c6d791(this.keybind, C0245.class));
          this.modProps.addProperty("state", defaultMod != null);
          this.modProps.addProperty("pinned", defaultMod != null && defaultMod.pinned());
          Main.getConfig().putObject(this.modID, this.modProps);
@@ -80,13 +80,13 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
 
       if (this.modProps.has("keyBind")) {
          try {
-            this.keybind = (C0245)C0125.f_70947d4f.m_5f630fc1(this.modProps.get("keyBind").getAsJsonObject(), C0245.class);
+            this.keybind = (C0245)C0125.f_94eb86f7.m_b3b664ad(this.modProps.get("keyBind").getAsJsonObject(), C0245.class);
          } catch (Exception var2) {
             var2.printStackTrace();
          }
       }
 
-      this.keybind.m_1990ab66(this::save);
+      this.keybind.m_c162d659(this::save);
       if (!(this instanceof C0297) && !(this instanceof C0295)) {
          this.enabled = this.modProps.get("state").getAsBoolean()
             && !this.getClass().isAnnotationPresent(C0421.class)
@@ -98,10 +98,10 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
 
    public void save() {
       try {
-         C0091.m_03614e5a(this);
+         C0091.m_5e69f832(this);
          this.modProps.addProperty("state", this.enabled);
          this.modProps.addProperty("pinned", this.pinned);
-         this.modProps.add("keyBind", C0125.f_70947d4f.m_77b61bf9(this.keybind, C0245.class));
+         this.modProps.add("keyBind", C0125.f_94eb86f7.m_a7c6d791(this.keybind, C0245.class));
       } catch (Exception var2) {
          var2.printStackTrace();
       }
@@ -114,12 +114,13 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
          this.registerEvents(true);
       }
 
-      C0091.m_3e2b7ec9(this);
+      C0091.m_6fea6797(this);
    }
 
-   public Message m_bdef0f40() {
+   @Override
+   public Message m_6fc98322() {
       for (C0094<?> field : this.fields) {
-         field.m_4e85e8f7();
+         field.m_6fc98322();
       }
 
       this.save();
@@ -145,8 +146,8 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
          Class<? extends AbstractMod>[] clashes = this.getClashes();
          if (clashes != null) {
             Arrays.stream(clashes)
-               .filter(c -> C0289.m_ded43506((Class<? extends AbstractMod>)c).isEnabled())
-               .forEach(c -> C0289.m_ded43506((Class<? extends AbstractMod>)c).toggle());
+               .filter(c -> C0289.m_c3a8b502((Class<? extends AbstractMod>)c).isEnabled())
+               .forEach(c -> C0289.m_c3a8b502((Class<? extends AbstractMod>)c).toggle());
          }
 
          this.registerEvents(true);
@@ -175,33 +176,33 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
    }
 
    protected void onCrash(Throwable cause) {
-      logger.error("Module {} in category {} (state: {})", new Object[]{this.m_5aac041f(), this.getCategory().name(), this.enabled ? "enabled" : "disabled"});
+      logger.error("Module {} in category {} (state: {})", new Object[]{this.m_6f1f396d(), this.getCategory().name(), this.enabled ? "enabled" : "disabled"});
 
       try {
-         C0091.m_03614e5a(this);
+         C0091.m_5e69f832(this);
       } catch (Throwable var4) {
-         logger.error("An error occurred when serializing settings in mod \"{}\"", new Object[]{this.m_5aac041f(), var4});
+         logger.error("An error occurred when serializing settings in mod \"{}\"", new Object[]{this.m_6f1f396d(), var4});
       }
 
       Gson gson = new GsonBuilder().setPrettyPrinting().create();
       String json = gson.toJson(this.modProps);
       logger.info("Properties {}", new Object[]{json});
-      C0064.m_c28a0024().m_6b4e8235("An error occurred").m_77a7bc18("See the logs for more information").m_66e721c0();
-      C0064.m_c28a0024()
-         .m_77a7bc18(
-            "An error occurred in " + this.m_5aac041f(),
+      C0064.m_b79f2e94().m_2c2620fc("An error occurred").m_ee04ba1b("See the logs for more information").m_1058ed9a();
+      C0064.m_b79f2e94()
+         .m_ee04ba1b(
+            "An error occurred in " + this.m_6f1f396d(),
             "Report this to us in our aristois.net/guilded",
             "More information is available in the latest.log file"
          )
-         .m_9d59fbe9();
+         .m_b728afce();
    }
 
    public String getDisplayMode() {
-      return this.mode != null ? this.mode.m_27694bb2() : null;
+      return this.mode != null ? this.mode.m_d32ebe65() : null;
    }
 
    public String getDisplayName() {
-      return this.betaVersion ? this.m_5aac041f() + " (Beta)" : this.m_5aac041f();
+      return this.betaVersion ? this.m_6f1f396d() + " (Beta)" : this.m_6f1f396d();
    }
 
    protected void runOnce(String key, Runnable action) {
@@ -285,7 +286,8 @@ public class AbstractMod implements C0217.anonymousthis, C0092 {
       return this.category;
    }
 
-   public String m_5aac041f() {
+   @Override
+   public String m_6f1f396d() {
       return this.name;
    }
 

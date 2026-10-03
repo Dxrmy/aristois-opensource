@@ -4,56 +4,56 @@ import com.google.gson.annotations.SerializedName;
 
 public class C0133 {
    @SerializedName("address")
-   private String f_edf38df5;
+   private String f_15ce1167;
    @SerializedName("port")
-   private int f_1b741e85;
+   private int f_a5343ae0;
    @SerializedName("channel")
-   private String f_d57c9527;
+   private String f_7ec689a2;
    @SerializedName("password")
-   private String f_1f724c9f;
+   private String f_5b61f7eb;
    @SerializedName("hash")
-   private String f_4d0598d5;
+   private String f_fa76c77a;
 
    public C0133() {
    }
 
-   public String m_929cb2a5() {
-      return this.f_edf38df5;
+   public String m_8d7dbe31() {
+      return this.f_15ce1167;
    }
 
-   public int m_a6eb5ded() {
-      return this.f_1b741e85;
+   public int m_79bbc2da() {
+      return this.f_a5343ae0;
    }
 
-   public String m_63e1429a() {
-      return this.f_d57c9527;
+   public String m_e07cee76() {
+      return this.f_7ec689a2;
    }
 
-   public String m_38a1f518() {
-      return this.f_1f724c9f;
+   public String m_d32ebe65() {
+      return this.f_5b61f7eb;
    }
 
-   public String m_5c8e9270() {
-      return this.f_4d0598d5;
+   public String m_3855be80() {
+      return this.f_fa76c77a;
    }
 
-   public void m_9c8971c4(String var1) {
-      this.f_edf38df5 = var1;
+   public void m_256015fc(String var1) {
+      this.f_15ce1167 = var1;
    }
 
-   public void m_89cd4107(int var1) {
-      this.f_1b741e85 = var1;
+   public void m_46938bdb(int var1) {
+      this.f_a5343ae0 = var1;
    }
 
-   public void m_41e5f27b(String var1) {
-      this.f_d57c9527 = var1;
+   public void m_a11708c5(String var1) {
+      this.f_7ec689a2 = var1;
    }
 
-   public void m_04394275(String var1) {
-      this.f_1f724c9f = var1;
+   public void m_333019c8(String var1) {
+      this.f_5b61f7eb = var1;
    }
 
-   public void m_d83f3a13(String var1) {
-      this.f_4d0598d5 = var1;
+   public void m_4404c3bc(String var1) {
+      this.f_fa76c77a = var1;
    }
 }

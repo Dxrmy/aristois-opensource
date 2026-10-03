@@ -5,55 +5,55 @@ import java.util.UUID;
 
 public class C0134 {
    @SerializedName("uuid")
-   private UUID f_b8d7024a;
+   private UUID f_f63c2942;
    @SerializedName("username")
-   private String f_03c08df6;
+   private String f_cb37d908;
    @SerializedName("properties")
-   private C0134.anonymousthis f_cbf83211;
+   private C0134.anonymousthis f_de562be3;
    @SerializedName("signature")
-   private C0134.anonymousdefault f_b882ef76;
+   private C0134.anonymousdefault f_8d35de48;
 
-   public boolean m_2ca4efdc() {
-      return this.f_cbf83211 != null && C0114.bootstrap<"call",0,1>(this.f_cbf83211);
+   public boolean m_efa7610e() {
+      return this.f_de562be3 != null && this.f_de562be3.f_1dd09754;
    }
 
-   public boolean m_e59637a2() {
-      return this.f_cbf83211 != null && C0114.bootstrap<"call",0,1>(this.f_cbf83211);
+   public boolean m_9362a920() {
+      return this.f_de562be3 != null && this.f_de562be3.f_4f8d4a8d;
    }
 
    public C0134() {
    }
 
-   public UUID m_d4ce5adf() {
-      return this.f_b8d7024a;
+   public UUID m_d230268a() {
+      return this.f_f63c2942;
    }
 
-   public String m_e52927c8() {
-      return this.f_03c08df6;
+   public String m_d32ebe65() {
+      return this.f_cb37d908;
    }
 
-   public C0134.anonymousthis m_3d959bd5() {
-      return this.f_cbf83211;
+   public C0134.anonymousthis m_772cf437() {
+      return this.f_de562be3;
    }
 
-   public C0134.anonymousdefault m_4af4c328() {
-      return this.f_b882ef76;
+   public C0134.anonymousdefault m_1b54fc03() {
+      return this.f_8d35de48;
    }
 
-   public void m_f07c164e(UUID var1) {
-      this.f_b8d7024a = var1;
+   public void m_43a0cbf2(UUID var1) {
+      this.f_f63c2942 = var1;
    }
 
-   public void m_6c1c535d(String var1) {
-      this.f_03c08df6 = var1;
+   public void m_256015fc(String var1) {
+      this.f_cb37d908 = var1;
    }
 
-   public void m_ac8cb263(C0134.anonymousthis var1) {
-      this.f_cbf83211 = var1;
+   public void m_df7bd384(C0134.anonymousthis var1) {
+      this.f_de562be3 = var1;
    }
 
-   public void m_1a1de287(C0134.anonymousdefault var1) {
-      this.f_b882ef76 = var1;
+   public void m_cfd81537(C0134.anonymousdefault var1) {
+      this.f_8d35de48 = var1;
    }
 
    @Override
@@ -64,20 +64,20 @@ public class C0134 {
          return false;
       } else {
          C0134 var2 = (C0134)var1;
-         if (!var2.m_a09ac62a(this)) {
+         if (!var2.m_22ad6203(this)) {
             return false;
          } else {
-            UUID var3 = this.m_d4ce5adf();
-            UUID var4 = var2.m_d4ce5adf();
+            UUID var3 = this.m_d230268a();
+            UUID var4 = var2.m_d230268a();
             if (var3 == null ? var4 == null : var3.equals(var4)) {
-               String var5 = this.m_e52927c8();
-               String var6 = var2.m_e52927c8();
+               String var5 = this.m_d32ebe65();
+               String var6 = var2.m_d32ebe65();
                if (var5 == null ? var6 == null : var5.equals(var6)) {
-                  C0134.anonymousthis var7 = this.m_3d959bd5();
-                  C0134.anonymousthis var8 = var2.m_3d959bd5();
+                  C0134.anonymousthis var7 = this.m_772cf437();
+                  C0134.anonymousthis var8 = var2.m_772cf437();
                   if (var7 == null ? var8 == null : var7.equals(var8)) {
-                     C0134.anonymousdefault var9 = this.m_4af4c328();
-                     C0134.anonymousdefault var10 = var2.m_4af4c328();
+                     C0134.anonymousdefault var9 = this.m_1b54fc03();
+                     C0134.anonymousdefault var10 = var2.m_1b54fc03();
                      return var9 == null ? var10 == null : var9.equals(var10);
                   } else {
                      return false;
@@ -92,7 +92,7 @@ public class C0134 {
       }
    }
 
-   protected boolean m_a09ac62a(Object var1) {
+   protected boolean m_22ad6203(Object var1) {
       return var1 instanceof C0134;
    }
 
@@ -100,80 +100,80 @@ public class C0134 {
    public int hashCode() {
       byte var1 = 59;
       int var2 = 1;
-      UUID var3 = this.m_d4ce5adf();
+      UUID var3 = this.m_d230268a();
       var2 = var2 * 59 + (var3 == null ? 43 : var3.hashCode());
-      String var4 = this.m_e52927c8();
+      String var4 = this.m_d32ebe65();
       var2 = var2 * 59 + (var4 == null ? 43 : var4.hashCode());
-      C0134.anonymousthis var5 = this.m_3d959bd5();
+      C0134.anonymousthis var5 = this.m_772cf437();
       var2 = var2 * 59 + (var5 == null ? 43 : var5.hashCode());
-      C0134.anonymousdefault var6 = this.m_4af4c328();
+      C0134.anonymousdefault var6 = this.m_1b54fc03();
       return var2 * 59 + (var6 == null ? 43 : var6.hashCode());
    }
 
    @Override
    public String toString() {
-      return C0252.bootstrap<"get",4294967347>()
-         + this.m_d4ce5adf()
-         + C0252.bootstrap<"get",109>()
-         + this.m_e52927c8()
-         + C0252.bootstrap<"get",4294967348>()
-         + this.m_3d959bd5()
-         + C0252.bootstrap<"get",4294967349>()
-         + this.m_4af4c328()
-         + C0252.bootstrap<"get",59>();
+      return C0264.m_73708dd3()
+         + this.m_d230268a()
+         + C0257.m_37c08c9d()
+         + this.m_d32ebe65()
+         + C0264.m_96ba50d4()
+         + this.m_772cf437()
+         + C0264.m_88726494()
+         + this.m_1b54fc03()
+         + C0257.m_9e27f038();
    }
 
    public static class anonymousdefault {
       @SerializedName("timestamp")
-      protected String f_d5d7002f;
+      protected String f_ce4f2d1a;
       @SerializedName("data")
-      protected String f_f86b38aa;
+      protected String f_8fc7f074;
 
       public anonymousdefault() {
       }
 
-      public String m_822eb083() {
-         return this.f_d5d7002f;
+      public String m_8d7dbe31() {
+         return this.f_ce4f2d1a;
       }
 
-      public String m_ff31934f() {
-         return this.f_f86b38aa;
+      public String m_3d3a8736() {
+         return this.f_8fc7f074;
       }
    }
 
    public static class anonymousthis {
       @SerializedName("banned")
-      private boolean f_ab86c9fc;
+      private boolean f_1dd09754;
       @SerializedName("donor")
-      private boolean f_be0ba219;
+      private boolean f_4f8d4a8d;
       @SerializedName("prefix")
-      private String f_ac05ad9d;
+      private String f_1401ffbe;
 
       public anonymousthis() {
       }
 
-      public boolean m_791df234() {
-         return this.f_ab86c9fc;
+      public boolean m_efa7610e() {
+         return this.f_1dd09754;
       }
 
-      public boolean m_dbd2e1fa() {
-         return this.f_be0ba219;
+      public boolean m_9362a920() {
+         return this.f_4f8d4a8d;
       }
 
-      public String m_edab534e() {
-         return this.f_ac05ad9d;
+      public String m_e07cee76() {
+         return this.f_1401ffbe;
       }
 
-      public void m_28a9495b(boolean var1) {
-         this.f_ab86c9fc = var1;
+      public void m_d6ac7420(boolean var1) {
+         this.f_1dd09754 = var1;
       }
 
-      public void m_7231ef72(boolean var1) {
-         this.f_be0ba219 = var1;
+      public void m_394ecb95(boolean var1) {
+         this.f_4f8d4a8d = var1;
       }
 
-      public void m_596775a5(String var1) {
-         this.f_ac05ad9d = var1;
+      public void m_256015fc(String var1) {
+         this.f_1401ffbe = var1;
       }
 
       @Override
@@ -184,21 +184,21 @@ public class C0134 {
             return false;
          } else {
             C0134.anonymousthis var2 = (C0134.anonymousthis)var1;
-            if (!var2.m_f4e36bf3(this)) {
+            if (!var2.m_22ad6203(this)) {
                return false;
-            } else if (this.m_791df234() != var2.m_791df234()) {
+            } else if (this.m_efa7610e() != var2.m_efa7610e()) {
                return false;
-            } else if (this.m_dbd2e1fa() != var2.m_dbd2e1fa()) {
+            } else if (this.m_9362a920() != var2.m_9362a920()) {
                return false;
             } else {
-               String var3 = this.m_edab534e();
-               String var4 = var2.m_edab534e();
+               String var3 = this.m_e07cee76();
+               String var4 = var2.m_e07cee76();
                return var3 == null ? var4 == null : var3.equals(var4);
             }
          }
       }
 
-      protected boolean m_f4e36bf3(Object var1) {
+      protected boolean m_22ad6203(Object var1) {
          return var1 instanceof C0134.anonymousthis;
       }
 
@@ -206,21 +206,15 @@ public class C0134 {
       public int hashCode() {
          byte var1 = 59;
          int var2 = 1;
-         var2 = var2 * 59 + (this.m_791df234() ? 79 : 97);
-         var2 = var2 * 59 + (this.m_dbd2e1fa() ? 79 : 97);
-         String var3 = this.m_edab534e();
+         var2 = var2 * 59 + (this.m_efa7610e() ? 79 : 97);
+         var2 = var2 * 59 + (this.m_9362a920() ? 79 : 97);
+         String var3 = this.m_e07cee76();
          return var2 * 59 + (var3 == null ? 43 : var3.hashCode());
       }
 
       @Override
       public String toString() {
-         return C0252.bootstrap<"get",4294967344>()
-            + this.m_791df234()
-            + C0252.bootstrap<"get",4294967345>()
-            + this.m_dbd2e1fa()
-            + C0252.bootstrap<"get",4294967346>()
-            + this.m_edab534e()
-            + C0252.bootstrap<"get",59>();
+         return C0264.m_7f74d855() + this.m_efa7610e() + C0264.m_b89b7876() + this.m_9362a920() + C0264.m_a33fab52() + this.m_e07cee76() + C0257.m_9e27f038();
       }
    }
 }

@@ -9,12 +9,12 @@ import me.deftware.client.framework.global.GameMap;
 )
 public class C0358 extends AbstractMod {
    public C0358() {
-      super(C0252.bootstrap<"get",51539607609>(), C0290.f_faada303, C0252.bootstrap<"get",51539607610>());
+      super(C0255.m_df6e621c(), C0290.f_516f3c47, C0255.m_56242a84());
    }
 
    @Override
    public void onEnable() {
-      GameMap.INSTANCE.put(GameKeys.IGNORE_WORLD_BORDER, C0114.bootstrap<"call",0,1>(true));
+      GameMap.INSTANCE.put(GameKeys.IGNORE_WORLD_BORDER, true);
    }
 
    @Override

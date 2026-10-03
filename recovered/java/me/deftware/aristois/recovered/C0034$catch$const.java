@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class C0034$catch$const {
    @SerializedName("ms")
-   public long f_d99ee749;
+   public long f_21799c7c;
    @SerializedName("text")
-   public String f_4c178740;
+   public String f_f3275c0b;
 
    public C0034$catch$const() {
    }

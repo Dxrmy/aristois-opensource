@@ -1,133 +1,139 @@
 package me.deftware.aristois.recovered;
 
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.gui.widgets.TextField;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 
 public class C0157 extends C0168<TextField> implements C0163 {
-   private final C0165 f_368bb4dc;
-   private Message f_a048a565;
-   private String f_a54d7fe6 = "";
-   private String f_a3450660 = "";
-   private Message f_327df58c;
-   private final TextField f_e2486a4a;
+   private final C0165 f_e66b318c;
+   private Message f_86c551f5;
+   private String f_1e1cdc2b = "";
+   private String f_a8988247 = "";
+   private Message f_47012fbf;
+   private final TextField f_535e9229;
 
    public C0157(int var1, int var2, int var3, int var4) {
-      this.f_368bb4dc = new C0165((double)var1, (double)var2, (double)var3, (double)var4);
-      this.f_e2486a4a = C0114.bootstrap<"call",0,1>(var1, var2, var3, var4);
+      this.f_e66b318c = new C0165((double)var1, (double)var2, (double)var3, (double)var4);
+      this.f_535e9229 = TextField.create(var1, var2, var3, var4);
    }
 
-   public void m_4003551c() {
-      this.m_63ef8c45("");
+   public void m_23674f64() {
+      this.m_333019c8("");
    }
 
-   public void m_742449de() {
-      this.setPosition((int)this.f_368bb4dc.m_14f8bc2c(), (int)this.f_368bb4dc.m_5a998971());
+   @Override
+   public void m_1058ed9a() {
+      this.setPosition((int)this.f_e66b318c.m_a005efae(), (int)this.f_e66b318c.m_84808068());
    }
 
-   public C0157 m_09e822a9(String var1) {
-      this.f_327df58c = C0114.bootstrap<"call",0,1>(var1).style(C0114.bootstrap<"call",1,1>(DefaultColors.DARK_GRAY));
+   public C0157 m_407926d1(String var1) {
+      this.f_47012fbf = Message.of(var1).style(Appearance.of(DefaultColors.DARK_GRAY));
       return this;
    }
 
-   public C0157 m_d39ed081() {
-      this.f_a54d7fe6 = C0252.bootstrap<"get",25769803879>();
+   public C0157 m_35587e93() {
+      this.f_1e1cdc2b = C0267.m_c04d8f6e();
       return this;
    }
 
-   public int m_161753a4() {
-      return C0114.bootstrap<"call",0,1>(this.m_55cc55cf());
+   public int m_2ac34870() {
+      return Integer.parseInt(this.m_e9914bd3());
    }
 
-   public boolean m_e439f254() {
-      if (!this.f_a54d7fe6.isEmpty() && !this.m_55cc55cf().trim().isEmpty()) {
-         String var1 = this.m_55cc55cf();
-         if (var1.startsWith(C0252.bootstrap<"get",4294967313>())) {
+   public boolean m_f21a055b() {
+      if (!this.f_1e1cdc2b.isEmpty() && !this.m_e9914bd3().trim().isEmpty()) {
+         String var1 = this.m_e9914bd3();
+         if (var1.startsWith(C0264.m_18204724())) {
             var1 = var1.substring(1);
          }
 
-         return var1.matches(this.f_a54d7fe6);
+         return var1.matches(this.f_1e1cdc2b);
       } else {
-         return !this.m_55cc55cf().trim().isEmpty();
+         return !this.m_e9914bd3().trim().isEmpty();
       }
    }
 
-   public String m_55cc55cf() {
-      return this.f_e2486a4a._getText();
+   public String m_e9914bd3() {
+      return this.f_535e9229._getText();
    }
 
-   public void m_63ef8c45(String var1) {
-      this.f_e2486a4a._setText(var1);
+   public void m_333019c8(String var1) {
+      this.f_535e9229._setText(var1);
    }
 
-   public boolean m_f4b6dd30(double var1, double var3, float var5, boolean var6) {
-      if (this.f_a048a565 != null) {
-         C0114.bootstrap<"call",1,1>(
-            this.f_a048a565, (int)this.f_368bb4dc.m_14f8bc2c(), (int)this.f_368bb4dc.m_5a998971() - C0114.bootstrap<"call",0,1>() - 5, 16777215
+   @Override
+   public boolean m_572d14e6(double var1, double var3, float var5, boolean var6) {
+      if (this.f_86c551f5 != null) {
+         FontRenderer.drawStringWithShadow(
+            this.f_86c551f5, (int)this.f_e66b318c.m_a005efae(), (int)this.f_e66b318c.m_84808068() - FontRenderer.getFontHeight() - 5, 16777215
          );
       }
 
-      if (this.f_327df58c != null && this.m_55cc55cf().isEmpty()) {
-         C0114.bootstrap<"call",1,1>(
-            this.f_327df58c, this.getPositionX() + 4, (int)((double)this.getPositionY() + (this.m_4e48f5ec().m_fc7f45bc() - 8.0) / 2.0), 16777215
+      if (this.f_47012fbf != null && this.m_e9914bd3().isEmpty()) {
+         FontRenderer.drawStringWithShadow(
+            this.f_47012fbf, this.getPositionX() + 4, (int)((double)this.getPositionY() + (this.m_44bb072f().m_d42f3372() - 8.0) / 2.0), 16777215
          );
       }
 
       return var6;
    }
 
-   public void m_d3298760() {
-      if (!this.f_a3450660.equals(this.m_55cc55cf())) {
-         this.f_a3450660 = this.m_55cc55cf();
-         this.m_5fe5b665();
+   @Override
+   public void m_0e265701() {
+      if (!this.f_a8988247.equals(this.m_e9914bd3())) {
+         this.f_a8988247 = this.m_e9914bd3();
+         this.m_b728afce();
       }
    }
 
    @Override
    public String toString() {
-      return this.m_55cc55cf();
+      return this.m_e9914bd3();
    }
 
-   protected void m_5fe5b665() {
+   protected void m_b728afce() {
    }
 
-   public C0165 m_4e48f5ec() {
-      return this.f_368bb4dc;
+   @Override
+   public C0165 m_44bb072f() {
+      return this.f_e66b318c;
    }
 
-   public Message m_07ba16b8() {
-      return this.f_a048a565;
+   public Message m_6fc98322() {
+      return this.f_86c551f5;
    }
 
-   public void m_f260ed14(Message var1) {
-      this.f_a048a565 = var1;
+   public void m_8d564dc2(Message var1) {
+      this.f_86c551f5 = var1;
    }
 
-   public String m_23db04f7() {
-      return this.f_a54d7fe6;
+   public String m_6f1f396d() {
+      return this.f_1e1cdc2b;
    }
 
-   public String m_0b31c318() {
-      return this.f_a3450660;
+   public String m_94acbdac() {
+      return this.f_a8988247;
    }
 
-   public void m_edbc42aa(String var1) {
-      this.f_a54d7fe6 = var1;
+   public void m_4404c3bc(String var1) {
+      this.f_1e1cdc2b = var1;
    }
 
-   public void m_fde4bcda(String var1) {
-      this.f_a3450660 = var1;
+   public void m_4f03e646(String var1) {
+      this.f_a8988247 = var1;
    }
 
-   public Message m_20aca3e9() {
-      return this.f_327df58c;
+   public Message m_1b2580f8() {
+      return this.f_47012fbf;
    }
 
-   public void m_6944db4d(Message var1) {
-      this.f_327df58c = var1;
+   public void m_efb6bb0d(Message var1) {
+      this.f_47012fbf = var1;
    }
 
-   public TextField m_00c3febe() {
-      return this.f_e2486a4a;
+   public TextField m_6909040f() {
+      return this.f_535e9229;
    }
 }

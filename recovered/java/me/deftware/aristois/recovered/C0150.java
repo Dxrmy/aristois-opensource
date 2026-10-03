@@ -7,68 +7,72 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.gui.GuiScreen;
 import me.deftware.client.framework.gui.screens.GenericScreen;
+import me.deftware.client.framework.input.Mouse;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
+import me.deftware.client.framework.render.batching.RenderStack;
 
 public abstract class C0150 extends GuiScreen {
-   protected Queue<Runnable> f_8e775fc5 = new ConcurrentLinkedQueue<>();
-   protected Queue<Runnable> f_8da9ac7f = new ConcurrentLinkedQueue<>();
-   protected List<C0163> f_28e409a6 = new CopyOnWriteArrayList<>();
-   protected boolean f_b3be3666 = false;
-   protected C0170 f_fc552245 = new C0170(C0170.anonymousthis.f_30166e29);
-   private float f_9f22f031 = (float)C0114.bootstrap<"call",0,1>();
-   private float f_e502bfdf = (float)C0114.bootstrap<"call",1,1>();
+   protected Queue<Runnable> f_37f92d3c = new ConcurrentLinkedQueue<>();
+   protected Queue<Runnable> f_fc732e17 = new ConcurrentLinkedQueue<>();
+   protected List<C0163> f_3a3757f5 = new CopyOnWriteArrayList<>();
+   protected boolean f_9fef701d = false;
+   protected C0170 f_1676ce40 = new C0170(C0170.anonymousthis.f_d3168abd);
+   private float f_3dcdccbc = (float)getDisplayWidth();
+   private float f_efafb8a0 = (float)getDisplayHeight();
 
    public C0150(GenericScreen var1) {
       super(var1);
    }
 
-   protected abstract void m_83a81c97();
+   protected abstract void m_1058ed9a();
 
    protected void onInitGui() {
       this.getMinecraftScreen()._clearChildren();
-      this.f_28e409a6.clear();
-      this.m_83a81c97();
-      this.f_28e409a6.forEach(C0163::m_6b155392);
+      this.f_3a3757f5.clear();
+      this.m_1058ed9a();
+      this.f_3a3757f5.forEach(C0163::m_1058ed9a);
    }
 
    protected void onDraw(int var1, int var2, float var3) {
       boolean var4 = false;
 
-      for (C0163 var6 : this.f_28e409a6) {
-         var4 = var6.m_2f338522(this.m_9cbbf5a4((double)var1), this.m_95c2b8b3((double)var2), var3, var4);
+      for (C0163 var6 : this.f_3a3757f5) {
+         var4 = var6.m_572d14e6(this.m_d945de47((double)var1), this.m_461db524((double)var2), var3, var4);
       }
    }
 
    protected void onPostDraw(int var1, int var2, float var3) {
-      this.f_28e409a6
+      this.f_3a3757f5
          .stream()
-         .filter(var0 -> var0.m_bb20fb08() != null)
-         .forEach(var4x -> var4x.m_bb20fb08().m_92696976(this.m_9cbbf5a4((double)var1), this.m_95c2b8b3((double)var2), var3, false));
-      Runnable var4 = this.f_8da9ac7f.poll();
+         .filter(var0 -> var0.m_75885561() != null)
+         .forEach(var4x -> var4x.m_75885561().m_572d14e6(this.m_d945de47((double)var1), this.m_461db524((double)var2), var3, false));
+      Runnable var4 = this.f_fc732e17.poll();
       if (var4 != null) {
          var4.run();
       }
    }
 
    protected void onUpdate() {
-      this.f_28e409a6.forEach(C0163::m_e103589e);
-      if (this.f_b3be3666 && (this.f_9f22f031 != (float)C0114.bootstrap<"call",0,1>() || this.f_e502bfdf != (float)C0114.bootstrap<"call",1,1>())) {
-         this.f_9f22f031 = (float)C0114.bootstrap<"call",0,1>();
-         this.f_e502bfdf = (float)C0114.bootstrap<"call",1,1>();
+      this.f_3a3757f5.forEach(C0163::m_0e265701);
+      if (this.f_9fef701d && (this.f_3dcdccbc != (float)GuiScreen.getDisplayWidth() || this.f_efafb8a0 != (float)GuiScreen.getDisplayHeight())) {
+         this.f_3dcdccbc = (float)GuiScreen.getDisplayWidth();
+         this.f_efafb8a0 = (float)GuiScreen.getDisplayHeight();
          this.onInitGui();
       }
 
-      Runnable var1 = this.f_8e775fc5.poll();
+      Runnable var1 = this.f_37f92d3c.poll();
       if (var1 != null) {
          var1.run();
       }
    }
 
    protected boolean onKeyPressed(int var1, int var2, int var3) {
-      for (C0163 var5 : this.f_28e409a6) {
-         if (var5.m_fd40ceb2(var1, var2, var3)) {
+      for (C0163 var5 : this.f_3a3757f5) {
+         if (var5.m_82e0832a(var1, var2, var3)) {
             return true;
          }
       }
@@ -77,8 +81,8 @@ public abstract class C0150 extends GuiScreen {
    }
 
    protected boolean onKeyReleased(int var1, int var2, int var3) {
-      for (C0163 var5 : this.f_28e409a6) {
-         if (var5.m_80d40b65(var1, var2, var3)) {
+      for (C0163 var5 : this.f_3a3757f5) {
+         if (var5.m_81405691(var1, var2, var3)) {
             return true;
          }
       }
@@ -87,8 +91,8 @@ public abstract class C0150 extends GuiScreen {
    }
 
    protected boolean onMouseReleased(int var1, int var2, int var3) {
-      for (C0163 var5 : this.f_28e409a6) {
-         if (var5.m_73c37f1a(this.m_9cbbf5a4((double)var1), this.m_95c2b8b3((double)var2), var3)) {
+      for (C0163 var5 : this.f_3a3757f5) {
+         if (var5.m_a2722fba(this.m_d945de47((double)var1), this.m_461db524((double)var2), var3)) {
             return true;
          }
       }
@@ -97,8 +101,8 @@ public abstract class C0150 extends GuiScreen {
    }
 
    protected boolean onMouseClicked(int var1, int var2, int var3) {
-      for (C0163 var5 : this.f_28e409a6) {
-         if (var5.m_7e41b969(this.m_9cbbf5a4((double)var1), this.m_95c2b8b3((double)var2), var3)) {
+      for (C0163 var5 : this.f_3a3757f5) {
+         if (var5.m_8407b1bf(this.m_d945de47((double)var1), this.m_461db524((double)var2), var3)) {
             return true;
          }
       }
@@ -106,31 +110,31 @@ public abstract class C0150 extends GuiScreen {
       return false;
    }
 
-   protected double m_9cbbf5a4(double var1) {
-      if (this.f_fc552245.m_f29c6a39() != C0170.anonymousthis.f_30166e29) {
-         var1 = C0114.bootstrap<"call",0,1>();
+   protected double m_d945de47(double var1) {
+      if (this.f_1676ce40.m_d8379fac() != C0170.anonymousthis.f_d3168abd) {
+         var1 = Mouse.getMouseX();
       }
 
-      if (this.f_fc552245.m_f29c6a39() == C0170.anonymousthis.f_4b51c068) {
-         var1 *= (double)C0114.bootstrap<"call",1,1>();
-      }
-
-      return var1;
-   }
-
-   protected double m_95c2b8b3(double var1) {
-      if (this.f_fc552245.m_f29c6a39() != C0170.anonymousthis.f_30166e29) {
-         var1 = C0114.bootstrap<"call",0,1>();
-      }
-
-      if (this.f_fc552245.m_f29c6a39() == C0170.anonymousthis.f_4b51c068) {
-         var1 *= (double)C0114.bootstrap<"call",1,1>();
+      if (this.f_1676ce40.m_d8379fac() == C0170.anonymousthis.f_f2dd6320) {
+         var1 *= (double)RenderStack.getScale();
       }
 
       return var1;
    }
 
-   protected C0150 m_85ec1792(int var1, int var2, Message... var3) {
+   protected double m_461db524(double var1) {
+      if (this.f_1676ce40.m_d8379fac() != C0170.anonymousthis.f_d3168abd) {
+         var1 = Mouse.getMouseY();
+      }
+
+      if (this.f_1676ce40.m_d8379fac() == C0170.anonymousthis.f_f2dd6320) {
+         var1 *= (double)RenderStack.getScale();
+      }
+
+      return var1;
+   }
+
+   protected C0150 m_ba846326(int var1, int var2, Message... var3) {
       for (Message var7 : var3) {
          this.addCenteredText(var1, var2, var7);
          var2 += 15;
@@ -139,56 +143,49 @@ public abstract class C0150 extends GuiScreen {
       return this;
    }
 
-   public C0164 m_96a83982(int var1, int var2, int var3, Message var4, ArgumentType<?> var5) {
-      C0164 var6 = new C0164(var1, var2 + C0114.bootstrap<"call",2,1>() + 5, var3, 20, var5);
-      var6.m_1764a806(var4);
+   public C0164 m_79f4267e(int var1, int var2, int var3, Message var4, ArgumentType<?> var5) {
+      C0164 var6 = new C0164(var1, var2 + FontRenderer.getFontHeight() + 5, var3, 20, var5);
+      var6.m_8d564dc2(var4);
       return var6;
    }
 
-   protected C0157 m_135bf7e8(int var1, int var2, int var3, Message var4) {
-      C0157 var5 = new C0157(var1, var2 + C0114.bootstrap<"call",2,1>() + 5, var3, 20);
-      var5.m_f260ed14(var4);
+   protected C0157 m_c1f9f0d3(int var1, int var2, int var3, Message var4) {
+      C0157 var5 = new C0157(var1, var2 + FontRenderer.getFontHeight() + 5, var3, 20);
+      var5.m_8d564dc2(var4);
       return var5;
    }
 
-   protected C0154 m_652e51a7(int var1, int var2, float var3, Message var4, Supplier<GuiScreen> var5) {
-      return this.m_8803dae3(var1, var2, var3, var4, () -> C0114.bootstrap<"call",3,1>().openScreen((GenericScreen)var5.get()));
+   protected C0154 m_7b83f958(int var1, int var2, float var3, Message var4, Supplier<GuiScreen> var5) {
+      return this.m_79273652(var1, var2, var3, var4, () -> Minecraft.getMinecraftGame().openScreen((GenericScreen)var5.get()));
    }
 
-   protected C0154 m_8803dae3(int var1, int var2, float var3, Message var4, Runnable var5) {
-      return this.m_0447bd6d(var1, var2, var3, var4, var1x -> var5.run());
+   protected C0154 m_79273652(int var1, int var2, float var3, Message var4, Runnable var5) {
+      return this.m_5a1fbc03(var1, var2, var3, var4, var1x -> var5.run());
    }
 
-   protected C0154 m_0447bd6d(int var1, int var2, float var3, Message var4, final Consumer<C0154> var5) {
+   protected C0154 m_5a1fbc03(int var1, int var2, float var3, Message var4, final Consumer<C0154> var5) {
       return new C0154(var1, var2, (int)var3, 20, var4) {
-         public boolean m_f2e616af(int var1) {
+         @Override
+         public boolean m_1521b1fa(int var1) {
             var5.accept(this);
             return true;
          }
       };
    }
 
-   public GuiScreen m_8d846d1c(GenericScreen var1) {
+   public GuiScreen m_772dbb91(GenericScreen var1) {
       this.parent = var1;
       return this;
    }
 
-   protected void m_a415c4df() {
+   protected void m_fd4438d8() {
       short var1 = 180;
-      this.m_ef389a68(
-         this.m_8803dae3(
-            C0114.bootstrap<"call",0,1>() / 2 - var1 / 2,
-            C0114.bootstrap<"call",1,1>() - 50,
-            (float)var1,
-            C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",10>()),
-            this::goBack
-         )
-      );
+      this.m_4f7d4126(this.m_79273652(getScaledWidth() / 2 - var1 / 2, getScaledHeight() - 50, (float)var1, Message.of(C0257.m_c42f1c7e()), this::goBack));
    }
 
-   protected boolean m_e8141714(C0157... var1) {
+   protected boolean m_8407423a(C0157... var1) {
       for (C0157 var5 : var1) {
-         if (!var5.m_e439f254()) {
+         if (!var5.m_f21a055b()) {
             return false;
          }
       }
@@ -196,9 +193,9 @@ public abstract class C0150 extends GuiScreen {
       return true;
    }
 
-   public C0150 m_ef389a68(C0163... var1) {
+   public C0150 m_4f7d4126(C0163... var1) {
       for (C0163 var5 : var1) {
-         this.f_28e409a6.add(var5);
+         this.f_3a3757f5.add(var5);
          if (var5 instanceof C0154) {
             this.addComponent((C0154)var5);
          } else if (var5 instanceof C0157) {
@@ -208,22 +205,22 @@ public abstract class C0150 extends GuiScreen {
          }
 
          if (var5 instanceof C0428) {
-            ((C0428)var5).m_efd468d7(this.f_fc552245.m_879f24b8());
+            ((C0428)var5).m_394ecb95(this.f_1676ce40.m_89e0519f());
          }
       }
 
       return this;
    }
 
-   public List<C0163> m_dcccdb46() {
-      return this.f_28e409a6;
+   public List<C0163> m_ed46fa58() {
+      return this.f_3a3757f5;
    }
 
-   public void m_c742a154(boolean var1) {
-      this.f_b3be3666 = var1;
+   public void m_d6ac7420(boolean var1) {
+      this.f_9fef701d = var1;
    }
 
-   public void m_5df4a615(C0170 var1) {
-      this.f_fc552245 = var1;
+   public void m_c037c5e2(C0170 var1) {
+      this.f_1676ce40 = var1;
    }
 }

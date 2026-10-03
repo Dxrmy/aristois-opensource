@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
@@ -7,32 +8,33 @@ import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.gui.GuiScreen;
 import me.deftware.client.framework.gui.screens.ContainerScreen;
 import me.deftware.client.framework.item.Item;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0405 extends AbstractMod {
-   private static final C0219<Item> f_21bd6125 = new C0219<>(Item.class, C0252.bootstrap<"get",38654705694>());
+   private static final C0219<Item> f_7d5cbbd4 = new C0219<>(Item.class, C0263.m_28b2c020());
    @C0098("Items")
-   private static final GuiScreen f_6a33ee38 = C0114.bootstrap<"call",0,1>(null, f_21bd6125);
+   private static final GuiScreen f_ca8578e8 = C0217.m_81b76da4(null, f_7d5cbbd4);
 
    public C0405() {
-      super(C0252.bootstrap<"get",38654705692>(), C0290.f_dad8467e, C0252.bootstrap<"get",38654705693>());
+      super(C0263.m_5fa6dd07(), C0290.f_dbc16475, C0263.m_5f1ab561());
    }
 
    @EventHandler
-   public void m_97853f91(EventUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
-      if (!(C0114.bootstrap<"call",0,1>().getScreen() instanceof ContainerScreen)) {
-         C0114.bootstrap<"call",2,1>()
-            .m_ad163406()
-            .filter(var0 -> f_21bd6125.contains(var0.m_17485ebf().getItem()))
-            .forEach(var1x -> C0114.bootstrap<"call",3,1>(var2, var1x.m_0ea37aad()));
+   public void m_3072cba8(EventUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
+      if (!(Minecraft.getMinecraftGame().getScreen() instanceof ContainerScreen)) {
+         C0072.m_1c5da965()
+            .m_b3d23b7d()
+            .filter(var0 -> f_7d5cbbd4.contains(var0.m_7b08e12a().getItem()))
+            .forEach(var1x -> C0073.m_3907084c(var2, var1x.m_5b3d3148()));
       }
    }
 
-   public static C0219<Item> m_6cc21dd8() {
-      return f_21bd6125;
+   public static C0219<Item> m_001ab21f() {
+      return f_7d5cbbd4;
    }
 
-   public static GuiScreen m_6b370dd0() {
-      return f_6a33ee38;
+   public static GuiScreen m_1ebb9a23() {
+      return f_ca8578e8;
    }
 }

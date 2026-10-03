@@ -5,92 +5,100 @@ import com.thealtening.auth.service.AlteningServiceType;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.gui.screens.GenericScreen;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.session.AccountSession;
 import me.deftware.client.framework.session.AccountType;
+import org.apache.commons.lang3.StringUtils;
 
 public class C0053 implements C0049 {
-   private static final List<C0053> f_7d3b08cf = new C0219.anonymousthis<>(C0053.class, C0252.bootstrap<"get",100>());
+   private static final List<C0053> f_5dd95803 = new C0219.anonymousthis<>(C0053.class, C0257.m_8ccfdf29());
    @SerializedName("username")
-   private String f_8b55e7b5;
+   private String f_82ac271d;
    @SerializedName("uuid")
-   private UUID f_ae9be970;
+   private UUID f_6d1ce3a2;
    @SerializedName("refreshToken")
-   private String f_288a2e32;
+   private String f_a2919e6b;
    @SerializedName("lastUsed")
-   private Date f_c6c15b20;
-   private String f_b181badf;
-   private boolean f_d8e73624 = false;
+   private Date f_f6aa1355;
+   private String f_ee1b7e73;
+   private boolean f_878b638a = false;
 
    public C0053(C0050 var1) throws Exception {
-      this.f_b181badf = var1.m_8ffd6531();
-      this.f_288a2e32 = var1.m_8fd69e27();
-      C0137 var2 = var1.m_e83be9e6();
-      this.f_8b55e7b5 = var2.m_c0ebd658();
-      this.f_ae9be970 = C0114.bootstrap<"call",0,1>(var2.m_a585c62e());
+      this.f_ee1b7e73 = var1.m_c42f1c7e();
+      this.f_a2919e6b = var1.m_e9914bd3();
+      C0137 var2 = var1.m_035881b0();
+      this.f_82ac271d = var2.m_e07cee76();
+      this.f_6d1ce3a2 = UUID.fromString(var2.m_8d7dbe31());
    }
 
    public C0053() {
    }
 
-   public String m_93ff70eb() {
-      return this.f_8b55e7b5;
+   @Override
+   public String m_c42f1c7e() {
+      return this.f_82ac271d;
    }
 
-   public UUID m_b52fbd59() {
-      return this.f_ae9be970;
+   @Override
+   public UUID m_e3947f34() {
+      return this.f_6d1ce3a2;
    }
 
-   public C0230 m_eab502ee() {
-      return C0114.bootstrap<"call",0,1>(this.f_ae9be970);
+   @Override
+   public C0230 m_7b315cdd() {
+      return C0224.m_3d9368ca(this.f_6d1ce3a2);
    }
 
-   public void m_4abf7648() {
-      f_7d3b08cf.remove(this);
+   @Override
+   public void m_fd4438d8() {
+      f_5dd95803.remove(this);
    }
 
-   public void m_63d2dc9e() throws Exception {
-      if (C0114.bootstrap<"call",0,1>()) {
-         C0236.f_8b0448cf.m_beb16421(AlteningServiceType.MOJANG);
+   @Override
+   public void m_f1ec3ae8() throws Exception {
+      if (C0242.m_efa7610e()) {
+         C0236.f_758a0b10.m_d43ad68a(AlteningServiceType.MOJANG);
       }
 
-      this.f_d8e73624 = true;
-      System.out.println(C0252.bootstrap<"get",93>() + this.f_8b55e7b5);
-      if (C0114.bootstrap<"call",1,1>(this.f_b181badf)) {
-         this.m_412e7a09();
+      this.f_878b638a = true;
+      System.out.println(C0257.m_9bf0a29a() + this.f_82ac271d);
+      if (StringUtils.isEmpty(this.f_ee1b7e73)) {
+         this.m_0e389a72();
       }
 
       HashMap var1 = new HashMap();
-      var1.put(C0252.bootstrap<"get",94>(), this.f_8b55e7b5);
-      var1.put(C0252.bootstrap<"get",95>(), this.f_ae9be970.toString());
-      var1.put(C0252.bootstrap<"get",96>(), this.f_b181badf);
+      var1.put(C0257.m_85cd13b4(), this.f_82ac271d);
+      var1.put(C0257.m_65c7e6e6(), this.f_6d1ce3a2.toString());
+      var1.put(C0257.m_a19a564f(), this.f_ee1b7e73);
       new AccountSession(null).withSession(var1, AccountType.Microsoft).setSession();
-      this.f_c6c15b20 = new Date();
-      this.f_d8e73624 = false;
+      this.f_f6aa1355 = new Date();
+      this.f_878b638a = false;
    }
 
-   private void m_412e7a09() throws Exception {
-      System.out.println(C0252.bootstrap<"get",97>());
+   private void m_0e389a72() throws Exception {
+      System.out.println(C0257.m_03430357());
       C0050 var1 = new C0050();
-      var1.m_846a2abd(this.f_288a2e32);
-      var1.m_2997ae9a();
-      var1.m_00408695();
-      var1.m_51e0bc72();
-      this.f_b181badf = var1.m_8ffd6531();
-      this.f_288a2e32 = var1.m_8fd69e27();
+      var1.m_256015fc(this.f_a2919e6b);
+      var1.m_b728afce();
+      var1.m_0e265701();
+      var1.m_41e83f88();
+      this.f_ee1b7e73 = var1.m_c42f1c7e();
+      this.f_a2919e6b = var1.m_e9914bd3();
    }
 
    @Override
    public void render(int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8) {
-      C0114.bootstrap<"call",2,1>(
-         C0114.bootstrap<"call",0,1>(this.f_ae9be970.toString()).style(C0114.bootstrap<"call",1,1>(DefaultColors.GRAY)), var2 + 20, var3 + 15, 16777215
-      );
-      if (this.f_d8e73624) {
-         Message var9 = C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",98>());
-         C0114.bootstrap<"call",2,1>(var9, var2 + var4 - C0114.bootstrap<"call",3,1>(var9) - 35, var3 + 3, 16777215);
+      FontRenderer.drawString(Message.of(this.f_6d1ce3a2.toString()).style(Appearance.of(DefaultColors.GRAY)), var2 + 20, var3 + 15, 16777215);
+      if (this.f_878b638a) {
+         Message var9 = Message.of(C0257.m_ec329d2e());
+         FontRenderer.drawString(var9, var2 + var4 - FontRenderer.getStringWidth(var9) - 35, var3 + 3, 16777215);
       }
 
       C0049.super.render(var1, var2, var3, var4, var5, var6, var7, var8);
@@ -102,7 +110,7 @@ public class C0053 implements C0049 {
          return true;
       } else if (var1 != null && this.getClass() == var1.getClass()) {
          C0053 var2 = (C0053)var1;
-         return C0114.bootstrap<"call",0,1>(this.f_8b55e7b5, var2.f_8b55e7b5) && C0114.bootstrap<"call",0,1>(this.f_ae9be970, var2.f_ae9be970);
+         return Objects.equals(this.f_82ac271d, var2.f_82ac271d) && Objects.equals(this.f_6d1ce3a2, var2.f_6d1ce3a2);
       } else {
          return false;
       }
@@ -110,30 +118,22 @@ public class C0053 implements C0049 {
 
    @Override
    public int hashCode() {
-      return C0114.bootstrap<"call",0,1>(new Object[]{this.f_8b55e7b5, this.f_ae9be970});
+      return Objects.hash(this.f_82ac271d, this.f_6d1ce3a2);
    }
 
-   public static void m_e9b9dc51(GenericScreen var0) {
-      C0114.bootstrap<"call",0,1>()
-         .openScreen(
-            new C0178<C0053>(var0, f_7d3b08cf, C0053.class, C0252.bootstrap<"get",99>()) {
-               @Override
-               protected void onDraw(int var1, int var2, float var3) {
-                  super.onDraw(var1, var2, var3);
-                  if (C0114.bootstrap<"call",0,1>().isEmpty()) {
-                     C0114.bootstrap<"call",4,1>(
-                        C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",92>()).style(C0114.bootstrap<"call",2,1>(DefaultColors.GRAY)),
-                        C0114.bootstrap<"call",3,1>() / 2,
-                        55,
-                        16777215
-                     );
-                  }
-               }
+   public static void m_a4e18580(GenericScreen var0) {
+      Minecraft.getMinecraftGame().openScreen(new C0178<C0053>(var0, f_5dd95803, C0053.class, C0257.m_edf5fb69()) {
+         @Override
+         protected void onDraw(int var1, int var2, float var3) {
+            super.onDraw(var1, var2, var3);
+            if (C0053.f_5dd95803.isEmpty()) {
+               FontRenderer.drawCenteredString(Message.of(C0257.m_fac478b2()).style(Appearance.of(DefaultColors.GRAY)), getScaledWidth() / 2, 55, 16777215);
             }
-         );
+         }
+      });
    }
 
-   public static List<C0053> m_542d9e9e() {
-      return f_7d3b08cf;
+   public static List<C0053> m_110abc4e() {
+      return f_5dd95803;
    }
 }

@@ -1,58 +1,62 @@
 package me.deftware.aristois.recovered;
 
+import com.google.common.io.ByteStreams;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import me.deftware.aristois.main.Main;
 import me.deftware.client.framework.render.batching.GifRenderStack;
 import me.deftware.client.framework.render.texture.GlTexture;
+import me.deftware.client.framework.util.ResourceUtils;
+import org.apache.commons.io.FilenameUtils;
 
 public class C0223 {
-   public static final C0223 f_7c6d0315 = new C0223();
-   private GlTexture f_bca93dd0;
-   private GifRenderStack f_89957fbf;
+   public static final C0223 f_a04019fa = new C0223();
+   private GlTexture f_30ab54f8;
+   private GifRenderStack f_6c49ea43;
 
    public C0223() {
    }
 
-   public boolean m_9f85df3c(int var1, int var2) {
-      if (this.f_89957fbf != null) {
-         this.f_89957fbf.begin().draw(0, 0, var1, var2).end();
-      } else if (this.f_bca93dd0 != null) {
-         this.f_bca93dd0.bind().draw(0, 0, var1, var2);
+   public boolean m_d7db8b4a(int var1, int var2) {
+      if (this.f_6c49ea43 != null) {
+         this.f_6c49ea43.begin().draw(0, 0, var1, var2).end();
+      } else if (this.f_30ab54f8 != null) {
+         this.f_30ab54f8.bind().draw(0, 0, var1, var2);
       }
 
-      return this.f_89957fbf != null || this.f_bca93dd0 != null;
+      return this.f_6c49ea43 != null || this.f_30ab54f8 != null;
    }
 
-   public void m_b8fdf5b9() {
+   public void m_1058ed9a() {
       try {
-         this.f_89957fbf = null;
-         this.f_bca93dd0 = null;
-         File var1 = ((C0296)C0114.bootstrap<"call",0,1>(C0296.class)).m_b3cfdea7();
+         this.f_6c49ea43 = null;
+         this.f_30ab54f8 = null;
+         File var1 = C0289.m_c3a8b502(C0296.class).m_4e58adf5();
          if (var1.isFile() && var1.exists()) {
-            String var2 = C0114.bootstrap<"call",1,1>(var1.getAbsolutePath());
-            if (var2.equalsIgnoreCase(C0252.bootstrap<"get",17179869247>())) {
-               if (C0241.f_7826e715) {
-                  this.f_89957fbf = C0114.bootstrap<"call",3,1>(C0114.bootstrap<"call",2,1>(new FileInputStream(var1)));
-                  if (this.f_89957fbf != null) {
+            String var2 = FilenameUtils.getExtension(var1.getAbsolutePath());
+            if (var2.equalsIgnoreCase(C0261.m_15737526())) {
+               if (C0241.f_f6e3d33b) {
+                  this.f_6c49ea43 = m_4a3d94d2(C0211.m_4ad97825(new FileInputStream(var1)));
+                  if (this.f_6c49ea43 != null) {
                      return;
                   }
                }
-            } else if (var2.matches(C0252.bootstrap<"get",17179869248>())) {
-               this.f_bca93dd0 = this.m_074c8a2f(var1);
-               if (this.f_bca93dd0 != null) {
+            } else if (var2.matches(C0261.m_6cf615ba())) {
+               this.f_30ab54f8 = this.m_4ed9a35e(var1);
+               if (this.f_30ab54f8 != null) {
                   return;
                }
             }
          }
 
-         this.f_89957fbf = this.m_d8291589();
+         this.f_6c49ea43 = this.m_d81de86f();
       } catch (Throwable var3) {
          throw var3;
       }
    }
 
-   private GlTexture m_074c8a2f(File var1) {
+   private GlTexture m_4ed9a35e(File var1) {
       try {
          return new GlTexture(var1);
       } catch (Exception var3) {
@@ -61,19 +65,15 @@ public class C0223 {
       }
    }
 
-   private GifRenderStack m_d8291589() throws Exception {
-      return C0114.bootstrap<"call",4,1>(
-         C0114.bootstrap<"call",3,1>(
-            C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(), C0252.bootstrap<"get",17179869249>()))
-         )
-      );
+   private GifRenderStack m_d81de86f() throws Exception {
+      return m_4a3d94d2(C0211.m_5e01be8d(ByteStreams.toByteArray(ResourceUtils.getStreamFromModResources(Main.getInstance(), C0261.m_ecb46027()))));
    }
 
-   public static GifRenderStack m_b001aa46(C0211.anonymoustransient var0) {
+   public static GifRenderStack m_4a3d94d2(C0211.anonymoustransient var0) {
       try {
          GifRenderStack var1 = new GifRenderStack(var0);
          if (!var1.isAvailable()) {
-            throw new IOException(C0252.bootstrap<"get",17179869250>());
+            throw new IOException(C0261.m_b526dd3b());
          } else {
             return var1;
          }
@@ -83,11 +83,11 @@ public class C0223 {
       }
    }
 
-   public GlTexture m_11f01c95() {
-      return this.f_bca93dd0;
+   public GlTexture m_c9334066() {
+      return this.f_30ab54f8;
    }
 
-   public GifRenderStack m_6bad9734() {
-      return this.f_89957fbf;
+   public GifRenderStack m_fc32fd6d() {
+      return this.f_6c49ea43;
    }
 }

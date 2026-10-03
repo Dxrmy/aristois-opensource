@@ -3,56 +3,53 @@ package me.deftware.aristois.recovered;
 import java.awt.Color;
 import me.deftware.client.framework.gui.screens.GenericScreen;
 import me.deftware.client.framework.gui.widgets.Button;
+import me.deftware.client.framework.input.Keyboard;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.QuadRenderStack;
 
 public class C0052 extends C0150 {
-   private final QuadRenderStack f_c6c0ad36 = (QuadRenderStack)new QuadRenderStack().setScaled(false);
+   private final QuadRenderStack f_8fb8aa08 = (QuadRenderStack)new QuadRenderStack().setScaled(false);
 
    public C0052(GenericScreen var1) {
       super(var1);
    }
 
-   protected void m_5496ccc8() {
-      this.m_3cf03cc2(
-         C0114.bootstrap<"call",0,1>() / 2,
-         C0114.bootstrap<"call",1,1>() - 60,
+   @Override
+   protected void m_1058ed9a() {
+      this.m_ba846326(
+         getScaledWidth() / 2,
+         getScaledHeight() - 60,
          new Message[]{
-            C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",1>()).style(C0114.bootstrap<"call",3,1>(DefaultColors.GRAY)),
-            C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",2>()).style(C0114.bootstrap<"call",3,1>(DefaultColors.GRAY)),
-            C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",3>()).style(C0114.bootstrap<"call",3,1>(DefaultColors.GRAY))
+            Message.of(C0257.m_813e3509()).style(Appearance.of(DefaultColors.GRAY)),
+            Message.of(C0257.m_3855be80()).style(Appearance.of(DefaultColors.GRAY)),
+            Message.of(C0257.m_a9247108()).style(Appearance.of(DefaultColors.GRAY))
          }
       );
       byte var1 = 70;
-      this.m_1dbfc94c(
+      this.m_4f7d4126(
          new C0163[]{
-            this.m_2403502d(
-               C0114.bootstrap<"call",0,1>() / 2 - var1 - 2,
-               C0114.bootstrap<"call",1,1>() - 90,
+            this.m_79273652(getScaledWidth() / 2 - var1 - 2, getScaledHeight() - 90, (float)var1, Message.of(C0257.m_4626ac74()), () -> {
+               Keyboard.openLink(C0050.m_c688f8ca());
+               Minecraft.getMinecraftGame().openScreen(new C0051(this));
+            }),
+            this.m_5a1fbc03(
+               getScaledWidth() / 2 + 2,
+               getScaledHeight() - 90,
                (float)var1,
-               C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",4>()),
-               () -> {
-                  C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>());
-                  C0114.bootstrap<"call",2,1>().openScreen(new C0051(this));
-               }
-            ),
-            this.m_3acc2633(
-               C0114.bootstrap<"call",0,1>() / 2 + 2,
-               C0114.bootstrap<"call",1,1>() - 90,
-               (float)var1,
-               C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",5>()),
+               Message.of(C0257.m_c688f8ca()),
                var1x -> {
-                  if (C0241.f_7826e715) {
-                     C0114.bootstrap<"call",4,1>(this);
+                  if (C0241.f_f6e3d33b) {
+                     C0053.m_a4e18580(this);
                   } else {
-                     ((Button)var1x.m_8f596680()
-                           .setComponentLabel(C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",7>()).style(C0114.bootstrap<"call",3,1>(DefaultColors.RED))))
-                        .resetToAfter(1500, C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",5>()));
+                     ((Button)var1x.m_b1b94a23().setComponentLabel(Message.of(C0257.m_624b40d8()).style(Appearance.of(DefaultColors.RED))))
+                        .resetToAfter(1500, Message.of(C0257.m_c688f8ca()));
                   }
                }
             ),
-            this.m_2403502d(10, 10, 60.0F, C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",6>()), this::goBack)
+            this.m_79273652(10, 10, 60.0F, Message.of(C0257.m_35cdaa1a()), this::goBack)
          }
       );
    }
@@ -63,12 +60,12 @@ public class C0052 extends C0150 {
       byte var4 = 40;
       byte var5 = 3;
       int var6 = 2 * var4 + var5;
-      int var7 = C0114.bootstrap<"call",0,1>() / 2 - var6 / 2;
+      int var7 = getScaledWidth() / 2 - var6 / 2;
       byte var8 = 20;
-      C0114.bootstrap<"call",1,1>(this.f_c6c0ad36, var7, var8, var4);
+      m_a5827fbf(this.f_8fb8aa08, var7, var8, var4);
    }
 
-   public static void m_27d11fc7(QuadRenderStack var0, int var1, int var2, int var3) {
+   public static void m_a5827fbf(QuadRenderStack var0, int var1, int var2, int var3) {
       byte var4 = 3;
       ((QuadRenderStack)((QuadRenderStack)((QuadRenderStack)((QuadRenderStack)var0.begin().glColor(new Color(255, 79, 24)))
                   .drawRect((float)var1, (float)var2, (float)(var1 + var3), (float)(var2 + var3))

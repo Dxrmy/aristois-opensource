@@ -1,17 +1,18 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
-import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0387 extends AbstractMod {
    public C0387() {
-      super(C0252.bootstrap<"get",42949673052>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673053>());
+      super(C0259.m_fac478b2(), C0290.f_829d9b20, C0259.m_9bf0a29a());
    }
 
    @EventHandler
-   public void m_65812eeb(EventUpdate var1) {
-      ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer())).setHorseJumpPower(1.0F);
+   public void m_3072cba8(EventUpdate var1) {
+      Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).setHorseJumpPower(1.0F);
    }
 }

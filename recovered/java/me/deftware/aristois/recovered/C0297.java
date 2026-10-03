@@ -3,6 +3,8 @@ package me.deftware.aristois.recovered;
 import java.awt.Color;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.gui.screens.GenericScreen;
+import me.deftware.client.framework.helper.WindowHelper;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.shader.Shader;
 
@@ -12,13 +14,13 @@ public class C0297 extends AbstractMod {
       value = "Hide Hud",
       description = {"Hide hud when the main UI is open"}
    )
-   private boolean f_b5e19bca = true;
+   private boolean f_2aa4dadd = true;
    @C0098(
       value = "Blur Background",
       description = {"Blur the background in the main UI"},
       id = 100
    )
-   private boolean f_13282148 = true;
+   private boolean f_54cb9600 = true;
    @C0098(
       value = "Blur Strength",
       number = @C0096(
@@ -28,16 +30,16 @@ public class C0297 extends AbstractMod {
       triggerPostChanged = true,
       id = 99
    )
-   private float f_dacdac35 = 20.0F;
+   private float f_e1b4b443 = 20.0F;
    @C0098(
       value = "Show Keybinds",
       description = {"Show keybinds next to the mod name"}
    )
-   private boolean f_547c095d = false;
+   private boolean f_908135c9 = false;
    @C0098("Icon Color")
-   private Color f_4c819326 = Color.white;
+   private Color f_923f7689 = Color.white;
    @C0098("Show Icons")
-   private boolean f_83daf926 = true;
+   private boolean f_4a112c2d = true;
    @C0098(
       value = "Scale",
       description = {"The size of the Aristois UI"},
@@ -48,118 +50,118 @@ public class C0297 extends AbstractMod {
          max = 4.0
       )
    )
-   private C0103<Float> f_8226538b = new C0103<>(RenderStack::getScale, RenderStack::setScale);
-   private C0203<C0433> f_f9d4c95c = new C0203<>(C0433::new);
+   private C0103<Float> f_fc2e0768 = new C0103<>(RenderStack::getScale, RenderStack::setScale);
+   private C0203<C0433> f_1aeb6db4 = new C0203<>(C0433::new);
 
    public C0297() {
-      super(C0252.bootstrap<"get",42949672971>(), C0290.f_5fe5d165, C0252.bootstrap<"get",42949672972>());
+      super(C0259.m_6f1f396d(), C0290.f_020f9141, C0259.m_8ced16bd());
    }
 
    @Override
    public void onEnable() {
-      if (!(C0114.bootstrap<"call",0,1>().getScreen() instanceof C0433)) {
-         this.m_b76ad674();
+      if (!(Minecraft.getMinecraftGame().getScreen() instanceof C0433)) {
+         this.m_23674f64();
       }
 
       this.toggle();
    }
 
-   public void m_b76ad674() {
-      C0114.bootstrap<"call",0,1>().openScreen((GenericScreen)this.f_f9d4c95c.m_1c30b0a8());
+   public void m_23674f64() {
+      Minecraft.getMinecraftGame().openScreen((GenericScreen)this.f_1aeb6db4.m_ac6eac3b());
    }
 
    @Override
    public String getDisplayName() {
-      return C0252.bootstrap<"get",42949672973>();
+      return C0259.m_15ef1a0d();
    }
 
    @Override
    public void onSettingUpdate(C0098 var1) {
       if (var1.id() == 99) {
-         this.m_1a27cacf(this.f_dacdac35);
+         this.m_d881d3e3(this.f_e1b4b443);
       }
 
-      if (var1.id() == 100 && C0114.bootstrap<"call",0,1>().getScreen() instanceof C0433) {
-         C0433 var2 = (C0433)C0114.bootstrap<"call",0,1>().getScreen();
-         if (!this.f_13282148) {
-            C0114.bootstrap<"call",1,1>((Shader)null);
+      if (var1.id() == 100 && Minecraft.getMinecraftGame().getScreen() instanceof C0433) {
+         C0433 var2 = (C0433)Minecraft.getMinecraftGame().getScreen();
+         if (!this.f_54cb9600) {
+            WindowHelper.loadShader((Shader)null);
          }
 
-         var2.m_9ff7c171(false);
-         var2.m_55845879();
+         var2.m_394ecb95(false);
+         var2.m_41e83f88();
       }
    }
 
-   public void m_1a27cacf(float var1) {
-      Shader var2 = C0114.bootstrap<"call",0,1>().m_26765a8c();
-      var2.setUniform(C0252.bootstrap<"get",42949672974>(), new float[]{var1});
+   public void m_d881d3e3(float var1) {
+      Shader var2 = C0242.m_fc1b642c().m_e77ae4a1();
+      var2.setUniform(C0259.m_9793dfe2(), new float[]{var1});
    }
 
-   public boolean m_7458b21f() {
-      return this.f_b5e19bca && C0114.bootstrap<"call",0,1>().getScreen() instanceof C0433;
+   public boolean m_275ab222() {
+      return this.f_2aa4dadd && Minecraft.getMinecraftGame().getScreen() instanceof C0433;
    }
 
-   public void m_77c64582(boolean var1) {
-      this.f_b5e19bca = var1;
+   public void m_35150f14(boolean var1) {
+      this.f_2aa4dadd = var1;
    }
 
-   public void m_eaa5079e(boolean var1) {
-      this.f_13282148 = var1;
+   public void m_355190e6(boolean var1) {
+      this.f_54cb9600 = var1;
    }
 
-   public void m_c11b7aab(float var1) {
-      this.f_dacdac35 = var1;
+   public void m_35bea3d9(float var1) {
+      this.f_e1b4b443 = var1;
    }
 
-   public void m_5d8e13d8(boolean var1) {
-      this.f_547c095d = var1;
+   public void m_279e21aa(boolean var1) {
+      this.f_908135c9 = var1;
    }
 
-   public void m_8a12b7e1(Color var1) {
-      this.f_4c819326 = var1;
+   public void m_6e0baed2(Color var1) {
+      this.f_923f7689 = var1;
    }
 
-   public void m_f1b374a3(boolean var1) {
-      this.f_83daf926 = var1;
+   public void m_1be53b7f(boolean var1) {
+      this.f_4a112c2d = var1;
    }
 
-   public void m_419b497a(C0103<Float> var1) {
-      this.f_8226538b = var1;
+   public void m_ec476b09(C0103<Float> var1) {
+      this.f_fc2e0768 = var1;
    }
 
-   public void m_84627c09(C0203<C0433> var1) {
-      this.f_f9d4c95c = var1;
+   public void m_99d6594e(C0203<C0433> var1) {
+      this.f_1aeb6db4 = var1;
    }
 
-   public boolean m_d9eb1bab() {
-      return this.f_b5e19bca;
+   public boolean m_f21a055b() {
+      return this.f_2aa4dadd;
    }
 
-   public boolean m_0f9961eb() {
-      return this.f_13282148;
+   public boolean m_6c9f39f9() {
+      return this.f_54cb9600;
    }
 
-   public float m_653e01c1() {
-      return this.f_dacdac35;
+   public float m_14287929() {
+      return this.f_e1b4b443;
    }
 
-   public boolean m_4e638610() {
-      return this.f_547c095d;
+   public boolean m_691d9b1d() {
+      return this.f_908135c9;
    }
 
-   public Color m_0a1415e1() {
-      return this.f_4c819326;
+   public Color m_4aac060f() {
+      return this.f_923f7689;
    }
 
-   public boolean m_85d9b73d() {
-      return this.f_83daf926;
+   public boolean m_f057b877() {
+      return this.f_4a112c2d;
    }
 
-   public C0103<Float> m_31f60b67() {
-      return this.f_8226538b;
+   public C0103<Float> m_42f34113() {
+      return this.f_fc2e0768;
    }
 
-   public C0203<C0433> m_bd86fc72() {
-      return this.f_f9d4c95c;
+   public C0203<C0433> m_c7e6be95() {
+      return this.f_1aeb6db4;
    }
 }

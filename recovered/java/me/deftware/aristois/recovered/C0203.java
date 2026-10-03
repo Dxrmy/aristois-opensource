@@ -3,18 +3,18 @@ package me.deftware.aristois.recovered;
 import java.util.function.Supplier;
 
 public final class C0203<T> {
-   private T f_3eac953d;
-   private final Supplier<T> f_5423f6a1;
+   private T f_68b53e72;
+   private final Supplier<T> f_2645035b;
 
    public C0203(Supplier<T> var1) {
-      this.f_5423f6a1 = var1;
+      this.f_2645035b = var1;
    }
 
-   public T m_1c30b0a8() {
-      if (this.f_3eac953d == null) {
-         this.f_3eac953d = this.f_5423f6a1.get();
+   public T m_ac6eac3b() {
+      if (this.f_68b53e72 == null) {
+         this.f_68b53e72 = this.f_2645035b.get();
       }
 
-      return this.f_3eac953d;
+      return this.f_68b53e72;
    }
 }

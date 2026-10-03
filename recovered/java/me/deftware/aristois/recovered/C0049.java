@@ -1,50 +1,51 @@
 package me.deftware.aristois.recovered;
 
 import java.util.UUID;
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.gui.widgets.SelectableList.ListItem;
+import me.deftware.client.framework.helper.SessionHelper;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
+import me.deftware.client.framework.message.Message;
 
 public interface C0049 extends ListItem {
-   C0224 f_81193085 = C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",0>()));
-   int f_28837e36 = 20;
+   C0224 f_bd2f3d48 = C0224.m_3d9368ca(UUID.fromString(C0257.m_44418b5d()));
+   int f_3a1e3bed = 20;
 
-   static UUID m_46b7f546() {
-      String var0 = C0114.bootstrap<"call",0,1>();
+   static UUID m_144ca0fc() {
+      String var0 = SessionHelper.getPlayerUUID();
       int var1 = var0.length();
-      return var1 != 32 && var1 != 36 ? null : C0114.bootstrap<"call",1,1>(var0);
+      return var1 != 32 && var1 != 36 ? null : C0217.m_edf212e5(var0);
    }
 
-   String m_d940b335();
+   String m_c42f1c7e();
 
-   UUID m_94ee9461();
+   UUID m_e3947f34();
 
-   default String m_42452946() {
-      return this.m_d940b335();
+   default String m_d32ebe65() {
+      return this.m_c42f1c7e();
    }
 
-   default C0230 m_dda36821() {
-      return f_81193085;
+   default C0230 m_7b315cdd() {
+      return f_bd2f3d48;
    }
 
-   default boolean m_f9052555() {
-      UUID var1 = C0114.bootstrap<"call",0,1>();
-      return var1 != null && var1.equals(this.m_94ee9461());
+   default boolean m_e0f7c666() {
+      UUID var1 = m_144ca0fc();
+      return var1 != null && var1.equals(this.m_e3947f34());
    }
 
-   void m_afc8f035();
+   void m_fd4438d8();
 
-   void m_02fb878c() throws Exception;
+   void m_f1ec3ae8() throws Exception;
 
    default void render(int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8) {
-      C0114.bootstrap<"call",2,1>(
-         C0114.bootstrap<"call",0,1>(this.m_42452946()).style(C0114.bootstrap<"call",1,1>(this.m_f9052555() ? DefaultColors.GREEN : DefaultColors.WHITE)),
-         var2 + 20,
-         var3 + 3,
-         16777215
+      FontRenderer.drawString(
+         Message.of(this.m_d32ebe65()).style(Appearance.of(this.m_e0f7c666() ? DefaultColors.GREEN : DefaultColors.WHITE)), var2 + 20, var3 + 3, 16777215
       );
-      C0230 var9 = this.m_dda36821();
-      if (var9.m_63716b28(C0230.anonymouscatch.f_b4b41867)) {
-         var9.m_1d96e0fd(var2 - 8, var3 + 1, 24, 24, C0230.anonymouscatch.f_b4b41867);
+      C0230 var9 = this.m_7b315cdd();
+      if (var9.m_c0b2fa8c(C0230.anonymouscatch.f_bce9cc23)) {
+         var9.m_d4d15bd2(var2 - 8, var3 + 1, 24, 24, C0230.anonymouscatch.f_bce9cc23);
       }
    }
 }

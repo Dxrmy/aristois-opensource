@@ -4,75 +4,55 @@ import me.deftware.client.framework.gui.screens.GenericScreen;
 import me.deftware.client.framework.message.Message;
 
 public class C0171 extends C0150 {
-   protected C0157 f_4733c937;
-   protected C0160 f_ee52094e;
-   protected C0160 f_8050faa8;
-   protected String f_aabb2253 = C0252.bootstrap<"get",21474836564>();
-   protected String f_d91f80a5 = C0252.bootstrap<"get",21474836565>();
+   protected C0157 f_7a8bca33;
+   protected C0160 f_03900406;
+   protected C0160 f_fce448d3;
+   protected String f_45ed19a3 = C0254.m_a55b07ff();
+   protected String f_8b9abab9 = C0254.m_16315846();
 
    public C0171(GenericScreen var1) {
       super(var1);
    }
 
-   protected void m_3c18b79c() {
-      this.addCenteredText(C0114.bootstrap<"call",0,1>() / 2, 30, C0114.bootstrap<"call",1,1>(this.f_aabb2253));
+   @Override
+   protected void m_1058ed9a() {
+      this.addCenteredText(getScaledWidth() / 2, 30, Message.of(this.f_45ed19a3));
       short var1 = 380;
       short var2 = 130;
-      this.m_853fd341(
-         new C0163[]{
-            this.f_4733c937 = this.m_ed634012(
-               C0114.bootstrap<"call",0,1>() / 2 - var1 / 2, 60, var1, C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836566>())
-            )
-         }
-      );
-      this.f_4733c937.m_00c3febe()._setMaxLength(9999);
-      this.m_deb13d8b(
-         C0114.bootstrap<"call",0,1>() / 2,
-         105,
-         new Message[]{
-            C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836567>()),
-            C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836568>()),
-            C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836569>())
-         }
-      );
+      this.m_4f7d4126(new C0163[]{this.f_7a8bca33 = this.m_c1f9f0d3(getScaledWidth() / 2 - var1 / 2, 60, var1, Message.of(C0254.m_e8fd0250()))});
+      this.f_7a8bca33.m_6909040f()._setMaxLength(9999);
+      this.m_ba846326(getScaledWidth() / 2, 105, new Message[]{Message.of(C0254.m_d0da63e8()), Message.of(C0254.m_0425f2ec()), Message.of(C0254.m_1b17f04f())});
       var1 = 280;
-      this.m_853fd341(
+      this.m_4f7d4126(
          new C0163[]{
-            new C0155(C0114.bootstrap<"call",0,1>() / 2, 160, (float)var1, (float)var2, this)
-               .m_5d3ed1f2(this.f_ee52094e = new C0160(0, 0, var2, 20), this.f_8050faa8 = new C0160(0, 0, var2, 20))
+            new C0155(getScaledWidth() / 2, 160, (float)var1, (float)var2, this)
+               .m_2ee4da8d(this.f_03900406 = new C0160(0, 0, var2, 20), this.f_fce448d3 = new C0160(0, 0, var2, 20))
          }
       );
-      this.f_8050faa8.m_7a9b0e8d(true);
-      this.f_8050faa8
-         .m_20835c5b(
-            new C0153(
-               this.f_8050faa8,
-               C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836570>()),
-               C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836571>())
-            )
-         );
-      this.m_853fd341(
+      this.f_fce448d3.m_394ecb95(true);
+      this.f_fce448d3.m_c7a3618c(new C0153(this.f_fce448d3, Message.of(C0254.m_bcef2112()), Message.of(C0254.m_114677c2())));
+      this.m_4f7d4126(
          new C0163[]{
-            new C0155(C0114.bootstrap<"call",0,1>() / 2, C0114.bootstrap<"call",2,1>() - 40, (float)var1, (float)var2, this)
-               .m_5d3ed1f2(
-                  this.m_c8e82587(0, 0, (float)var2, C0114.bootstrap<"call",1,1>(this.f_d91f80a5), this::m_f4bb942b)
-                     .m_dc08502f(() -> C0114.bootstrap<"call",0,1>(this.m_3ef5a0cc(new C0157[]{this.f_4733c937}))),
-                  this.m_c8e82587(0, 0, (float)var2, C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",17179869310>()), this::goBack)
+            new C0155(getScaledWidth() / 2, getScaledHeight() - 40, (float)var1, (float)var2, this)
+               .m_2ee4da8d(
+                  this.m_79273652(0, 0, (float)var2, Message.of(this.f_8b9abab9), this::m_23674f64)
+                     .m_798462fc(() -> this.m_8407423a(new C0157[]{this.f_7a8bca33})),
+                  this.m_79273652(0, 0, (float)var2, Message.of(C0261.m_56c1229f()), this::goBack)
                )
          }
       );
    }
 
-   protected void m_180f0cd8(C0268 var1) {
-      var1.m_3e620f34(this.f_4733c937.m_55cc55cf());
-      var1.m_2faedb85(this.f_ee52094e.m_12ad4521());
-      var1.m_5dc61818(this.f_8050faa8.m_12ad4521());
+   protected void m_e07ace4d(C0268 var1) {
+      var1.m_a11708c5(this.f_7a8bca33.m_e9914bd3());
+      var1.m_46938bdb(this.f_03900406.m_2ac34870());
+      var1.m_7c7fe86a(this.f_fce448d3.m_2ac34870());
    }
 
-   protected void m_f4bb942b() {
+   protected void m_23674f64() {
       C0268 var1 = new C0268();
-      this.m_180f0cd8(var1);
-      C0114.bootstrap<"call",0,1>().add(var1);
+      this.m_e07ace4d(var1);
+      C0268.m_ea54feba().add(var1);
       this.goBack();
    }
 }

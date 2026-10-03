@@ -43,9 +43,10 @@ Options: `--client donor`, `--game-dir <path>`, `--mc <version>`.
 
 ## Recovering the client source
 
-`libs/aristois-452.jar` (and any client jar) can be turned into Java with the
-recovery pipeline. The client is obfuscated with a method-handle
-`invokedynamic` dispatcher, so the output is readable but not yet compilable.
+`libs/aristois-452.jar` (and any client jar) can be turned into ordinary Java
+with the recovery pipeline. The client is obfuscated with a method-handle
+`invokedynamic` dispatcher; the resolver rewrites **all 6203** of its call sites
+into direct invocations.
 
 ```bash
 python3 scripts/deobfuscate.py --jar libs/aristois-452.jar --out recovered/java
@@ -55,13 +56,14 @@ Pipeline:
 
 1. `scripts/recover_client.py` — recovers real class names (many ZIP entries are
    blank) and builds a name map (`mappings/aristois-class-map.*`).
-2. `tools/Remap.java` — ASM remapper that renames every invalid
-   class/field/method to valid Java names.
-3. Vineflower — decompiles the remapped classes.
+2. `tools/ResolveIndy.java` — decrypts the two dispatchers and rewrites every
+   `invokedynamic` call into a direct call.
+3. `tools/Remap.java` — ASM remapper that renames every invalid
+   class/field/method to valid Java names (override-safe).
+4. Vineflower — decompiles the remapped classes.
 
 Output lives in [`recovered/`](recovered/) (508 Java files for v452). See
-[`docs/DEOBFUSCATION.md`](docs/DEOBFUSCATION.md) for the obfuscation scheme and
-the remaining `invokedynamic` resolution step needed to compile it.
+[`docs/DEOBFUSCATION.md`](docs/DEOBFUSCATION.md) for the obfuscation scheme.
 
 ## Clean-room client (MIT)
 

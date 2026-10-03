@@ -3,56 +3,60 @@ package me.deftware.aristois.recovered;
 import me.deftware.client.framework.entity.types.EntityPlayer;
 import me.deftware.client.framework.gui.ScreenRegistry;
 import me.deftware.client.framework.input.MinecraftKeyBind;
+import me.deftware.client.framework.input.Mouse;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.util.minecraft.BlockSwingResult;
 import me.deftware.client.framework.world.block.InteractableBlock;
 
 public abstract class C0277 extends C0279 {
-   private boolean f_32ef1cfe = false;
-   private boolean f_0417440c = false;
+   private boolean f_cca0ba88 = false;
+   private boolean f_da6bcb83 = false;
 
    public C0277(int var1, EntityPlayer var2) {
       super(var1, var2);
    }
 
-   public C0279 m_859b8950() {
-      super.m_fb884086();
+   @Override
+   public C0279 m_30bfe4e5() {
+      super.m_30bfe4e5();
       MinecraftKeyBind.USE_ITEM.setPressed(true);
       return this;
    }
 
-   public C0279 m_3a250deb() {
-      if (!this.m_b6f0782c()) {
+   @Override
+   public C0279 m_e3ec0ce5() {
+      if (!this.m_5d7ada2f()) {
          MinecraftKeyBind.USE_ITEM.setPressed(false);
-         this.m_298f9c49();
+         this.m_476256a8();
          return this;
       } else {
-         if ((this.f_3437aab2.test(this.f_bc3b0c5c) || !this.f_32ef1cfe) && !this.f_dead560b) {
-            this.m_83ca93c0();
-            if (this.m_b6f0782c()) {
-               this.f_0417440c = false;
-               this.m_b8ae9ef2();
+         if ((this.f_06024348.test(this.f_35114e14) || !this.f_cca0ba88) && !this.f_d5801aab) {
+            this.m_e4dddc57();
+            if (this.m_5d7ada2f()) {
+               this.f_da6bcb83 = false;
+               this.m_ae2c9744();
                if (ScreenRegistry.Chat.isOpen()) {
-                  C0114.bootstrap<"call",0,1>(1);
+                  Mouse.clickMouse(1);
                }
-            } else if (!this.f_0417440c) {
-               this.f_0417440c = true;
+            } else if (!this.f_da6bcb83) {
+               this.f_da6bcb83 = true;
                MinecraftKeyBind.USE_ITEM.setPressed(false);
             }
          } else {
             MinecraftKeyBind.USE_ITEM.setPressed(false);
-            super.m_7b565b67();
+            super.m_e3ec0ce5();
          }
 
          return this;
       }
    }
 
-   protected void m_b8ae9ef2() {
-      MinecraftKeyBind.USE_ITEM.setPressed(this.f_32ef1cfe = true);
+   protected void m_ae2c9744() {
+      MinecraftKeyBind.USE_ITEM.setPressed(this.f_cca0ba88 = true);
    }
 
-   private boolean m_b6f0782c() {
-      BlockSwingResult var1 = C0114.bootstrap<"call",0,1>().getHitBlock();
-      return var1 == null || !(var1.getBlock() instanceof InteractableBlock) && !this.f_de55e104;
+   private boolean m_5d7ada2f() {
+      BlockSwingResult var1 = Minecraft.getMinecraftGame().getHitBlock();
+      return var1 == null || !(var1.getBlock() instanceof InteractableBlock) && !this.f_3baca66d;
    }
 }

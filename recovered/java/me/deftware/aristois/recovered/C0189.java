@@ -7,101 +7,98 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import me.deftware.aristois.main.Main;
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.gui.screens.GenericScreen;
 import me.deftware.client.framework.gui.widgets.SelectableList;
 import me.deftware.client.framework.gui.widgets.SelectableList.ListItem;
+import me.deftware.client.framework.input.Keyboard;
 import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.message.Appearance.ClickAction;
 import me.deftware.client.framework.message.Message.Builder;
+import me.deftware.client.framework.util.ResourceUtils;
 
 public class C0189 extends C0150 {
-   private final List<C0189.anonymousimplements> f_5d641c87;
-   private final Message f_44213b0d;
-   private final Message f_a8bdaf06;
-   private static final Pattern f_d7fbabb5 = C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",25769803802>());
+   private final List<C0189.anonymousimplements> f_f9c98f95;
+   private final Message f_5b532a1d;
+   private final Message f_7d2fa70a;
+   private static final Pattern f_e862e800 = Pattern.compile(C0267.m_7b0db73e());
 
    public C0189(GenericScreen var1, List<C0189.anonymousimplements> var2, Message var3, Message var4) {
       super(var1);
-      this.f_44213b0d = var3;
-      this.f_a8bdaf06 = var4;
-      this.f_5d641c87 = var2;
+      this.f_5b532a1d = var3;
+      this.f_7d2fa70a = var4;
+      this.f_f9c98f95 = var2;
    }
 
-   protected void m_6d2bec55() {
+   @Override
+   protected void m_1058ed9a() {
       SelectableList var1 = new SelectableList(
-         this.f_5d641c87, this.getGuiScreenWidth(), this.getGuiScreenHeight(), 43, this.getGuiScreenHeight(), C0114.bootstrap<"call",0,1>() + 2
+         this.f_f9c98f95, this.getGuiScreenWidth(), this.getGuiScreenHeight(), 43, this.getGuiScreenHeight(), FontRenderer.getFontHeight() + 2
       );
       var1.setExtended(true);
       this.addComponent(var1);
-      Message var2 = C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",4>());
-      this.m_5b3badac(
+      Message var2 = Message.of(C0257.m_4626ac74());
+      this.m_4f7d4126(
          new C0163[]{
-            this.m_22ac2276(
-               this.getGuiScreenWidth() - C0114.bootstrap<"call",2,1>(var2) - 25, 10, (float)(C0114.bootstrap<"call",2,1>(var2) + 15), var2, this::goBack
+            this.m_79273652(
+               this.getGuiScreenWidth() - FontRenderer.getStringWidth(var2) - 25, 10, (float)(FontRenderer.getStringWidth(var2) + 15), var2, this::goBack
             )
          }
       );
-      this.addCenteredText(this.getGuiScreenWidth() / 2, 15, this.f_44213b0d);
-      this.addCenteredText(this.getGuiScreenWidth() / 2, 15 + C0114.bootstrap<"call",0,1>() + 2, this.f_a8bdaf06);
+      this.addCenteredText(this.getGuiScreenWidth() / 2, 15, this.f_5b532a1d);
+      this.addCenteredText(this.getGuiScreenWidth() / 2, 15 + FontRenderer.getFontHeight() + 2, this.f_7d2fa70a);
    }
 
-   private static C0189.anonymousimplements m_7f8cea98(String var0) {
+   private static C0189.anonymousimplements m_bc9ff2bf(String var0) {
       Builder var1 = new Builder();
-      String[] var2 = var0.split(C0252.bootstrap<"get",70>());
+      String[] var2 = var0.split(C0257.m_593ecbab());
       String var3 = null;
 
       for (String var7 : var2) {
-         Matcher var8 = f_d7fbabb5.matcher(var7);
+         Matcher var8 = f_e862e800.matcher(var7);
          if (var8.matches()) {
-            Appearance var10000 = C0114.bootstrap<"call",3,1>(8, DefaultColors.GRAY);
+            Appearance var10000 = Appearance.of(8, DefaultColors.GRAY);
             var3 = var7;
-            Appearance var9 = var10000.withClickEvent(ClickAction.OPEN_URL, var7)
-               .withTextHoverEvent(C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",25769803797>()));
-            var1.append(C0114.bootstrap<"call",1,1>(var7).style(var9));
+            Appearance var9 = var10000.withClickEvent(ClickAction.OPEN_URL, var7).withTextHoverEvent(Message.of(C0267.m_b886ae1c()));
+            var1.append(Message.of(var7).style(var9));
          } else {
             var1.append(var7);
          }
 
-         var1.append(C0252.bootstrap<"get",70>());
+         var1.append(C0257.m_593ecbab());
       }
 
       return new C0189.anonymousimplements(var1.build(), var3);
    }
 
-   public static C0189 m_6b334c35(GenericScreen var0) throws IOException {
-      int var1 = C0114.bootstrap<"call",0,1>().getMeta().getVersion();
+   public static C0189 m_e842fe9d(GenericScreen var0) throws IOException {
+      int var1 = Main.getInstance().getMeta().getVersion();
 
       C0189 var9;
-      try (InputStream var2 = C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(), C0252.bootstrap<"get",25769803798>())) {
+      try (InputStream var2 = ResourceUtils.getStreamFromModResources(Main.getInstance(), C0267.m_bec91365())) {
          if (var2 == null) {
-            throw new IOException(C0252.bootstrap<"get",25769803799>());
+            throw new IOException(C0267.m_79bfaec2());
          }
 
          try (
             InputStreamReader var4 = new InputStreamReader(var2);
             BufferedReader var6 = new BufferedReader(var4);
          ) {
-            List var8 = var6.lines().map(C0189::m_7f8cea98).collect(C0114.bootstrap<"call",2,1>());
-            var9 = new C0189(
-               var0,
-               var8,
-               C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",25769803800>() + var1 + C0252.bootstrap<"get",24>()),
-               C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",25769803801>())
-            ) {
-               protected void m_184eca6a() {
-                  super.m_6d2bec55();
-                  if (!C0241.f_7826e715) {
-                     Message var1 = C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",25769803790>());
-                     this.m_729ebb8a(
+            List var8 = var6.lines().map(C0189::m_bc9ff2bf).collect(Collectors.toList());
+            var9 = new C0189(var0, var8, Message.of(C0267.m_2e834348() + var1 + C0257.m_2e834348()), Message.of(C0267.m_e07cee76())) {
+               @Override
+               protected void m_1058ed9a() {
+                  super.m_1058ed9a();
+                  if (!C0241.f_f6e3d33b) {
+                     Message var1 = Message.of(C0267.m_9793dfe2());
+                     this.m_4f7d4126(
                         new C0163[]{
-                           this.m_47421e66(
-                              10,
-                              10,
-                              (float)(C0114.bootstrap<"call",1,1>(var1) + 15),
-                              var1,
-                              () -> C0114.bootstrap<"call",0,1>(C0146.f_c02c60c3 + C0252.bootstrap<"get",25769803789>())
+                           this.m_79273652(
+                              10, 10, (float)(FontRenderer.getStringWidth(var1) + 15), var1, () -> Keyboard.openLink(C0146.f_36f829be + C0267.m_15ef1a0d())
                            )
                         }
                      );
@@ -115,29 +112,24 @@ public class C0189 extends C0150 {
    }
 
    private static class anonymousimplements implements ListItem {
-      private final Message f_eca5ea07;
-      private final String f_e9cc0219;
+      private final Message f_96d17a04;
+      private final String f_7c91a33e;
 
       public void render(int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8) {
-         C0114.bootstrap<"call",1,1>(
-            C0114.bootstrap<"call",0,1>(this.f_eca5ea07, var1x -> C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(var1x) > var4 - 6)),
-            var2,
-            var3,
-            16777215
-         );
+         FontRenderer.drawString(C0197.m_3e1df413(this.f_96d17a04, var1x -> FontRenderer.getStringWidth(var1x) > var4 - 6), var2, var3, 16777215);
       }
 
       public boolean onMouseClicked(double var1, double var3, int var5) {
-         if (this.f_e9cc0219 != null) {
-            C0114.bootstrap<"call",0,1>(this.f_e9cc0219);
+         if (this.f_7c91a33e != null) {
+            Keyboard.openLink(this.f_7c91a33e);
          }
 
          return false;
       }
 
       public anonymousimplements(Message var1, String var2) {
-         this.f_eca5ea07 = var1;
-         this.f_e9cc0219 = var2;
+         this.f_96d17a04 = var1;
+         this.f_7c91a33e = var2;
       }
    }
 }

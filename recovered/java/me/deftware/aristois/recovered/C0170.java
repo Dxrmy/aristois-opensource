@@ -1,36 +1,38 @@
 package me.deftware.aristois.recovered;
 
+import me.deftware.client.framework.render.batching.RenderStack;
+
 public class C0170 {
-   private final C0170.anonymousthis f_326884e7;
+   private final C0170.anonymousthis f_bfa52464;
 
    public C0170(C0170.anonymousthis var1) {
-      this.f_326884e7 = var1;
+      this.f_bfa52464 = var1;
    }
 
-   public void m_80718ecc() {
-      if (this.f_326884e7 != C0170.anonymousthis.f_30166e29) {
-         C0114.bootstrap<"call",0,1>();
+   public void m_1058ed9a() {
+      if (this.f_bfa52464 != C0170.anonymousthis.f_d3168abd) {
+         RenderStack.reloadCustomMatrix();
       }
    }
 
-   public void m_04aec35b() {
-      if (this.f_326884e7 != C0170.anonymousthis.f_30166e29) {
-         C0114.bootstrap<"call",0,1>();
+   public void m_b728afce() {
+      if (this.f_bfa52464 != C0170.anonymousthis.f_d3168abd) {
+         RenderStack.reloadMinecraftMatrix();
       }
    }
 
-   public boolean m_879f24b8() {
-      return this.f_326884e7 == C0170.anonymousthis.f_146b6ee0;
+   public boolean m_89e0519f() {
+      return this.f_bfa52464 == C0170.anonymousthis.f_8f6bc807;
    }
 
-   public C0170.anonymousthis m_f29c6a39() {
-      return this.f_326884e7;
+   public C0170.anonymousthis m_d8379fac() {
+      return this.f_bfa52464;
    }
 
    public static enum anonymousthis {
-      f_4b51c068,
-      f_30166e29,
-      f_146b6ee0;
+      f_f2dd6320,
+      f_d3168abd,
+      f_8f6bc807;
 
       private anonymousthis() {
       }

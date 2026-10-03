@@ -20,7 +20,7 @@ public class BaritoneGotoCommand extends EMCModCommand {
          .set((LiteralArgumentBuilder)LiteralArgumentBuilder.literal("goto").then(RequiredArgumentBuilder.argument("point", new C0012()).executes(c -> {
             CommandResult r = new CommandResult(c);
             C0244 point = (C0244)r.getCustom("point", C0244.class);
-            this.service.sendCommand(String.format("goto %s %s %s", point.m_93e58820(), point.m_aa5acfd6(), point.m_b0090208()));
+            this.service.sendCommand(String.format("goto %s %s %s", point.m_36ffc578(), point.m_a135e825(), point.m_f34ec3cf()));
             return 1;
          })));
    }

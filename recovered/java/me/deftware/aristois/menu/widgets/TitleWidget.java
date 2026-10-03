@@ -1,16 +1,17 @@
 package me.deftware.aristois.menu.widgets;
 
 import java.awt.Color;
-import me.deftware.aristois.recovered.C0114;
 import me.deftware.aristois.recovered.C0222;
 import me.deftware.aristois.recovered.C0228;
 import me.deftware.aristois.recovered.C0231;
 import me.deftware.aristois.recovered.C0234;
+import me.deftware.aristois.recovered.C0289;
 import me.deftware.aristois.recovered.C0297;
 import me.deftware.aristois.recovered.C0441;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.batching.LineRenderStack;
 import me.deftware.client.framework.render.batching.QuadRenderStack;
+import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.batching.font.FontRenderStack;
 
 public abstract class TitleWidget extends ButtonWidget {
@@ -23,11 +24,12 @@ public abstract class TitleWidget extends ButtonWidget {
    protected boolean mousePressed = false;
    protected boolean drawIcon = false;
    protected final LineRenderStack lineRenderStack = new LineRenderStack();
-   protected C0234 atlas = C0228.f_1a35892e;
+   protected C0234 atlas = C0228.f_12b529e0;
    protected int iconU;
    protected int iconV;
    protected final C0222 arrow = new C0222() {
-      protected void m_5069a71f(double var1, double var3, double var5, double var7) {
+      @Override
+      protected void m_7b35c96a(double var1, double var3, double var5, double var7) {
          TitleWidget.this.lineRenderStack.begin();
          TitleWidget.this.lineRenderStack.vertex(var1, var3);
          TitleWidget.this.lineRenderStack.vertex(var1 + var5 / 2.0, var3 + var5);
@@ -37,7 +39,8 @@ public abstract class TitleWidget extends ButtonWidget {
       }
    };
    protected final C0222 exit = new C0222() {
-      protected void m_583f8707(double var1, double var3, double var5, double var7) {
+      @Override
+      protected void m_7b35c96a(double var1, double var3, double var5, double var7) {
          TitleWidget.this.lineRenderStack.begin();
          TitleWidget.this.lineRenderStack.vertex(var1, var3);
          TitleWidget.this.lineRenderStack.vertex(var1 + var5, var3 + var5);
@@ -49,38 +52,40 @@ public abstract class TitleWidget extends ButtonWidget {
 
    public TitleWidget(Message var1, C0441 var2) {
       super(var1, var2);
-      this.f_0d293471 = new FontRenderStack(C0231.f_a3b67470);
+      this.f_360de984 = new FontRenderStack(C0231.f_83bcaed9);
       this.init();
       this.setup();
    }
 
-   public void m_f584ec52(boolean var1) {
-      super.m_99260898(var1);
+   @Override
+   public void m_394ecb95(boolean var1) {
+      super.m_394ecb95(var1);
       this.lineRenderStack.setScaled(var1);
    }
 
    @Override
    protected void drawText(double var1, double var3, Message var5) {
-      this.f_0d293471.glColor(this.fontColor != null ? this.fontColor : this.f_0e78903e.m_b675cf2a());
-      this.f_0d293471.begin().drawString((int)var1, (int)var3, var5).end();
+      this.f_360de984.glColor(this.fontColor != null ? this.fontColor : this.f_02ea293d.m_f6c8a26c());
+      this.f_360de984.begin().drawString((int)var1, (int)var3, var5).end();
    }
 
    protected void setup() {
-      double var1 = this.f_e1c11053.m_fc7f45bc() - this.buttonPadding * 2.0;
+      double var1 = this.f_7fd3d7b7.m_d42f3372() - this.buttonPadding * 2.0;
       double var3 = this.buttonPadding;
       double var5 = this.buttonPadding;
-      this.arrow.m_66b8456f().m_1e49f000(var3, var5);
-      this.arrow.m_66b8456f().m_b9e3750e(var1);
-      this.arrow.m_66b8456f().m_5078410c(var1);
-      this.exit.m_66b8456f().m_7e0ab7c8(var5);
-      this.exit.m_66b8456f().m_b9e3750e(var1);
-      this.exit.m_66b8456f().m_5078410c(var1);
-      this.exit.m_f7e1b7d6(90.0);
-      this.exit.m_66b8456f().m_b772f454(this.f_e1c11053);
-      this.arrow.m_66b8456f().m_b772f454(this.f_e1c11053);
+      this.arrow.m_44bb072f().m_f8b16cfb(var3, var5);
+      this.arrow.m_44bb072f().m_6fd9bdae(var1);
+      this.arrow.m_44bb072f().m_61ade8f3(var1);
+      this.exit.m_44bb072f().m_01fed791(var5);
+      this.exit.m_44bb072f().m_6fd9bdae(var1);
+      this.exit.m_44bb072f().m_61ade8f3(var1);
+      this.exit.m_7c9e279f(90.0);
+      this.exit.m_44bb072f().m_8d8487f4(this.f_7fd3d7b7);
+      this.arrow.m_44bb072f().m_8d8487f4(this.f_7fd3d7b7);
    }
 
-   public boolean m_5fe8ba72(double var1, double var3, int var5) {
+   @Override
+   public boolean m_a2722fba(double var1, double var3, int var5) {
       if (this.mousePressed) {
          this.mousePressed = false;
          this.onExitPress();
@@ -90,9 +95,10 @@ public abstract class TitleWidget extends ButtonWidget {
       }
    }
 
-   public boolean m_a993d5f6(double var1, double var3, int var5) {
-      super.m_d9e70307(var1, var3, var5);
-      if (this.drawExitButton && this.exit.m_66b8456f().m_263d91ea(var1, var3)) {
+   @Override
+   public boolean m_8407b1bf(double var1, double var3, int var5) {
+      super.m_8407b1bf(var1, var3, var5);
+      if (this.drawExitButton && this.exit.m_44bb072f().m_a58797d6(var1, var3)) {
          this.mousePressed = true;
          return true;
       } else {
@@ -103,45 +109,45 @@ public abstract class TitleWidget extends ButtonWidget {
    @Override
    protected void drawBackground(double var1, double var3, float var5) {
       super.drawBackground(var1, var3, var5);
-      ((QuadRenderStack)this.quadRenderStack.glColor(this.f_0e78903e.m_8ccc187c()))
+      ((QuadRenderStack)this.quadRenderStack.glColor(this.f_02ea293d.m_e1729432()))
          .drawRect(
-            this.f_e1c11053.m_14f8bc2c(),
-            this.f_e1c11053.m_5a998971() + this.f_e1c11053.m_fc7f45bc() - this.underlineHeight,
-            this.f_e1c11053.m_14f8bc2c() + this.f_e1c11053.m_830cb294(),
-            this.f_e1c11053.m_5a998971() + this.f_e1c11053.m_fc7f45bc()
+            this.f_7fd3d7b7.m_a005efae(),
+            this.f_7fd3d7b7.m_84808068() + this.f_7fd3d7b7.m_d42f3372() - this.underlineHeight,
+            this.f_7fd3d7b7.m_a005efae() + this.f_7fd3d7b7.m_4388ac29(),
+            this.f_7fd3d7b7.m_84808068() + this.f_7fd3d7b7.m_d42f3372()
          )
          .end();
       if (this.drawExitButton || this.drawArrowButton) {
-         ((LineRenderStack)this.lineRenderStack.glColor(Color.white)).lineWidth(1.5F * C0114.bootstrap<"call",0,1>());
+         ((LineRenderStack)this.lineRenderStack.glColor(Color.white)).lineWidth(1.5F * RenderStack.getScale());
       }
 
       if (this.drawArrowButton) {
-         this.arrow.m_ca42edf7(var1, var3, var5);
+         this.arrow.m_9d486ef7(var1, var3, var5);
       }
 
       if (this.drawExitButton) {
-         boolean var6 = this.exit.m_66b8456f().m_263d91ea(var1, var3);
-         if (var6 != this.hover && this.exit.m_b73d9bc8().m_f6c24736()) {
-            this.exit.m_dcc9a738();
+         boolean var6 = this.exit.m_44bb072f().m_a58797d6(var1, var3);
+         if (var6 != this.hover && this.exit.m_acb8f086().m_e606d819()) {
+            this.exit.m_1058ed9a();
             this.hover = var6;
          }
 
-         this.exit.m_66b8456f().m_6894765d(this.f_e1c11053.m_830cb294() - this.buttonPadding - this.exit.m_66b8456f().m_830cb294());
-         this.exit.m_ca42edf7(var1, var3, var5);
+         this.exit.m_44bb072f().m_dadc1f5d(this.f_7fd3d7b7.m_4388ac29() - this.buttonPadding - this.exit.m_44bb072f().m_4388ac29());
+         this.exit.m_9d486ef7(var1, var3, var5);
       }
 
-      C0297 var11 = (C0297)C0114.bootstrap<"call",1,1>(C0297.class);
-      if (this.drawIcon && var11.m_85d9b73d()) {
+      C0297 var11 = C0289.m_c3a8b502(C0297.class);
+      if (this.drawIcon && var11.m_f057b877()) {
          double var7 = 10.0;
-         double var9 = (this.m_cb4e693c().m_fc7f45bc() - var7 * 2.0) * (double)C0114.bootstrap<"call",0,1>();
+         double var9 = (this.m_44bb072f().m_d42f3372() - var7 * 2.0) * (double)RenderStack.getScale();
          this.atlas
-            .m_e8034329(
+            .m_9b6362d6(
                var9,
-               (this.m_cb4e693c().m_14f8bc2c() + var7) * (double)C0114.bootstrap<"call",0,1>(),
-               (this.m_cb4e693c().m_5a998971() + var7) * (double)C0114.bootstrap<"call",0,1>(),
+               (this.m_44bb072f().m_a005efae() + var7) * (double)RenderStack.getScale(),
+               (this.m_44bb072f().m_84808068() + var7) * (double)RenderStack.getScale(),
                this.iconU,
                this.iconV,
-               var11.m_0a1415e1()
+               var11.m_4aac060f()
             );
       }
    }

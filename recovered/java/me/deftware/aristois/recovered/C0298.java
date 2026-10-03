@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
@@ -7,6 +8,7 @@ import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.gui.screens.ContainerScreen;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.item.types.ArmourItem;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 @C0101(
    minimumProtocol = C0213.MINECRAFT_1_9
@@ -16,52 +18,52 @@ public class C0298 extends AbstractMod {
       value = "Priority",
       description = {"Choose chest priority"}
    )
-   private C0102<C0298.anonymousconst> f_d3988f4c = new C0102<>(C0298.anonymousconst.f_3840ec42);
+   private C0102<C0298.anonymousconst> f_dafd543e = new C0102<>(C0298.anonymousconst.f_e354db16);
    @C0098(
       value = "Creative",
       description = {"Allow AutoArmour to run in creative mode"}
    )
-   private boolean f_78f0c8c6 = false;
+   private boolean f_7e5581a6 = false;
 
    public C0298() {
-      super(C0252.bootstrap<"get",38654705766>(), C0290.f_e2483c18, C0252.bootstrap<"get",38654705767>());
-      this.setMode(this.f_d3988f4c);
+      super(C0263.m_bdbd5e40(), C0290.f_4b7b2d37, C0263.m_c04d8f6e());
+      this.setMode(this.f_dafd543e);
    }
 
    @EventHandler
-   public void m_cd2e43fe(EventUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
-      if ((!var2.isCreative() || this.f_78f0c8c6) && !(C0114.bootstrap<"call",0,1>().getScreen() instanceof ContainerScreen)) {
+   public void m_3072cba8(EventUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
+      if ((!var2.isCreative() || this.f_7e5581a6) && !(Minecraft.getMinecraftGame().getScreen() instanceof ContainerScreen)) {
          for (int var3 = 0; var3 < 4; var3++) {
-            int var4 = this.m_c570ea7e(var2, var3);
-            C0072 var5 = C0114.bootstrap<"call",2,1>().m_d5fce8ed(var3);
-            if (this.f_d3988f4c.m_e2691446() == C0298.anonymousconst.f_77442ee8 && var3 == 2) {
-               var5.m_82117449(C0070.f_a049faba, 999.0F);
+            int var4 = this.m_8d984962(var2, var3);
+            C0072 var5 = C0072.m_9a0150ee().m_f26b74b3(var3);
+            if (this.f_dafd543e.m_284992ec() == C0298.anonymousconst.f_019ee630 && var3 == 2) {
+               var5.m_6b100e6c(C0070.f_88717b71, 999.0F);
             }
 
-            int var6 = var5.m_a0aa8556();
+            int var6 = var5.m_eb304949();
             if (var6 != -1) {
                ItemStack var7 = var2.getInventory().getStackInSlot(var6);
-               if (this.m_7e4ff373(var7) > var4) {
-                  ((C0073.anonymousdefault)((C0073.anonymousdefault)C0114.bootstrap<"call",3,1>().m_44d897bb(var6)).m_aa5e9f8b(var3)).m_08fa2bad();
+               if (this.m_016cf39b(var7) > var4) {
+                  C0073.m_f76a4979().m_e1463257(var6).m_68351bcd(var3).m_ac6eac3b();
                }
             }
          }
       }
    }
 
-   private int m_7e4ff373(ItemStack var1) {
-      return this.f_d3988f4c.m_e2691446() == C0298.anonymousconst.f_77442ee8 && var1.getItem().equals(C0070.f_a049faba) ? 999 : var1.getStackProtectionAmount();
+   private int m_016cf39b(ItemStack var1) {
+      return this.f_dafd543e.m_284992ec() == C0298.anonymousconst.f_019ee630 && var1.getItem().equals(C0070.f_88717b71) ? 999 : var1.getStackProtectionAmount();
    }
 
-   private int m_c570ea7e(MainEntityPlayer var1, int var2) {
+   private int m_8d984962(MainEntityPlayer var1, int var2) {
       ItemStack var3 = var1.getInventory().getStackInArmourSlot(var2);
       if (!var3.isEmpty()) {
          if (var3.getItem() instanceof ArmourItem) {
             return var3.getStackProtectionAmount();
          }
 
-         if (var3.getItem().equals(C0070.f_a049faba) && this.f_d3988f4c.m_e2691446() == C0298.anonymousconst.f_77442ee8) {
+         if (var3.getItem().equals(C0070.f_88717b71) && this.f_dafd543e.m_284992ec() == C0298.anonymousconst.f_019ee630) {
             return 999;
          }
       }
@@ -70,8 +72,8 @@ public class C0298 extends AbstractMod {
    }
 
    private static enum anonymousconst {
-      f_77442ee8,
-      f_3840ec42;
+      f_019ee630,
+      f_e354db16;
 
       private anonymousconst() {
       }

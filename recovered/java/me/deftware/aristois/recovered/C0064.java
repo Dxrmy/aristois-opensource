@@ -1,75 +1,76 @@
 package me.deftware.aristois.recovered;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 
 public class C0064 {
-   private final Appearance f_5d961d17;
-   private List<Message> f_69634c5e;
-   private Message f_73e4b7e3;
+   private final Appearance f_39e2ade4;
+   private List<Message> f_1d5ed69b;
+   private Message f_3d7b00dc;
 
    private C0064(Appearance var1) {
-      this.f_5d961d17 = var1;
+      this.f_39e2ade4 = var1;
    }
 
-   public C0064 m_2b06cee8(Message var1) {
-      this.f_73e4b7e3 = var1.style(this.f_5d961d17);
+   public C0064 m_d574e88d(Message var1) {
+      this.f_3d7b00dc = var1.style(this.f_39e2ade4);
       return this;
    }
 
-   public C0064 m_6b4e8235(String var1) {
-      return this.m_2b06cee8(C0114.bootstrap<"call",0,1>(var1));
+   public C0064 m_2c2620fc(String var1) {
+      return this.m_d574e88d(Message.of(var1));
    }
 
-   public C0064 m_b7d6d46c(Message... var1) {
-      this.f_69634c5e = C0114.bootstrap<"call",1,1>(var1);
+   public C0064 m_f41992de(Message... var1) {
+      this.f_1d5ed69b = Arrays.asList(var1);
       return this;
    }
 
-   public C0064 m_77a7bc18(String... var1) {
+   public C0064 m_ee04ba1b(String... var1) {
       Message[] var2 = new Message[var1.length];
 
       for (int var3 = 0; var3 < var1.length; var3++) {
-         var2[var3] = C0114.bootstrap<"call",0,1>(var1[var3]);
+         var2[var3] = Message.of(var1[var3]);
       }
 
-      return this.m_b7d6d46c(var2);
+      return this.m_f41992de(var2);
    }
 
-   public C0064 m_5de8d0b8(String var1, Object... var2) {
-      if (this.f_69634c5e == null) {
-         this.f_69634c5e = new ArrayList<>();
+   public C0064 m_ecf8e7ae(String var1, Object... var2) {
+      if (this.f_1d5ed69b == null) {
+         this.f_1d5ed69b = new ArrayList<>();
       }
 
-      this.f_69634c5e.add(C0114.bootstrap<"call",0,1>(C0114.bootstrap<"call",2,1>(var1, var2)));
+      this.f_1d5ed69b.add(Message.of(String.format(var1, var2)));
       return this;
    }
 
-   public void m_66e721c0() {
-      C0269.f_13431579.m_71701f32(new C0287(this.f_73e4b7e3, this.f_69634c5e.toArray(new Message[0])).m_48761c0f()).m_2246a05a();
+   public void m_1058ed9a() {
+      C0269.f_44d31626.m_dfae9307(new C0287(this.f_3d7b00dc, this.f_1d5ed69b.toArray(new Message[0])).m_6a1b300a()).m_547191bb();
    }
 
-   public void m_9d59fbe9() {
-      for (Message var2 : this.f_69634c5e) {
-         C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",4294967324>()).append(var2, this.f_5d961d17).build().print();
+   public void m_b728afce() {
+      for (Message var2 : this.f_1d5ed69b) {
+         C0001.m_3ce42128(C0264.m_5fa6dd07()).append(var2, this.f_39e2ade4).build().print();
       }
    }
 
-   public void m_f0402f6b() {
+   public void m_0e265701() {
    }
 
-   public static C0064 m_6b025fec() {
-      return new C0064(C0114.bootstrap<"call",0,1>(DefaultColors.GRAY)).m_6b4e8235(C0252.bootstrap<"get",4294967302>());
+   public static C0064 m_13c9ffeb() {
+      return new C0064(Appearance.of(DefaultColors.GRAY)).m_2c2620fc(C0264.m_35cdaa1a());
    }
 
-   public static C0064 m_243a7c19() {
-      return new C0064(C0114.bootstrap<"call",0,1>(DefaultColors.YELLOW)).m_6b4e8235(C0252.bootstrap<"get",51539607680>());
+   public static C0064 m_7853c016() {
+      return new C0064(Appearance.of(DefaultColors.YELLOW)).m_2c2620fc(C0255.m_65d43991());
    }
 
-   public static C0064 m_c28a0024() {
-      return new C0064(C0114.bootstrap<"call",0,1>(2, DefaultColors.RED)).m_6b4e8235(C0252.bootstrap<"get",51539607663>());
+   public static C0064 m_b79f2e94() {
+      return new C0064(Appearance.of(2, DefaultColors.RED)).m_2c2620fc(C0255.m_a5b24d28());
    }
 }

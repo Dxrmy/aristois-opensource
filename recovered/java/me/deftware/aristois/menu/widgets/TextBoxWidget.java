@@ -2,13 +2,13 @@ package me.deftware.aristois.menu.widgets;
 
 import java.awt.Color;
 import java.util.function.BiFunction;
-import me.deftware.aristois.recovered.C0114;
 import me.deftware.aristois.recovered.C0165;
 import me.deftware.aristois.recovered.C0197;
 import me.deftware.aristois.recovered.C0233;
 import me.deftware.aristois.recovered.C0437;
 import me.deftware.aristois.recovered.C0438;
 import me.deftware.aristois.recovered.C0441;
+import me.deftware.client.framework.input.Keyboard;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.batching.QuadRenderStack;
 
@@ -27,8 +27,9 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
    private double ticks = 0.0;
    private double textOffset = 0.0;
    private final C0233 animation = new C0233(140.0F, 16.0) {
-      protected void m_d8586096(double var1) {
-         C0114.bootstrap<"call",0,1>(TextBoxWidget.this, var1 * 5.0);
+      @Override
+      protected void m_560d077c(double var1) {
+         TextBoxWidget.this.textOffset = var1 * 5.0;
       }
    };
 
@@ -41,15 +42,15 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
    }
 
    public TextBoxWidget(double var1, double var3, double var5, C0441 var7) {
-      super(var1, var3, var5, C0197.f_716a73fa, var7);
+      super(var1, var3, var5, C0197.f_9607505d, var7);
       this.initTextbox();
    }
 
    public void initTextbox() {
-      this.textBounds.m_1e49f000(this.padding, 0.0);
-      this.textBounds.m_5078410c(this.f_22a1be61.m_fc7f45bc());
-      this.textBounds.m_b772f454(this.f_22a1be61);
-      this.animation.m_6a0b904b(true);
+      this.textBounds.m_f8b16cfb(this.padding, 0.0);
+      this.textBounds.m_61ade8f3(this.f_7fd3d7b7.m_d42f3372());
+      this.textBounds.m_8d8487f4(this.f_7fd3d7b7);
+      this.animation.m_d6ac7420(true);
       this.setTextBounds();
    }
 
@@ -58,24 +59,26 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
       return this;
    }
 
-   public boolean m_1a0f2d91(double var1, double var3, float var5, boolean var6) {
-      this.animation.m_61a5f120(var5);
+   @Override
+   public boolean m_572d14e6(double var1, double var3, float var5, boolean var6) {
+      this.animation.m_d881d3e3(var5);
       this.setTextBounds();
-      boolean var7 = super.m_843bab94(var1, var3, var5, var6);
+      boolean var7 = super.m_572d14e6(var1, var3, var5, var6);
       this.drawCaret();
       return var7;
    }
 
    protected void setTextBounds() {
-      this.textBounds.m_b9e3750e(this.f_22a1be61.m_830cb294() - this.padding * 3.0);
+      this.textBounds.m_6fd9bdae(this.f_7fd3d7b7.m_4388ac29() - this.padding * 3.0);
    }
 
-   public boolean m_19a9f8cd(double var1, double var3, int var5) {
-      if (!this.f_22a1be61.m_263d91ea(var1, var3)) {
+   @Override
+   public boolean m_a2722fba(double var1, double var3, int var5) {
+      if (!this.f_7fd3d7b7.m_a58797d6(var1, var3)) {
          this.deFocus();
       }
 
-      return super.m_73c7429e(var1, var3, var5);
+      return super.m_a2722fba(var1, var3, var5);
    }
 
    public void deFocus() {
@@ -86,17 +89,18 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
       this.focused = false;
    }
 
-   public boolean m_f030b790(int var1, int var2, int var3) {
+   @Override
+   public boolean m_82e0832a(int var1, int var2, int var3) {
       if (this.focused) {
          switch (var1) {
             case 67:
             case 88:
                if (!this.text.isEmpty() && var3 == 2) {
-                  C0114.bootstrap<"call",1,1>(this.text);
+                  Keyboard.setClipboardString(this.text);
                   if (var1 == 88) {
                      this.amend(2);
                   } else {
-                     this.animation.m_bb3577b4();
+                     this.animation.m_41e83f88();
                   }
 
                   return true;
@@ -104,7 +108,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
                break;
             case 86:
                if (var3 == 2) {
-                  this.append(C0114.bootstrap<"call",0,1>());
+                  this.append(Keyboard.getClipboardString());
                   return true;
                }
                break;
@@ -143,23 +147,25 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
          ((QuadRenderStack)this.quadRenderStack.glColor(Color.white))
             .begin()
             .drawRect(
-               this.textBounds.m_14f8bc2c() + this.caretPosition + var1,
-               this.fontBounds.m_5a998971(),
-               this.textBounds.m_14f8bc2c() + this.caretPosition + this.caretWidth + var1,
-               this.fontBounds.m_5a998971() + this.fontBounds.m_fc7f45bc()
+               this.textBounds.m_a005efae() + this.caretPosition + var1,
+               this.fontBounds.m_84808068(),
+               this.textBounds.m_a005efae() + this.caretPosition + this.caretWidth + var1,
+               this.fontBounds.m_84808068() + this.fontBounds.m_d42f3372()
             )
             .end();
       }
    }
 
-   public void m_0f0d0ce4() {
+   @Override
+   public void m_0e265701() {
       if (++this.ticks / 6.0 % 2.0 == 0.0) {
          this.renderCaret = !this.renderCaret;
       }
    }
 
-   public void m_6b58ebc7(int var1) {
-      String var2 = C0114.bootstrap<"call",2,1>((char)var1);
+   @Override
+   public void m_7c7fe86a(int var1) {
+      String var2 = String.valueOf((char)var1);
       if (this.focused) {
          this.append(var2);
       }
@@ -167,7 +173,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
 
    @Override
    protected void drawText(double var1, double var3, Message var5) {
-      this.f_7faa09d9.glColor(this.text.isEmpty() ? Color.GRAY : Color.white);
+      this.f_360de984.glColor(this.text.isEmpty() ? Color.GRAY : Color.white);
       String var6 = this.shadowText;
       if (!this.text.isEmpty()) {
          var6 = this.text.substring(this.firstCharacterIndex, this.lastCharacterIndex);
@@ -176,7 +182,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
          }
       }
 
-      this.f_7faa09d9.begin().drawString((int)(var1 + this.textOffset), (int)var3, var6).end();
+      this.f_360de984.begin().drawString((int)(var1 + this.textOffset), (int)var3, var6).end();
    }
 
    @Override
@@ -187,7 +193,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
    }
 
    public double clamp(double var1, double var3, double var5) {
-      return C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(var1, var5), var3);
+      return Math.min(Math.max(var1, var5), var3);
    }
 
    public void append(String var1) {
@@ -197,7 +203,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
 
       this.text = this.text.substring(0, this.caretIndex) + var1 + this.text.substring(this.caretIndex);
       this.setCaretIndex(this.caretIndex + var1.length());
-      if (this.getStringWidth(this.text) > this.textBounds.m_830cb294()) {
+      if (this.getStringWidth(this.text) > this.textBounds.m_4388ac29()) {
          this.setFirstCharacterIndex(this.firstCharacterIndex + var1.length());
          if (this.caretIndex >= var1.length()) {
             this.firstCharacterIndex = this.trimEnd();
@@ -242,7 +248,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
 
       for (int var3 = var1; var3 <= this.text.length(); var3++) {
          var2 = var3;
-         if (this.getStringWidth(this.text.substring(var1, var3)) > this.textBounds.m_830cb294()) {
+         if (this.getStringWidth(this.text.substring(var1, var3)) > this.textBounds.m_4388ac29()) {
             break;
          }
       }
@@ -251,14 +257,14 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
    }
 
    public int trimEnd() {
-      if (this.getStringWidth(this.text) < this.textBounds.m_830cb294()) {
+      if (this.getStringWidth(this.text) < this.textBounds.m_4388ac29()) {
          return 0;
       } else {
          int var1 = 0;
 
          for (int var2 = this.text.length(); var2 >= 0; var2--) {
             var1 = var2;
-            if (this.getStringWidth(this.text.substring(var2)) > this.textBounds.m_830cb294()) {
+            if (this.getStringWidth(this.text.substring(var2)) > this.textBounds.m_4388ac29()) {
                break;
             }
          }
@@ -284,7 +290,7 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
    }
 
    public double getStringWidth(String var1) {
-      return (double)this.f_7faa09d9.getStringWidth(var1);
+      return (double)this.f_360de984.getStringWidth(var1);
    }
 
    public double calculateCaretPosition(int var1) {
@@ -293,8 +299,9 @@ public abstract class TextBoxWidget extends ButtonWidget implements C0438, C0437
 
    protected abstract void apply(String var1);
 
-   public int m_ee4d6705(double var1, double var3) {
-      return this.textBounds.m_263d91ea(var1, var3) ? 221186 : -1;
+   @Override
+   public int m_3abf02d1(double var1, double var3) {
+      return this.textBounds.m_a58797d6(var1, var3) ? 221186 : -1;
    }
 
    public String getText() {

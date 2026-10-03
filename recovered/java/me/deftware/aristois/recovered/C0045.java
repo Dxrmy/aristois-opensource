@@ -1,6 +1,8 @@
 package me.deftware.aristois.recovered;
 
 import java.awt.Color;
+import java.util.Objects;
+import me.deftware.aristois.main.Main;
 import me.deftware.client.framework.entity.types.EntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.EventListener;
@@ -13,62 +15,57 @@ import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.event.events.EventWorldLoad;
 import me.deftware.client.framework.event.events.EventChatSend.Type;
 import me.deftware.client.framework.gui.ScreenRegistry;
+import me.deftware.client.framework.input.Keyboard;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.message.Message.Builder;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public final class C0045 extends EventListener {
-   public static final C0045 f_d228694b = new C0045();
-   private float f_399d67ca = 0.0F;
-   private float f_cbcdef73 = 0.006F;
-   private Color f_73e59e41 = Color.white;
-   private long f_c49f2e5c = C0114.bootstrap<"call",0,1>();
-   private EventChatSend f_6df59d2c;
-   private long f_a0552e0e = 0L;
+   public static final C0045 f_8f480fc4 = new C0045();
+   private float f_05140345 = 0.0F;
+   private float f_dc4d2046 = 0.006F;
+   private Color f_dc4e3630 = Color.white;
+   private long f_04bd724a = System.currentTimeMillis();
+   private EventChatSend f_d32481ec;
+   private long f_8c0dfc57 = 0L;
 
    public C0045() {
    }
 
    @EventHandler
-   public void m_678df3fd(EventChatSend var1) {
-      this.f_6df59d2c = var1;
+   public void m_7161a1f8(EventChatSend var1) {
+      this.f_d32481ec = var1;
    }
 
    @EventHandler
-   public void m_01bd30f4(EventUpdate var1) {
-      this.f_399d67ca = this.f_399d67ca + this.f_cbcdef73;
-      if (this.f_399d67ca > 0.99F) {
-         this.f_399d67ca = 0.01F;
+   public void m_3072cba8(EventUpdate var1) {
+      this.f_05140345 = this.f_05140345 + this.f_dc4d2046;
+      if (this.f_05140345 > 0.99F) {
+         this.f_05140345 = 0.01F;
       }
 
-      this.f_73e59e41 = C0114.bootstrap<"call",0,1>(this.f_399d67ca + 0.05F, 1.0F, 1.0F);
+      this.f_dc4e3630 = Color.getHSBColor(this.f_05140345 + 0.05F, 1.0F, 1.0F);
    }
 
    @EventHandler
-   public void m_4b1c87f9(EventWorldLoad var1) {
-      if (!C0114.bootstrap<"call",1,1>().hasKey(C0252.bootstrap<"get",17179869223>())) {
-         C0114.bootstrap<"call",1,1>().putPrimitive(C0252.bootstrap<"get",17179869223>(), true);
+   public void m_270a7d18(EventWorldLoad var1) {
+      if (!Main.getConfig().hasKey(C0261.m_afb31f66())) {
+         Main.getConfig().putPrimitive(C0261.m_afb31f66(), true);
          Message var2 = new Builder()
-            .append(C0252.bootstrap<"get",17179869224>())
-            .append(C0252.bootstrap<"get",17179869225>(), C0114.bootstrap<"call",2,1>(DefaultColors.YELLOW))
-            .append(C0252.bootstrap<"get",17179869226>())
+            .append(C0261.m_c254a253())
+            .append(C0261.m_3d3a8736(), Appearance.of(DefaultColors.YELLOW))
+            .append(C0261.m_94acbdac())
             .build();
-         C0269.f_13431579
-            .m_71701f32(
-               new C0286(
-                     () -> C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(344)),
-                     C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",17179869227>()),
-                     var2
-                  )
-                  .m_b7d0bc68()
-            );
+         C0269.f_44d31626.m_dfae9307(new C0286(() -> Keyboard.isKeyDown(344), Message.of(C0261.m_022da1b4()), var2).m_6a1b300a());
       }
    }
 
    @EventHandler
-   public void m_216f4e48(EventChatReceive var1) {
-      for (C0250 var3 : C0114.bootstrap<"call",4,1>()) {
-         if (C0114.bootstrap<"call",5,1>(var1.getMessage(), var3.m_84e98a9f())) {
+   public void m_f84326ec(EventChatReceive var1) {
+      for (C0250 var3 : C0250.m_a13a31bc()) {
+         if (C0197.m_6bc011d7(var1.getMessage(), var3.m_3d3a8736())) {
             var1.setCanceled(true);
             break;
          }
@@ -76,51 +73,48 @@ public final class C0045 extends EventListener {
    }
 
    @EventHandler
-   public void m_48df7a9e(EventKeyAction var1) {
-      C0295 var2 = (C0295)C0114.bootstrap<"call",6,1>(C0295.class);
-      if (var1.getKeyCode() == var2.getKeybind().m_6978c604() && C0114.bootstrap<"call",7,1>().getScreen() == null) {
-         if (C0114.bootstrap<"call",8,1>() - this.f_a0552e0e < 250L && var1.getAction() != 2) {
-            C0114.bootstrap<"call",7,1>().openScreen(new C0429());
+   public void m_1e0a909c(EventKeyAction var1) {
+      C0295 var2 = C0289.m_c3a8b502(C0295.class);
+      if (var1.getKeyCode() == var2.getKeybind().m_36ffc578() && Minecraft.getMinecraftGame().getScreen() == null) {
+         if (System.currentTimeMillis() - this.f_8c0dfc57 < 250L && var1.getAction() != 2) {
+            Minecraft.getMinecraftGame().openScreen(new C0429());
          } else {
-            this.f_a0552e0e = C0114.bootstrap<"call",8,1>();
+            this.f_8c0dfc57 = System.currentTimeMillis();
          }
       } else {
-         C0289.f_c22b8d7e
-            .m_ea73e1f0()
+         C0289.f_85a7343f
+            .m_918b7b9e()
             .forEach(
                var1x -> {
-                  boolean var2x = C0114.bootstrap<"call",15,1>(292) || C0114.bootstrap<"call",15,1>(46);
-                  if (var1x.getKeybind().m_6978c604() == var1.getKeyCode()
-                     && var1x.getKeybind().m_6978c604() != -1
+                  boolean var2x = Keyboard.isKeyDown(292) || Keyboard.isKeyDown(46);
+                  if (var1x.getKeybind().m_36ffc578() == var1.getKeyCode()
+                     && var1x.getKeybind().m_36ffc578() != -1
                      && !var2x
-                     && (var1x.getKeybind().m_0c53f85c() == 0 || var1x.getKeybind().m_0c53f85c() == var1.getModifiers())) {
+                     && (var1x.getKeybind().m_a135e825() == 0 || var1x.getKeybind().m_a135e825() == var1.getModifiers())) {
                      var1x.toggle();
                   }
                }
             );
 
-         for (C0268 var4 : C0114.bootstrap<"call",9,1>()) {
-            if (var4.m_9d73c835() != -1 && var4.m_9d73c835() == var1.getKeyCode() && (var4.m_1921cf88() == -1 || var4.m_1921cf88() == var1.getModifiers())) {
+         for (C0268 var4 : C0268.m_ea54feba()) {
+            if (var4.m_79bbc2da() != -1 && var4.m_79bbc2da() == var1.getKeyCode() && (var4.m_037208cc() == -1 || var4.m_037208cc() == var1.getModifiers())) {
                var4.run();
             }
          }
 
-         if (this.f_6df59d2c != null
-            && var1.getKeyCode() == 265
-            && !C0114.bootstrap<"call",10,1>(C0431.class)
-            && ((C0296)C0114.bootstrap<"call",6,1>(C0296.class)).m_45e0418b()) {
-            String var5 = (this.f_6df59d2c.getType() == Type.Command ? C0252.bootstrap<"get",17179869228>() : "") + this.f_6df59d2c.getMessage();
-            C0114.bootstrap<"call",7,1>().runOnRenderThread(() -> ScreenRegistry.Chat.open(new Object[]{var5}));
+         if (this.f_d32481ec != null && var1.getKeyCode() == 265 && !C0289.m_5caae0c3(C0431.class) && C0289.m_c3a8b502(C0296.class).m_6c9f39f9()) {
+            String var5 = (this.f_d32481ec.getType() == Type.Command ? C0261.m_6e2d03c3() : "") + this.f_d32481ec.getMessage();
+            Minecraft.getMinecraftGame().runOnRenderThread(() -> ScreenRegistry.Chat.open(new Object[]{var5}));
          }
       }
    }
 
    @EventHandler
-   public void m_d2b81718(EventServerPinged var1) {
-      if (!C0114.bootstrap<"call",5,1>(var1.getPlayerList(), C0252.bootstrap<"get",17179869229>())) {
+   public void m_31ec7ab2(EventServerPinged var1) {
+      if (!C0197.m_6bc011d7(var1.getPlayerList(), C0261.m_760db7bb())) {
          Message var2 = new Builder()
-            .append(var1.getGameVersion(), C0114.bootstrap<"call",2,1>(DefaultColors.AQUA))
-            .append(C0252.bootstrap<"get",17179869230>(), C0114.bootstrap<"call",2,1>(DefaultColors.GRAY))
+            .append(var1.getGameVersion(), Appearance.of(DefaultColors.AQUA))
+            .append(C0261.m_68957b31(), Appearance.of(DefaultColors.GRAY))
             .append(var1.getPlayerList())
             .build();
          var1.setPlayerList(var2);
@@ -128,44 +122,37 @@ public final class C0045 extends EventListener {
    }
 
    @EventHandler
-   public void m_f99e303a(EventGameOver var1) {
-      if (this.f_c49f2e5c + 10000L < C0114.bootstrap<"call",8,1>()) {
-         this.f_c49f2e5c = C0114.bootstrap<"call",8,1>();
-         if (((C0333)C0114.bootstrap<"call",11,1>(C0114.bootstrap<"call",6,1>(C0333.class))).m_398ba9a1()) {
-            EntityPlayer var2 = (EntityPlayer)C0114.bootstrap<"call",11,1>(C0114.bootstrap<"call",7,1>()._getPlayer());
+   public void m_cf449f57(EventGameOver var1) {
+      if (this.f_04bd724a + 10000L < System.currentTimeMillis()) {
+         this.f_04bd724a = System.currentTimeMillis();
+         if (Objects.requireNonNull(C0289.m_c3a8b502(C0333.class)).m_e0f7c666()) {
+            EntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
             C0244 var3 = new C0244();
-            var3.m_5e296171((int)var2.getPosX());
-            var3.m_989d0d43((int)var2.getPosY());
-            var3.m_0faa1ebc((int)var2.getPosZ());
-            var3.m_9d941243(false);
-            var3.m_9bee8302(Color.pink.getRGB());
-            var3.m_efd8b5f8(C0252.bootstrap<"get",17179869231>());
-            C0114.bootstrap<"call",12,1>().add(var3);
-            C0114.bootstrap<"call",13,1>()
-               .m_5de8d0b8(
-                  C0252.bootstrap<"get",17179869232>(),
-                  C0114.bootstrap<"call",14,1>(var2.getPosX()),
-                  C0114.bootstrap<"call",14,1>(var2.getPosY()),
-                  C0114.bootstrap<"call",14,1>(var2.getPosZ())
-               )
-               .m_9d59fbe9();
+            var3.m_46938bdb((int)var2.getPosX());
+            var3.m_7c7fe86a((int)var2.getPosY());
+            var3.m_8b037516((int)var2.getPosZ());
+            var3.m_d6ac7420(false);
+            var3.m_0e76b397(Color.pink.getRGB());
+            var3.m_256015fc(C0261.m_4e02e7a9());
+            C0244.m_a492b2a7().add(var3);
+            C0064.m_13c9ffeb().m_ecf8e7ae(C0261.m_7f74d855(), var2.getPosX(), var2.getPosY(), var2.getPosZ()).m_b728afce();
          }
       }
    }
 
-   public float m_8db20abd() {
-      return this.f_399d67ca;
+   public float m_796256b9() {
+      return this.f_05140345;
    }
 
-   public void m_d87ed5e1(float var1) {
-      this.f_cbcdef73 = var1;
+   public void m_d881d3e3(float var1) {
+      this.f_dc4d2046 = var1;
    }
 
-   public float m_03682d2e() {
-      return this.f_cbcdef73;
+   public float m_b7fbb877() {
+      return this.f_dc4d2046;
    }
 
-   public Color m_86ca0a09() {
-      return this.f_73e59e41;
+   public Color m_f6c8a26c() {
+      return this.f_dc4e3630;
    }
 }

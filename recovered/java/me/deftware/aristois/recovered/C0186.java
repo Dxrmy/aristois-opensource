@@ -3,93 +3,76 @@ package me.deftware.aristois.recovered;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.gui.screens.GenericScreen;
 import me.deftware.client.framework.gui.widgets.Button;
+import me.deftware.client.framework.input.Keyboard;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
+import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0186 extends C0188<C0244> {
    public C0186(GenericScreen var1) {
-      super(var1, C0114.bootstrap<"call",0,1>());
+      super(var1, C0244.m_a492b2a7());
    }
 
-   protected void m_1f248ae1() {
-      this.f_15c98010 = C0252.bootstrap<"get",21474836556>();
-      this.f_70753c20 = 400;
-      this.m_a2901b5b(true);
-      super.m_295487ee();
+   @Override
+   protected void m_1058ed9a() {
+      this.f_3dd96e1d = C0254.m_91e95cb4();
+      this.f_15585be0 = 400;
+      this.m_d6ac7420(true);
+      super.m_1058ed9a();
    }
 
-   protected C0155[] m_e341e464() {
+   @Override
+   protected C0155[] m_da527608() {
       byte var1 = 95;
       short var2 = 130;
       C0154 var3;
       C0155[] var4 = new C0155[]{
          new C0155((float)var1, this)
-            .m_5d3ed1f2(
-               this.m_f3c7c9fd(0, 0, (float)var1, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836558>()), () -> new C0185(this)),
-               this.m_f8cdafdd(0, 0, (float)var1, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836559>()), this::m_e0dbe97c)
-                  .m_dc08502f(this::m_3c15851a),
-               this.m_f3c7c9fd(
-                     0, 0, (float)var1, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836560>()), () -> new C0187(this, (C0244)this.m_770b561d())
-                  )
-                  .m_dc08502f(this::m_3c15851a),
-               this.m_1bd28ba2(0, 0, (float)var1, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",10>()), this::goBack)
+            .m_2ee4da8d(
+               this.m_7b83f958(0, 0, (float)var1, Message.of(C0254.m_6dc2a812()), () -> new C0185(this)),
+               this.m_5a1fbc03(0, 0, (float)var1, Message.of(C0254.m_e7934778()), this::m_1764cd79).m_798462fc(this::m_51ce03a5),
+               this.m_7b83f958(0, 0, (float)var1, Message.of(C0254.m_d0e43f69()), () -> new C0187(this, this.m_cee5fd5a())).m_798462fc(this::m_51ce03a5),
+               this.m_79273652(0, 0, (float)var1, Message.of(C0257.m_c42f1c7e()), this::goBack)
             ),
          new C0155((float)var2, this)
-            .m_5d3ed1f2(
-               this.m_f8cdafdd(
+            .m_2ee4da8d(
+               this.m_5a1fbc03(0, 0, (float)var2, Message.of(C0254.m_c04d8f6e()), var1x -> {
+                  Keyboard.setClipboardString(this.m_cee5fd5a().m_8d7dbe31());
+                  ((Button)var1x.m_b1b94a23().setComponentLabel(Message.of(C0254.m_03430357()))).resetToAfter(2000, Message.of(C0254.m_c04d8f6e()));
+               }).m_798462fc(this::m_51ce03a5),
+               this.m_5a1fbc03(
                      0,
                      0,
                      (float)var2,
-                     C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836583>()),
+                     Message.of(C0254.m_2dc36b02()),
                      var1x -> {
-                        C0114.bootstrap<"call",0,1>(((C0244)this.m_770b561d()).m_025af698());
-                        ((Button)var1x.m_8f596680().setComponentLabel(C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836577>())))
-                           .resetToAfter(2000, C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836583>()));
-                     }
-                  )
-                  .m_dc08502f(this::m_3c15851a),
-               this.m_f8cdafdd(
-                     0,
-                     0,
-                     (float)var2,
-                     C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836584>()),
-                     var1x -> {
-                        ((C0244)this.m_770b561d()).m_9d941243(!((C0244)this.m_770b561d()).m_1cfee894());
-                        boolean var2x = ((C0244)this.m_770b561d()).m_1cfee894();
-                        ((Button)var1x.m_8f596680()
+                        this.m_cee5fd5a().m_d6ac7420(!this.m_cee5fd5a().m_f0e7dcaa());
+                        boolean var2x = this.m_cee5fd5a().m_f0e7dcaa();
+                        ((Button)var1x.m_b1b94a23()
                               .setComponentLabel(
-                                 C0114.bootstrap<"call",0,1>(var2x ? C0252.bootstrap<"get",12884901927>() : C0252.bootstrap<"get",12884901928>())
-                                    .style(C0114.bootstrap<"call",1,1>(var2x ? DefaultColors.GREEN : DefaultColors.RED))
+                                 Message.of(var2x ? C0266.m_afb31f66() : C0266.m_c254a253())
+                                    .style(Appearance.of(var2x ? DefaultColors.GREEN : DefaultColors.RED))
                               ))
-                           .resetToAfter(2000, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836584>()));
+                           .resetToAfter(2000, Message.of(C0254.m_2dc36b02()));
                      }
                   )
-                  .m_dc08502f(this::m_3c15851a),
-               var3 = this.m_f8cdafdd(
-                     0,
-                     0,
-                     (float)var2,
-                     C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836585>()),
-                     var1x -> {
-                        MainEntityPlayer var2x = C0114.bootstrap<"call",0,1>()._getPlayer();
-                        String var3x = "";
-                        if (var2x == null) {
-                           var3x = C0252.bootstrap<"get",21474836575>();
-                        } else {
-                           var2x.sendMessage(
-                              C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836587>(), new Object[]{((C0244)this.m_770b561d()).m_025af698()}),
-                              this.getClass()
-                           );
-                           var3x = C0252.bootstrap<"get",21474836588>();
-                        }
+                  .m_798462fc(this::m_51ce03a5),
+               var3 = this.m_5a1fbc03(0, 0, (float)var2, Message.of(C0254.m_4cbaf16f()), var1x -> {
+                  MainEntityPlayer var2x = Minecraft.getMinecraftGame()._getPlayer();
+                  String var3x = "";
+                  if (var2x == null) {
+                     var3x = C0254.m_65c7e6e6();
+                  } else {
+                     var2x.sendMessage(String.format(C0254.m_1672ac4d(), this.m_cee5fd5a().m_8d7dbe31()), this.getClass());
+                     var3x = C0254.m_e9a52709();
+                  }
 
-                        ((Button)var1x.m_8f596680().setComponentLabel(C0114.bootstrap<"call",2,1>(var3x)))
-                           .resetToAfter(2000, C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",21474836585>()));
-                     }
-                  )
-                  .m_dc08502f(this::m_3c15851a)
+                  ((Button)var1x.m_b1b94a23().setComponentLabel(Message.of(var3x))).resetToAfter(2000, Message.of(C0254.m_4cbaf16f()));
+               }).m_798462fc(this::m_51ce03a5)
             )
       };
-      var3.m_ca06ea23(new C0153(var3, C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",21474836586>())));
+      var3.m_c7a3618c(new C0153(var3, Message.of(C0254.m_678c4ddb())));
       return var4;
    }
 }

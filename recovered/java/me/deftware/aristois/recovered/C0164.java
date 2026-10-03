@@ -5,95 +5,98 @@ import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.suggestion.Suggestion;
 import com.mojang.brigadier.suggestion.Suggestions;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import me.deftware.client.framework.item.IItem;
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.item.ItemStack;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
+import me.deftware.client.framework.registry.RegistryMan;
 
 public class C0164 extends C0157 {
-   private final CommandDispatcher<Object> f_78901dc0 = new CommandDispatcher();
-   private ParseResults<Object> f_86210596;
-   private Suggestions f_9ca7b2bd;
-   private ItemStack f_a2141a63;
-   private final ArgumentType<?> f_2d2e20c0;
-   private final String f_ed532e1a = C0252.bootstrap<"get",12884901897>();
-   private String f_ddf5dd58 = "";
-   private boolean f_418a1842 = true;
+   private final CommandDispatcher<Object> f_8a18a41a = new CommandDispatcher();
+   private ParseResults<Object> f_f4f7a662;
+   private Suggestions f_78fd71df;
+   private ItemStack f_535c3b46;
+   private final ArgumentType<?> f_181c8f78;
+   private final String f_35a64156 = C0266.m_1d87ef21();
+   private String f_9e2819d4 = "";
+   private boolean f_9797eae4 = true;
 
    public C0164(int var1, int var2, int var3, int var4, ArgumentType<?> var5) {
       super(var1, var2, var3, var4);
-      this.f_2d2e20c0 = var5;
+      this.f_181c8f78 = var5;
       if (var5 != null) {
-         this.f_78901dc0
+         this.f_8a18a41a
             .register(
-               (LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901897>())
-                  .then(C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",25769803852>(), var5).executes(var0 -> 1))
+               (LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0266.m_1d87ef21())
+                  .then(RequiredArgumentBuilder.argument(C0267.m_91e95cb4(), var5).executes(var0 -> 1))
             );
-         this.m_db7e2cbb(this.m_852a4be7());
+         this.m_a11708c5(this.m_e9914bd3());
       }
 
-      this.m_0f07aaa2(C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",25769803853>()).style(C0114.bootstrap<"call",3,1>(DefaultColors.DARK_GRAY)));
-      this.f_ed532e1a = C0252.bootstrap<"get",12884901897>();
+      this.m_efb6bb0d(Message.of(C0267.m_1616e137()).style(Appearance.of(DefaultColors.DARK_GRAY)));
+      this.f_35a64156 = C0266.m_1d87ef21();
    }
 
-   public boolean m_cdfe0a78(double var1, double var3, float var5, boolean var6) {
-      var6 = super.m_f4b6dd30(var1, var3, var5, var6);
-      if (this.f_9ca7b2bd != null) {
-         Message var7 = C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",25769803854>()).style(C0114.bootstrap<"call",1,1>(DefaultColors.RED));
-         int var8 = this.getPositionX() + 4 + C0114.bootstrap<"call",2,1>(this.m_852a4be7());
-         if (this.m_852a4be7().isEmpty()) {
-            var7 = C0197.f_716a73fa.style(C0114.bootstrap<"call",1,1>(DefaultColors.DARK_GRAY));
-         } else if (!this.f_9ca7b2bd.getList().isEmpty()) {
-            Suggestion var9 = (Suggestion)this.f_9ca7b2bd.getList().get(0);
-            var7 = C0114.bootstrap<"call",0,1>(
-                  var9.apply(C0252.bootstrap<"get",25769803855>() + this.m_852a4be7())
-                     .substring(C0252.bootstrap<"get",12884901897>().length() + 1 + this.m_852a4be7().length())
-               )
-               .style(C0114.bootstrap<"call",1,1>(DefaultColors.DARK_GRAY));
+   @Override
+   public boolean m_572d14e6(double var1, double var3, float var5, boolean var6) {
+      var6 = super.m_572d14e6(var1, var3, var5, var6);
+      if (this.f_78fd71df != null) {
+         Message var7 = Message.of(C0267.m_6dc2a812()).style(Appearance.of(DefaultColors.RED));
+         int var8 = this.getPositionX() + 4 + FontRenderer.getStringWidth(this.m_e9914bd3());
+         if (this.m_e9914bd3().isEmpty()) {
+            var7 = C0197.f_9607505d.style(Appearance.of(DefaultColors.DARK_GRAY));
+         } else if (!this.f_78fd71df.getList().isEmpty()) {
+            Suggestion var9 = (Suggestion)this.f_78fd71df.getList().get(0);
+            var7 = Message.of(var9.apply(C0267.m_e7934778() + this.m_e9914bd3()).substring(C0266.m_1d87ef21().length() + 1 + this.m_e9914bd3().length()))
+               .style(Appearance.of(DefaultColors.DARK_GRAY));
          } else {
-            var8 = (int)((double)this.getPositionX() + this.m_2f9743b7().m_830cb294() - (double)C0114.bootstrap<"call",3,1>(var7) - 5.0);
+            var8 = (int)((double)this.getPositionX() + this.m_44bb072f().m_4388ac29() - (double)FontRenderer.getStringWidth(var7) - 5.0);
          }
 
-         if (this.f_a2141a63 != null) {
-            this.f_a2141a63.renderItemIntoGUI((int)((double)this.getPositionX() + this.m_2f9743b7().m_830cb294() - 20.0), this.getPositionY() + 2);
+         if (this.f_535c3b46 != null) {
+            this.f_535c3b46.renderItemIntoGUI((int)((double)this.getPositionX() + this.m_44bb072f().m_4388ac29() - 20.0), this.getPositionY() + 2);
          } else {
-            C0114.bootstrap<"call",4,1>(var7, var8, (int)((double)this.getPositionY() + (this.m_2f9743b7().m_fc7f45bc() - 8.0) / 2.0), 16777215);
+            FontRenderer.drawStringWithShadow(var7, var8, (int)((double)this.getPositionY() + (this.m_44bb072f().m_d42f3372() - 8.0) / 2.0), 16777215);
          }
       }
 
       return var6;
    }
 
-   public void m_9cbf8678() {
-      if (!this.f_ddf5dd58.equalsIgnoreCase(this.m_852a4be7())) {
-         this.f_ddf5dd58 = this.m_852a4be7();
-         this.m_db7e2cbb(this.m_852a4be7());
+   @Override
+   public void m_0e265701() {
+      if (!this.f_9e2819d4.equalsIgnoreCase(this.m_e9914bd3())) {
+         this.f_9e2819d4 = this.m_e9914bd3();
+         this.m_a11708c5(this.m_e9914bd3());
       }
 
-      super.m_d3298760();
+      super.m_0e265701();
    }
 
-   public void m_db7e2cbb(String var1) {
-      if (this.f_2d2e20c0 != null) {
-         this.f_9ca7b2bd = null;
-         this.f_a2141a63 = null;
-         StringReader var2 = new StringReader(C0252.bootstrap<"get",25769803855>() + var1);
+   public void m_a11708c5(String var1) {
+      if (this.f_181c8f78 != null) {
+         this.f_78fd71df = null;
+         this.f_535c3b46 = null;
+         StringReader var2 = new StringReader(C0267.m_e7934778() + var1);
          if (var2.canRead()) {
-            this.f_86210596 = this.f_78901dc0.parse(var2, this);
-            CompletableFuture var3 = this.f_78901dc0.getCompletionSuggestions(this.f_86210596);
+            this.f_f4f7a662 = this.f_8a18a41a.parse(var2, this);
+            CompletableFuture var3 = this.f_8a18a41a.getCompletionSuggestions(this.f_f4f7a662);
             var3.thenRun(() -> {
                if (var3.isDone()) {
                   try {
-                     this.f_78901dc0.execute(C0252.bootstrap<"get",25769803855>() + this.m_852a4be7(), this);
-                     this.f_a2141a63 = new ItemStack((IItem)C0114.bootstrap<"call",6,1>(C0114.bootstrap<"call",5,1>(this.m_852a4be7())), 1);
+                     this.f_8a18a41a.execute(C0267.m_e7934778() + this.m_e9914bd3(), this);
+                     this.f_535c3b46 = new ItemStack(Objects.requireNonNull(RegistryMan.find(this.m_e9914bd3())), 1);
                   } catch (Exception var3x) {
-                     this.f_a2141a63 = null;
+                     this.f_535c3b46 = null;
                   }
 
-                  this.f_9ca7b2bd = (Suggestions)var3.join();
+                  this.f_78fd71df = (Suggestions)var3.join();
                }
             });
          }

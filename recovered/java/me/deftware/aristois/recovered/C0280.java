@@ -1,42 +1,44 @@
 package me.deftware.aristois.recovered;
 
 public class C0280 extends C0288<C0280> {
-   private boolean f_07947ca3 = false;
-   private boolean f_73df34fe = false;
-   private final Runnable f_ddf98df1;
-   private final long f_b8f79e41;
+   private boolean f_332a0509 = false;
+   private boolean f_b4213fac = false;
+   private final Runnable f_b4b962b3;
+   private final long f_54a9f1fc;
 
    public C0280(Runnable var1, long var2) {
-      this.f_ddf98df1 = var1;
-      this.f_b8f79e41 = var2;
+      this.f_b4b962b3 = var1;
+      this.f_54a9f1fc = var2;
    }
 
-   public C0280 m_d7d55d49() {
-      this.f_07947ca3 = true;
+   public C0280 m_81bdd14b() {
+      this.f_332a0509 = true;
       return this;
    }
 
-   public C0280 m_6a86ba49() {
-      this.f_73df34fe = true;
-      this.f_ddf98df1.run();
-      this.f_ee6ec1e0 = C0114.bootstrap<"call",0,1>();
+   public C0280 m_79eeb654() {
+      this.f_b4213fac = true;
+      this.f_b4b962b3.run();
+      this.f_ae2cc37b = System.currentTimeMillis();
       return this;
    }
 
-   public C0280 m_4cdf7572() {
-      if (this.f_ee6ec1e0 + this.f_b8f79e41 < C0114.bootstrap<"call",0,1>()) {
-         this.f_07947ca3 = true;
-         this.m_db7f89b4();
+   public C0280 m_70aa5488() {
+      if (this.f_ae2cc37b + this.f_54a9f1fc < System.currentTimeMillis()) {
+         this.f_332a0509 = true;
+         this.m_23674f64();
       }
 
       return this;
    }
 
-   public boolean m_ac80b914() {
-      return this.f_07947ca3;
+   @Override
+   public boolean m_f7b07982() {
+      return this.f_332a0509;
    }
 
-   public boolean m_4e5bf44f() {
-      return this.f_73df34fe;
+   @Override
+   public boolean m_9362a920() {
+      return this.f_b4213fac;
    }
 }

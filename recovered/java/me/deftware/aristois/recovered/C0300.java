@@ -1,6 +1,7 @@
 package me.deftware.aristois.recovered;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.entity.types.EntityPlayer;
@@ -11,9 +12,11 @@ import me.deftware.client.framework.event.events.EventRender3D;
 import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
+import me.deftware.client.framework.minecraft.Minecraft;
+import me.deftware.client.framework.world.ClientWorld;
 
 public class C0300 extends AbstractMod {
-   private static final long f_6c51dd15 = 16L;
+   private static final long f_dbeadfdd = 16L;
    @C0098(
       value = "Persistence",
       description = {"How strongly it should nudge your aim"},
@@ -23,7 +26,7 @@ public class C0300 extends AbstractMod {
          percentage = true
       )
    )
-   protected double f_7435adea = 5.0;
+   protected double f_5e0bc193 = 5.0;
    @C0098(
       value = "Min Angle",
       description = {"Min angle from your target to nudge"},
@@ -32,7 +35,7 @@ public class C0300 extends AbstractMod {
          max = 2.0
       )
    )
-   protected double f_bed4bacb = 0.25;
+   protected double f_2fc6cb2d = 0.25;
    @C0098(
       value = "Lock Angle",
       description = {"Angle from target required to lock on"},
@@ -41,7 +44,7 @@ public class C0300 extends AbstractMod {
          max = 30.0
       )
    )
-   protected double f_09e99f04 = 10.0;
+   protected double f_02a73ab0 = 10.0;
    @C0098(
       value = "Drop Distance",
       description = {"Distance from target to drop them"},
@@ -50,7 +53,7 @@ public class C0300 extends AbstractMod {
          max = 30.0
       )
    )
-   protected double f_29aeb72c = 8.0;
+   protected double f_389c95dc = 8.0;
    @C0098(
       value = "Drop Angle",
       description = {"Angle from target to drop them"},
@@ -59,45 +62,45 @@ public class C0300 extends AbstractMod {
          max = 45.0
       )
    )
-   protected double f_f0c58836 = 30.0;
+   protected double f_f04b882b = 30.0;
    @C0098(
       value = "Smooth",
       description = {"Smooth aiming"}
    )
-   protected boolean f_6b321567 = true;
+   protected boolean f_556833a6 = true;
    @C0098(
       value = "Held Key",
       description = {"Require holding a key to trigger"}
    )
-   protected C0245 f_7740f847 = new C0245();
-   private long f_6b494e12;
-   protected C0301 f_31ab51b7;
+   protected C0245 f_6d436bb5 = new C0245();
+   private long f_892f1eac;
+   protected C0301 f_2f814197;
 
    public C0300(String var1, C0290 var2, String... var3) {
       super(var1, var2, var3);
    }
 
    public C0300() {
-      super(C0252.bootstrap<"get",38654705746>(), C0290.f_e2483c18, C0252.bootstrap<"get",38654705747>());
+      super(C0263.m_11f0c704(), C0290.f_4b7b2d37, C0263.m_19faa493());
    }
 
    @EventHandler
-   protected void m_550e6fbc(EventUpdate var1) {
-      MainEntityPlayer var2 = C0114.bootstrap<"call",0,1>()._getPlayer();
-      if (this.f_31ab51b7 == null && this.m_d89e54e9()) {
-         float var3 = (Float)GameMap.INSTANCE.get(GameKeys.BLOCK_REACH_DISTANCE, C0114.bootstrap<"call",1,1>(5.0F));
-         List var4 = C0114.bootstrap<"call",2,1>()
+   protected void m_61059d72(EventUpdate var1) {
+      MainEntityPlayer var2 = Minecraft.getMinecraftGame()._getPlayer();
+      if (this.f_2f814197 == null && this.m_275ab222()) {
+         float var3 = (Float)GameMap.INSTANCE.get(GameKeys.BLOCK_REACH_DISTANCE, 5.0F);
+         List var4 = ClientWorld.getClientWorld()
             .getLoadedEntities()
             .filter(var0 -> var0 instanceof LivingEntity)
             .filter(var0 -> !var0.isSelf())
             .filter(var2x -> var2x.distanceToEntity(var2) < var3)
-            .collect(C0114.bootstrap<"call",3,1>());
-         C0301 var5 = new C0301(this.f_bed4bacb, this.f_7435adea, this.f_f0c58836, this.f_29aeb72c, this.f_6b321567);
+            .collect(Collectors.toList());
+         C0301 var5 = new C0301(this.f_2fc6cb2d, this.f_5e0bc193, this.f_f04b882b, this.f_389c95dc, this.f_556833a6);
 
          for (Entity var7 : var4) {
-            var5.m_cdb42d6f((LivingEntity)var7);
-            if (var5.m_1dcda4b1() < this.f_09e99f04) {
-               this.f_31ab51b7 = var5;
+            var5.m_76e16abf((LivingEntity)var7);
+            if (var5.m_d42f3372() < this.f_02a73ab0) {
+               this.f_2f814197 = var5;
                break;
             }
          }
@@ -105,34 +108,34 @@ public class C0300 extends AbstractMod {
    }
 
    @EventHandler
-   private void m_a7d26809(EventRender3D var1) {
-      long var2 = C0114.bootstrap<"call",0,1>() - this.f_6b494e12;
-      if (var2 > 16L && this.f_31ab51b7 != null) {
-         this.f_6b494e12 = C0114.bootstrap<"call",0,1>();
-         this.f_31ab51b7.m_5169054f();
-         if (this.f_31ab51b7.m_abaf9b26()) {
-            this.f_31ab51b7.m_0e2773ce();
+   private void m_c738343e(EventRender3D var1) {
+      long var2 = System.currentTimeMillis() - this.f_892f1eac;
+      if (var2 > 16L && this.f_2f814197 != null) {
+         this.f_892f1eac = System.currentTimeMillis();
+         this.f_2f814197.m_1058ed9a();
+         if (this.f_2f814197.m_89e0519f()) {
+            this.f_2f814197.m_b728afce();
          } else {
-            this.f_31ab51b7 = null;
+            this.f_2f814197 = null;
          }
       }
    }
 
-   protected boolean m_d89e54e9() {
-      return this.f_7740f847.m_9bec5cd2() ? this.f_7740f847.m_a3b35090(C0114.bootstrap<"call",0,1>()) : true;
+   protected boolean m_275ab222() {
+      return this.f_6d436bb5.m_9362a920() ? this.f_6d436bb5.m_aa45d95d(C0190.m_5b3d3148()) : true;
    }
 
    @Override
    public String getDisplayMode() {
-      if (this.f_31ab51b7 == null) {
-         return C0252.bootstrap<"get",38654705748>();
+      if (this.f_2f814197 == null) {
+         return C0263.m_a55b07ff();
       } else {
-         String var1 = this.f_31ab51b7.m_cfbd0f4e().getName().string();
-         if (this.f_31ab51b7.m_cfbd0f4e() instanceof EntityPlayer) {
-            var1 = ((EntityPlayer)this.f_31ab51b7.m_cfbd0f4e()).getUsername();
+         String var1 = this.f_2f814197.m_aa8edb9c().getName().string();
+         if (this.f_2f814197.m_aa8edb9c() instanceof EntityPlayer) {
+            var1 = ((EntityPlayer)this.f_2f814197.m_aa8edb9c()).getUsername();
          }
 
-         return C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",38654705749>(), new Object[]{var1, C0114.bootstrap<"call",0,1>(this.f_31ab51b7.m_1dcda4b1())});
+         return String.format(C0263.m_16315846(), var1, this.f_2f814197.m_d42f3372());
       }
    }
 }

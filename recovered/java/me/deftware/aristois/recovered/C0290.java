@@ -1,28 +1,28 @@
 package me.deftware.aristois.recovered;
 
 public enum C0290 {
-   f_cd638c01(C0252.bootstrap<"get",51539607616>()),
-   f_5fe5d165,
-   f_e2483c18,
-   f_a5db61fd,
-   f_faada303,
-   f_5d5ce22b,
-   f_d6bd3b90(C0252.bootstrap<"get",51539607622>()),
-   f_dad8467e,
-   f_4792a25c,
-   f_0e5924ad;
+   f_829d9b20(C0255.m_6cf615ba()),
+   f_020f9141,
+   f_4b7b2d37,
+   f_99d080af,
+   f_516f3c47,
+   f_3210deb7,
+   f_b895465e(C0255.m_593ecbab()),
+   f_dbc16475,
+   f_43c13687,
+   f_2847ec1c;
 
-   private final String f_64bcbbdb;
+   private final String f_3da4da84;
 
    private C0290() {
       this(null);
    }
 
    private C0290(String var3) {
-      this.f_64bcbbdb = var3 != null ? var3 : this.name();
+      this.f_3da4da84 = var3 != null ? var3 : this.name();
    }
 
-   public String m_3f736b16() {
-      return this.f_64bcbbdb;
+   public String m_8d7dbe31() {
+      return this.f_3da4da84;
    }
 }

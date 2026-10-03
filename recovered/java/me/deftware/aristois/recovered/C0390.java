@@ -1,45 +1,47 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.input.MinecraftKeyBind;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0390 extends AbstractMod {
    @C0098(
       value = "Mode",
       description = {"Speed wont affect Jumpy mode"}
    )
-   private C0102<C0390.anonymousconst> f_15efabfc = new C0102<>(C0390.anonymousconst.f_51f32afc);
+   private C0102<C0390.anonymousconst> f_47d0446b = new C0102<>(C0390.anonymousconst.f_3332a938);
    @C0098(
       value = "Speed",
       number = @C0096(
          max = 2.0
       )
    )
-   private C0106<Double> f_8f44a76a = new C0106<>(C0114.bootstrap<"call",0,1>(1.0)).m_10caee7d(this.f_15efabfc, C0390.anonymousconst.f_51f32afc);
+   private C0106<Double> f_42c9d966 = new C0106<>(1.0).m_2d6ca2bd(this.f_47d0446b, C0390.anonymousconst.f_3332a938);
 
    public C0390() {
-      super(C0252.bootstrap<"get",42949673063>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673064>());
-      this.setMode(this.f_15efabfc);
+      super(C0259.m_c04d8f6e(), C0290.f_829d9b20, C0259.m_2dc36b02());
+      this.setMode(this.f_47d0446b);
    }
 
    @EventHandler
-   public void m_71ebbd80(EventUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   public void m_3072cba8(EventUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       if (MinecraftKeyBind.JUMP.isPressed()) {
-         if (this.f_15efabfc.m_e2691446() == C0390.anonymousconst.f_e2e2a132) {
+         if (this.f_47d0446b.m_284992ec() == C0390.anonymousconst.f_c138e725) {
             var2.doJump();
          } else {
-            var2.setVelocity(var2.getVelocity().set(0.0, this.f_8f44a76a.get(), 0.0));
+            var2.setVelocity(var2.getVelocity().set(0.0, this.f_42c9d966.get(), 0.0));
          }
       }
    }
 
    public static enum anonymousconst {
-      f_51f32afc,
-      f_e2e2a132;
+      f_3332a938,
+      f_c138e725;
 
       private anonymousconst() {
       }

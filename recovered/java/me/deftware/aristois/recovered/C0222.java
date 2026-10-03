@@ -1,71 +1,73 @@
 package me.deftware.aristois.recovered;
 
+import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.gl.GLX;
 
 public abstract class C0222 {
-   protected double f_886bc86a = 180.0;
-   protected double f_8d2ab004 = 0.0;
-   protected boolean f_b19161b6 = false;
-   protected final C0165 f_b430ef15 = new C0165();
-   protected double f_6d154f7a = 0.0;
-   private final C0233 f_45dc4b3b = new C0233(110.0F, 33.0) {
-      protected void m_3cff2634(double var1) {
-         double var3 = !C0222.this.f_b19161b6 ? 1.0 - var1 : var1;
-         C0222.this.f_6d154f7a = C0222.this.f_8d2ab004 + C0222.this.f_886bc86a * var3;
+   protected double f_ef84fdfb = 180.0;
+   protected double f_11a042fe = 0.0;
+   protected boolean f_89c83b12 = false;
+   protected final C0165 f_274192a2 = new C0165();
+   protected double f_7013f599 = 0.0;
+   private final C0233 f_5476b6ba = new C0233(110.0F, 33.0) {
+      @Override
+      protected void m_560d077c(double var1) {
+         double var3 = !C0222.this.f_89c83b12 ? 1.0 - var1 : var1;
+         C0222.this.f_7013f599 = C0222.this.f_11a042fe + C0222.this.f_ef84fdfb * var3;
       }
    };
 
    public C0222() {
    }
 
-   public void m_bde3528d(double var1) {
-      this.f_8d2ab004 = this.f_6d154f7a = var1;
+   public void m_4b04f920(double var1) {
+      this.f_11a042fe = this.f_7013f599 = var1;
    }
 
-   public void m_ca42edf7(double var1, double var3, float var5) {
-      this.f_45dc4b3b.m_61a5f120(var5);
-      double var6 = this.f_b430ef15.m_14f8bc2c();
-      double var8 = this.f_b430ef15.m_5a998971();
-      double var10 = this.f_b430ef15.m_830cb294();
-      double var12 = this.f_b430ef15.m_fc7f45bc();
-      var6 *= (double)C0114.bootstrap<"call",0,1>();
-      var8 *= (double)C0114.bootstrap<"call",0,1>();
-      var10 *= (double)C0114.bootstrap<"call",0,1>();
-      var12 *= (double)C0114.bootstrap<"call",0,1>();
+   public void m_9d486ef7(double var1, double var3, float var5) {
+      this.f_5476b6ba.m_d881d3e3(var5);
+      double var6 = this.f_274192a2.m_a005efae();
+      double var8 = this.f_274192a2.m_84808068();
+      double var10 = this.f_274192a2.m_4388ac29();
+      double var12 = this.f_274192a2.m_d42f3372();
+      var6 *= (double)RenderStack.getScale();
+      var8 *= (double)RenderStack.getScale();
+      var10 *= (double)RenderStack.getScale();
+      var12 *= (double)RenderStack.getScale();
       GLX.INSTANCE.push();
       double var14 = var6 + var10 / 2.0;
       double var16 = var8 + var12 / 2.0;
       GLX.INSTANCE.translate(var14, var16, 1.0);
-      GLX.INSTANCE.rotate(this.f_6d154f7a, 0.0, 0.0, 1.0);
+      GLX.INSTANCE.rotate(this.f_7013f599, 0.0, 0.0, 1.0);
       GLX.INSTANCE.translate(-var14, -var16, 1.0);
-      this.m_d915398d(var6, var8, var10, var12);
+      this.m_7b35c96a(var6, var8, var10, var12);
       GLX.INSTANCE.pop();
    }
 
-   public void m_dcc9a738() {
-      this.f_b19161b6 = !this.f_b19161b6;
-      this.f_45dc4b3b.m_bb3577b4();
+   public void m_1058ed9a() {
+      this.f_89c83b12 = !this.f_89c83b12;
+      this.f_5476b6ba.m_41e83f88();
    }
 
-   protected abstract void m_d915398d(double var1, double var3, double var5, double var7);
+   protected abstract void m_7b35c96a(double var1, double var3, double var5, double var7);
 
-   public void m_f7e1b7d6(double var1) {
-      this.f_886bc86a = var1;
+   public void m_7c9e279f(double var1) {
+      this.f_ef84fdfb = var1;
    }
 
-   public double m_9779856e() {
-      return this.f_8d2ab004;
+   public double m_84808068() {
+      return this.f_11a042fe;
    }
 
-   public boolean m_ba8958be() {
-      return this.f_b19161b6;
+   public boolean m_89e0519f() {
+      return this.f_89c83b12;
    }
 
-   public C0165 m_66b8456f() {
-      return this.f_b430ef15;
+   public C0165 m_44bb072f() {
+      return this.f_274192a2;
    }
 
-   public C0233 m_b73d9bc8() {
-      return this.f_45dc4b3b;
+   public C0233 m_acb8f086() {
+      return this.f_5476b6ba;
    }
 }

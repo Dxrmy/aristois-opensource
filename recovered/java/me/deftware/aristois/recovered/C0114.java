@@ -10,7 +10,7 @@ public static class C0114 {
    public static CallSite bootstrap(Lookup var0, String var1, MethodType var2, long var3, int var5) {
       int var6 = (int)((var3 & -4294967296L) >>> 32);
       int var7 = (int)(var3 & 4294967295L);
-      return ((C0115)a[var6]).m_d8a597a9(var0, var2, var7, var5);
+      return ((C0115)a[var6]).m_6e26e261(var0, var2, var7, var5);
    }
 
    static {

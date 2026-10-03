@@ -4,10 +4,11 @@ import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.input.MinecraftKeyBind;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0413 extends AbstractMod {
    public C0413() {
-      super(C0252.bootstrap<"get",38654705707>(), C0290.f_dad8467e, C0252.bootstrap<"get",38654705708>());
+      super(C0263.m_022da1b4(), C0290.f_dbc16475, C0263.m_6e2d03c3());
    }
 
    @Override
@@ -16,7 +17,7 @@ public class C0413 extends AbstractMod {
    }
 
    @EventHandler
-   public void m_dd2caad1(EventUpdate var1) {
-      MinecraftKeyBind.ATTACK.setPressed(C0114.bootstrap<"call",0,1>().isMouseOver());
+   public void m_3072cba8(EventUpdate var1) {
+      MinecraftKeyBind.ATTACK.setPressed(Minecraft.getMinecraftGame().isMouseOver());
    }
 }

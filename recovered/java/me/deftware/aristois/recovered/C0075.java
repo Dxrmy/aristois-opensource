@@ -1,20 +1,20 @@
 package me.deftware.aristois.recovered;
 
 public interface C0075 {
-   double m_48cd465e();
+   double m_b199d4ff();
 
-   double m_53084e34();
+   double m_a005efae();
 
-   C0087 m_a1d8aae5();
+   C0087 m_a7c622af();
 
-   boolean m_f5c4d925();
+   boolean m_89e0519f();
 
-   default int m_d6a53a66() {
+   default int m_36ffc578() {
       return 1;
    }
 
-   default void m_90da69be() {
+   default void m_083b6d08() {
    }
 
-   void m_f998b96d(double var1, double var3);
+   void m_a172f6fe(double var1, double var3);
 }

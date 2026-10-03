@@ -1,64 +1,70 @@
 package me.deftware.aristois.recovered;
 
 import java.awt.Color;
+import java.util.Collections;
 import me.deftware.aristois.menu.view.container.ContextMenu;
 import me.deftware.aristois.menu.view.container.ModifiableWidget;
 import me.deftware.aristois.menu.view.dialog.DialogWidget;
+import me.deftware.client.framework.gui.GuiScreen;
 import me.deftware.client.framework.gui.GuiScreen.BackgroundType;
 import me.deftware.client.framework.gui.screens.GenericScreen;
+import me.deftware.client.framework.helper.WindowHelper;
+import me.deftware.client.framework.input.Mouse;
 import me.deftware.client.framework.render.batching.QuadRenderStack;
+import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.gl.GLX;
+import org.lwjgl.glfw.GLFW;
 
 public abstract class C0446 extends C0150 {
-   protected C0441 f_c3908204;
-   protected double f_862c35f9;
-   protected double f_6ffd9430;
-   protected int f_258a51d0 = -1;
-   private C0153 f_8a7be2ae = null;
-   protected final QuadRenderStack f_65418f48 = (QuadRenderStack)new QuadRenderStack().setScaled(false);
+   protected C0441 f_b48b1555;
+   protected double f_bda96e4b;
+   protected double f_78fb3fbb;
+   protected int f_4622f81d = -1;
+   private C0153 f_b8bd3bea = null;
+   protected final QuadRenderStack f_5cd8cdfe = (QuadRenderStack)new QuadRenderStack().setScaled(false);
 
    public C0446(GenericScreen var1) {
       super(var1);
       this.setBackgroundType(BackgroundType.None);
-      this.m_8a07cc27(new C0170(C0170.anonymousthis.f_146b6ee0));
-      C0114.bootstrap<"call",0,1>((var1x, var2) -> {
-         this.m_69b91328(var1x, var2);
-         C0163 var3 = this.m_910d92d3(this.f_862c35f9, this.f_6ffd9430);
+      this.m_c037c5e2(new C0170(C0170.anonymousthis.f_8f6bc807));
+      Mouse.registerScrollHook((var1x, var2) -> {
+         this.m_0eebc025(var1x, var2);
+         C0163 var3 = this.m_5be6bae4(this.f_bda96e4b, this.f_78fb3fbb);
          if (var3 != null) {
-            var3.m_9357ee29(var1x, var2);
+            var3.m_0eebc025(var1x, var2);
          }
       });
    }
 
-   protected void m_69b91328(double var1, double var3) {
+   protected void m_0eebc025(double var1, double var3) {
    }
 
    @Override
    protected void onInitGui() {
-      this.f_70ce9296.removeIf(var0 -> var0 instanceof DialogWidget);
+      this.f_3a3757f5.removeIf(var0 -> var0 instanceof DialogWidget);
       super.onInitGui();
    }
 
    protected boolean goBack() {
-      return !this.f_70ce9296.removeIf(var0 -> var0 instanceof DialogWidget) && !this.f_70ce9296.removeIf(var0 -> var0 instanceof ContextMenu)
+      return !this.f_3a3757f5.removeIf(var0 -> var0 instanceof DialogWidget) && !this.f_3a3757f5.removeIf(var0 -> var0 instanceof ContextMenu)
          ? super.goBack()
          : true;
    }
 
    @Override
    protected boolean onMouseClicked(int var1, int var2, int var3) {
-      var1 = (int)this.m_dd3897ca((double)var1);
-      var2 = (int)this.m_0fb4a58b((double)var2);
+      var1 = (int)this.m_d945de47((double)var1);
+      var2 = (int)this.m_461db524((double)var2);
 
-      for (int var4 = this.f_70ce9296.size() - 1; var4 >= 0; var4--) {
-         C0163 var5 = (C0163)this.f_70ce9296.get(var4);
-         boolean var6 = var5.m_7e41b969((double)var1, (double)var2, var3);
-         if (var6 && this.m_ca249047(var5, (double)var1, (double)var2)) {
+      for (int var4 = this.f_3a3757f5.size() - 1; var4 >= 0; var4--) {
+         C0163 var5 = this.f_3a3757f5.get(var4);
+         boolean var6 = var5.m_8407b1bf((double)var1, (double)var2, var3);
+         if (var6 && this.m_17a413dc(var5, (double)var1, (double)var2)) {
             if (!(var5 instanceof ContextMenu)) {
-               this.m_d988b758(var1, var2);
+               this.m_885a0920(var1, var2);
             }
 
-            C0114.bootstrap<"call",0,1>(this.f_70ce9296, var4, this.f_70ce9296.size() - 1);
+            Collections.swap(this.f_3a3757f5, var4, this.f_3a3757f5.size() - 1);
             return true;
          }
       }
@@ -66,14 +72,14 @@ public abstract class C0446 extends C0150 {
       return false;
    }
 
-   protected void m_d988b758(int var1, int var2) {
-      C0163 var3 = (C0163)this.f_70ce9296.get(this.f_70ce9296.size() - 1);
-      if (var3 instanceof ContextMenu && !var3.m_fd6ca281().m_263d91ea((double)var1, (double)var2)) {
-         this.f_70ce9296.remove(var3);
+   protected void m_885a0920(int var1, int var2) {
+      C0163 var3 = this.f_3a3757f5.get(this.f_3a3757f5.size() - 1);
+      if (var3 instanceof ContextMenu && !var3.m_44bb072f().m_a58797d6((double)var1, (double)var2)) {
+         this.f_3a3757f5.remove(var3);
       }
    }
 
-   protected boolean m_f14aabda(C0163 var1) {
+   protected boolean m_f79ec8c5(C0163 var1) {
       if (!(var1 instanceof ModifiableWidget)) {
          return false;
       } else {
@@ -82,11 +88,11 @@ public abstract class C0446 extends C0150 {
       }
    }
 
-   public C0163 m_910d92d3(double var1, double var3) {
+   public C0163 m_5be6bae4(double var1, double var3) {
       C0163 var5 = null;
 
-      for (C0163 var7 : this.f_70ce9296) {
-         if (this.m_ca249047(var7, var1, var3)) {
+      for (C0163 var7 : this.f_3a3757f5) {
+         if (this.m_17a413dc(var7, var1, var3)) {
             var5 = var7;
          }
       }
@@ -94,19 +100,19 @@ public abstract class C0446 extends C0150 {
       return var5;
    }
 
-   protected boolean m_ca249047(C0163 var1, double var2, double var4) {
-      return var1.m_fd6ca281().m_263d91ea(var2, var4) || this.m_f14aabda(var1) || var1 instanceof DialogWidget && ((DialogWidget)var1).isDarkOverlay();
+   protected boolean m_17a413dc(C0163 var1, double var2, double var4) {
+      return var1.m_44bb072f().m_a58797d6(var2, var4) || this.m_f79ec8c5(var1) || var1 instanceof DialogWidget && ((DialogWidget)var1).isDarkOverlay();
    }
 
-   public void m_9fcd5c03(double var1) {
-      for (int var3 = 0; var3 < this.f_70ce9296.size(); var3++) {
-         C0163 var4 = (C0163)this.f_70ce9296.get(var3);
+   public void m_ddfd9367(double var1) {
+      for (int var3 = 0; var3 < this.f_3a3757f5.size(); var3++) {
+         C0163 var4 = this.f_3a3757f5.get(var3);
          boolean var5 = var3 % 2 != 0;
-         C0165 var6 = var3 < 2 ? null : ((C0163)this.f_70ce9296.get(var3 - (var5 ? 2 : 1))).m_fd6ca281();
-         C0165 var7 = var5 ? ((C0163)this.f_70ce9296.get(var3 - 1)).m_fd6ca281() : null;
-         var4.m_fd6ca281()
-            .m_1e49f000(
-               var1 + (var6 == null ? 0.0 : var6.m_14f8bc2c() + var6.m_830cb294()), var1 + (var7 != null ? var7.m_5a998971() + var7.m_fc7f45bc() : 0.0)
+         C0165 var6 = var3 < 2 ? null : this.f_3a3757f5.get(var3 - (var5 ? 2 : 1)).m_44bb072f();
+         C0165 var7 = var5 ? this.f_3a3757f5.get(var3 - 1).m_44bb072f() : null;
+         var4.m_44bb072f()
+            .m_f8b16cfb(
+               var1 + (var6 == null ? 0.0 : var6.m_a005efae() + var6.m_4388ac29()), var1 + (var7 != null ? var7.m_84808068() + var7.m_d42f3372() : 0.0)
             );
       }
    }
@@ -114,76 +120,76 @@ public abstract class C0446 extends C0150 {
    @Override
    protected void onDraw(int var1, int var2, float var3) {
       GLX.INSTANCE.push();
-      C0114.bootstrap<"call",0,1>();
-      this.f_ad5998f0.m_80718ecc();
-      var1 = (int)this.m_dd3897ca((double)var1);
-      var2 = (int)this.m_0fb4a58b((double)var2);
-      ((QuadRenderStack)this.f_65418f48.glColor(Color.black, 100.0F))
+      RenderStack.setupGl();
+      this.f_1676ce40.m_1058ed9a();
+      var1 = (int)this.m_d945de47((double)var1);
+      var2 = (int)this.m_461db524((double)var2);
+      ((QuadRenderStack)this.f_5cd8cdfe.glColor(Color.black, 100.0F))
          .begin()
-         .drawRect(0.0F, 0.0F, (float)C0114.bootstrap<"call",1,1>(), (float)C0114.bootstrap<"call",2,1>())
+         .drawRect(0.0F, 0.0F, (float)GuiScreen.getDisplayWidth(), (float)GuiScreen.getDisplayHeight())
          .end();
-      this.f_862c35f9 = (double)var1;
-      this.f_6ffd9430 = (double)var2;
-      C0163 var4 = this.m_910d92d3((double)var1, (double)var2);
+      this.f_bda96e4b = (double)var1;
+      this.f_78fb3fbb = (double)var2;
+      C0163 var4 = this.m_5be6bae4((double)var1, (double)var2);
       int var5 = 221185;
 
-      for (C0163 var7 : this.f_70ce9296) {
+      for (C0163 var7 : this.f_3a3757f5) {
          boolean var8 = false;
          if (var4 != null) {
             var8 = !var4.equals(var7);
-         } else if (!var7.m_fd6ca281().m_263d91ea((double)var1, (double)var2)) {
+         } else if (!var7.m_44bb072f().m_a58797d6((double)var1, (double)var2)) {
             var8 = true;
          }
 
          if (var7 instanceof C0437) {
-            int var9 = ((C0437)var7).m_5227a122((double)var1, (double)var2);
+            int var9 = ((C0437)var7).m_3abf02d1((double)var1, (double)var2);
             if (var9 != -1) {
                var5 = var9;
             }
          }
 
-         var7.m_2f338522((double)var1, (double)var2, var3, var8);
+         var7.m_572d14e6((double)var1, (double)var2, var3, var8);
       }
 
-      if (this.f_258a51d0 != var5) {
-         this.f_258a51d0 = var5;
-         C0114.bootstrap<"call",5,1>(C0114.bootstrap<"call",3,1>(), C0114.bootstrap<"call",4,1>(var5));
+      if (this.f_4622f81d != var5) {
+         this.f_4622f81d = var5;
+         GLFW.glfwSetCursor(WindowHelper.getWindowHandle(), GLFW.glfwCreateStandardCursor(var5));
       }
 
-      if (var4 != null && this.f_c3908204.m_6e5853a8()) {
-         C0153 var12 = var4.m_bb20fb08();
+      if (var4 != null && this.f_b48b1555.m_f7b07982()) {
+         C0153 var12 = var4.m_75885561();
          if (var12 != null) {
-            if (this.f_8a7be2ae == null || this.f_8a7be2ae != var12) {
-               this.f_8a7be2ae = var12;
-               var12.m_4f39a897();
+            if (this.f_b8bd3bea == null || this.f_b8bd3bea != var12) {
+               this.f_b8bd3bea = var12;
+               var12.m_1058ed9a();
             }
 
-            var12.m_92696976((double)var1, (double)var2, var3, false);
+            var12.m_572d14e6((double)var1, (double)var2, var3, false);
          }
       }
 
-      this.f_ad5998f0.m_04aec35b();
-      C0114.bootstrap<"call",6,1>();
+      this.f_1676ce40.m_b728afce();
+      RenderStack.restoreGl();
       GLX.INSTANCE.pop();
    }
 
    protected void onGuiClose() {
-      C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",0,1>(), C0114.bootstrap<"call",1,1>(221185));
+      GLFW.glfwSetCursor(WindowHelper.getWindowHandle(), GLFW.glfwCreateStandardCursor(221185));
    }
 
    @Override
    protected void onPostDraw(int var1, int var2, float var3) {
    }
 
-   public C0441 m_f5556892() {
-      return this.f_c3908204;
+   public C0441 m_2ea807fd() {
+      return this.f_b48b1555;
    }
 
-   public void m_09faea97(C0441 var1) {
-      this.f_c3908204 = var1;
+   public void m_3dcead2b(C0441 var1) {
+      this.f_b48b1555 = var1;
    }
 
-   public void m_ff2cab60(C0153 var1) {
-      this.f_8a7be2ae = var1;
+   public void m_c7a3618c(C0153 var1) {
+      this.f_b8bd3bea = var1;
    }
 }

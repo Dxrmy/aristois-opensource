@@ -7,6 +7,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Locale;
 import java.util.Optional;
@@ -16,20 +17,20 @@ import me.deftware.client.framework.item.enchantment.Enchantment;
 import me.deftware.client.framework.registry.EnchantmentRegistry;
 
 public class C0002 implements ArgumentType<Enchantment> {
-   private static final DynamicCommandExceptionType f_3525b833 = new DynamicCommandExceptionType(
-      var0 -> new ArgumentExceptionFunction(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",4294967380>(), new Object[]{var0}))
+   private static final DynamicCommandExceptionType f_468e244e = new DynamicCommandExceptionType(
+      var0 -> new ArgumentExceptionFunction(String.format(C0264.m_a55b07ff(), var0))
    );
 
    public C0002() {
    }
 
-   public Enchantment m_b8e65af7(StringReader var1) throws CommandSyntaxException {
+   public Enchantment m_2b62972d(StringReader var1) throws CommandSyntaxException {
       String var2 = var1.readUnquotedString();
       Optional var3 = EnchantmentRegistry.INSTANCE.stream().filter(var1x -> var1x.getIdentifierKey().equalsIgnoreCase(var2)).findFirst();
       if (var3.isPresent()) {
          return (Enchantment)var3.get();
       } else {
-         throw f_3525b833.create(var2);
+         throw f_468e244e.create(var2);
       }
    }
 
@@ -42,6 +43,6 @@ public class C0002 implements ArgumentType<Enchantment> {
    }
 
    public Collection<String> getExamples() {
-      return C0114.bootstrap<"call",0,1>(new String[]{C0252.bootstrap<"get",4294967378>(), C0252.bootstrap<"get",4294967379>()});
+      return Arrays.asList(C0264.m_11f0c704(), C0264.m_19faa493());
    }
 }

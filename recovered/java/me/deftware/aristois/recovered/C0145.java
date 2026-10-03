@@ -2,25 +2,26 @@ package me.deftware.aristois.recovered;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.message.Message.Builder;
 
 public class C0145 extends C0144 {
    @SerializedName("ip")
-   private String f_af64646a;
+   private String f_13722055;
    @SerializedName("port")
-   private String f_61108198;
+   private String f_691a110d;
    @SerializedName("protocols")
-   private List<String> f_46046f05;
+   private List<String> f_315c43ae;
    @SerializedName("anonymityLevel")
-   private String f_e19dd3ca;
+   private String f_a5672ed2;
    @SerializedName("country")
-   private String f_d69c7c89;
+   private String f_33bc5233;
    @SerializedName("city")
-   private String f_4ec37255;
+   private String f_19c7864b;
    @SerializedName("speed")
-   private int f_e8e18030;
+   private int f_de8b419e;
 
    public C0145() {
    }
@@ -34,27 +35,25 @@ public class C0145 extends C0144 {
    }
 
    public String getAddress() {
-      return this.f_af64646a + C0252.bootstrap<"get",25769803903>() + this.f_61108198;
+      return this.f_13722055 + C0267.m_0d6ae39b() + this.f_691a110d;
    }
 
    public int getVersion() {
-      return this.f_46046f05.get(0).endsWith(C0252.bootstrap<"get",34359738395>()) ? 5 : 4;
+      return this.f_315c43ae.get(0).endsWith(C0262.m_056a389d()) ? 5 : 4;
    }
 
-   protected Message[] m_62b20e4e() {
+   @Override
+   protected Message[] m_91be39c9() {
       return new Message[]{
-         C0114.bootstrap<"call",1,1>(
-               C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",51539607649>(), new Object[]{this.m_7f30252d(this.f_4ec37255, 30), this.f_d69c7c89})
-            )
-            .style(C0114.bootstrap<"call",2,1>(this.m_0c3db78a())),
+         Message.of(String.format(C0255.m_03430357(), this.m_efa63665(this.f_19c7864b, 30), this.f_33bc5233)).style(Appearance.of(this.m_43cd70a2())),
          new Builder()
-            .append(this.f_af64646a + C0252.bootstrap<"get",12884902010>(), C0114.bootstrap<"call",2,1>(DefaultColors.GRAY))
-            .append(this.f_e8e18030 + C0252.bootstrap<"get",51539607650>(), C0114.bootstrap<"call",2,1>(this.m_22feacf5(this.f_e8e18030)))
+            .append(this.f_13722055 + C0266.m_56cd5284(), Appearance.of(DefaultColors.GRAY))
+            .append(this.f_de8b419e + C0255.m_ec329d2e(), Appearance.of(this.m_4de4a42d(this.f_de8b419e)))
             .build()
       };
    }
 
-   private String m_7f30252d(String var1, int var2) {
-      return var1 != null && var1.length() > var2 ? var1.substring(0, var2) + C0252.bootstrap<"get",21474836598>() : var1;
+   private String m_efa63665(String var1, int var2) {
+      return var1 != null && var1.length() > var2 ? var1.substring(0, var2) + C0254.m_a004d745() : var1;
    }
 }

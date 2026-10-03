@@ -41,7 +41,7 @@ public class BaritoneService implements Runnable {
 
    @Override
    public void run() {
-      C0014.f_70e27a90.m_e04d25fd(BaritoneCommand.class).m_e04d25fd(BaritoneGotoCommand.class);
+      C0014.f_def608a1.m_1da4980c(BaritoneCommand.class).m_1da4980c(BaritoneGotoCommand.class);
       String prefix = (String)BaritoneAPI.getSettings().prefix.value;
       if (prefix.equalsIgnoreCase("#") || prefix.equalsIgnoreCase(CommandRegister.getCommandTrigger())) {
          BaritoneAPI.getSettings().prefix.value = "@";
@@ -53,10 +53,10 @@ public class BaritoneService implements Runnable {
 
    @EventHandler
    private void onUpdate(EventUpdate event) {
-      boolean jesus = C0289.m_c716a1b3(C0395.class);
+      boolean jesus = C0289.m_5caae0c3(C0395.class);
       BaritoneAPI.getSettings().assumeWalkOnLava.value = jesus;
       BaritoneAPI.getSettings().assumeWalkOnWater.value = jesus;
-      BaritoneAPI.getSettings().assumeSafeWalk.value = C0289.m_c716a1b3(C0393.class);
+      BaritoneAPI.getSettings().assumeSafeWalk.value = C0289.m_5caae0c3(C0393.class);
       this.stateController.tick();
    }
 

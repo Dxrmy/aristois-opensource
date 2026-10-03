@@ -11,99 +11,96 @@ import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.item.types.ArmourItem;
 import me.deftware.client.framework.item.types.FoodItem;
 import me.deftware.client.framework.item.types.WeaponItem;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.util.types.Pair;
 import me.deftware.client.framework.world.block.Block;
 
 public class C0072 {
-   public static final int f_7ba2351f = 2;
-   private final Function<ItemStack, Boolean> f_dca1dc7c;
-   private final Function<ItemStack, Float> f_7c80efec;
-   private Function<ItemStack, Boolean> f_7576f7f0 = var0 -> C0114.bootstrap<"call",0,1>(true);
-   private int f_1e4633ef = 0;
-   private BiFunction<Float, Float, Boolean> f_0d9091de = (var0, var1x) -> C0114.bootstrap<"call",0,1>(var0 < var1x);
-   private Pair<Item, Float> f_dea6e4c1;
+   public static final int f_3bb18f24 = 2;
+   private final Function<ItemStack, Boolean> f_c83a91a4;
+   private final Function<ItemStack, Float> f_d77d7cb3;
+   private Function<ItemStack, Boolean> f_8664bff9 = var0 -> true;
+   private int f_9a43f0e9 = 0;
+   private BiFunction<Float, Float, Boolean> f_aea7a456 = (var0, var1x) -> var0 < var1x;
+   private Pair<Item, Float> f_0e43e0a7;
 
-   private MainEntityPlayer m_2db07a6a() {
-      return C0114.bootstrap<"call",0,1>()._getPlayer();
+   private MainEntityPlayer m_6061955d() {
+      return Minecraft.getMinecraftGame()._getPlayer();
    }
 
-   public static C0072 m_2901632c(Item var0) {
-      return new C0072(var1 -> C0114.bootstrap<"call",0,1>(var1.getItem().equals(var0)), var0x -> C0114.bootstrap<"call",0,1>((float)var0x.getDamage()));
+   public static C0072 m_5143fd15(Item var0) {
+      return new C0072(var1 -> var1.getItem().equals(var0), var0x -> (float)var0x.getDamage());
    }
 
-   public static C0072 m_4c6e9701() {
-      return new C0072(var0 -> C0114.bootstrap<"call",1,1>(true), var0 -> C0114.bootstrap<"call",0,1>(1.0F)).m_99d657df();
+   public static C0072 m_1c5da965() {
+      return new C0072(var0 -> true, var0 -> 1.0F).m_e0ca1f51();
    }
 
-   public static C0072 m_718dc3ed(Item var0) {
-      return new C0072(var1 -> C0114.bootstrap<"call",3,1>(var1.getItem().equals(var0)), var0x -> C0114.bootstrap<"call",0,1>(1.0F)).m_99d657df();
+   public static C0072 m_17e298ea(Item var0) {
+      return new C0072(var1 -> var1.getItem().equals(var0), var0x -> 1.0F).m_e0ca1f51();
    }
 
-   public static C0072 m_e64c1ee8() {
-      return new C0072(var0 -> C0114.bootstrap<"call",0,1>(var0.getItem() instanceof WeaponItem), ItemStack::getStackAttackDamage);
+   public static C0072 m_c6050a72() {
+      return new C0072(var0 -> var0.getItem() instanceof WeaponItem, ItemStack::getStackAttackDamage);
    }
 
-   public static C0072 m_8036c7e4() {
-      return new C0072(
-         var0 -> C0114.bootstrap<"call",0,1>(var0.getItem() instanceof FoodItem),
-         var0 -> C0114.bootstrap<"call",0,1>((float)((FoodItem)var0.getItem()).getHunger())
-      );
+   public static C0072 m_11e5d51a() {
+      return new C0072(var0 -> var0.getItem() instanceof FoodItem, var0 -> (float)((FoodItem)var0.getItem()).getHunger());
    }
 
-   public static C0072 m_ecb8c315() {
-      return new C0072(
-         var0 -> C0114.bootstrap<"call",0,1>(var0.getItem() instanceof ArmourItem || var0.getItem().equals(C0070.f_a049faba)),
-         var0 -> C0114.bootstrap<"call",1,1>((float)var0.getStackProtectionAmount())
-      );
+   public static C0072 m_9a0150ee() {
+      return new C0072(var0 -> var0.getItem() instanceof ArmourItem || var0.getItem().equals(C0070.f_88717b71), var0 -> (float)var0.getStackProtectionAmount());
    }
 
-   public static C0072.anonymousboolean m_9b399593() {
+   public static C0072.anonymousboolean m_48cf3e49() {
       return new C0072.anonymousboolean();
    }
 
-   public C0072 m_7ecd94e5(Function<ItemStack, Boolean> var1) {
-      this.f_7576f7f0 = var1;
+   public C0072 m_2b5aea64(Function<ItemStack, Boolean> var1) {
+      this.f_8664bff9 = var1;
       return this;
    }
 
-   public C0072 m_d5fce8ed(int var1) {
-      this.f_1e4633ef = var1;
+   public C0072 m_f26b74b3(int var1) {
+      this.f_9a43f0e9 = var1;
       return this;
    }
 
-   public C0072 m_82117449(Item var1, float var2) {
-      this.f_dea6e4c1 = new Pair(var1, C0114.bootstrap<"call",1,1>(var2));
+   public C0072 m_6b100e6c(Item var1, float var2) {
+      this.f_0e43e0a7 = new Pair(var1, var2);
       return this;
    }
 
-   protected float m_d837e959(ItemStack var1) {
-      return this.f_7c80efec.apply(var1);
+   protected float m_2f2b24b9(ItemStack var1) {
+      return this.f_d77d7cb3.apply(var1);
    }
 
-   public C0072 m_99d657df() {
-      this.f_0d9091de = (var0, var1) -> C0114.bootstrap<"call",0,1>(true);
+   public C0072 m_e0ca1f51() {
+      this.f_aea7a456 = (var0, var1) -> true;
       return this;
    }
 
-   public C0072 m_c809d082() {
-      this.f_0d9091de = (var0, var1) -> C0114.bootstrap<"call",3,1>(var0 > var1);
+   public C0072 m_8391f334() {
+      this.f_aea7a456 = (var0, var1) -> var0 > var1;
       return this;
    }
 
-   public Collection<C0072.anonymousdefault> m_905f1534() {
-      MainEntityPlayer var1 = this.m_2db07a6a();
+   public Collection<C0072.anonymousdefault> m_a9cd4609() {
+      MainEntityPlayer var1 = this.m_6061955d();
       ArrayList var2 = new ArrayList();
 
       for (int var3 = 0; var3 < var1.getInventory().getSize(); var3++) {
-         final int var4 = C0114.bootstrap<"call",0,1>(var3);
+         final int var4 = C0073.m_a73ee2be(var3);
          final ItemStack var5 = var1.getInventory().getStackInSlot(var3);
-         if (!var5.isEmpty() && this.f_dca1dc7c.apply(var5)) {
+         if (!var5.isEmpty() && this.f_c83a91a4.apply(var5)) {
             var2.add(new C0072.anonymousdefault() {
-               public int m_ddf7005f() {
+               @Override
+               public int m_5b3d3148() {
                   return var4;
                }
 
-               public ItemStack m_171317b0() {
+               @Override
+               public ItemStack m_7b08e12a() {
                   return var5;
                }
             });
@@ -113,43 +110,43 @@ public class C0072 {
       return var2;
    }
 
-   public Stream<C0072.anonymousdefault> m_ad163406() {
-      return this.m_905f1534().stream();
+   public Stream<C0072.anonymousdefault> m_b3d23b7d() {
+      return this.m_a9cd4609().stream();
    }
 
-   public int m_a0aa8556() {
-      return this.m_b359a24a(0, this.m_2db07a6a().getInventory().getSize(), -1, -1.0F);
+   public int m_eb304949() {
+      return this.m_ceb42ce2(0, this.m_6061955d().getInventory().getSize(), -1, -1.0F);
    }
 
-   public int m_e05ba629() {
-      return this.m_b359a24a(0, 8, -1, -1.0F);
+   public int m_b8bdb7ac() {
+      return this.m_ceb42ce2(0, 8, -1, -1.0F);
    }
 
-   public int m_b359a24a(int var1, int var2, int var3, float var4) {
+   public int m_ceb42ce2(int var1, int var2, int var3, float var4) {
       int var5 = var3;
 
       for (int var6 = var1; var6 <= var2 + 1; var6++) {
          ItemStack var7;
          if (var6 == var2 + 1) {
-            var7 = this.m_2db07a6a().getInventory().getHeldItem(true);
+            var7 = this.m_6061955d().getInventory().getHeldItem(true);
          } else {
-            var7 = this.m_2db07a6a().getInventory().getStackInSlot(var6);
+            var7 = this.m_6061955d().getInventory().getStackInSlot(var6);
          }
 
-         if (this.f_dca1dc7c.apply(var7) && this.f_7576f7f0.apply(var7)) {
-            float var8 = this.m_d837e959(var7);
-            if (var7.getItem() instanceof ArmourItem || var7.getItem().equals(C0070.f_a049faba)) {
+         if (this.f_c83a91a4.apply(var7) && this.f_8664bff9.apply(var7)) {
+            float var8 = this.m_2f2b24b9(var7);
+            if (var7.getItem() instanceof ArmourItem || var7.getItem().equals(C0070.f_88717b71)) {
                int var9 = var7.getItem() instanceof ArmourItem ? ((ArmourItem)var7.getItem()).getTypeOrdinal() - 2 : 2;
-               if (var9 != this.f_1e4633ef) {
+               if (var9 != this.f_9a43f0e9) {
                   continue;
                }
             }
 
-            if (this.f_dea6e4c1 != null && ((Item)this.f_dea6e4c1.getLeft()).equals(var7.getItem())) {
-               var8 = (Float)this.f_dea6e4c1.getRight();
+            if (this.f_0e43e0a7 != null && ((Item)this.f_0e43e0a7.getLeft()).equals(var7.getItem())) {
+               var8 = (Float)this.f_0e43e0a7.getRight();
             }
 
-            if (this.f_0d9091de.apply(C0114.bootstrap<"call",1,1>(var4), C0114.bootstrap<"call",1,1>(var8))) {
+            if (this.f_aea7a456.apply(var4, var8)) {
                var4 = var8;
                var3 = var6;
             }
@@ -161,37 +158,38 @@ public class C0072 {
       }
 
       if (var3 != var5) {
-         var3 = C0114.bootstrap<"call",2,1>(var3);
+         var3 = C0073.m_a73ee2be(var3);
       }
 
       return var3;
    }
 
    public C0072(Function<ItemStack, Boolean> var1, Function<ItemStack, Float> var2) {
-      this.f_dca1dc7c = var1;
-      this.f_7c80efec = var2;
+      this.f_c83a91a4 = var1;
+      this.f_d77d7cb3 = var2;
    }
 
    public static class anonymousboolean extends C0072 {
-      private Block f_739fe722;
+      private Block f_0cdc217a;
 
       public anonymousboolean() {
-         super(var0 -> C0114.bootstrap<"call",0,1>(true), null);
+         super(var0 -> true, null);
       }
 
-      public C0072.anonymousboolean m_586dbaa6(Block var1) {
-         this.f_739fe722 = var1;
+      public C0072.anonymousboolean m_ef8c78c7(Block var1) {
+         this.f_0cdc217a = var1;
          return this;
       }
 
-      protected float m_a189df29(ItemStack var1) {
-         return var1.getStrVsBlock(this.f_739fe722.getBlockPosition());
+      @Override
+      protected float m_2f2b24b9(ItemStack var1) {
+         return var1.getStrVsBlock(this.f_0cdc217a.getBlockPosition());
       }
    }
 
    public interface anonymousdefault {
-      int m_0ea37aad();
+      int m_5b3d3148();
 
-      ItemStack m_17485ebf();
+      ItemStack m_7b08e12a();
    }
 }

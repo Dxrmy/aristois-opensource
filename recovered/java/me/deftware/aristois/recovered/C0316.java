@@ -7,8 +7,11 @@ import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.entity.types.objects.ItemEntity;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventRender3D;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.CubeRenderStack;
+import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.shader.EntityShader;
+import me.deftware.client.framework.world.ClientWorld;
 
 public class C0316 extends C0319<Entity> {
    @C0098(
@@ -19,12 +22,12 @@ public class C0316 extends C0319<Entity> {
          max = 300.0
       )
    )
-   private C0106<Integer> f_4dfbde9c = new C0106<>(C0114.bootstrap<"call",0,1>(50)).m_6da46a9c(this.f_094b9fa5, C0319.anonymousabstract.f_37020a22);
+   private C0106<Integer> f_c764e4a6 = new C0106<>(50).m_cb9291a5(this.f_e1d988aa, C0319.anonymousabstract.f_40f68e21);
    @C0098(
       value = "Color",
       description = {"Requires mode to be BoundaryBoxFull or BoundaryBox"}
    )
-   private C0106<Color> f_60a6d094 = new C0106<>(new Color(255, 100, 0, 30)).m_6da46a9c(this.f_094b9fa5, C0319.anonymousabstract.f_37020a22);
+   private C0106<Color> f_0c0a14ad = new C0106<>(new Color(255, 100, 0, 30)).m_cb9291a5(this.f_e1d988aa, C0319.anonymousabstract.f_40f68e21);
    @C0098(
       value = "Line thickness",
       description = {"Thickness of the BoundaryBox line thickness"},
@@ -32,57 +35,59 @@ public class C0316 extends C0319<Entity> {
          max = 8.0
       )
    )
-   private C0106<Integer> f_8d379e5f = new C0106<>(C0114.bootstrap<"call",0,1>(2)).m_10caee7d(this.f_094b9fa5, C0319.anonymousabstract.f_5ab2c155);
-   private final CubeRenderStack f_59ee716d = new CubeRenderStack();
+   private C0106<Integer> f_cf1f2a4b = new C0106<>(2).m_2d6ca2bd(this.f_e1d988aa, C0319.anonymousabstract.f_cf065721);
+   private final CubeRenderStack f_42a76a9d = new CubeRenderStack();
 
    public C0316() {
-      super(C0252.bootstrap<"get",47244640357>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",47244640358>());
-      this.f_1e081d4e = new C0319.anonymousnew<Entity>() {
-         public Supplier<EntityShader> m_fa98e4ae() {
-            return C0114.bootstrap<"call",0,1>()::m_373a3102;
+      super(C0260.m_0223faff(), C0290.f_3210deb7, C0260.m_bdbd5e40());
+      this.f_c7894f51 = new C0319.anonymousnew<Entity>() {
+         @Override
+         public Supplier<EntityShader> m_5219c421() {
+            return C0242.m_fc1b642c()::m_b0a87172;
          }
 
-         public Class<Entity> m_f64754be() {
+         @Override
+         public Class<Entity> m_6305e767() {
             return Entity.class;
          }
 
-         public boolean m_0f2fd439(Entity var1) {
+         public boolean m_97a0a4cb(Entity var1) {
             return var1 instanceof ItemEntity;
          }
       };
    }
 
    @EventHandler
-   public void m_506517ac(EventRender3D var1) {
-      MainEntityPlayer var2 = C0114.bootstrap<"call",0,1>()._getPlayer();
-      if (var2 != null && !this.m_0cea6d97()) {
-         C0114.bootstrap<"call",1,1>();
-         ((CubeRenderStack)this.f_59ee716d.lineWidth((float)this.f_8d379e5f.get().intValue()))
-            .begin(this.f_094b9fa5.m_e2691446() == C0319.anonymousabstract.f_5ab2c155)
-            .glColor(this.f_60a6d094.get());
-         C0114.bootstrap<"call",2,1>()
+   public void m_c738343e(EventRender3D var1) {
+      MainEntityPlayer var2 = Minecraft.getMinecraftGame()._getPlayer();
+      if (var2 != null && !this.m_297cfef6()) {
+         RenderStack.setupGl();
+         ((CubeRenderStack)this.f_42a76a9d.lineWidth((float)this.f_cf1f2a4b.get().intValue()))
+            .begin(this.f_e1d988aa.m_284992ec() == C0319.anonymousabstract.f_cf065721)
+            .glColor(this.f_0c0a14ad.get());
+         ClientWorld.getClientWorld()
             .getLoadedEntities()
             .filter(var0 -> var0 instanceof ItemEntity)
-            .filter(var2x -> var2x.distanceToEntity(var2) < (float)this.f_4dfbde9c.get().intValue())
-            .forEach(var1x -> this.f_59ee716d.draw(var1x.getBoundingBox()));
-         this.f_59ee716d.end();
-         C0114.bootstrap<"call",3,1>();
+            .filter(var2x -> var2x.distanceToEntity(var2) < (float)this.f_c764e4a6.get().intValue())
+            .forEach(var1x -> this.f_42a76a9d.draw(var1x.getBoundingBox()));
+         this.f_42a76a9d.end();
+         RenderStack.restoreGl();
       }
    }
 
-   public C0106<Integer> m_ac4405db() {
-      return this.f_4dfbde9c;
+   public C0106<Integer> m_a90174f5() {
+      return this.f_c764e4a6;
    }
 
-   public C0106<Color> m_3347462a() {
-      return this.f_60a6d094;
+   public C0106<Color> m_2d3b19b0() {
+      return this.f_0c0a14ad;
    }
 
-   public C0106<Integer> m_9d0f6d99() {
-      return this.f_8d379e5f;
+   public C0106<Integer> m_d9b52e21() {
+      return this.f_cf1f2a4b;
    }
 
-   public CubeRenderStack m_ddb2c6a1() {
-      return this.f_59ee716d;
+   public CubeRenderStack m_c7f7164e() {
+      return this.f_42a76a9d;
    }
 }

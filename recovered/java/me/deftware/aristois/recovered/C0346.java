@@ -7,19 +7,19 @@ import me.deftware.client.framework.input.MinecraftKeyBind;
 
 public class C0346 extends AbstractMod {
    @C0098("Delay")
-   private float f_af1e5126 = 1.0F;
-   private float f_679ad5f5 = 0.0F;
+   private float f_9044857a = 1.0F;
+   private float f_ed6b8777 = 0.0F;
 
    public C0346() {
-      super(C0252.bootstrap<"get",47244640325>(), C0290.f_a5db61fd, C0252.bootstrap<"get",47244640326>());
+      super(C0260.m_b0896de7(), C0290.f_99d080af, C0260.m_593ecbab());
    }
 
    @EventHandler
-   public void m_27bed80f(EventUpdate var1) {
-      if (this.f_679ad5f5 < this.f_af1e5126) {
-         this.f_679ad5f5++;
+   public void m_3072cba8(EventUpdate var1) {
+      if (this.f_ed6b8777 < this.f_9044857a) {
+         this.f_ed6b8777++;
       } else {
-         this.f_679ad5f5 = 0.0F;
+         this.f_ed6b8777 = 0.0F;
          MinecraftKeyBind.SNEAK.setPressed(!MinecraftKeyBind.SNEAK.isPressed());
       }
    }

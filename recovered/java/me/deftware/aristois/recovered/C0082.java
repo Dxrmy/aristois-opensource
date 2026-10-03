@@ -7,26 +7,28 @@ public abstract class C0082 extends AbstractMod implements C0075 {
       value = "Location",
       id = 0
    )
-   private C0102<C0087> f_16473b02;
+   private C0102<C0087> f_1b4e0049;
    @C0098(
       value = "Priority",
       id = 1
    )
-   protected int f_2c05c16e = 1;
+   protected int f_fd8e2fcd = 1;
 
    public C0082(String var1, C0087 var2, String... var3) {
-      super(var1, C0290.f_4792a25c, var3);
-      this.f_16473b02 = new C0102<>(var2);
+      super(var1, C0290.f_43c13687, var3);
+      this.f_1b4e0049 = new C0102<>(var2);
    }
 
-   protected void m_4ad4f025(C0087 var1) {
+   protected void m_4edf5543(C0087 var1) {
    }
 
-   public C0087 m_c8fdc8ee() {
-      return this.f_16473b02.m_e2691446();
+   @Override
+   public C0087 m_a7c622af() {
+      return this.f_1b4e0049.m_284992ec();
    }
 
-   public boolean m_6ffca938() {
+   @Override
+   public boolean m_89e0519f() {
       return this.isEnabled();
    }
 
@@ -34,14 +36,15 @@ public abstract class C0082 extends AbstractMod implements C0075 {
    public void onSettingUpdate(C0098 var1) {
       if (var1.id() <= 1) {
          if (var1.id() == 0) {
-            this.m_4ad4f025(this.m_c8fdc8ee());
+            this.m_4edf5543(this.m_a7c622af());
          }
 
-         C0074.f_c9f3a771.m_2244f384(false);
+         C0074.f_d3f3801b.m_d6ac7420(false);
       }
    }
 
-   public int m_78054fd6() {
-      return this.f_2c05c16e;
+   @Override
+   public int m_36ffc578() {
+      return this.f_fd8e2fcd;
    }
 }

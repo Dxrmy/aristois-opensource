@@ -3,78 +3,78 @@ package me.deftware.aristois.recovered;
 import me.deftware.client.framework.entity.types.EntityPlayer;
 
 public enum C0215 {
-   f_0e18c9b2(C0252.bootstrap<"get",55834574959>(), 247.5F, 292.5F),
-   f_f26fb985(C0252.bootstrap<"get",55834574961>(), 292.5F, 337.5F),
-   f_a3529769(C0252.bootstrap<"get",55834574963>(), 202.5F, 247.5F),
-   f_c4e10650(C0252.bootstrap<"get",55834574965>(), 337.5F, 360.0F, 0.0F, 22.5F),
-   f_7ed71fd2(C0252.bootstrap<"get",55834574967>(), 22.5F, 67.5F),
-   f_664159a0(C0252.bootstrap<"get",55834574969>(), 67.5F, 112.5F),
-   f_2b6ebab8(C0252.bootstrap<"get",55834574971>(), 112.5F, 157.5F),
-   f_1538e231(C0252.bootstrap<"get",55834574973>(), 157.5F, 202.5F);
+   f_6eb9252e(C0256.m_a5b24d28(), 247.5F, 292.5F),
+   f_57482be4(C0256.m_09052c0b(), 292.5F, 337.5F),
+   f_acfe15ce(C0256.m_733bff3d(), 202.5F, 247.5F),
+   f_08ddf818(C0256.m_8870d2c1(), 337.5F, 360.0F, 0.0F, 22.5F),
+   f_7a64b3de(C0256.m_3c19a819(), 22.5F, 67.5F),
+   f_91e62fdd(C0256.m_5b2d5cb2(), 67.5F, 112.5F),
+   f_3c4a1b12(C0256.m_62895921(), 112.5F, 157.5F),
+   f_980a027c(C0256.m_83f6dd00(), 157.5F, 202.5F);
 
-   private final float f_46d7f312;
-   private final float f_e37403d9;
-   private final float f_87c873aa;
-   private final float f_6fc77080;
-   private final String f_90ff487c;
-   private static final C0215[] f_46851acd = C0114.bootstrap<"call",0,1>();
+   private final float f_44aecd42;
+   private final float f_f2a4b159;
+   private final float f_ee95bde6;
+   private final float f_5efe1b48;
+   private final String f_748a38b5;
+   private static final C0215[] f_4d41bd13 = values();
 
    private C0215(String var3, float var4, float var5) {
-      this.f_46d7f312 = var4;
-      this.f_e37403d9 = var5;
-      this.f_87c873aa = var4;
-      this.f_6fc77080 = var5;
-      this.f_90ff487c = var3;
+      this.f_44aecd42 = var4;
+      this.f_f2a4b159 = var5;
+      this.f_ee95bde6 = var4;
+      this.f_5efe1b48 = var5;
+      this.f_748a38b5 = var3;
    }
 
    private C0215(String var3, float var4, float var5, float var6, float var7) {
-      this.f_46d7f312 = var4;
-      this.f_e37403d9 = var5;
-      this.f_87c873aa = var6;
-      this.f_6fc77080 = var7;
-      this.f_90ff487c = var3;
+      this.f_44aecd42 = var4;
+      this.f_f2a4b159 = var5;
+      this.f_ee95bde6 = var6;
+      this.f_5efe1b48 = var7;
+      this.f_748a38b5 = var3;
    }
 
-   public float m_f0708555() {
-      return (this.f_46d7f312 + this.f_e37403d9) / 2.0F;
+   public float m_796256b9() {
+      return (this.f_44aecd42 + this.f_f2a4b159) / 2.0F;
    }
 
-   public float m_10c31318() {
-      return this.f_46d7f312;
+   public float m_b7fbb877() {
+      return this.f_44aecd42;
    }
 
-   public float m_e3823b3e() {
-      return this.f_e37403d9;
+   public float m_f3107a2c() {
+      return this.f_f2a4b159;
    }
 
-   public float m_26f47f89() {
-      return this.f_87c873aa;
+   public float m_ec7fb983() {
+      return this.f_ee95bde6;
    }
 
-   public float m_35743847() {
-      return this.f_6fc77080;
+   public float m_4fa7ddfe() {
+      return this.f_5efe1b48;
    }
 
-   public String m_b1cbbc00() {
-      return this.f_90ff487c;
+   public String m_8ced16bd() {
+      return this.f_748a38b5;
    }
 
-   public static C0215 m_43598fa6(float var0) {
-      for (C0215 var4 : f_46851acd) {
-         if (var0 > var4.f_46d7f312 && var0 < var4.f_e37403d9 || var0 > var4.f_87c873aa && var0 < var4.f_6fc77080) {
+   public static C0215 m_923238c5(float var0) {
+      for (C0215 var4 : f_4d41bd13) {
+         if (var0 > var4.f_44aecd42 && var0 < var4.f_f2a4b159 || var0 > var4.f_ee95bde6 && var0 < var4.f_5efe1b48) {
             return var4;
          }
       }
 
-      return f_0e18c9b2;
+      return f_6eb9252e;
    }
 
-   public static C0215 m_e95d1fa5(EntityPlayer var0) {
+   public static C0215 m_a3f5650c(EntityPlayer var0) {
       float var1 = (var0.getRotationYaw() + 90.0F) % 360.0F;
       if (var1 < 0.0F) {
          var1 += 360.0F;
       }
 
-      return C0114.bootstrap<"call",0,1>(var1);
+      return m_923238c5(var1);
    }
 }

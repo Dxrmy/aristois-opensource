@@ -1,124 +1,125 @@
 package me.deftware.aristois.recovered;
 
 import java.awt.Color;
+import me.deftware.client.framework.input.Mouse;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.batching.QuadRenderStack;
+import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.batching.font.FontRenderStack;
 
 public abstract class C0151 implements C0194 {
-   private final C0165 f_5831836d;
-   private FontRenderStack f_ccbe9ed2;
-   private Message f_92de1e18;
-   protected final QuadRenderStack f_d849ea9e = (QuadRenderStack)new QuadRenderStack().setScaled(false);
-   private Color f_60143b13;
-   private boolean f_b77addd1 = false;
-   private boolean f_6e2225fc = true;
-   private double f_8e36065f = 0.0;
-   private int f_bd7833f5 = -1;
+   private final C0165 f_90217941;
+   private FontRenderStack f_55266f05;
+   private Message f_4d3ee626;
+   protected final QuadRenderStack f_ea67bb4c = (QuadRenderStack)new QuadRenderStack().setScaled(false);
+   private Color f_120c0631;
+   private boolean f_83fbbb14 = false;
+   private boolean f_0e02aa89 = true;
+   private double f_f944c368 = 0.0;
+   private int f_0b645d0d = -1;
 
    public C0151(Message var1, FontRenderStack var2) {
       this(var1, 0.0, 0.0, var2);
    }
 
    public C0151(Message var1, double var2, double var4, FontRenderStack var6) {
-      this.f_60143b13 = ((C0432)C0114.bootstrap<"call",0,1>(C0432.class)).m_604f8702();
-      this.f_5831836d = new C0165(var2, var4, (double)var6.getStringWidth(var1), (double)var6.getFontHeight());
-      this.f_ccbe9ed2 = var6;
-      this.f_92de1e18 = var1;
+      this.f_120c0631 = C0289.m_c3a8b502(C0432.class).m_e1729432();
+      this.f_90217941 = new C0165(var2, var4, (double)var6.getStringWidth(var1), (double)var6.getFontHeight());
+      this.f_55266f05 = var6;
+      this.f_4d3ee626 = var1;
    }
 
-   public C0151 m_4c6d5b71() {
-      this.f_6e2225fc = false;
+   public C0151 m_5be40aea() {
+      this.f_0e02aa89 = false;
       return this;
    }
 
-   public C0151 m_562cdcf4(int var1) {
-      this.f_bd7833f5 = var1;
+   public C0151 m_4ef3b726(int var1) {
+      this.f_0b645d0d = var1;
       return this;
    }
 
-   public void m_57727a05(boolean var1) {
-      this.f_d849ea9e.setScaled(var1);
+   @Override
+   public void m_394ecb95(boolean var1) {
+      this.f_ea67bb4c.setScaled(var1);
    }
 
-   public boolean m_03ca24a3(double var1, double var3, float var5, boolean var6) {
-      if (this.f_6e2225fc) {
-         this.f_b77addd1 = this.f_5831836d
-            .m_263d91ea(
-               C0114.bootstrap<"call",0,1>() * (double)C0114.bootstrap<"call",1,1>(), C0114.bootstrap<"call",2,1>() * (double)C0114.bootstrap<"call",1,1>()
-            );
-         double var7 = this.f_5831836d.m_830cb294() / 8.0;
-         if (this.f_b77addd1) {
-            this.f_8e36065f = C0114.bootstrap<"call",3,1>(this.f_5831836d.m_830cb294(), this.f_8e36065f + var7 * (double)var5);
+   @Override
+   public boolean m_572d14e6(double var1, double var3, float var5, boolean var6) {
+      if (this.f_0e02aa89) {
+         this.f_83fbbb14 = this.f_90217941.m_a58797d6(Mouse.getMouseX() * (double)RenderStack.getScale(), Mouse.getMouseY() * (double)RenderStack.getScale());
+         double var7 = this.f_90217941.m_4388ac29() / 8.0;
+         if (this.f_83fbbb14) {
+            this.f_f944c368 = Math.min(this.f_90217941.m_4388ac29(), this.f_f944c368 + var7 * (double)var5);
          } else {
-            this.f_8e36065f = C0114.bootstrap<"call",4,1>(0.0, this.f_8e36065f - var7 * (double)var5);
+            this.f_f944c368 = Math.max(0.0, this.f_f944c368 - var7 * (double)var5);
          }
 
-         ((QuadRenderStack)this.f_d849ea9e.glColor(this.f_60143b13)).begin();
-         this.f_d849ea9e
+         ((QuadRenderStack)this.f_ea67bb4c.glColor(this.f_120c0631)).begin();
+         this.f_ea67bb4c
             .drawRect(
-               this.f_5831836d.m_14f8bc2c(),
-               this.f_5831836d.m_5a998971() + this.f_5831836d.m_fc7f45bc() - 2.0,
-               this.f_5831836d.m_14f8bc2c() + this.f_8e36065f,
-               this.f_5831836d.m_5a998971() + this.f_5831836d.m_fc7f45bc()
+               this.f_90217941.m_a005efae(),
+               this.f_90217941.m_84808068() + this.f_90217941.m_d42f3372() - 2.0,
+               this.f_90217941.m_a005efae() + this.f_f944c368,
+               this.f_90217941.m_84808068() + this.f_90217941.m_d42f3372()
             );
-         this.f_d849ea9e.end();
+         this.f_ea67bb4c.end();
       }
 
-      this.f_ccbe9ed2.begin();
-      this.f_ccbe9ed2.drawString((int)this.f_5831836d.m_14f8bc2c(), (int)this.f_5831836d.m_5a998971(), this.f_92de1e18);
-      this.f_ccbe9ed2.end();
+      this.f_55266f05.begin();
+      this.f_55266f05.drawString((int)this.f_90217941.m_a005efae(), (int)this.f_90217941.m_84808068(), this.f_4d3ee626);
+      this.f_55266f05.end();
       return var6;
    }
 
-   public boolean m_abaa3905(double var1, double var3, int var5) {
-      boolean var6 = this.f_5831836d
-         .m_263d91ea(
-            C0114.bootstrap<"call",0,1>() * (double)C0114.bootstrap<"call",1,1>(), C0114.bootstrap<"call",2,1>() * (double)C0114.bootstrap<"call",1,1>()
-         );
+   @Override
+   public boolean m_8407b1bf(double var1, double var3, int var5) {
+      boolean var6 = this.f_90217941.m_a58797d6(Mouse.getMouseX() * (double)RenderStack.getScale(), Mouse.getMouseY() * (double)RenderStack.getScale());
       if (var6 && var5 == 0) {
-         this.m_d11bd0a8();
+         this.m_b728afce();
       }
 
       return var6;
    }
 
-   public boolean m_d95bdcf9(int var1, int var2, int var3) {
-      if (var1 == this.f_bd7833f5 && this.f_bd7833f5 != -1) {
-         this.m_d11bd0a8();
+   @Override
+   public boolean m_81405691(int var1, int var2, int var3) {
+      if (var1 == this.f_0b645d0d && this.f_0b645d0d != -1) {
+         this.m_b728afce();
          return true;
       } else {
          return false;
       }
    }
 
-   protected abstract void m_d11bd0a8();
+   protected abstract void m_b728afce();
 
-   public C0165 m_8cd045bb() {
-      return this.f_5831836d;
+   @Override
+   public C0165 m_44bb072f() {
+      return this.f_90217941;
    }
 
-   public void m_29242ee9(FontRenderStack var1) {
-      this.f_ccbe9ed2 = var1;
+   public void m_b3d7bc43(FontRenderStack var1) {
+      this.f_55266f05 = var1;
    }
 
-   public Message m_7f676093() {
-      return this.f_92de1e18;
+   public Message m_2d348094() {
+      return this.f_4d3ee626;
    }
 
-   public void m_e31bed3f(Message var1) {
-      this.f_92de1e18 = var1;
+   public void m_8d564dc2(Message var1) {
+      this.f_4d3ee626 = var1;
    }
 
-   public void m_e422a7ec(Color var1) {
-      this.f_60143b13 = var1;
+   public void m_6e0baed2(Color var1) {
+      this.f_120c0631 = var1;
    }
 
-   public boolean m_dc230825() {
-      return this.f_b77addd1;
+   public boolean m_275ab222() {
+      return this.f_83fbbb14;
    }
 
-   public boolean m_56635fa0() {
-      return this.f_6e2225fc;
+   public boolean m_f21a055b() {
+      return this.f_0e02aa89;
    }
 }

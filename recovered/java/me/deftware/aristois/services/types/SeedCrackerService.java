@@ -94,7 +94,7 @@ public class SeedCrackerService implements Runnable {
       // 6d: pop
       // 6e: ldc2_w 1000
       // 71: invokedynamic run ()Ljava/lang/Runnable; bsm=java/lang/invoke/LambdaMetafactory.metafactory (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite; args=[ ()V, me/deftware/aristois/services/types/SeedCrackerService.lambda$onWorldLoad$0 ()V, ()V ]
-      // 76: invokestatic me/deftware/aristois/recovered/C0217.m_7cee49e1 (JLjava/lang/Runnable;)V
+      // 76: invokestatic me/deftware/aristois/recovered/C0217.m_124336d4 (JLjava/lang/Runnable;)V
       // 79: goto 81
       // 7c: astore 2
       // 7d: aload 2

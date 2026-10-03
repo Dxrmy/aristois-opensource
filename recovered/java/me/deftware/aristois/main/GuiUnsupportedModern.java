@@ -22,7 +22,7 @@ public class GuiUnsupportedModern extends GuiScreen {
    public static List<Message> text = Arrays.asList(
       Message.of("Aristois (EMC) was unable to perform an auto update. This means you will").style(Appearance.of(DefaultColors.GRAY)),
       Message.of("need to re-download and re-install Aristois from aristois.net/download.").style(Appearance.of(DefaultColors.GRAY)),
-      C0197.f_716a73fa,
+      C0197.f_9607505d,
       new Builder()
          .append("If you proceed without updating, your game", Appearance.of(DefaultColors.GRAY))
          .append(" will be unstable.", Appearance.of(2, DefaultColors.RED))
@@ -34,7 +34,7 @@ public class GuiUnsupportedModern extends GuiScreen {
       Message.of("1. Close Minecraft and open your Minecraft directory.").style(Appearance.of(DefaultColors.GRAY)),
       Message.of("2. Go into the libraries folder and delete the \"me\" folder.").style(Appearance.of(DefaultColors.GRAY)),
       Message.of("3. Start Aristois again and it *should* work.").style(Appearance.of(DefaultColors.GRAY)),
-      C0197.f_716a73fa,
+      C0197.f_9607505d,
       Message.of("If it doesn't work, visit aristois.net/guilded or try to re-install Aristois.").style(Appearance.of(DefaultColors.GRAY))
    );
    private final GuiUnsupportedModern.UnsupportedReason reason;
@@ -62,7 +62,7 @@ public class GuiUnsupportedModern extends GuiScreen {
             btn -> {
                Main.getInstance().setup();
                ScreenRegistry.MainMenu.open(new Object[]{(GenericScreen)null});
-               C0242.m_8f1dc943().m_9a1c80f7();
+               C0242.m_fc1b642c().m_0e265701();
                return true;
             }
          )

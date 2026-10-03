@@ -6,16 +6,16 @@ import me.deftware.client.framework.global.GameMap;
 
 public class C0334 extends AbstractMod {
    public C0334() {
-      super(C0252.bootstrap<"get",47244640384>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",47244640385>());
+      super(C0260.m_65d43991(), C0290.f_3210deb7, C0260.m_c6614274());
    }
 
    @Override
    public void onEnable() {
-      GameMap.INSTANCE.put(GameKeys.RAINBOW_ITEM_GLINT, C0114.bootstrap<"call",0,1>(true));
+      GameMap.INSTANCE.put(GameKeys.RAINBOW_ITEM_GLINT, true);
    }
 
    @Override
    public void onDisable() {
-      GameMap.INSTANCE.put(GameKeys.RAINBOW_ITEM_GLINT, C0114.bootstrap<"call",0,1>(false));
+      GameMap.INSTANCE.put(GameKeys.RAINBOW_ITEM_GLINT, false);
    }
 }

@@ -1,9 +1,10 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
-import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0353 extends AbstractMod {
    @C0098(
@@ -13,20 +14,20 @@ public class C0353 extends AbstractMod {
          max = 200.0
       )
    )
-   private float f_eaf5582a = 40.0F;
-   private float f_b94e0020 = 0.0F;
+   private float f_a3456e5f = 40.0F;
+   private float f_df787dae = 0.0F;
 
    public C0353() {
-      super(C0252.bootstrap<"get",47244640311>(), C0290.f_a5db61fd, C0252.bootstrap<"get",47244640312>());
+      super(C0260.m_23f794da(), C0290.f_99d080af, C0260.m_cc27b633());
    }
 
    @EventHandler
-   public void m_d09fdfd5(EventUpdate var1) {
-      if (this.f_b94e0020 < this.f_eaf5582a * 2.0F) {
-         this.f_b94e0020++;
+   public void m_3072cba8(EventUpdate var1) {
+      if (this.f_df787dae < this.f_a3456e5f * 2.0F) {
+         this.f_df787dae++;
       } else {
-         this.f_b94e0020 = 0.0F;
-         ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer())).toggleSkinLayers();
+         this.f_df787dae = 0.0F;
+         Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).toggleSkinLayers();
       }
    }
 }

@@ -10,27 +10,27 @@ public class C0398 extends AbstractMod {
       value = "Entities",
       description = {"Prevents pushing from entities"}
    )
-   private boolean f_47d30f75 = true;
+   private boolean f_0825cac1 = true;
    @C0098(
       value = "Fluids",
       description = {"Prevents pushing from fluids"}
    )
-   private boolean f_6e8a1781 = true;
+   private boolean f_344c15e9 = true;
 
    public C0398() {
-      super(C0252.bootstrap<"get",42949673075>(), C0290.f_cd638c01, C0252.bootstrap<"get",42949673076>());
+      super(C0259.m_733bff3d(), C0290.f_829d9b20, C0259.m_76700429());
    }
 
    @EventHandler
-   private void m_06eb2ade(EventFluidVelocity var1) {
-      if (this.f_6e8a1781) {
+   private void m_367b927c(EventFluidVelocity var1) {
+      if (this.f_344c15e9) {
          var1.setCanceled(true);
       }
    }
 
    @EventHandler
-   private void m_aac48081(EventEntityPush var1) {
-      if (this.f_47d30f75) {
+   private void m_93b1c786(EventEntityPush var1) {
+      if (this.f_0825cac1) {
          var1.setCanceled(true);
       }
    }

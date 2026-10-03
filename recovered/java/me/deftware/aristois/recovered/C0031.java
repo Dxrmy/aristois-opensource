@@ -2,7 +2,10 @@ package me.deftware.aristois.recovered;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import me.deftware.client.framework.command.CommandBuilder;
+import me.deftware.client.framework.gui.screens.ConnectingScreen;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.minecraft.ServerDetails;
+import me.deftware.client.framework.world.ClientWorld;
 
 public class C0031 extends C0001 {
    public C0031() {
@@ -11,49 +14,49 @@ public class C0031 extends C0001 {
    public CommandBuilder<?> getCommandBuilder() {
       return new CommandBuilder()
          .set(
-            (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(
-                           C0252.bootstrap<"get",12884901898>()
+            (LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)LiteralArgumentBuilder.literal(
+                           C0266.m_c42f1c7e()
                         )
                         .executes(var1 -> {
-                           this.m_17a66855();
+                           this.m_1058ed9a();
                            return 1;
                         }))
-                     .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901899>()).executes(var0 -> {
-                        C0114.bootstrap<"call",0,1>()._disconnect();
+                     .then(LiteralArgumentBuilder.literal(C0266.m_6f1f396d()).executes(var0 -> {
+                        ClientWorld.getClientWorld()._disconnect();
                         return 1;
                      })))
-                  .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901900>()).executes(var0 -> {
-                     if (C0114.bootstrap<"call",0,1>().getLastConnectedServer() != null) {
-                        C0114.bootstrap<"call",1,1>()._disconnect();
-                        C0114.bootstrap<"call",2,1>(C0114.bootstrap<"call",0,1>().getLastConnectedServer());
+                  .then(LiteralArgumentBuilder.literal(C0266.m_8ced16bd()).executes(var0 -> {
+                     if (Minecraft.getMinecraftGame().getLastConnectedServer() != null) {
+                        ClientWorld.getClientWorld()._disconnect();
+                        ConnectingScreen._connect(Minecraft.getMinecraftGame().getLastConnectedServer());
                      } else {
-                        C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",12884901907>());
+                        m_333019c8(C0266.m_b251ca51());
                      }
 
                      return 1;
                   })))
-               .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",4294967296>()).executes(var1 -> {
-                  this.m_17a66855();
+               .then(LiteralArgumentBuilder.literal(C0264.m_44418b5d()).executes(var1 -> {
+                  this.m_1058ed9a();
                   return 1;
                }))
          );
    }
 
-   private void m_17a66855() {
-      if (C0114.bootstrap<"call",0,1>()._isSinglePlayer()) {
-         C0114.bootstrap<"call",1,1>().m_77a7bc18(C0252.bootstrap<"get",12884901901>()).m_66e721c0();
+   private void m_1058ed9a() {
+      if (Minecraft.getMinecraftGame()._isSinglePlayer()) {
+         C0064.m_13c9ffeb().m_ee04ba1b(C0266.m_15ef1a0d()).m_1058ed9a();
       } else {
          try {
-            ServerDetails var1 = C0114.bootstrap<"call",0,1>().getConnectedServer();
+            ServerDetails var1 = Minecraft.getMinecraftGame().getConnectedServer();
             if (var1 == null) {
-               throw new Exception(C0252.bootstrap<"get",12884901902>());
+               throw new Exception(C0266.m_9793dfe2());
             }
 
-            C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",12884901903>() + C0114.bootstrap<"call",2,1>());
-            C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",12884901904>() + var1._getAddress());
-            C0114.bootstrap<"call",3,1>(C0252.bootstrap<"get",12884901905>() + var1._getMotd());
+            m_a11708c5(C0266.m_1635bc47() + Minecraft.getMinecraftProtocolVersion());
+            m_a11708c5(C0266.m_d597c122() + var1._getAddress());
+            m_a11708c5(C0266.m_18204724() + var1._getMotd());
          } catch (Exception var2) {
-            C0114.bootstrap<"call",4,1>().m_77a7bc18(C0252.bootstrap<"get",12884901906>()).m_66e721c0();
+            C0064.m_7853c016().m_ee04ba1b(C0266.m_cf4f91f1()).m_1058ed9a();
          }
       }
    }

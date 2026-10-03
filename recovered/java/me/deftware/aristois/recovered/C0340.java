@@ -9,22 +9,22 @@ public class C0340 extends AbstractMod {
       value = "Username",
       description = {"Repeat messages sent by this user"}
    )
-   private String f_ea07690a = C0252.bootstrap<"get",47244640261>();
+   private String f_a595727e = C0260.m_c688f8ca();
    @C0098(
       value = "Splitter",
       description = {"Message splitter, default \">\", name is supposedly on the left of this character"}
    )
-   private String f_739e9956 = C0252.bootstrap<"get",25769803851>();
+   private String f_14ce8a90 = C0267.m_b2dd5137();
 
    public C0340() {
-      super(C0252.bootstrap<"get",47244640259>(), C0290.f_a5db61fd, C0252.bootstrap<"get",47244640260>());
+      super(C0260.m_a9247108(), C0290.f_99d080af, C0260.m_4626ac74());
    }
 
    @EventHandler
-   public void m_6db7bd48(EventChatReceive var1) {
+   public void m_f84326ec(EventChatReceive var1) {
       String var2 = var1.getMessage().string();
-      if (var2.contains(this.f_ea07690a + this.f_739e9956)) {
-         C0114.bootstrap<"call",0,1>().m_77a7bc18(var2.split(this.f_ea07690a + this.f_739e9956)[1]).m_f0402f6b();
+      if (var2.contains(this.f_a595727e + this.f_14ce8a90)) {
+         C0064.m_13c9ffeb().m_ee04ba1b(var2.split(this.f_a595727e + this.f_14ce8a90)[1]).m_0e265701();
       }
    }
 }

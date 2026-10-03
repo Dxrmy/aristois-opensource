@@ -1,9 +1,9 @@
 package me.deftware.aristois.recovered;
 
 public enum C0427 {
-   f_f7cee513,
-   f_3c5c0941,
-   f_2db8c19a;
+   f_26bd24ae,
+   f_73e87f17,
+   f_b1ff7fe9;
 
    private C0427() {
    }

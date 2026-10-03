@@ -12,21 +12,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.nio.file.OpenOption;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class C0198 {
    public C0198() {
    }
 
-   public static GsonBuilder m_ab13aa72() {
-      return new GsonBuilder()
-         .setPrettyPrinting()
-         .addDeserializationExclusionStrategy(C0114.bootstrap<"call",0,1>())
-         .addSerializationExclusionStrategy(C0114.bootstrap<"call",0,1>());
+   public static GsonBuilder m_cde2d310() {
+      return new GsonBuilder().setPrettyPrinting().addDeserializationExclusionStrategy(m_ee8519bd()).addSerializationExclusionStrategy(m_ee8519bd());
    }
 
-   public static ExclusionStrategy m_996dbc1d() {
+   public static ExclusionStrategy m_ee8519bd() {
       return new ExclusionStrategy() {
          public boolean shouldSkipClass(Class<?> var1) {
             return false;
@@ -38,22 +35,22 @@ public class C0198 {
       };
    }
 
-   public static void m_6efd6053(JsonElement var0, File var1) throws IOException {
+   public static void m_cc641daf(JsonElement var0, File var1) throws IOException {
       Gson var2 = new GsonBuilder().setPrettyPrinting().create();
       JsonParser var3 = new JsonParser();
       JsonElement var4 = var3.parse(var0.toString());
       String var5 = var2.toJson(var4);
-      PrintWriter var6 = new PrintWriter(var1.getAbsolutePath(), C0252.bootstrap<"get",55834574931>());
+      PrintWriter var6 = new PrintWriter(var1.getAbsolutePath(), C0256.m_19faa493());
       var6.println(var5);
       var6.close();
    }
 
-   public static <T> T m_902a1dac(Path var0, Class<T> var1) throws IOException {
-      Gson var2 = C0114.bootstrap<"call",1,1>().create();
+   public static <T> T m_19d60999(Path var0, Class<T> var1) throws IOException {
+      Gson var2 = m_cde2d310().create();
 
       Object var7;
       try (
-         InputStream var3 = C0114.bootstrap<"call",2,1>(var0, new OpenOption[0]);
+         InputStream var3 = Files.newInputStream(var0);
          InputStreamReader var5 = new InputStreamReader(var3);
       ) {
          var7 = var2.fromJson(var5, var1);

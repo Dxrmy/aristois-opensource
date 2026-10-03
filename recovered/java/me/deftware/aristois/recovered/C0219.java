@@ -2,39 +2,42 @@ package me.deftware.aristois.recovered;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import java.nio.file.LinkOption;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.BiConsumer;
+import me.deftware.aristois.main.Main;
 import me.deftware.client.framework.config.Settings;
+import org.apache.commons.lang3.StringUtils;
 
 public class C0219<T> extends AbstractList<T> {
-   private final Class<T> f_65349cff;
-   private final C0125 f_772a07ff;
-   protected List<T> f_cf4e182c = new CopyOnWriteArrayList<>();
-   protected List<T> f_f0c082a8 = new ArrayList<>();
-   private final String f_1209411e;
-   private boolean f_155cf561;
-   private final List<BiConsumer<T, Boolean>> f_57582165 = new ArrayList<>();
+   private final Class<T> f_f56e9422;
+   private final C0125 f_bfc89d79;
+   protected List<T> f_2acc0bd9 = new CopyOnWriteArrayList<>();
+   protected List<T> f_d4c21b24 = new ArrayList<>();
+   private final String f_89af993d;
+   private boolean f_97b23827;
+   private final List<BiConsumer<T, Boolean>> f_a09fd544 = new ArrayList<>();
 
    public C0219(Class<T> var1, String var2) {
       this(var1, var2, true);
    }
 
    public C0219(Class<T> var1, String var2, boolean var3) {
-      this.f_65349cff = var1;
-      this.f_1209411e = var2;
-      this.f_772a07ff = C0125.f_70947d4f;
-      this.f_155cf561 = var3;
-      if (!C0114.bootstrap<"call",0,1>(var2)) {
+      this.f_f56e9422 = var1;
+      this.f_89af993d = var2;
+      this.f_bfc89d79 = C0125.f_94eb86f7;
+      this.f_97b23827 = var3;
+      if (!StringUtils.isEmpty(var2)) {
          if (var3) {
-            C0114.bootstrap<"call",1,1>().getShutdownQueue().add(this::m_3e4b2992);
+            Main.getConfig().getShutdownQueue().add(this::m_fdb05c09);
          }
 
-         this.m_6e45c8fa();
+         this.m_a13a31bc();
       }
    }
 
@@ -42,47 +45,47 @@ public class C0219<T> extends AbstractList<T> {
       this(var1, var2);
       var3.forEach(var2x -> {
          try {
-            this.f_f0c082a8.add((T)this.f_772a07ff.m_5f630fc1(var2x, var1));
+            this.f_d4c21b24.add((T)this.f_bfc89d79.m_b3b664ad(var2x, var1));
          } catch (Exception var4) {
             var4.printStackTrace();
          }
       });
       if (this.isEmpty()) {
-         this.f_cf4e182c.addAll(this.f_f0c082a8);
+         this.f_2acc0bd9.addAll(this.f_d4c21b24);
       }
    }
 
    @SafeVarargs
    public C0219(Class<T> var1, String var2, T... var3) {
       this(var1, var2);
-      this.f_f0c082a8.addAll(C0114.bootstrap<"call",2,1>(var3));
+      this.f_d4c21b24.addAll(Arrays.asList((T[])var3));
       if (this.isEmpty()) {
-         this.f_cf4e182c.addAll(this.f_f0c082a8);
+         this.f_2acc0bd9.addAll(this.f_d4c21b24);
       }
    }
 
    @Override
    public T get(int var1) {
-      return this.f_cf4e182c.get(var1);
+      return this.f_2acc0bd9.get(var1);
    }
 
    @Override
    public int size() {
-      return this.f_cf4e182c.size();
+      return this.f_2acc0bd9.size();
    }
 
    @Override
    public T remove(int var1) {
-      Object var2 = this.f_cf4e182c.remove(var1);
-      this.m_2bf95354((T)var2, true);
+      Object var2 = this.f_2acc0bd9.remove(var1);
+      this.m_cef1a7b6((T)var2, true);
       return (T)var2;
    }
 
    @Override
    public boolean remove(Object var1) {
-      boolean var2 = this.f_cf4e182c.remove(var1);
+      boolean var2 = this.f_2acc0bd9.remove(var1);
       if (var2) {
-         this.m_2bf95354((T)var1, true);
+         this.m_cef1a7b6((T)var1, true);
       }
 
       return var2;
@@ -90,16 +93,16 @@ public class C0219<T> extends AbstractList<T> {
 
    @Override
    public boolean add(T var1) {
-      this.f_cf4e182c.add((T)var1);
-      this.m_2bf95354((T)var1, false);
+      this.f_2acc0bd9.add((T)var1);
+      this.m_cef1a7b6((T)var1, false);
       return true;
    }
 
-   public boolean m_b6097a55(JsonElement var1) {
+   public boolean m_bf96552f(JsonElement var1) {
       try {
-         Object var2 = this.f_772a07ff.m_5f630fc1(var1, this.f_65349cff);
-         this.f_cf4e182c.add((T)var2);
-         this.m_2bf95354((T)var2, false);
+         Object var2 = this.f_bfc89d79.m_b3b664ad(var1, this.f_f56e9422);
+         this.f_2acc0bd9.add((T)var2);
+         this.m_cef1a7b6((T)var2, false);
       } catch (Exception var3) {
          var3.printStackTrace();
       }
@@ -109,14 +112,14 @@ public class C0219<T> extends AbstractList<T> {
 
    @Override
    public void add(int var1, T var2) {
-      this.f_cf4e182c.add(var1, (T)var2);
-      this.m_2bf95354((T)var2, false);
+      this.f_2acc0bd9.add(var1, (T)var2);
+      this.m_cef1a7b6((T)var2, false);
    }
 
-   public void m_62c96cfe() {
+   public void m_41e83f88() {
       this.clear();
-      if (!this.f_f0c082a8.isEmpty()) {
-         this.addAll(this.f_f0c082a8);
+      if (!this.f_d4c21b24.isEmpty()) {
+         this.addAll(this.f_d4c21b24);
       }
    }
 
@@ -124,7 +127,7 @@ public class C0219<T> extends AbstractList<T> {
    public boolean contains(Object var1) {
       boolean var2 = super.contains(var1);
       if (!var2) {
-         for (Object var4 : this.f_cf4e182c) {
+         for (Object var4 : this.f_2acc0bd9) {
             if (var4.equals(var1)) {
                return true;
             }
@@ -134,24 +137,24 @@ public class C0219<T> extends AbstractList<T> {
       return var2;
    }
 
-   protected void m_2bf95354(T var1, boolean var2) {
-      if (this.f_155cf561) {
-         this.m_3e4b2992();
+   protected void m_cef1a7b6(T var1, boolean var2) {
+      if (this.f_97b23827) {
+         this.m_fdb05c09();
       }
 
-      this.f_57582165.forEach(var2x -> var2x.accept((T)var1, C0114.bootstrap<"call",0,1>(var2)));
+      this.f_a09fd544.forEach(var2x -> var2x.accept((T)var1, var2));
    }
 
-   public JsonArray m_61dde10c() {
+   public JsonArray m_d788a065() {
       JsonArray var1 = new JsonArray();
-      this.f_cf4e182c.forEach(var2 -> var1.add(this.f_772a07ff.m_77b61bf9(var2, var2.getClass())));
+      this.f_2acc0bd9.forEach(var2 -> var1.add(this.f_bfc89d79.m_a7c6d791(var2, var2.getClass())));
       return var1;
    }
 
-   public C0219<T> m_073bf4dd(JsonArray var1) {
+   public C0219<T> m_50cef0e3(JsonArray var1) {
       var1.forEach(var1x -> {
          try {
-            this.add((T)this.f_772a07ff.m_5f630fc1(var1x, this.m_87bd75a8()));
+            this.add((T)this.f_bfc89d79.m_b3b664ad(var1x, this.m_5ce6615d()));
          } catch (Exception var3) {
             var3.printStackTrace();
          }
@@ -159,61 +162,62 @@ public class C0219<T> extends AbstractList<T> {
       return this;
    }
 
-   public C0219<T> m_3e4b2992() {
-      C0114.bootstrap<"call",0,1>().putArray(this.f_1209411e, this.m_61dde10c());
-      C0114.bootstrap<"call",0,1>().save();
+   public C0219<T> m_fdb05c09() {
+      Main.getConfig().putArray(this.f_89af993d, this.m_d788a065());
+      Main.getConfig().save();
       return this;
    }
 
-   public C0219<T> m_6e45c8fa() {
-      if (C0114.bootstrap<"call",0,1>().hasKey(this.f_1209411e)) {
-         this.m_073bf4dd(C0114.bootstrap<"call",0,1>().getArray(this.f_1209411e));
+   public C0219<T> m_a13a31bc() {
+      if (Main.getConfig().hasKey(this.f_89af993d)) {
+         this.m_50cef0e3(Main.getConfig().getArray(this.f_89af993d));
       }
 
       return this;
    }
 
-   public Class<T> m_87bd75a8() {
-      return this.f_65349cff;
+   public Class<T> m_5ce6615d() {
+      return this.f_f56e9422;
    }
 
-   public C0125 m_65eff211() {
-      return this.f_772a07ff;
+   public C0125 m_b299a0a9() {
+      return this.f_bfc89d79;
    }
 
-   public List<T> m_99e6aa32() {
-      return this.f_cf4e182c;
+   public List<T> m_93a86be0() {
+      return this.f_2acc0bd9;
    }
 
-   public List<T> m_c831055d() {
-      return this.f_f0c082a8;
+   public List<T> m_a2a4e197() {
+      return this.f_d4c21b24;
    }
 
-   public String m_749720b1() {
-      return this.f_1209411e;
+   public String m_c42f1c7e() {
+      return this.f_89af993d;
    }
 
-   public boolean m_d8176196() {
-      return this.f_155cf561;
+   public boolean m_f0e7dcaa() {
+      return this.f_97b23827;
    }
 
-   public List<BiConsumer<T, Boolean>> m_f76e85c9() {
-      return this.f_57582165;
+   public List<BiConsumer<T, Boolean>> m_8db15fc6() {
+      return this.f_a09fd544;
    }
 
    public static class anonymousthis<T> extends C0219<T> {
-      private final Path f_ec526712;
+      private final Path f_ecb44f20;
 
       public anonymousthis(Class<T> var1, String var2) {
          super(var1, null);
-         this.f_ec526712 = Settings.configDir.resolve(var2);
-         C0114.bootstrap<"call",0,1>().addShutdownHook(new Thread(this::m_f6b94184));
-         this.m_04bb6667();
+         this.f_ecb44f20 = Settings.configDir.resolve(var2);
+         Runtime.getRuntime().addShutdownHook(new Thread(this::m_fdb05c09));
+         this.m_a13a31bc();
       }
 
-      public C0219<T> m_f6b94184() {
+      @Override
+      public C0219<T> m_fdb05c09() {
          try {
-            C0114.bootstrap<"call",0,1>(this.m_d0827ccc(), this.f_ec526712.toFile());
+            C0198.m_cc641daf(this.m_d788a065(), this.f_ecb44f20.toFile());
          } catch (Exception var2) {
             var2.printStackTrace();
          }
@@ -221,11 +225,12 @@ public class C0219<T> extends AbstractList<T> {
          return this;
       }
 
-      public C0219<T> m_04bb6667() {
+      @Override
+      public C0219<T> m_a13a31bc() {
          try {
-            if (C0114.bootstrap<"call",0,1>(this.f_ec526712, new LinkOption[0])) {
-               JsonArray var1 = (JsonArray)C0114.bootstrap<"call",1,1>(this.f_ec526712, JsonArray.class);
-               this.m_7a26db7a(var1);
+            if (Files.exists(this.f_ecb44f20)) {
+               JsonArray var1 = C0198.m_19d60999(this.f_ecb44f20, JsonArray.class);
+               this.m_50cef0e3(var1);
             }
          } catch (Exception var2) {
             var2.printStackTrace();

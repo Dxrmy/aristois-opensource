@@ -1,7 +1,10 @@
 package me.deftware.aristois.recovered;
 
 import java.util.concurrent.Callable;
+import me.deftware.client.framework.fonts.FontRenderer;
 import me.deftware.client.framework.gui.widgets.SelectableList.ListItem;
+import me.deftware.client.framework.input.Keyboard;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.message.Appearance.FormattingColor;
@@ -9,40 +12,39 @@ import me.deftware.client.framework.network.PacketRegistry;
 import me.deftware.client.framework.network.SocksProxy;
 
 public abstract class C0144 implements SocksProxy, ListItem {
-   private C0144.anonymouscatch f_000ee492 = C0144.anonymouscatch.f_95e9f7f0;
-   protected Message f_c1a51e3e = C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",51539607654>()).style(C0114.bootstrap<"call",1,1>(DefaultColors.GRAY));
-   private boolean f_56543fe3;
-   private boolean f_3e5a89e9;
-   private long f_aac0489e;
-   private Message[] f_ba00399b;
+   private C0144.anonymouscatch f_03a99b50 = C0144.anonymouscatch.f_c8c15b48;
+   protected Message f_ea13adf7 = Message.of(C0255.m_bdbd5e40()).style(Appearance.of(DefaultColors.GRAY));
+   private boolean f_87ca682e;
+   private boolean f_0b4e307b;
+   private long f_85a454c8;
+   private Message[] f_879a6301;
 
    public C0144() {
    }
 
-   public synchronized void m_4a859b77() {
-      if (!this.f_56543fe3) {
-         this.f_56543fe3 = true;
-         if (C0213.f_57699eb8.m_093ae25a()) {
-            C0114.bootstrap<"call",0,1>(
+   public synchronized void m_b728afce() {
+      if (!this.f_87ca682e) {
+         this.f_87ca682e = true;
+         if (C0213.f_17e12451.m_efa7610e()) {
+            C0217.m_c162d659(
                () -> {
                   try {
-                     this.m_280fdfbd(
-                        () -> C0114.bootstrap<"call",0,1>(this.getSocketAddress().getAddress().isReachable(1000)),
-                        C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",51539607662>()).style(C0114.bootstrap<"call",1,1>(DefaultColors.RED))
+                     this.m_e1c70890(
+                        () -> this.getSocketAddress().getAddress().isReachable(1000), Message.of(C0255.m_1472ab32()).style(Appearance.of(DefaultColors.RED))
                      );
                   } catch (Exception var2) {
-                     this.f_c1a51e3e = C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",51539607663>()).style(C0114.bootstrap<"call",1,1>(DefaultColors.RED));
+                     this.f_ea13adf7 = Message.of(C0255.m_a5b24d28()).style(Appearance.of(DefaultColors.RED));
                   }
                }
             );
          } else {
-            this.f_3e5a89e9 = true;
-            this.f_c1a51e3e = C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",51539607655>()).style(C0114.bootstrap<"call",2,1>(DefaultColors.LIGHT_PURPLE));
+            this.f_0b4e307b = true;
+            this.f_ea13adf7 = Message.of(C0255.m_c04d8f6e()).style(Appearance.of(DefaultColors.LIGHT_PURPLE));
          }
       }
    }
 
-   public FormattingColor m_ff08f2fd(int var1) {
+   public FormattingColor m_4de4a42d(int var1) {
       DefaultColors var2;
       if (var1 <= 75) {
          var2 = DefaultColors.DARK_GREEN;
@@ -57,43 +59,38 @@ public abstract class C0144 implements SocksProxy, ListItem {
       return var2;
    }
 
-   public boolean m_1d4a5421() {
+   public boolean m_89e0519f() {
       SocksProxy var1 = PacketRegistry.INSTANCE.getProxy();
       return var1 != null && var1.equals(this);
    }
 
-   public FormattingColor m_cb738fbb() {
-      return this.m_1d4a5421() ? DefaultColors.GREEN : DefaultColors.WHITE;
+   public FormattingColor m_43cd70a2() {
+      return this.m_89e0519f() ? DefaultColors.GREEN : DefaultColors.WHITE;
    }
 
-   public boolean m_ef4d96d1() {
+   public boolean m_e606d819() {
       try {
-         if (this.m_7a7c753e()) {
-            if (C0114.bootstrap<"call",0,1>()) {
-               this.f_000ee492 = C0144.anonymouscatch.f_cb43324d;
+         if (this.m_f21a055b()) {
+            if (Keyboard.isShiftPressed()) {
+               this.f_03a99b50 = C0144.anonymouscatch.f_1442a648;
             }
 
-            if (this.f_000ee492 == C0144.anonymouscatch.f_95e9f7f0) {
-               this.f_c1a51e3e = C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",21474836506>()).style(C0114.bootstrap<"call",2,1>(DefaultColors.YELLOW));
-               this.m_280fdfbd(
-                  () -> {
-                     C0140 var1 = new C0139(C0252.bootstrap<"get",51539607659>()).m_5d950b0b(this).m_244f5552();
-                     if (var1.m_9781181b()) {
-                        this.f_000ee492 = C0144.anonymouscatch.f_cb43324d;
-                        return C0114.bootstrap<"call",0,1>(true);
-                     } else {
-                        this.f_000ee492 = C0144.anonymouscatch.f_72be8fc5;
-                        this.f_ba00399b = new Message[]{
-                           C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",51539607660>()), C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",51539607661>())
-                        };
-                        return C0114.bootstrap<"call",0,1>(false);
-                     }
-                  },
-                  C0114.bootstrap<"call",1,1>(C0252.bootstrap<"get",51539607656>()).style(C0114.bootstrap<"call",2,1>(DefaultColors.RED))
-               );
+            if (this.f_03a99b50 == C0144.anonymouscatch.f_c8c15b48) {
+               this.f_ea13adf7 = Message.of(C0254.m_7b0db73e()).style(Appearance.of(DefaultColors.YELLOW));
+               this.m_e1c70890(() -> {
+                  C0140 var1 = new C0139(C0255.m_1672ac4d()).m_4ac4bce5(this).m_0017133f();
+                  if (var1.m_9362a920()) {
+                     this.f_03a99b50 = C0144.anonymouscatch.f_1442a648;
+                     return true;
+                  } else {
+                     this.f_03a99b50 = C0144.anonymouscatch.f_a2f15feb;
+                     this.f_879a6301 = new Message[]{Message.of(C0255.m_e9a52709()), Message.of(C0255.m_37c08c9d())};
+                     return false;
+                  }
+               }, Message.of(C0255.m_2dc36b02()).style(Appearance.of(DefaultColors.RED)));
             }
 
-            if (this.f_000ee492 == C0144.anonymouscatch.f_cb43324d) {
+            if (this.f_03a99b50 == C0144.anonymouscatch.f_1442a648) {
                PacketRegistry.INSTANCE.setProxy(this);
                return true;
             }
@@ -105,101 +102,94 @@ public abstract class C0144 implements SocksProxy, ListItem {
       }
    }
 
-   private void m_280fdfbd(Callable<Boolean> var1, Message var2) throws Exception {
-      long var3 = C0114.bootstrap<"call",0,1>();
+   private void m_e1c70890(Callable<Boolean> var1, Message var2) throws Exception {
+      long var3 = System.currentTimeMillis();
       boolean var5 = (Boolean)var1.call();
-      this.f_aac0489e = C0114.bootstrap<"call",0,1>() - var3;
+      this.f_85a454c8 = System.currentTimeMillis() - var3;
       if (var5) {
-         this.f_c1a51e3e = C0114.bootstrap<"call",3,1>(
-               C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",51539607657>(), new Object[]{C0114.bootstrap<"call",1,1>(this.f_aac0489e)})
-            )
-            .style(C0114.bootstrap<"call",4,1>(this.m_ff08f2fd((int)this.f_aac0489e)));
-         this.f_3e5a89e9 = true;
+         this.f_ea13adf7 = Message.of(String.format(C0255.m_4cbaf16f(), this.f_85a454c8)).style(Appearance.of(this.m_4de4a42d((int)this.f_85a454c8)));
+         this.f_0b4e307b = true;
       } else {
-         this.f_c1a51e3e = var2;
+         this.f_ea13adf7 = var2;
       }
    }
 
    public void render(int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8) {
       var3 += 4;
-      this.m_6ca3d1b3(
-         true,
-         var2 + var4 - 18,
-         var3,
-         this.f_c1a51e3e,
-         C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",51539607658>() + this.getVersion()).style(C0114.bootstrap<"call",1,1>(DefaultColors.GRAY))
+      this.m_ad28fb7c(
+         true, var2 + var4 - 18, var3, this.f_ea13adf7, Message.of(C0255.m_678c4ddb() + this.getVersion()).style(Appearance.of(DefaultColors.GRAY))
       );
-      this.m_6ca3d1b3(false, var2 - 4, var3, this.m_70bc12d7());
+      this.m_ad28fb7c(false, var2 - 4, var3, this.m_91be39c9());
    }
 
-   protected void m_6ca3d1b3(boolean var1, int var2, int var3, Message... var4) {
+   protected void m_ad28fb7c(boolean var1, int var2, int var3, Message... var4) {
       for (Message var8 : var4) {
          int var9 = var2;
          if (var1) {
-            var9 = var2 - C0114.bootstrap<"call",5,1>(var8);
+            var9 = var2 - FontRenderer.getStringWidth(var8);
          }
 
-         C0114.bootstrap<"call",6,1>(var8, var9, var3, 16777215);
-         var3 += C0114.bootstrap<"call",7,1>();
+         FontRenderer.drawString(var8, var9, var3, 16777215);
+         var3 += FontRenderer.getFontHeight();
       }
    }
 
    public Message[] getTooltip() {
-      return this.f_ba00399b;
+      return this.f_879a6301;
    }
 
-   protected Message[] m_70bc12d7() {
-      return new Message[]{C0114.bootstrap<"call",3,1>(this.getAddress())};
+   protected Message[] m_91be39c9() {
+      return new Message[]{Message.of(this.getAddress())};
    }
 
-   public C0144.anonymouscatch m_c549f31b() {
-      return this.f_000ee492;
+   public C0144.anonymouscatch m_d8f4b1f5() {
+      return this.f_03a99b50;
    }
 
-   public Message m_a4c3163e() {
-      return this.f_c1a51e3e;
+   public Message m_2d348094() {
+      return this.f_ea13adf7;
    }
 
-   public boolean m_d7729356() {
-      return this.f_56543fe3;
+   public boolean m_275ab222() {
+      return this.f_87ca682e;
    }
 
-   public boolean m_7a7c753e() {
-      return this.f_3e5a89e9;
+   public boolean m_f21a055b() {
+      return this.f_0b4e307b;
    }
 
-   public long m_32de56e9() {
-      return this.f_aac0489e;
+   public long m_c495d695() {
+      return this.f_85a454c8;
    }
 
-   public void m_d851d56e(C0144.anonymouscatch var1) {
-      this.f_000ee492 = var1;
+   public void m_c93f373e(C0144.anonymouscatch var1) {
+      this.f_03a99b50 = var1;
    }
 
-   public void m_269116b4(Message var1) {
-      this.f_c1a51e3e = var1;
+   public void m_8d564dc2(Message var1) {
+      this.f_ea13adf7 = var1;
    }
 
-   public void m_d9b33be5(boolean var1) {
-      this.f_56543fe3 = var1;
+   public void m_d6ac7420(boolean var1) {
+      this.f_87ca682e = var1;
    }
 
-   public void m_4603032c(boolean var1) {
-      this.f_3e5a89e9 = var1;
+   public void m_394ecb95(boolean var1) {
+      this.f_0b4e307b = var1;
    }
 
-   public void m_c4fe65eb(long var1) {
-      this.f_aac0489e = var1;
+   public void m_ad6c7e6f(long var1) {
+      this.f_85a454c8 = var1;
    }
 
-   public void m_e4840076(Message[] var1) {
-      this.f_ba00399b = var1;
+   public void m_eb5ceeb6(Message[] var1) {
+      this.f_879a6301 = var1;
    }
 
    public static enum anonymouscatch {
-      f_95e9f7f0,
-      f_72be8fc5,
-      f_cb43324d;
+      f_c8c15b48,
+      f_a2f15feb,
+      f_1442a648;
 
       private anonymouscatch() {
       }

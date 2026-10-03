@@ -13,72 +13,72 @@ public class C0315 extends AbstractMod {
       value = "Totem",
       description = {"Disable the totem animation"}
    )
-   private boolean f_25ae92ea = true;
+   private boolean f_87646d84 = true;
    @C0098(
       value = "Fire",
       description = {"Disable the fire overlay animation"}
    )
-   private boolean f_af285d59 = true;
+   private boolean f_5e373322 = true;
    @C0098(
       value = "Fog",
       description = {"Disable fog overlay animation(s)"}
    )
-   private boolean f_a7698916 = true;
+   private boolean f_1970c8ab = true;
    @C0098(
       value = "Wall",
       description = {"Disable the in-wall suffocation overlay animation"}
    )
-   private boolean f_eaf6db00 = false;
+   private boolean f_29a6a846 = false;
    @C0098(
       value = "Underwater",
       description = {"Disable the underwater effect animation(s)"}
    )
-   private boolean f_b7583c55 = false;
+   private boolean f_2e7415bb = false;
    @C0098(
       value = "Pumpkin",
       description = {"Disable overlay from wearing a carved pumpkin"}
    )
-   private boolean f_df8492a0 = true;
+   private boolean f_20f3d354 = true;
    @C0098(
       value = "Hurtcam",
       description = {"Disable the hurtcam animation"}
    )
-   private boolean f_1b5de3c8 = true;
+   private boolean f_3ae3f534 = true;
    @C0098(
       value = "Potions",
       description = {"Disable visibility for potion effects such as nausea and confusion"}
    )
-   private boolean f_0896c18c = true;
+   private boolean f_a3a7c98b = true;
 
    public C0315() {
-      super(C0252.bootstrap<"get",47244640329>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",47244640330>());
+      super(C0260.m_d1f7b79f(), C0290.f_3210deb7, C0260.m_a29090eb());
    }
 
    @EventHandler
-   public void m_431d485f(EventAnimation var1) {
-      boolean var2 = var1.getAnimationType() == AnimationType.Totem && this.f_25ae92ea;
-      boolean var3 = var1.getAnimationType() == AnimationType.Fire && this.f_af285d59;
-      boolean var4 = var1.getAnimationType() == AnimationType.Wall && this.f_eaf6db00;
-      boolean var5 = var1.getAnimationType() == AnimationType.Pumpkin && this.f_df8492a0;
+   public void m_d344df6a(EventAnimation var1) {
+      boolean var2 = var1.getAnimationType() == AnimationType.Totem && this.f_87646d84;
+      boolean var3 = var1.getAnimationType() == AnimationType.Fire && this.f_5e373322;
+      boolean var4 = var1.getAnimationType() == AnimationType.Wall && this.f_29a6a846;
+      boolean var5 = var1.getAnimationType() == AnimationType.Pumpkin && this.f_20f3d354;
       boolean var6 = false;
-      boolean var7 = var1.getAnimationType() == AnimationType.Underwater && this.f_b7583c55;
+      boolean var7 = var1.getAnimationType() == AnimationType.Underwater && this.f_2e7415bb;
       var1.setCanceled(var2 || var3 || var4 || var5 || var6 || var7);
    }
 
    @EventHandler
-   public void m_77d3c31d(EventIsPotionActive var1) {
-      if (this.f_0896c18c) {
+   public void m_5ab13396(EventIsPotionActive var1) {
+      if (this.f_a3a7c98b) {
          var1.setActive(false);
       }
    }
 
    @EventHandler
-   public void m_aceb203a(EventFogRender var1) {
-      var1.setCanceled(this.f_a7698916);
+   public void m_acb8435a(EventFogRender var1) {
+      var1.setCanceled(this.f_1970c8ab);
    }
 
    @EventHandler
-   public void m_59690cde(EventHurtcam var1) {
-      var1.setCanceled(this.f_1b5de3c8);
+   public void m_5a26da3f(EventHurtcam var1) {
+      var1.setCanceled(this.f_3ae3f534);
    }
 }

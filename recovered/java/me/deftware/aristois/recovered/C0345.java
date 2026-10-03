@@ -7,16 +7,16 @@ import me.deftware.client.framework.network.packets.CPacketCloseWindow;
 
 public class C0345 extends AbstractMod {
    public C0345() {
-      super(C0252.bootstrap<"get",47244640288>(), C0290.f_a5db61fd, C0252.bootstrap<"get",47244640289>());
+      super(C0260.m_88937f2b(), C0290.f_99d080af, C0260.m_396f9431());
    }
 
    @Override
    public void onEnable() {
-      C0114.bootstrap<"call",0,1>().m_77a7bc18(C0252.bootstrap<"get",47244640290>()).m_66e721c0();
+      C0064.m_7853c016().m_ee04ba1b(C0260.m_e9914bd3()).m_1058ed9a();
    }
 
    @EventHandler
-   public void m_354bee91(EventPacketSend var1) {
+   public void m_2af6dda6(EventPacketSend var1) {
       if (var1.getIPacket() instanceof CPacketCloseWindow) {
          var1.setCanceled(true);
       }

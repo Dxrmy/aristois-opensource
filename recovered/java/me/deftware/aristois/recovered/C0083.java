@@ -1,23 +1,24 @@
 package me.deftware.aristois.recovered;
 
 public class C0083 implements C0084 {
-   private long f_3c57056a = 0L;
-   private long f_110ff112;
+   private long f_c04fb8b2 = 0L;
+   private long f_149f4257;
 
    public C0083(long var1) {
-      this.f_110ff112 = var1;
+      this.f_149f4257 = var1;
    }
 
-   public boolean m_4c4741b3() {
-      if (this.f_3c57056a + this.f_110ff112 < C0114.bootstrap<"call",0,1>()) {
-         this.f_3c57056a = C0114.bootstrap<"call",0,1>();
+   @Override
+   public boolean m_efa7610e() {
+      if (this.f_c04fb8b2 + this.f_149f4257 < System.currentTimeMillis()) {
+         this.f_c04fb8b2 = System.currentTimeMillis();
          return true;
       } else {
          return false;
       }
    }
 
-   public void m_60828e76(long var1) {
-      this.f_110ff112 = var1;
+   public void m_ad6c7e6f(long var1) {
+      this.f_149f4257 = var1;
    }
 }

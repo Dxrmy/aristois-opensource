@@ -12,15 +12,15 @@ public class C0328 extends AbstractMod {
          min = 0.0
       )
    )
-   private float f_f8fbea33 = 4.0F;
+   private float f_24cbf1f4 = 4.0F;
 
    public C0328() {
-      super(C0252.bootstrap<"get",47244640338>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",47244640339>());
+      super(C0260.m_11f0c704(), C0290.f_3210deb7, C0260.m_19faa493());
    }
 
    @EventHandler
-   public void m_fe786889(EventCameraClip var1) {
-      var1.setDistance((double)this.f_f8fbea33);
+   public void m_14ec7ed6(EventCameraClip var1) {
+      var1.setDistance((double)this.f_24cbf1f4);
       var1.setCanceled(true);
    }
 }

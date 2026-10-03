@@ -11,130 +11,120 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class C0468 {
-   public static int f_3e2dccc0 = 1024;
-   private C0461 f_1fbe8262;
-   private C0464 f_2405b800;
-   private String f_e89d272f;
-   private String f_53e76d57 = null;
-   private String f_97fc2012 = null;
-   private String f_16530cbb;
-   private long f_ebed5854;
-   private int f_6f6401df;
-   private long f_caf77b26;
-   private boolean f_14e6f8bc;
-   private Socket f_e18b438a = null;
-   private long f_b452da16 = 0L;
-   private File f_47d61a2c = null;
-   private int f_eee6ea8d = 0;
-   private boolean f_ec5ce26d;
-   private long f_22042504 = 0L;
-   private long f_69fde206 = 0L;
+   public static int f_c25f7a3b = 1024;
+   private C0461 f_84a2fafa;
+   private C0464 f_ee509d9d;
+   private String f_8a6f2139;
+   private String f_25bcf1bc = null;
+   private String f_494d0915 = null;
+   private String f_393f5204;
+   private long f_d6f281bc;
+   private int f_c1f3f4a3;
+   private long f_b721d101;
+   private boolean f_8cdd169d;
+   private Socket f_5724d0c0 = null;
+   private long f_dbc556da = 0L;
+   private File f_e5ae5e4d = null;
+   private int f_8c5ac125 = 0;
+   private boolean f_68a3f703;
+   private long f_27f6074a = 0L;
+   private long f_216d3659 = 0L;
 
    public C0468(C0461 var1, C0464 var2, String var3, String var4, String var5, String var6, String var7, long var8, int var10, long var11) {
-      this.f_1fbe8262 = var1;
-      this.f_2405b800 = var2;
-      this.f_e89d272f = var3;
-      this.f_53e76d57 = var4;
-      this.f_97fc2012 = var5;
-      this.f_16530cbb = var6;
-      this.f_47d61a2c = new File(var7);
-      this.f_ebed5854 = var8;
-      this.f_6f6401df = var10;
-      this.f_caf77b26 = var11;
-      this.f_14e6f8bc = false;
-      this.f_ec5ce26d = true;
+      this.f_84a2fafa = var1;
+      this.f_ee509d9d = var2;
+      this.f_8a6f2139 = var3;
+      this.f_25bcf1bc = var4;
+      this.f_494d0915 = var5;
+      this.f_393f5204 = var6;
+      this.f_e5ae5e4d = new File(var7);
+      this.f_d6f281bc = var8;
+      this.f_c1f3f4a3 = var10;
+      this.f_b721d101 = var11;
+      this.f_8cdd169d = false;
+      this.f_68a3f703 = true;
    }
 
    public C0468(C0461 var1, C0464 var2, File var3, String var4, int var5) {
-      this.f_1fbe8262 = var1;
-      this.f_2405b800 = var2;
-      this.f_e89d272f = var4;
-      this.f_47d61a2c = var3;
-      this.f_caf77b26 = var3.length();
-      this.f_eee6ea8d = var5;
-      this.f_14e6f8bc = true;
-      this.f_ec5ce26d = false;
+      this.f_84a2fafa = var1;
+      this.f_ee509d9d = var2;
+      this.f_8a6f2139 = var4;
+      this.f_e5ae5e4d = var3;
+      this.f_b721d101 = var3.length();
+      this.f_8c5ac125 = var5;
+      this.f_8cdd169d = true;
+      this.f_68a3f703 = false;
    }
 
-   public synchronized void m_5454f1e2(File var1, boolean var2) {
-      if (!this.f_14e6f8bc) {
-         this.f_14e6f8bc = true;
-         this.f_47d61a2c = var1;
-         if (this.f_16530cbb.equals(C0252.bootstrap<"get",30064771187>()) && var2) {
-            this.f_b452da16 = var1.length();
-            if (this.f_b452da16 == 0L) {
-               this.m_190c3916(var1, false);
+   public synchronized void m_b7343b48(File var1, boolean var2) {
+      if (!this.f_8cdd169d) {
+         this.f_8cdd169d = true;
+         this.f_e5ae5e4d = var1;
+         if (this.f_393f5204.equals(C0265.m_733bff3d()) && var2) {
+            this.f_dbc556da = var1.length();
+            if (this.f_dbc556da == 0L) {
+               this.m_2793dddf(var1, false);
             } else {
-               this.f_1fbe8262
-                  .m_ce0210e2(this.f_e89d272f, C0252.bootstrap<"get",30064771188>() + this.f_6f6401df + C0252.bootstrap<"get",70>() + this.f_b452da16);
-               this.f_2405b800.m_043b2416(this);
+               this.f_84a2fafa.m_412d10a2(this.f_8a6f2139, C0265.m_76700429() + this.f_c1f3f4a3 + C0257.m_593ecbab() + this.f_dbc556da);
+               this.f_ee509d9d.m_f9b69576(this);
             }
          } else {
-            this.f_b452da16 = var1.length();
-            this.m_190c3916(var1, var2);
+            this.f_dbc556da = var1.length();
+            this.m_2793dddf(var1, var2);
          }
       }
    }
 
-   public void m_190c3916(File var1, boolean var2) {
-      new Thread(
-            () -> {
-               BufferedOutputStream var3 = null;
-               Exception var4 = null;
+   public void m_2793dddf(File var1, boolean var2) {
+      new Thread(() -> {
+         BufferedOutputStream var3 = null;
+         Exception var4 = null;
 
-               try {
-                  int[] var5 = this.f_1fbe8262.m_45e74680(this.f_ebed5854);
-                  String var6 = var5[0]
-                     + C0252.bootstrap<"get",8589934650>()
-                     + var5[1]
-                     + C0252.bootstrap<"get",8589934650>()
-                     + var5[2]
-                     + C0252.bootstrap<"get",8589934650>()
-                     + var5[3];
-                  this.f_e18b438a = new Socket(var6, this.f_6f6401df);
-                  this.f_e18b438a.setSoTimeout(30000);
-                  this.f_69fde206 = C0114.bootstrap<"call",0,1>();
-                  this.f_2405b800.m_6ed12368(this);
-                  BufferedInputStream var7 = new BufferedInputStream(this.f_e18b438a.getInputStream());
-                  BufferedOutputStream var8 = new BufferedOutputStream(this.f_e18b438a.getOutputStream());
-                  var3 = new BufferedOutputStream(new FileOutputStream(var1.getCanonicalPath(), var2));
-                  byte[] var9 = new byte[f_3e2dccc0];
-                  byte[] var10 = new byte[4];
-                  int var11 = 0;
+         try {
+            int[] var5 = this.f_84a2fafa.m_729d3cd6(this.f_d6f281bc);
+            String var6 = var5[0] + C0253.m_56242a84() + var5[1] + C0253.m_56242a84() + var5[2] + C0253.m_56242a84() + var5[3];
+            this.f_5724d0c0 = new Socket(var6, this.f_c1f3f4a3);
+            this.f_5724d0c0.setSoTimeout(30000);
+            this.f_216d3659 = System.currentTimeMillis();
+            this.f_ee509d9d.m_81a3fe0e(this);
+            BufferedInputStream var7 = new BufferedInputStream(this.f_5724d0c0.getInputStream());
+            BufferedOutputStream var8 = new BufferedOutputStream(this.f_5724d0c0.getOutputStream());
+            var3 = new BufferedOutputStream(new FileOutputStream(var1.getCanonicalPath(), var2));
+            byte[] var9 = new byte[f_c25f7a3b];
+            byte[] var10 = new byte[4];
+            int var11 = 0;
 
-                  while ((var11 = var7.read(var9, 0, var9.length)) != -1) {
-                     var3.write(var9, 0, var11);
-                     this.f_b452da16 += (long)var11;
-                     var10[0] = (byte)((int)(this.f_b452da16 >> 24 & 255L));
-                     var10[1] = (byte)((int)(this.f_b452da16 >> 16 & 255L));
-                     var10[2] = (byte)((int)(this.f_b452da16 >> 8 & 255L));
-                     var10[3] = (byte)((int)(this.f_b452da16 & 255L));
-                     var8.write(var10);
-                     var8.flush();
-                     this.m_a6bb3f4f();
-                  }
+            while ((var11 = var7.read(var9, 0, var9.length)) != -1) {
+               var3.write(var9, 0, var11);
+               this.f_dbc556da += (long)var11;
+               var10[0] = (byte)((int)(this.f_dbc556da >> 24 & 255L));
+               var10[1] = (byte)((int)(this.f_dbc556da >> 16 & 255L));
+               var10[2] = (byte)((int)(this.f_dbc556da >> 8 & 255L));
+               var10[3] = (byte)((int)(this.f_dbc556da & 255L));
+               var8.write(var10);
+               var8.flush();
+               this.m_1058ed9a();
+            }
 
-                  var3.flush();
-               } catch (Exception var20) {
-                  var4 = var20;
-               } finally {
-                  try {
-                     if (var3 != null) {
-                        var3.close();
-                     }
-
-                     this.f_e18b438a.close();
-                  } catch (Exception var19) {
-                  }
+            var3.flush();
+         } catch (Exception var20) {
+            var4 = var20;
+         } finally {
+            try {
+               if (var3 != null) {
+                  var3.close();
                }
 
-               this.f_1fbe8262.m_a938a984(this, var4);
+               this.f_5724d0c0.close();
+            } catch (Exception var19) {
             }
-         )
-         .start();
+         }
+
+         this.f_84a2fafa.m_4c9108c9(this, var4);
+      }).start();
    }
 
-   public void m_73180361(boolean var1) {
+   public void m_d6ac7420(boolean var1) {
       new Thread(
             () -> {
                BufferedInputStream var2 = null;
@@ -142,7 +132,7 @@ public class C0468 {
 
                try {
                   ServerSocket var4 = null;
-                  int[] var5 = this.f_1fbe8262.m_b6a3faa3();
+                  int[] var5 = this.f_84a2fafa.m_9ea7017c();
                   if (var5 == null) {
                      var4 = new ServerSocket(0);
                   } else {
@@ -155,57 +145,57 @@ public class C0468 {
                      }
 
                      if (var4 == null) {
-                        throw new IOException(C0252.bootstrap<"get",30064771189>());
+                        throw new IOException(C0265.m_8870d2c1());
                      }
                   }
 
-                  var4.setSoTimeout(this.f_eee6ea8d);
-                  this.f_6f6401df = var4.getLocalPort();
-                  InetAddress var28 = this.f_1fbe8262.m_2609e004();
+                  var4.setSoTimeout(this.f_8c5ac125);
+                  this.f_c1f3f4a3 = var4.getLocalPort();
+                  InetAddress var28 = this.f_84a2fafa.m_7dba075f();
                   if (var28 == null) {
-                     var28 = this.f_1fbe8262.m_ae8bc5b6();
+                     var28 = this.f_84a2fafa.m_18ff89bb();
                   }
 
                   byte[] var29 = var28.getAddress();
-                  long var30 = this.f_1fbe8262.m_685d082e(var29);
-                  String var10 = this.f_47d61a2c.getName().replace(' ', '_');
+                  long var30 = this.f_84a2fafa.m_6fa424cb(var29);
+                  String var10 = this.f_e5ae5e4d.getName().replace(' ', '_');
                   var10 = var10.replace('\t', '_');
                   if (var1) {
-                     this.f_2405b800.m_043b2416(this);
+                     this.f_ee509d9d.m_f9b69576(this);
                   }
 
-                  this.f_1fbe8262
-                     .m_ce0210e2(
-                        this.f_e89d272f,
-                        C0252.bootstrap<"get",30064771190>()
+                  this.f_84a2fafa
+                     .m_412d10a2(
+                        this.f_8a6f2139,
+                        C0265.m_a004d745()
                            + var10
-                           + C0252.bootstrap<"get",70>()
+                           + C0257.m_593ecbab()
                            + var30
-                           + C0252.bootstrap<"get",70>()
-                           + this.f_6f6401df
-                           + C0252.bootstrap<"get",70>()
-                           + this.f_47d61a2c.length()
+                           + C0257.m_593ecbab()
+                           + this.f_c1f3f4a3
+                           + C0257.m_593ecbab()
+                           + this.f_e5ae5e4d.length()
                      );
-                  this.f_e18b438a = var4.accept();
-                  this.f_e18b438a.setSoTimeout(30000);
-                  this.f_69fde206 = C0114.bootstrap<"call",0,1>();
+                  this.f_5724d0c0 = var4.accept();
+                  this.f_5724d0c0.setSoTimeout(30000);
+                  this.f_216d3659 = System.currentTimeMillis();
                   if (var1) {
-                     this.f_2405b800.m_6ed12368(this);
+                     this.f_ee509d9d.m_81a3fe0e(this);
                   }
 
                   var4.close();
-                  BufferedOutputStream var11 = new BufferedOutputStream(this.f_e18b438a.getOutputStream());
-                  BufferedInputStream var12 = new BufferedInputStream(this.f_e18b438a.getInputStream());
-                  var2 = new BufferedInputStream(new FileInputStream(this.f_47d61a2c));
-                  if (this.f_b452da16 > 0L) {
+                  BufferedOutputStream var11 = new BufferedOutputStream(this.f_5724d0c0.getOutputStream());
+                  BufferedInputStream var12 = new BufferedInputStream(this.f_5724d0c0.getInputStream());
+                  var2 = new BufferedInputStream(new FileInputStream(this.f_e5ae5e4d));
+                  if (this.f_dbc556da > 0L) {
                      long var13 = 0L;
 
-                     while (var13 < this.f_b452da16) {
-                        var13 += var2.skip(this.f_b452da16 - var13);
+                     while (var13 < this.f_dbc556da) {
+                        var13 += var2.skip(this.f_dbc556da - var13);
                      }
                   }
 
-                  byte[] var32 = new byte[f_3e2dccc0];
+                  byte[] var32 = new byte[f_c25f7a3b];
                   byte[] var14 = new byte[4];
                   int var15 = 0;
 
@@ -213,8 +203,8 @@ public class C0468 {
                      var11.write(var32, 0, var15);
                      var11.flush();
                      var12.read(var14, 0, var14.length);
-                     this.f_b452da16 += (long)var15;
-                     this.m_a6bb3f4f();
+                     this.f_dbc556da += (long)var15;
+                     this.m_1058ed9a();
                   }
                } catch (Exception var26) {
                   var3 = var26;
@@ -224,91 +214,91 @@ public class C0468 {
                         var2.close();
                      }
 
-                     this.f_e18b438a.close();
+                     this.f_5724d0c0.close();
                   } catch (Exception var24) {
                   }
                }
 
-               this.f_1fbe8262.m_a938a984(this, var3);
+               this.f_84a2fafa.m_4c9108c9(this, var3);
             }
          )
          .start();
    }
 
-   private void m_a6bb3f4f() {
-      if (this.f_22042504 > 0L) {
+   private void m_1058ed9a() {
+      if (this.f_27f6074a > 0L) {
          try {
-            C0114.bootstrap<"call",0,1>(this.f_22042504);
+            Thread.sleep(this.f_27f6074a);
          } catch (InterruptedException var2) {
          }
       }
    }
 
-   public String m_c9fee510() {
-      return this.f_e89d272f;
+   public String m_3d3a8736() {
+      return this.f_8a6f2139;
    }
 
-   public String m_1b6eb0bd() {
-      return this.f_53e76d57;
+   public String m_e07cee76() {
+      return this.f_25bcf1bc;
    }
 
-   public String m_c8aa4f28() {
-      return this.f_97fc2012;
+   public String m_d32ebe65() {
+      return this.f_494d0915;
    }
 
-   public File m_2335353c() {
-      return this.f_47d61a2c;
+   public File m_facf6936() {
+      return this.f_e5ae5e4d;
    }
 
-   public int m_146d9f78() {
-      return this.f_6f6401df;
+   public int m_f34ec3cf() {
+      return this.f_c1f3f4a3;
    }
 
-   public boolean m_9cd91056() {
-      return this.f_ec5ce26d;
+   public boolean m_297cfef6() {
+      return this.f_68a3f703;
    }
 
-   public boolean m_c2bb1238() {
-      return !this.m_9cd91056();
+   public boolean m_275ab222() {
+      return !this.m_297cfef6();
    }
 
-   public long m_3e56f843() {
-      return this.f_22042504;
+   public long m_3edda337() {
+      return this.f_27f6074a;
    }
 
-   public void m_a4700369(long var1) {
-      this.f_22042504 = var1;
+   public void m_ad6c7e6f(long var1) {
+      this.f_27f6074a = var1;
    }
 
-   public long m_049e3261() {
-      return this.f_caf77b26;
+   public long m_c495d695() {
+      return this.f_b721d101;
    }
 
-   public long m_e96a7009() {
-      return this.f_b452da16;
+   public long m_88ccf931() {
+      return this.f_dbc556da;
    }
 
-   public void m_9fe748e5(long var1) {
-      this.f_b452da16 = var1;
+   public void m_e12f1e31(long var1) {
+      this.f_dbc556da = var1;
    }
 
-   public double m_d9f672b2() {
-      return 100.0 * ((double)this.m_e96a7009() / (double)this.m_049e3261());
+   public double m_20206c69() {
+      return 100.0 * ((double)this.m_88ccf931() / (double)this.m_c495d695());
    }
 
-   public void m_c63a28e4() {
+   public void m_e4dddc57() {
       try {
-         this.f_e18b438a.close();
+         this.f_5724d0c0.close();
       } catch (Exception var2) {
       }
    }
 
-   public long m_56320631() {
-      long var1 = (C0114.bootstrap<"call",0,1>() - this.f_69fde206) / 1000L;
-      return var1 <= 0L ? 0L : this.m_e96a7009() / var1;
+   public long m_8adc505c() {
+      long var1 = (System.currentTimeMillis() - this.f_216d3659) / 1000L;
+      return var1 <= 0L ? 0L : this.m_88ccf931() / var1;
    }
 
-   public long m_d810f2a5() {
-      return this.f_ebed5854;
+   public long m_1993b0ec() {
+      return this.f_d6f281bc;
    }
 }

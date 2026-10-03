@@ -1,20 +1,22 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.network.packets.CPacketPosition;
 
 public class C0033 extends C0001 {
    public C0033() {
    }
 
-   public static boolean m_208a83c8(int var0) {
-      MainEntityPlayer var1 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   public static boolean m_1521b1fa(int var0) {
+      MainEntityPlayer var1 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       if (var1.isCreative()) {
-         C0114.bootstrap<"call",2,1>().m_77a7bc18(C0252.bootstrap<"get",8589934620>()).m_66e721c0();
+         C0064.m_7853c016().m_ee04ba1b(C0253.m_5fa6dd07()).m_1058ed9a();
          return false;
-      } else if (C0114.bootstrap<"call",3,1>(C0382.class)) {
-         C0114.bootstrap<"call",2,1>().m_77a7bc18(C0252.bootstrap<"get",8589934621>()).m_66e721c0();
+      } else if (C0289.m_5caae0c3(C0382.class)) {
+         C0064.m_7853c016().m_ee04ba1b(C0253.m_5f1ab561()).m_1058ed9a();
          return false;
       } else {
          double var2 = var1.getPosX();
@@ -32,9 +34,9 @@ public class C0033 extends C0001 {
    }
 
    public CommandBuilder<?> getCommandBuilder() {
-      return new CommandBuilder().addCommand(C0252.bootstrap<"get",8589934622>(), var0 -> {
-         if (C0114.bootstrap<"call",4,1>(1)) {
-            C0114.bootstrap<"call",5,1>().m_77a7bc18(C0252.bootstrap<"get",8589934623>()).m_66e721c0();
+      return new CommandBuilder().addCommand(C0253.m_28b2c020(), var0 -> {
+         if (m_1521b1fa(1)) {
+            C0064.m_13c9ffeb().m_ee04ba1b(C0253.m_45aaaba8()).m_1058ed9a();
          }
       });
    }

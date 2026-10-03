@@ -56,7 +56,11 @@ decrypts `String[][]` entries with `byte ^ 0xAA` and resolves the member
 reflectively. The encrypted blob is embedded in the class. It is decryptable
 offline with the same XOR.
 
-## 3. Plan: make it compile
+## 3. Resolution (implemented)
+
+`tools/ResolveIndy.java` performs steps 1–3 below and **resolves all 6203 of the
+obfuscator's call sites** (the remaining 827 `invokedynamic` instructions in the
+jar are ordinary Java lambdas and are left alone).
 
 1. **Resolve call sites.** Using ASM, walk every class:
    * For `InvokeDynamicInsnNode` with BSM `C0252.bootstrap`:
@@ -69,22 +73,13 @@ offline with the same XOR.
    * `findVirtual`  -> `INVOKEVIRTUAL` / `INVOKEINTERFACE`
    * `findSpecial`  -> `INVOKESPECIAL`
    * `findGetter/Setter` -> `GETFIELD`/`PUTFIELD`/`GETSTATIC`/`PUTSTATIC`
-3. **Drop the dispatcher classes** (`C0252`, `C0114`, `C0115*`) once no call
-   sites remain, then re-run Vineflower. The output is then ordinary Java.
-4. **Map the synthetic names** to real ones. Many display names, setting names
-   and descriptions survive as plain string constants (e.g. `"The line color"`,
-   `"Box color"`), which makes identification tractable. Contribute mappings to
-   `mappings/aristois-class-map.json`.
-5. **Port to the current EMC API.** The recovered build targets the EMC
-   framework of its release; the framework API changes between Minecraft
-   versions. Use `me.deftware.client.framework.*` from the matching EMC jar.
+3. **Rename** with `tools/Remap.java` (member names mapped globally by
+   name + descriptor so interface methods and their implementations stay
+   linked), then re-run Vineflower. The output is ordinary Java.
 
-### Suggested tooling
-
-* `org.ow2.asm:asm-tree` for scanning/rewriting call sites.
-* `tools/Remap.java` already handles the class/field/method renaming pass.
-* A new `tools/ResolveIndy.java` should implement steps 1–3. The
-  `b0..b14` bodies are parseable with a small state machine over the ASM tree.
+> Order matters: `ResolveIndy` must run **before** `Remap`, because the
+> encrypted dispatcher keys its table by a hash of the *original* caller class
+> and method name. `scripts/deobfuscate.py` enforces this order.
 
 ## 4. Why this is safe to run offline
 

@@ -1,5 +1,4 @@
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.*;
 import org.objectweb.asm.commons.ClassRemapper;
 import org.objectweb.asm.commons.Remapper;
 
@@ -15,11 +14,15 @@ import java.util.stream.Stream;
  *
  * Renames every invalid class/field/method name in the recovered client classes
  * to a valid, deterministic Java name so the result can be decompiled and
- * compiled. Class names come from mappings/aristois-class-map.json (produced by
- * scripts/recover_client.py); member names are hashed deterministically.
+ * compiled.
+ *
+ * Class names come from mappings/aristois-class-map.txt (produced by
+ * scripts/recover_client.py). Member names are mapped *globally* by
+ * (name + descriptor) rather than per-owner: an interface method and its
+ * implementations share a name+descriptor, so this keeps overrides linked.
  *
  * Usage:
- *   java -cp tools/asm-9.7.1.jar:...:tools Remap <in-dir> <out-dir> <map.json>
+ *   java -cp tools/*.jar:tools Remap <in-dir> <out-dir> <class-map.txt>
  */
 public final class Remap {
 
@@ -33,7 +36,7 @@ public final class Remap {
             "transient", "try", "void", "volatile", "while", "true", "false", "null",
             "var", "record", "yield", "sealed", "permits", "non-sealed");
 
-    private static boolean validIdent(String s) {
+    static boolean validIdent(String s) {
         if (s == null || s.isEmpty() || KEYWORDS.contains(s)) return false;
         if (!Character.isJavaIdentifierStart(s.charAt(0))) return false;
         for (int i = 1; i < s.length(); i++) {
@@ -42,16 +45,19 @@ public final class Remap {
         return true;
     }
 
-    private static String hash(String s) {
+    static String hash(String s) {
         try {
-            byte[] d = MessageDigest.getInstance("MD5")
-                    .digest(s.getBytes(StandardCharsets.UTF_8));
+            byte[] d = MessageDigest.getInstance("MD5").digest(s.getBytes(StandardCharsets.UTF_8));
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 4; i++) sb.append(String.format("%02x", d[i]));
             return sb.toString();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static String key(String name, String desc) {
+        return name + "\u0000" + desc;
     }
 
     public static void main(String[] args) throws IOException {
@@ -62,6 +68,34 @@ public final class Remap {
         final Map<String, String> classMap = loadMap(mapFile);
         System.out.println("[+] class name map entries: " + classMap.size());
 
+        // Pass 1: collect invalid member names keyed by (name, descriptor).
+        final Map<String, String> methodMap = new HashMap<>();
+        final Map<String, String> fieldMap = new HashMap<>();
+        forEachClass(inDir, p -> {
+            byte[] data = Files.readAllBytes(p);
+            new ClassReader(data).accept(new ClassVisitor(Opcodes.ASM9) {
+                @Override
+                public MethodVisitor visitMethod(int access, String name, String desc,
+                                                 String sig, String[] ex) {
+                    if (!validIdent(name) && !name.startsWith("<")) {
+                        methodMap.putIfAbsent(key(name, desc), "m_" + hash(name + desc));
+                    }
+                    return null;
+                }
+
+                @Override
+                public FieldVisitor visitField(int access, String name, String desc,
+                                               String sig, Object value) {
+                    if (!validIdent(name)) {
+                        fieldMap.putIfAbsent(key(name, desc), "f_" + hash(name + desc));
+                    }
+                    return null;
+                }
+            }, 0);
+        });
+        System.out.println("[+] member rename maps: " + methodMap.size() + " methods, "
+                + fieldMap.size() + " fields");
+
         Remapper remapper = new Remapper() {
             @Override
             public String map(String internalName) {
@@ -71,36 +105,45 @@ public final class Remap {
             @Override
             public String mapMethodName(String owner, String name, String descriptor) {
                 if (validIdent(name) || name.startsWith("<")) return name;
-                return "m_" + hash(owner + "#" + name + descriptor);
+                return methodMap.getOrDefault(key(name, descriptor), "m_" + hash(name + descriptor));
             }
 
             @Override
             public String mapFieldName(String owner, String name, String descriptor) {
                 if (validIdent(name)) return name;
-                return "f_" + hash(owner + "#" + name + ":" + descriptor);
+                return fieldMap.getOrDefault(key(name, descriptor), "f_" + hash(name + ":" + descriptor));
             }
         };
 
         int[] count = {0};
-        try (Stream<Path> walk = Files.walk(inDir)) {
-            walk.filter(p -> p.toString().endsWith(".class")).forEach(p -> {
-                try {
-                    byte[] data = Files.readAllBytes(p);
-                    ClassReader cr = new ClassReader(data);
-                    ClassWriter cw = new ClassWriter(0);
-                    cr.accept(new ClassRemapper(cw, remapper), 0);
-                    String internalName = cr.getClassName();
-                    String newName = classMap.getOrDefault(internalName, internalName);
-                    Path dest = outDir.resolve(newName + ".class");
-                    Files.createDirectories(dest.getParent());
-                    Files.write(dest, cw.toByteArray());
-                    count[0]++;
-                } catch (Exception e) {
-                    System.err.println("[!] failed: " + p + " -> " + e);
-                }
-            });
-        }
+        forEachClass(inDir, p -> {
+            try {
+                byte[] data = Files.readAllBytes(p);
+                ClassReader cr = new ClassReader(data);
+                ClassWriter cw = new ClassWriter(0);
+                cr.accept(new ClassRemapper(cw, remapper), 0);
+                String newName = classMap.getOrDefault(cr.getClassName(), cr.getClassName());
+                Path dest = outDir.resolve(newName + ".class");
+                Files.createDirectories(dest.getParent());
+                Files.write(dest, cw.toByteArray());
+                count[0]++;
+            } catch (Exception e) {
+                System.err.println("[!] failed: " + p + " -> " + e);
+            }
+        });
         System.out.println("[+] remapped " + count[0] + " classes -> " + outDir);
+    }
+
+    private interface ClassFileTask {
+        void run(Path p) throws IOException;
+    }
+
+    private static void forEachClass(Path inDir, ClassFileTask task) throws IOException {
+        try (Stream<Path> walk = Files.walk(inDir)) {
+            for (Path p : (Iterable<Path>) walk.filter(x -> x.toString().endsWith(".class"))::iterator) {
+                task.run(p);
+            }
+        }
     }
 
     private static Map<String, String> loadMap(Path mapFile) throws IOException {

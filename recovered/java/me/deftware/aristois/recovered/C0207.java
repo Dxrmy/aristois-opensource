@@ -11,7 +11,7 @@ public class C0207 {
    public C0207() {
    }
 
-   public static <T extends IItem> List<T> m_5058bc5d(IRegistry<T, ?> var0, Predicate<T> var1) {
+   public static <T extends IItem> List<T> m_ffe8ab8f(IRegistry<T, ?> var0, Predicate<T> var1) {
       ArrayList var2 = new ArrayList();
       var0.stream().forEach(var2x -> {
          if (var1.test(var2x)) {
@@ -21,7 +21,7 @@ public class C0207 {
       return var2;
    }
 
-   public static <T> List<T> m_d2df6e1e(IRegistry<T, ?> var0, String... var1) {
+   public static <T> List<T> m_2290cbf8(IRegistry<T, ?> var0, String... var1) {
       ArrayList var2 = new ArrayList();
 
       for (String var6 : var1) {
@@ -32,7 +32,7 @@ public class C0207 {
       return var2;
    }
 
-   public static <T> T m_502631b2(IRegistry<T, ?> var0, String var1) {
+   public static <T> T m_6c580359(IRegistry<T, ?> var0, String var1) {
       return (T)var0.find(var1).orElse(null);
    }
 }

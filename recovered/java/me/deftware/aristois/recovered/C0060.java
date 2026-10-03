@@ -10,33 +10,33 @@ import me.deftware.client.framework.event.events.EventWorldLoad;
 import me.deftware.client.framework.event.events.EventEntityUpdated.Change;
 
 public class C0060 {
-   public static final C0060 f_49cf413c = new C0060();
-   private final List<Entity> f_1ad4694c = new CopyOnWriteArrayList<>();
+   public static final C0060 f_4818213b = new C0060();
+   private final List<Entity> f_67728d95 = new CopyOnWriteArrayList<>();
 
    public C0060() {
    }
 
    @EventHandler
-   private void m_5e8001ba(EventWorldLoad var1) {
-      this.f_1ad4694c.clear();
+   private void m_270a7d18(EventWorldLoad var1) {
+      this.f_67728d95.clear();
    }
 
    @EventHandler
-   private void m_33fc17f9(EventEntityUpdated var1) {
+   private void m_161560b1(EventEntityUpdated var1) {
       if (var1.getChange() == Change.Removed) {
-         this.f_1ad4694c.remove(var1.getEntity());
+         this.f_67728d95.remove(var1.getEntity());
       }
    }
 
    @EventHandler
-   private void m_b6d4de10(EventAttackEntity var1) {
+   private void m_1cf877ff(EventAttackEntity var1) {
       Entity var2 = var1.getTarget();
-      if (var2 != null && !this.f_1ad4694c.contains(var2)) {
-         this.f_1ad4694c.add(var2);
+      if (var2 != null && !this.f_67728d95.contains(var2)) {
+         this.f_67728d95.add(var2);
       }
    }
 
-   public List<Entity> m_fa5df726() {
-      return this.f_1ad4694c;
+   public List<Entity> m_350b5ae0() {
+      return this.f_67728d95;
    }
 }

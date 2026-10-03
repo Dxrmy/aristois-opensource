@@ -33,7 +33,7 @@ public @interface C0098 {
       public anonymouscatch() {
       }
 
-      public String m_75302ba1(String var1, String var2) {
+      public String m_8319a509(String var1, String var2) {
          return null;
       }
    }

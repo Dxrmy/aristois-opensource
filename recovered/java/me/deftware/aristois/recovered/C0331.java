@@ -1,9 +1,10 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
-import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 @C0421
 public class C0331 extends AbstractMod {
@@ -14,29 +15,29 @@ public class C0331 extends AbstractMod {
          max = 1.5
       )
    )
-   private float f_65ccbaf3 = 1.0F;
-   private float f_30bb85f3 = 1.0F;
+   private float f_f8822b44 = 1.0F;
+   private float f_ec4c47c2 = 1.0F;
 
    public C0331() {
-      super(C0252.bootstrap<"get",51539607552>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",51539607553>());
+      super(C0255.m_44418b5d(), C0290.f_3210deb7, C0255.m_813e3509());
    }
 
    @Override
    public void onEnable() {
-      if (C0114.bootstrap<"call",0,1>()._getPlayer() != null) {
-         this.f_30bb85f3 = C0114.bootstrap<"call",0,1>()._getPlayer().getPlayerFovMultiplier();
+      if (Minecraft.getMinecraftGame()._getPlayer() != null) {
+         this.f_ec4c47c2 = Minecraft.getMinecraftGame()._getPlayer().getPlayerFovMultiplier();
       }
    }
 
    @Override
    public void onDisable() {
-      if (C0114.bootstrap<"call",0,1>()._getPlayer() != null) {
-         C0114.bootstrap<"call",0,1>()._getPlayer().updatePlayerFovMultiplier(this.f_30bb85f3);
+      if (Minecraft.getMinecraftGame()._getPlayer() != null) {
+         Minecraft.getMinecraftGame()._getPlayer().updatePlayerFovMultiplier(this.f_ec4c47c2);
       }
    }
 
    @EventHandler
-   public void m_e4ad9573(EventUpdate var1) {
-      ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer())).updatePlayerFovMultiplier(this.f_65ccbaf3);
+   public void m_3072cba8(EventUpdate var1) {
+      Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).updatePlayerFovMultiplier(this.f_f8822b44);
    }
 }

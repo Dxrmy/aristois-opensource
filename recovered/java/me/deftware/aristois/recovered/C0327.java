@@ -6,12 +6,12 @@ import me.deftware.client.framework.global.GameMap;
 
 public class C0327 extends AbstractMod {
    public C0327() {
-      super(C0252.bootstrap<"get",47244640331>(), C0290.f_5d5ce22b, C0252.bootstrap<"get",47244640332>());
+      super(C0260.m_b2dd5137(), C0290.f_3210deb7, C0260.m_91e95cb4());
    }
 
    @Override
    public void onEnable() {
-      GameMap.INSTANCE.put(GameKeys.FULL_BARRIER_TEXTURE, C0114.bootstrap<"call",0,1>(true));
+      GameMap.INSTANCE.put(GameKeys.FULL_BARRIER_TEXTURE, true);
    }
 
    @Override

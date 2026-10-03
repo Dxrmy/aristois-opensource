@@ -36,7 +36,7 @@ public class Download {
    public void run() throws Exception {
       C0139 request = new C0139(this.url);
       if (this.redirection != null) {
-         String contents = request.m_244f5552().m_6c2c384f();
+         String contents = request.m_0017133f().m_e07cee76();
 
          for (Download.Instruction instruction : this.redirection.inst) {
             logger.debug("Executing instruction {}", new Object[]{instruction.getType()});
@@ -55,10 +55,10 @@ public class Download {
       if (!parent.exists() && !parent.mkdirs()) {
          throw new Exception("Unable to create download directory");
       } else {
-         C0140 response = request.m_4c1cd5ff(this.path.toFile());
-         if (!response.m_9781181b()) {
-            logger.error(response.m_f463879e());
-            throw new Exception(String.format("%s returned non OK status code %s", request.m_ea3fad3b().getHost(), response.m_c74e1657()));
+         C0140 response = request.m_7978999d(this.path.toFile());
+         if (!response.m_9362a920()) {
+            logger.error(response.m_e991ec61());
+            throw new Exception(String.format("%s returned non OK status code %s", request.m_dde8dbcb().getHost(), response.m_36ffc578()));
          }
       }
    }

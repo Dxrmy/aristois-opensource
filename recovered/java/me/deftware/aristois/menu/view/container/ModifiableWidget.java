@@ -1,9 +1,9 @@
 package me.deftware.aristois.menu.view.container;
 
-import me.deftware.aristois.recovered.C0114;
 import me.deftware.aristois.recovered.C0428;
 import me.deftware.aristois.recovered.C0437;
 import me.deftware.aristois.recovered.C0441;
+import me.deftware.client.framework.input.Mouse;
 
 public abstract class ModifiableWidget extends C0428 implements C0437 {
    protected boolean dragging = false;
@@ -27,39 +27,42 @@ public abstract class ModifiableWidget extends C0428 implements C0437 {
 
    public ModifiableWidget(double var1, double var3, double var5, double var7, C0441 var9) {
       super(var1, var3, var5, var7, var9);
-      this.minWidth = this.f_feb528bb.m_830cb294();
-      this.minHeight = this.f_feb528bb.m_fc7f45bc();
+      this.minWidth = this.f_7fd3d7b7.m_4388ac29();
+      this.minHeight = this.f_7fd3d7b7.m_d42f3372();
       this.maxWidth = this.minWidth * 3.0;
       this.maxHeight = this.minHeight * 3.0;
    }
 
-   public boolean m_c50ec0f2(double var1, double var3, float var5, boolean var6) {
+   @Override
+   public boolean m_572d14e6(double var1, double var3, float var5, boolean var6) {
       this.mouseX = var1;
       this.mouseY = var3;
       return this.update(var6);
    }
 
-   public boolean m_07141b75(double var1, double var3, int var5) {
+   @Override
+   public boolean m_a2722fba(double var1, double var3, int var5) {
       this.dragging = this.resizeLeft = this.resizeRight = this.resizeBottom = false;
       return false;
    }
 
-   public boolean m_0099f3c3(double var1, double var3, int var5) {
+   @Override
+   public boolean m_8407b1bf(double var1, double var3, int var5) {
       if (var5 == 0) {
-         if (this.f_feb528bb.m_25a0ff0c(this.draggableBorder).m_263d91ea(var1, var3)) {
+         if (this.f_7fd3d7b7.m_4b9c6d2e(this.draggableBorder).m_a58797d6(var1, var3)) {
             if (!this.draggable) {
                return false;
             }
 
             this.dragging = true;
-            this.x2 = this.f_feb528bb.m_14f8bc2c() - var1;
-            this.y2 = this.f_feb528bb.m_5a998971() - var3;
+            this.x2 = this.f_7fd3d7b7.m_a005efae() - var1;
+            this.y2 = this.f_7fd3d7b7.m_84808068() - var3;
          } else if (this.resizable) {
-            this.resizeLeft = this.f_feb528bb.m_4469d4c1(this.border).m_263d91ea(var1, var3);
-            this.resizeRight = this.f_feb528bb.m_2880a42d(this.border).m_263d91ea(var1, var3);
-            this.resizeBottom = this.f_feb528bb.m_6e88c212(this.border).m_263d91ea(var1, var3);
+            this.resizeLeft = this.f_7fd3d7b7.m_f516a783(this.border).m_a58797d6(var1, var3);
+            this.resizeRight = this.f_7fd3d7b7.m_c3f845f3(this.border).m_a58797d6(var1, var3);
+            this.resizeBottom = this.f_7fd3d7b7.m_95fe5030(this.border).m_a58797d6(var1, var3);
             if (this.resizeLeft) {
-               this.oldWidth = this.f_feb528bb.m_830cb294() + this.f_feb528bb.m_14f8bc2c();
+               this.oldWidth = this.f_7fd3d7b7.m_4388ac29() + this.f_7fd3d7b7.m_a005efae();
             }
          }
       }
@@ -71,25 +74,23 @@ public abstract class ModifiableWidget extends C0428 implements C0437 {
       if (this.dragging) {
          double var2 = this.x2 + this.mouseX;
          double var4 = this.y2 + this.mouseY;
-         this.f_feb528bb
-            .m_1e49f000(
-               (double)((float)(var2 > -1.0 ? var2 : this.f_feb528bb.m_14f8bc2c())), (double)((float)(var4 > -1.0 ? var4 : this.f_feb528bb.m_5a998971()))
+         this.f_7fd3d7b7
+            .m_f8b16cfb(
+               (double)((float)(var2 > -1.0 ? var2 : this.f_7fd3d7b7.m_a005efae())), (double)((float)(var4 > -1.0 ? var4 : this.f_7fd3d7b7.m_84808068()))
             );
       } else {
          if (this.resizeBottom) {
-            this.f_feb528bb
-               .m_5078410c(C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(this.mouseY - this.f_feb528bb.m_5a998971(), this.minHeight), this.maxHeight));
+            this.f_7fd3d7b7.m_61ade8f3(Math.min(Math.max(this.mouseY - this.f_7fd3d7b7.m_84808068(), this.minHeight), this.maxHeight));
          }
 
          if (this.resizeLeft) {
             double var6 = this.oldWidth - this.mouseX;
             if (var6 <= this.maxWidth && var6 >= this.minWidth) {
-               this.f_feb528bb.m_b9e3750e(var6);
-               this.f_feb528bb.m_6894765d(this.f_feb528bb.m_14f8bc2c() + (this.mouseX - this.f_feb528bb.m_14f8bc2c()));
+               this.f_7fd3d7b7.m_6fd9bdae(var6);
+               this.f_7fd3d7b7.m_dadc1f5d(this.f_7fd3d7b7.m_a005efae() + (this.mouseX - this.f_7fd3d7b7.m_a005efae()));
             }
          } else if (this.resizeRight) {
-            this.f_feb528bb
-               .m_b9e3750e(C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>(this.mouseX - this.f_feb528bb.m_14f8bc2c(), this.minWidth), this.maxWidth));
+            this.f_7fd3d7b7.m_6fd9bdae(Math.min(Math.max(this.mouseX - this.f_7fd3d7b7.m_a005efae(), this.minWidth), this.maxWidth));
          }
       }
 
@@ -97,16 +98,16 @@ public abstract class ModifiableWidget extends C0428 implements C0437 {
    }
 
    protected int getModificationCursor(double var1, double var3) {
-      boolean var5 = C0114.bootstrap<"call",0,1>(0);
-      if (!this.f_feb528bb.m_25a0ff0c(this.draggableBorder).m_263d91ea(var1, var3) && this.resizable) {
+      boolean var5 = Mouse.isButtonDown(0);
+      if (!this.f_7fd3d7b7.m_4b9c6d2e(this.draggableBorder).m_a58797d6(var1, var3) && this.resizable) {
          if (this.resizeLeft
-            || this.f_feb528bb.m_4469d4c1(this.border).m_263d91ea(var1, var3) && !var5
+            || this.f_7fd3d7b7.m_f516a783(this.border).m_a58797d6(var1, var3) && !var5
             || this.resizeRight
-            || this.f_feb528bb.m_2880a42d(this.border).m_263d91ea(var1, var3) && !var5) {
+            || this.f_7fd3d7b7.m_c3f845f3(this.border).m_a58797d6(var1, var3) && !var5) {
             return 221189;
          }
 
-         if (this.resizeBottom || this.f_feb528bb.m_6e88c212(this.border).m_263d91ea(var1, var3) && !var5) {
+         if (this.resizeBottom || this.f_7fd3d7b7.m_95fe5030(this.border).m_a58797d6(var1, var3) && !var5) {
             return 221190;
          }
       }
@@ -114,7 +115,8 @@ public abstract class ModifiableWidget extends C0428 implements C0437 {
       return -1;
    }
 
-   public int m_ba20b599(double var1, double var3) {
+   @Override
+   public int m_3abf02d1(double var1, double var3) {
       return this.getModificationCursor(var1, var3);
    }
 

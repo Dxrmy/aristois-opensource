@@ -7,7 +7,7 @@ import me.deftware.client.framework.input.MinecraftKeyBind;
 
 public class C0404 extends AbstractMod {
    public C0404() {
-      super(C0252.bootstrap<"get",38654705734>(), C0290.f_dad8467e, C0252.bootstrap<"get",38654705735>());
+      super(C0263.m_593ecbab(), C0290.f_dbc16475, C0263.m_17d51275());
    }
 
    @Override
@@ -16,7 +16,7 @@ public class C0404 extends AbstractMod {
    }
 
    @EventHandler
-   public void m_26fe80dc(EventUpdate var1) {
+   public void m_3072cba8(EventUpdate var1) {
       MinecraftKeyBind.SNEAK.setPressed(true);
    }
 }

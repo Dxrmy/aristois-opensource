@@ -57,13 +57,16 @@ def ensure_tools():
             urllib.request.urlretrieve(url, jar)
 
 
-def build_remapper():
-    """Compile tools/Remap.java (Java 17 bytecode) into TOOLS."""
-    class_file = os.path.join(TOOLS, "Remap.class")
-    if os.path.exists(class_file):
-        os.remove(class_file)
+def build_tools():
+    """Compile the ASM-based tools (Java 17 bytecode) into TOOLS."""
+    for src in ("Remap.java", "ResolveIndy.java"):
+        cls = src[:-5] + ".class"
+        cf = os.path.join(TOOLS, cls)
+        if os.path.exists(cf):
+            os.remove(cf)
     run(["javac", "--release", "17", "-cp", ASM_CP, "-d", TOOLS,
-         os.path.join(TOOLS, "Remap.java")])
+         os.path.join(TOOLS, "Remap.java"),
+         os.path.join(TOOLS, "ResolveIndy.java")])
 
 
 def main():
@@ -82,8 +85,9 @@ def main():
     ensure_tools()
 
     classes = os.path.join(args.work, "staging", "classes")
+    resolved = os.path.join(args.work, "staging", "resolved")
     remapped = os.path.join(args.work, "staging", "remapped")
-    for d in (classes, remapped):
+    for d in (classes, resolved, remapped):
         shutil.rmtree(d, ignore_errors=True)
 
     # 1. Recover names + extract classes with new paths, writing the name maps.
@@ -93,13 +97,19 @@ def main():
          "--out-map", os.path.join(REPO, "mappings", "aristois-class-map.json"),
          "--out-map-txt", os.path.join(REPO, "mappings", "aristois-class-map.txt")])
 
-    # 2. Rewrite bytecode names.
-    build_remapper()
+    # 2. Resolve the obfuscator's invokedynamic dispatcher into direct calls.
+    #    This MUST happen before renaming: the encrypted dispatcher hashes the
+    #    caller class + method name.
+    build_tools()
+    run(["java", "-Xmx1g", "-cp", TOOLS + os.pathsep + ASM_CP, "ResolveIndy",
+         classes, resolved])
+
+    # 3. Rewrite class/field/method names to valid Java.
     run(["java", "-Xmx768m", "-cp", TOOLS + os.pathsep + ASM_CP, "Remap",
-         classes, remapped,
+         resolved, remapped,
          os.path.join(REPO, "mappings", "aristois-class-map.txt")])
 
-    # 3. Decompile.
+    # 4. Decompile.
     shutil.rmtree(args.out, ignore_errors=True)
     os.makedirs(args.out, exist_ok=True)
     run(["java", "-Xmx1500m", "-jar", VINEFLOWER,
@@ -108,12 +118,13 @@ def main():
 
     if not args.keep_raw:
         shutil.rmtree(remapped, ignore_errors=True)
+        shutil.rmtree(resolved, ignore_errors=True)
 
     n = sum(len(files) for _r, _d, files in os.walk(args.out)
             for f in files if f.endswith(".java"))
     print(f"\n[+] Done. {n} Java files -> {args.out}")
-    print("[!] The recovered modules still use an invokedynamic method-handle")
-    print("    dispatcher; see docs/DEOBFUSCATION.md before expecting a compile.")
+    print("[*] The invokedynamic dispatcher has been resolved to direct calls.")
+    print("[*] Remaining work before a full build: port against the matching EMC API.")
 
 
 if __name__ == "__main__":

@@ -4,40 +4,48 @@ import java.util.function.Predicate;
 import me.deftware.client.framework.entity.types.LivingEntity;
 
 public class C0059 implements C0062 {
-   private final C0061 f_795cf7bb = (C0061)C0114.bootstrap<"call",0,1>(C0061.class);
+   private final C0061 f_de98c232 = C0289.m_c3a8b502(C0061.class);
 
    public C0059() {
    }
 
-   public boolean m_7b26f192() {
-      return this.f_795cf7bb.m_898464a0();
+   @Override
+   public boolean m_51ce03a5() {
+      return this.f_de98c232.m_51ce03a5();
    }
 
-   public boolean m_67808508() {
-      return this.f_795cf7bb.m_ef900f07();
+   @Override
+   public boolean m_e606d819() {
+      return this.f_de98c232.m_e606d819();
    }
 
-   public boolean m_bc9c3541() {
-      return this.f_795cf7bb.m_5b50483c();
+   @Override
+   public boolean m_e0f7c666() {
+      return this.f_de98c232.m_e0f7c666();
    }
 
-   public boolean m_ce5a4da4() {
-      return this.f_795cf7bb.m_42b67dca();
+   @Override
+   public boolean m_297cfef6() {
+      return this.f_de98c232.m_297cfef6();
    }
 
-   public boolean m_81f250d0() {
-      return this.f_795cf7bb.m_dda7a73e();
+   @Override
+   public boolean m_275ab222() {
+      return this.f_de98c232.m_275ab222();
    }
 
-   public float m_6cca5f8f() {
-      return this.f_795cf7bb.m_f1b1ea31();
+   @Override
+   public float m_796256b9() {
+      return this.f_de98c232.m_796256b9();
    }
 
-   public float m_be1eae49() {
-      return this.f_795cf7bb.m_7bc5de3e();
+   @Override
+   public float m_b9b6635c() {
+      return this.f_de98c232.m_b9b6635c();
    }
 
-   public Predicate<LivingEntity> m_4dabd50c() {
-      return this.f_795cf7bb.m_136271a4();
+   @Override
+   public Predicate<LivingEntity> m_c8fd13b8() {
+      return this.f_de98c232.m_c8fd13b8();
    }
 }

@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Marketplace implements Runnable {
-   private static final Gson gson = C0198.m_ab13aa72().create();
+   private static final Gson gson = C0198.m_cde2d310().create();
    public static final Marketplace INSTANCE = new Marketplace();
    protected final List<MarketplaceMod> modMap = new ArrayList<>();
    protected String updated;
@@ -25,10 +25,10 @@ public class Marketplace implements Runnable {
    @Override
    public void run() {
       this.logger.debug("Fetching marketplace mods");
-      new C0139(this.url).m_b24e4acc().thenAccept(response -> {
+      new C0139(this.url).m_51e5366a().thenAccept(response -> {
          try {
-            if (response.m_9781181b()) {
-               JsonObject json = response.m_fcc066b3();
+            if (response.m_9362a920()) {
+               JsonObject json = response.m_f7ec0040();
                this.updated = json.get("updated").getAsString();
 
                for (MarketplaceMod mod : (MarketplaceMod[])gson.fromJson(json.get("mods"), MarketplaceMod[].class)) {

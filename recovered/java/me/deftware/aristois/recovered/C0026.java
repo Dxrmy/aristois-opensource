@@ -11,23 +11,23 @@ public class C0026 extends C0001 {
    public CommandBuilder<?> getCommandBuilder() {
       return new CommandBuilder()
          .set(
-            (LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934707>())
+            (LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0253.m_733bff3d())
                .then(
-                  ((LiteralArgumentBuilder)((LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934708>())
-                           .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934709>()).executes(var0 -> {
-                              ((C0296)C0114.bootstrap<"call",0,1>(C0296.class)).m_a6cf6621(new File(""));
-                              C0223.f_7c6d0315.m_b8fdf5b9();
-                              C0114.bootstrap<"call",1,1>().m_77a7bc18(C0252.bootstrap<"get",8589934714>()).m_66e721c0();
+                  ((LiteralArgumentBuilder)((LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0253.m_76700429())
+                           .then(LiteralArgumentBuilder.literal(C0253.m_8870d2c1()).executes(var0 -> {
+                              C0289.m_c3a8b502(C0296.class).m_1acc8b38(new File(""));
+                              C0223.f_a04019fa.m_1058ed9a();
+                              C0064.m_13c9ffeb().m_ee04ba1b(C0253.m_56cd5284()).m_1058ed9a();
                               return 1;
                            })))
-                        .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934710>()).executes(var0 -> {
-                           ((C0432)C0114.bootstrap<"call",0,1>(C0432.class)).m_acdf166b();
-                           C0114.bootstrap<"call",1,1>().m_77a7bc18(C0252.bootstrap<"get",8589934713>()).m_66e721c0();
+                        .then(LiteralArgumentBuilder.literal(C0253.m_a004d745()).executes(var0 -> {
+                           C0289.m_c3a8b502(C0432.class).m_6fc98322();
+                           C0064.m_13c9ffeb().m_ee04ba1b(C0253.m_5b2d5cb2()).m_1058ed9a();
                            return 1;
                         })))
-                     .then(C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934711>()).executes(var0 -> {
-                        ((C0297)C0114.bootstrap<"call",0,1>(C0297.class)).m_bd86fc72().m_1c30b0a8().m_b66ba0ac();
-                        C0114.bootstrap<"call",1,1>().m_77a7bc18(C0252.bootstrap<"get",8589934712>()).m_66e721c0();
+                     .then(LiteralArgumentBuilder.literal(C0253.m_3c19a819()).executes(var0 -> {
+                        C0289.m_c3a8b502(C0297.class).m_c7e6be95().m_ac6eac3b().m_f1ec3ae8();
+                        C0064.m_13c9ffeb().m_ee04ba1b(C0253.m_f599ae93()).m_1058ed9a();
                         return 1;
                      }))
                )

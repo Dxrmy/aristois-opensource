@@ -7,76 +7,69 @@ public class C0093<T extends Number> extends C0094<T> {
       super(var1, var2, var3);
    }
 
-   public Number m_c8046c49() {
-      return C0114.bootstrap<"call",0,1>(this.m_a4a5f1c9().min());
+   public Number m_0ce362af() {
+      return this.m_caad6a91().min();
    }
 
-   public Number m_0f5966d8() {
-      return C0114.bootstrap<"call",0,1>(this.m_a4a5f1c9().max());
+   public Number m_67f0fc00() {
+      return this.m_caad6a91().max();
    }
 
-   public void m_e73922d0(Number var1) {
-      super.m_dfb23874(this.m_19cf1dd7(this.m_c3c19c52(var1)), false);
+   public void m_8bc24312(Number var1) {
+      super.m_9660fce8(this.m_3f371aae(this.m_794d615c(var1)), false);
    }
 
-   public boolean m_a0f7f587(String var1) {
-      Number var2 = (Number)this.m_c0a289a4();
+   public boolean m_8aace8bc(String var1) {
+      Number var2 = this.m_50ca8f08();
 
       try {
-         double var3 = C0114.bootstrap<"call",0,1>(var1);
-         this.m_e73922d0(C0114.bootstrap<"call",1,1>(var3));
-         this.m_9e9565ce();
+         double var3 = Double.parseDouble(var1);
+         this.m_8bc24312(var3);
+         this.m_0e389a72();
          return true;
       } catch (Exception var5) {
-         this.m_e73922d0(var2);
+         this.m_8bc24312(var2);
          return false;
       }
    }
 
-   public boolean m_00a17ba4(String var1) throws Exception {
-      return this.m_a0f7f587(var1);
+   @Override
+   public boolean m_1a28c037(String var1) throws Exception {
+      return this.m_8aace8bc(var1);
    }
 
-   public Number m_19cf1dd7(Number var1) {
-      if (this.m_6cb19ca6() == int.class || this.m_6cb19ca6() == Integer.class) {
-         return C0114.bootstrap<"call",2,1>(var1.intValue());
-      } else if (this.m_6cb19ca6() == float.class || this.m_6cb19ca6() == Float.class) {
-         return C0114.bootstrap<"call",3,1>(var1.floatValue());
+   public Number m_3f371aae(Number var1) {
+      if (this.m_01d9ec36() == int.class || this.m_01d9ec36() == Integer.class) {
+         return var1.intValue();
+      } else if (this.m_01d9ec36() == float.class || this.m_01d9ec36() == Float.class) {
+         return var1.floatValue();
       } else {
-         return (Number)(this.m_6cb19ca6() != long.class && this.m_6cb19ca6() != Long.class
-            ? C0114.bootstrap<"call",1,1>(var1.doubleValue())
-            : C0114.bootstrap<"call",4,1>(var1.longValue()));
+         return (Number)(this.m_01d9ec36() != long.class && this.m_01d9ec36() != Long.class ? var1.doubleValue() : var1.longValue());
       }
    }
 
    @Override
    public String toString() {
-      return this.m_6cb19ca6() == int.class
-         ? C0114.bootstrap<"call",0,1>(((Number)this.m_c0a289a4()).intValue())
-         : C0114.bootstrap<"call",2,1>(
-            C0252.bootstrap<"get",17179869200>(), new Object[]{C0114.bootstrap<"call",1,1>(((Number)this.m_c0a289a4()).doubleValue())}
-         );
+      return this.m_01d9ec36() == int.class ? String.valueOf(this.m_50ca8f08().intValue()) : String.format(C0261.m_d597c122(), this.m_50ca8f08().doubleValue());
    }
 
-   public Number m_c3c19c52(Number var1) {
-      return C0114.bootstrap<"call",2,1>(
-         C0114.bootstrap<"call",1,1>(this.m_c8046c49().doubleValue(), C0114.bootstrap<"call",0,1>(this.m_0f5966d8().doubleValue(), var1.doubleValue()))
-      );
+   public Number m_794d615c(Number var1) {
+      return Math.max(this.m_0ce362af().doubleValue(), Math.min(this.m_67f0fc00().doubleValue(), var1.doubleValue()));
    }
 
-   public C0096 m_a4a5f1c9() {
-      return this.m_d1fcdae9().number();
+   public C0096 m_caad6a91() {
+      return this.m_347620b9().number();
    }
 
-   public boolean m_f8464f93() {
-      return ((Number)this.m_c0a289a4()).doubleValue() == this.m_0f5966d8().doubleValue();
+   public boolean m_0e2aa5ef() {
+      return this.m_50ca8f08().doubleValue() == this.m_67f0fc00().doubleValue();
    }
 
-   public void m_66bc207a() {
-      this.m_e73922d0(this.m_c8046c49());
+   public void m_8fd51513() {
+      this.m_8bc24312(this.m_0ce362af());
    }
 
-   public void m_283e0c89() {
-      this.m_e73922d0(this.m_0f5966d8());
+   public void m_1d41ca9a() {
+      this.m_8bc24312(this.m_67f0fc00());
    }
 }

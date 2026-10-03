@@ -50,8 +50,8 @@ public enum Registry implements Runnable {
    }
 
    private void register() {
-      AbstractMod mod = new AbstractMod(this.data.name(), C0290.f_0e5924ad, this.data.description());
-      C0289.f_c22b8d7e.m_86afdc4a(this.clazz, mod, C0091.m_0c53b9f2(this.object));
+      AbstractMod mod = new AbstractMod(this.data.name(), C0290.f_2847ec1c, this.data.description());
+      C0289.f_85a7343f.m_1a101045(this.clazz, mod, C0091.m_7dd37260(this.object));
       mod.setSettingOnlyMod(true);
    }
 
@@ -68,8 +68,8 @@ public enum Registry implements Runnable {
    }
 
    private boolean canRunOnOS(C0217.anonymousdefault os) {
-      if (os != C0217.anonymousdefault.f_d756309c) {
-         return os != C0217.anonymousdefault.f_49393542 ? os == C0217.f_24eccff2 : os == C0217.f_24eccff2 && C0217.m_5935dab6();
+      if (os != C0217.anonymousdefault.f_ca235988) {
+         return os != C0217.anonymousdefault.f_0edc9299 ? os == C0217.f_99fecb28 : os == C0217.f_99fecb28 && C0217.m_efa7610e();
       } else {
          return true;
       }

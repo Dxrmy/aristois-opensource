@@ -1,8 +1,8 @@
 package me.deftware.aristois.menu.widgets;
 
 import me.deftware.aristois.recovered.C0102;
-import me.deftware.aristois.recovered.C0114;
 import me.deftware.aristois.recovered.C0441;
+import me.deftware.client.framework.message.Message;
 
 public abstract class EnumWidget extends ButtonWidget {
    protected final C0102<?> boxedEnum;
@@ -12,16 +12,16 @@ public abstract class EnumWidget extends ButtonWidget {
    }
 
    public EnumWidget(double var1, double var3, double var5, C0102<?> var7, C0441 var8) {
-      super(var1, var3, var5, C0114.bootstrap<"call",0,1>(var7.m_27694bb2()), var8);
+      super(var1, var3, var5, Message.of(var7.m_d32ebe65()), var8);
       this.boxedEnum = var7;
    }
 
    @Override
    protected void onClick(int var1) {
       if (var1 == 0) {
-         this.boxedEnum.m_a6872081();
-         this.m_b17b50f7();
-         this.apply(this.boxedEnum.m_27694bb2(), this.boxedEnum.m_36cf9409());
+         this.boxedEnum.m_0e265701();
+         this.m_1058ed9a();
+         this.apply(this.boxedEnum.m_d32ebe65(), this.boxedEnum.m_597f2e14());
       }
    }
 

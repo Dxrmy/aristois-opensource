@@ -1,5 +1,6 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Objects;
 import me.deftware.aristois.modules.AbstractMod;
 import me.deftware.client.framework.entity.EntityHand;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
@@ -12,6 +13,7 @@ import me.deftware.client.framework.gui.screens.ContainerScreen;
 import me.deftware.client.framework.inventory.EntityInventory;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.item.ItemStack;
+import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.world.block.Block;
 
 public class C0416 extends AbstractMod {
@@ -24,28 +26,28 @@ public class C0416 extends AbstractMod {
          percentage = true
       )
    )
-   private float f_adba8e68 = 0.15F;
+   private float f_7c943105 = 0.15F;
    @C0098(
       value = "Hotbar",
       description = {"Consider items in the hotbar, not just in the inventory"}
    )
-   private boolean f_63080da0 = false;
+   private boolean f_1d0c8733 = false;
    @C0098(
       value = "Durability",
       description = {"Replace low durability", "items with better ones", "from your inventory"}
    )
-   private boolean f_6b111372 = true;
+   private boolean f_973ba876 = true;
    @C0098(
       value = "Swap empty",
       description = {"Replace items that run out of", "with new ones from your", "inventory"}
    )
-   private boolean f_e19ce61a = true;
+   private boolean f_d7991bba = true;
 
    public C0416() {
-      super(C0252.bootstrap<"get",38654705724>(), C0290.f_dad8467e, C0252.bootstrap<"get",38654705725>(), C0252.bootstrap<"get",38654705726>());
+      super(C0263.m_af41331f(), C0290.f_dbc16475, C0263.m_f257bcca(), C0263.m_d9b37a36());
    }
 
-   public static float m_b5646b7c(ItemStack var0) {
+   public static float m_2f2b24b9(ItemStack var0) {
       if (!var0.isDamageable()) {
          return 1.0F;
       } else {
@@ -55,24 +57,24 @@ public class C0416 extends AbstractMod {
    }
 
    @EventHandler
-   private void m_d15eb604(EventItemUse var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
-      if (this.f_e19ce61a) {
-         this.m_392c00d8(var2.getInventory(), var1.getItem(), var1.getHand(), true);
+   private void m_6a43da6f(EventItemUse var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
+      if (this.f_d7991bba) {
+         this.m_ecde085e(var2.getInventory(), var1.getItem(), var1.getHand(), true);
       }
    }
 
    @EventHandler
-   private void m_af813639(EventBlockUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
-      if (this.f_e19ce61a && var1.getState() == State.Place) {
+   private void m_243b8b08(EventBlockUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
+      if (this.f_d7991bba && var1.getState() == State.Place) {
          Block var3 = var1.getBlock();
          ItemStack var4 = new ItemStack(var3, 1);
-         this.m_392c00d8(var2.getInventory(), var4.getItem(), var1.getHand(), false);
+         this.m_ecde085e(var2.getInventory(), var4.getItem(), var1.getHand(), false);
       }
    }
 
-   private void m_392c00d8(EntityInventory var1, Item var2, EntityHand var3, boolean var4) {
+   private void m_ecde085e(EntityInventory var1, Item var2, EntityHand var3, boolean var4) {
       ItemStack var5 = var1.getHeldItem(var3);
       int var6 = var5.getCount();
       if (var4) {
@@ -80,43 +82,37 @@ public class C0416 extends AbstractMod {
       }
 
       if (var6 <= 0) {
-         int var7 = C0114.bootstrap<"call",2,1>(var2).m_a0aa8556();
+         int var7 = C0072.m_17e298ea(var2).m_eb304949();
          if (var7 != -1) {
             int var8 = var1.getCurrentItem();
             if (var3 == EntityHand.OffHand) {
                var8 = 45;
             }
 
-            ((C0073.anonymousdefault)((C0073.anonymousdefault)C0114.bootstrap<"call",3,1>().m_44d897bb(var7)).m_7dabe54f(C0114.bootstrap<"call",4,1>(var8)))
-               .m_08fa2bad();
+            C0073.m_f76a4979().m_e1463257(var7).m_7c42e94f(C0073.m_a73ee2be(var8)).m_ac6eac3b();
          }
       }
    }
 
    @EventHandler
-   private void m_7a4399ac(EventUpdate var1) {
-      MainEntityPlayer var2 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+   private void m_3072cba8(EventUpdate var1) {
+      MainEntityPlayer var2 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
       EntityInventory var3 = var2.getInventory();
       ItemStack var4 = var3.getStackInSlot(var3.getCurrentItem());
-      if (this.f_6b111372 && !var4.isEmpty() && !(C0114.bootstrap<"call",0,1>().getScreen() instanceof ContainerScreen)) {
-         float var5 = C0114.bootstrap<"call",5,1>(var4);
-         if (var5 <= this.f_adba8e68) {
-            int var6 = C0114.bootstrap<"call",6,1>(var4.getItem())
-               .m_c809d082()
-               .m_b359a24a(this.f_63080da0 ? 0 : 9, var2.getInventory().getSize(), -1, (float)var4.getDamage());
+      if (this.f_973ba876 && !var4.isEmpty() && !(Minecraft.getMinecraftGame().getScreen() instanceof ContainerScreen)) {
+         float var5 = m_2f2b24b9(var4);
+         if (var5 <= this.f_7c943105) {
+            int var6 = C0072.m_5143fd15(var4.getItem())
+               .m_8391f334()
+               .m_ceb42ce2(this.f_1d0c8733 ? 0 : 9, var2.getInventory().getSize(), -1, (float)var4.getDamage());
             if (var6 != -1) {
-               if (C0114.bootstrap<"call",7,1>(var6)) {
-                  ((C0073.anonymousboolean)C0114.bootstrap<"call",8,1>().m_b5be4463(var6)).m_eebb0db7();
+               if (C0073.m_aa45d95d(var6)) {
+                  C0073.m_72cafc8a().m_7c42e94f(var6).m_ac6eac3b();
                } else {
-                  ((C0073.anonymousdefault)((C0073.anonymousdefault)C0114.bootstrap<"call",3,1>().m_44d897bb(var6))
-                        .m_7dabe54f(C0114.bootstrap<"call",4,1>(var2.getInventory().getCurrentItem())))
-                     .m_08fa2bad();
+                  C0073.m_f76a4979().m_e1463257(var6).m_7c42e94f(C0073.m_a73ee2be(var2.getInventory().getCurrentItem())).m_ac6eac3b();
                }
 
-               C0114.bootstrap<"call",9,1>()
-                  .m_6b4e8235(C0252.bootstrap<"get",38654705727>())
-                  .m_77a7bc18(C0252.bootstrap<"get",38654705728>(), C0252.bootstrap<"get",38654705729>())
-                  .m_66e721c0();
+               C0064.m_13c9ffeb().m_2c2620fc(C0263.m_15737526()).m_ee04ba1b(C0263.m_6cf615ba(), C0263.m_ecb46027()).m_1058ed9a();
             }
          }
       }

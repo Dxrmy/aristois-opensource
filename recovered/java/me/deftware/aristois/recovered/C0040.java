@@ -1,9 +1,14 @@
 package me.deftware.aristois.recovered;
 
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import java.util.Objects;
 import java.util.Optional;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.entity.types.EntityPlayer;
+import me.deftware.client.framework.minecraft.Minecraft;
+import me.deftware.client.framework.world.ClientWorld;
 
 public class C0040 extends C0001 {
    public C0040() {
@@ -12,30 +17,30 @@ public class C0040 extends C0001 {
    public CommandBuilder<?> getCommandBuilder() {
       return new CommandBuilder()
          .set(
-            (LiteralArgumentBuilder)C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",8589934640>())
+            (LiteralArgumentBuilder)LiteralArgumentBuilder.literal(C0253.m_7f74d855())
                .then(
-                  C0114.bootstrap<"call",2,1>(C0252.bootstrap<"get",94>(), C0114.bootstrap<"call",1,1>())
+                  RequiredArgumentBuilder.argument(C0257.m_85cd13b4(), StringArgumentType.string())
                      .executes(
                         var0 -> {
-                           EntityPlayer var1 = (EntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+                           EntityPlayer var1 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
                            if (var1.isCreative()) {
-                              C0114.bootstrap<"call",2,1>().m_77a7bc18(C0252.bootstrap<"get",8589934641>()).m_66e721c0();
+                              C0064.m_7853c016().m_ee04ba1b(C0253.m_b89b7876()).m_1058ed9a();
                            } else {
-                              C0114.bootstrap<"call",3,1>().m_77a7bc18(C0252.bootstrap<"get",8589934642>()).m_66e721c0();
-                              C0114.bootstrap<"call",0,1>()
+                              C0064.m_13c9ffeb().m_ee04ba1b(C0253.m_a33fab52()).m_1058ed9a();
+                              Minecraft.getMinecraftGame()
                                  .runOnRenderThread(
                                     () -> {
-                                       String var1x = C0114.bootstrap<"call",0,1>(var0, C0252.bootstrap<"get",94>());
-                                       Optional var2 = C0114.bootstrap<"call",1,1>()
+                                       String var1x = StringArgumentType.getString(var0, C0257.m_85cd13b4());
+                                       Optional var2 = ClientWorld.getClientWorld()
                                           .getLoadedEntities()
                                           .filter(var0xx -> var0xx instanceof EntityPlayer)
                                           .filter(var1xx -> ((EntityPlayer)var1xx).getUsername().equalsIgnoreCase(var1x))
                                           .findFirst();
                                        if (var2.isPresent()) {
-                                          C0114.bootstrap<"call",2,1>().m_5de8d0b8(C0252.bootstrap<"get",8589934643>(), var1x).m_66e721c0();
+                                          C0064.m_13c9ffeb().m_ecf8e7ae(C0253.m_73708dd3(), var1x).m_1058ed9a();
                                           ((EntityPlayer)var2.get()).openInventory();
                                        } else {
-                                          C0114.bootstrap<"call",3,1>().m_5de8d0b8(C0252.bootstrap<"get",8589934644>(), var1x).m_66e721c0();
+                                          C0064.m_7853c016().m_ecf8e7ae(C0253.m_96ba50d4(), var1x).m_1058ed9a();
                                        }
                                     }
                                  );

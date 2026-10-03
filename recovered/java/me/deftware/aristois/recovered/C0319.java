@@ -13,47 +13,47 @@ public class C0319<T> extends AbstractMod {
       value = "Mode",
       id = 10
    )
-   protected C0102<C0319.anonymousabstract> f_4a8e5259 = new C0102<>(C0319.anonymousabstract.f_37020a22);
+   protected C0102<C0319.anonymousabstract> f_e1d988aa = new C0102<>(C0319.anonymousabstract.f_40f68e21);
    @C0098(
       value = "Outline color",
       id = 2,
       triggerPostChanged = true
    )
-   private C0106<Color> f_43d511e1 = new C0106<>(Color.white).m_10caee7d(this.f_4a8e5259, C0319.anonymousabstract.f_37020a22);
+   private C0106<Color> f_328d0c0d = new C0106<>(Color.white).m_2d6ca2bd(this.f_e1d988aa, C0319.anonymousabstract.f_40f68e21);
    @C0098(
       value = "Filled color",
       id = 1,
       triggerPostChanged = true
    )
-   private C0106<Color> f_4e4d112b = new C0106<>(new Color(1.0F, 1.0F, 1.0F, 0.2F)).m_10caee7d(this.f_4a8e5259, C0319.anonymousabstract.f_37020a22);
+   private C0106<Color> f_cfe89b43 = new C0106<>(new Color(1.0F, 1.0F, 1.0F, 0.2F)).m_2d6ca2bd(this.f_e1d988aa, C0319.anonymousabstract.f_40f68e21);
    @C0098(
       value = "Filled",
       id = 3
    )
-   private C0106<Boolean> f_a9a67676 = new C0106<>(C0114.bootstrap<"call",0,1>(true)).m_10caee7d(this.f_4a8e5259, C0319.anonymousabstract.f_37020a22);
-   protected C0319.anonymousnew<T> f_8c99466c;
-   protected boolean f_f0de128c = false;
+   private C0106<Boolean> f_cf6db75a = new C0106<>(true).m_2d6ca2bd(this.f_e1d988aa, C0319.anonymousabstract.f_40f68e21);
+   protected C0319.anonymousnew<T> f_c7894f51;
+   protected boolean f_99d3ef77 = false;
 
    public C0319(String var1, C0290 var2, String... var3) {
       super(var1, var2, var3);
-      this.setMode(this.f_4a8e5259);
+      this.setMode(this.f_e1d988aa);
    }
 
    @EventHandler
-   protected void m_9f7a397f(EventUpdate var1) {
-      if (this.f_f0de128c && this.f_8c99466c.m_2b35766e()) {
-         this.f_f0de128c = false;
-         this.m_3e37ea67();
-         this.m_c352db74();
+   protected void m_3072cba8(EventUpdate var1) {
+      if (this.f_99d3ef77 && this.f_c7894f51.m_89e0519f()) {
+         this.f_99d3ef77 = false;
+         this.m_23674f64();
+         this.m_0e389a72();
       }
    }
 
    @Override
    public void onSettingUpdate(C0098 var1) {
       if (var1.id() > 0 && var1.id() <= 3) {
-         this.m_3e37ea67();
+         this.m_23674f64();
       } else if (var1.id() == 10) {
-         if (this.f_4a8e5259.m_e2691446() != C0319.anonymousabstract.f_37020a22) {
+         if (this.f_e1d988aa.m_284992ec() != C0319.anonymousabstract.f_40f68e21) {
             this.onDisable();
          } else {
             this.onEnable();
@@ -61,67 +61,67 @@ public class C0319<T> extends AbstractMod {
       }
    }
 
-   private void m_3e37ea67() {
-      this.m_37e642eb(C0252.bootstrap<"get",47244640362>(), this.f_4e4d112b.get());
-      this.m_37e642eb(C0252.bootstrap<"get",47244640363>(), this.f_43d511e1.get());
-      this.f_8c99466c.m_bf1fc8e9(C0252.bootstrap<"get",47244640364>(), this.f_a9a67676.get() ? 1.0F : 0.0F);
+   private void m_23674f64() {
+      this.m_2971682b(C0260.m_678c4ddb(), this.f_cfe89b43.get());
+      this.m_2971682b(C0260.m_1672ac4d(), this.f_328d0c0d.get());
+      this.f_c7894f51.m_1c802207(C0260.m_e9a52709(), this.f_cf6db75a.get() ? 1.0F : 0.0F);
    }
 
-   private void m_37e642eb(String var1, Color var2) {
-      this.f_8c99466c
-         .m_bf1fc8e9(var1, (float)var2.getRed() / 255.0F, (float)var2.getGreen() / 255.0F, (float)var2.getBlue() / 255.0F, (float)var2.getAlpha() / 255.0F);
+   private void m_2971682b(String var1, Color var2) {
+      this.f_c7894f51
+         .m_1c802207(var1, (float)var2.getRed() / 255.0F, (float)var2.getGreen() / 255.0F, (float)var2.getBlue() / 255.0F, (float)var2.getAlpha() / 255.0F);
    }
 
-   protected boolean m_49641678() {
-      return this.f_4a8e5259.m_e2691446() == C0319.anonymousabstract.f_37020a22;
+   protected boolean m_297cfef6() {
+      return this.f_e1d988aa.m_284992ec() == C0319.anonymousabstract.f_40f68e21;
    }
 
    @Override
    public void onEnable() {
-      this.f_f0de128c = true;
+      this.f_99d3ef77 = true;
    }
 
    @Override
    public void onDisable() {
-      this.f_8c99466c.m_c7ea6a48(false);
+      this.f_c7894f51.m_d6ac7420(false);
    }
 
-   private void m_c352db74() {
-      this.f_8c99466c.m_c7ea6a48(this.isEnabled() && this.m_49641678());
+   private void m_0e389a72() {
+      this.f_c7894f51.m_d6ac7420(this.isEnabled() && this.m_297cfef6());
    }
 
    public static enum anonymousabstract {
-      f_37020a22,
-      f_d569a437,
-      f_5ab2c155;
+      f_40f68e21,
+      f_e6ef46e1,
+      f_cf065721;
 
       private anonymousabstract() {
       }
    }
 
    public interface anonymousnew<T> {
-      Supplier<EntityShader> m_74bd4319();
+      Supplier<EntityShader> m_5219c421();
 
-      Class<T> m_4562a7e7();
+      Class<T> m_6305e767();
 
-      boolean m_7173d361(T var1);
+      boolean m_22ad6203(T var1);
 
-      default boolean m_2b35766e() {
-         Shader var1 = (Shader)this.m_74bd4319().get();
+      default boolean m_89e0519f() {
+         Shader var1 = (Shader)this.m_5219c421().get();
          return var1 != null && var1.isLoaded();
       }
 
-      default void m_bf1fc8e9(String var1, float... var2) {
-         Shader var3 = (Shader)this.m_74bd4319().get();
+      default void m_1c802207(String var1, float... var2) {
+         Shader var3 = (Shader)this.m_5219c421().get();
          if (var3 != null) {
             var3.setUniform(var1, var2);
          }
       }
 
-      default void m_c7ea6a48(boolean var1) {
-         EntityShader var2 = this.m_74bd4319().get();
+      default void m_d6ac7420(boolean var1) {
+         EntityShader var2 = this.m_5219c421().get();
          if (var2 != null) {
-            var2.setTargetPredicate(var1x -> var1x != null && this.m_4562a7e7().isAssignableFrom(var1x.getClass()) ? this.m_7173d361((T)var1x) : false);
+            var2.setTargetPredicate(var1x -> var1x != null && this.m_6305e767().isAssignableFrom(var1x.getClass()) ? this.m_22ad6203((T)var1x) : false);
             var2.setEnabled(var1);
          }
       }

@@ -8,68 +8,68 @@ import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.network.PacketWrapper;
 
 public class C0273<T extends C0273.anonymouscatch<?>> extends EventListener {
-   protected final Queue<T> f_0cb89766 = new LinkedBlockingQueue<>();
-   protected int f_f31fe77a = 0;
-   protected int f_ba342814 = 0;
+   protected final Queue<T> f_62a020a0 = new LinkedBlockingQueue<>();
+   protected int f_e5b1f1d0 = 0;
+   protected int f_c67bb039 = 0;
 
    public C0273() {
    }
 
    @EventHandler
-   public void m_2cc0cd15(EventUpdate var1) {
-      this.f_f31fe77a++;
+   public void m_3072cba8(EventUpdate var1) {
+      this.f_e5b1f1d0++;
    }
 
-   public void m_0ee479e0(T var1) {
-      this.f_0cb89766.add((T)var1);
+   public void m_0a42d7e5(T var1) {
+      this.f_62a020a0.add((T)var1);
    }
 
-   public T m_d8b68e94() {
-      return this.f_0cb89766.poll();
+   public T m_cec3adc2() {
+      return this.f_62a020a0.poll();
    }
 
-   public void m_59b9aae8() {
-      if (this.m_047fbb1d()) {
-         C0273.anonymouscatch var1 = this.m_d8b68e94();
+   public void m_b728afce() {
+      if (this.m_51ce03a5()) {
+         C0273.anonymouscatch var1 = this.m_cec3adc2();
          if (var1 != null) {
-            var1.m_91465ff7();
+            var1.m_0e265701();
             var1.run();
-            if (var1.m_fc69e37a() == -1) {
-               this.m_59b9aae8();
+            if (var1.m_8b15b5f4() == -1) {
+               this.m_b728afce();
             } else {
-               this.f_ba342814 = var1.m_fc69e37a();
+               this.f_c67bb039 = var1.m_8b15b5f4();
             }
          } else {
-            this.f_ba342814 = 0;
+            this.f_c67bb039 = 0;
          }
 
-         this.f_f31fe77a = 0;
+         this.f_e5b1f1d0 = 0;
       }
    }
 
-   public int m_a149fd85() {
-      return this.f_0cb89766.size();
+   public int m_037208cc() {
+      return this.f_62a020a0.size();
    }
 
-   public boolean m_047fbb1d() {
-      return this.f_f31fe77a >= this.f_ba342814;
+   public boolean m_51ce03a5() {
+      return this.f_e5b1f1d0 >= this.f_c67bb039;
    }
 
-   public boolean m_34ee7431() {
-      return this.m_047fbb1d() && this.f_0cb89766.isEmpty();
+   public boolean m_e606d819() {
+      return this.m_51ce03a5() && this.f_62a020a0.isEmpty();
    }
 
-   public int m_9348f2a3() {
-      return this.f_f31fe77a;
+   public int m_f34ec3cf() {
+      return this.f_e5b1f1d0;
    }
 
-   public int m_a0e62b2e() {
-      return this.f_ba342814;
+   public int m_8b15b5f4() {
+      return this.f_c67bb039;
    }
 
    public interface anonymouscatch<T extends PacketWrapper> extends Runnable {
-      void m_91465ff7();
+      void m_0e265701();
 
-      int m_fc69e37a();
+      int m_8b15b5f4();
    }
 }

@@ -98,11 +98,11 @@ public class Validator {
    }
 
    public static synchronized String getRemoteChecksum() {
-      return remoteChecksum.m_1c30b0a8();
+      return remoteChecksum.m_ac6eac3b();
    }
 
    public static synchronized String getLocalChecksum() {
-      return localChecksum.m_1c30b0a8();
+      return localChecksum.m_ac6eac3b();
    }
 
    private static String SHA1(Path path) throws Exception {
@@ -122,7 +122,7 @@ public class Validator {
       Gson gson = new Gson();
       URL url = new URL("https://maven.aristois.net/manifest");
       URLConnection connection = url.openConnection();
-      connection.setRequestProperty("User-Agent", C0139.f_be33f283);
+      connection.setRequestProperty("User-Agent", C0139.f_a07ec47b);
       connection.setConnectTimeout(3000);
 
       Validator.Version[] var9;

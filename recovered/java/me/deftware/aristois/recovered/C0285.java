@@ -1,42 +1,46 @@
 package me.deftware.aristois.recovered;
 
+import java.util.concurrent.Executors;
+
 public class C0285 extends C0288<C0285> {
-   protected boolean f_206f8e47 = false;
-   protected boolean f_0aebd4ca = false;
+   protected boolean f_0e95c81f = false;
+   protected boolean f_a0e8c1bc = false;
 
    public C0285(Runnable var1) {
       if (var1 != null) {
-         this.m_1ba7da6b(var1);
+         this.m_c162d659(var1);
       }
    }
 
-   protected void m_1ba7da6b(Runnable var1) {
-      C0114.bootstrap<"call",0,1>().submit(() -> {
+   protected void m_c162d659(Runnable var1) {
+      Executors.newSingleThreadExecutor().submit(() -> {
          var1.run();
-         this.f_0aebd4ca = true;
+         this.f_a0e8c1bc = true;
       });
    }
 
-   public C0285 m_239622f4() {
-      this.f_0aebd4ca = true;
+   public C0285 m_49509d4b() {
+      this.f_a0e8c1bc = true;
       return this;
    }
 
-   public C0285 m_cb933644() {
-      this.f_80c2ddee = C0114.bootstrap<"call",0,1>();
-      this.f_206f8e47 = true;
+   public C0285 m_d0dcca5b() {
+      this.f_ae2cc37b = System.currentTimeMillis();
+      this.f_0e95c81f = true;
       return this;
    }
 
-   public C0285 m_732f694e() {
+   public C0285 m_767c05e5() {
       return this;
    }
 
-   public boolean m_68ef7232() {
-      return this.f_206f8e47;
+   @Override
+   public boolean m_9362a920() {
+      return this.f_0e95c81f;
    }
 
-   public boolean m_59701e4b() {
-      return this.f_0aebd4ca;
+   @Override
+   public boolean m_f7b07982() {
+      return this.f_a0e8c1bc;
    }
 }

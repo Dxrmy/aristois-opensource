@@ -4,45 +4,49 @@ import java.util.EnumSet;
 import java.util.function.Supplier;
 
 public class C0106<T> implements C0105<T>, Supplier<T> {
-   private T f_67249887;
-   private Supplier<Boolean> f_67170b41 = () -> C0114.bootstrap<"call",1,1>(true);
+   private T f_0ecdad4a;
+   private Supplier<Boolean> f_c357080b = () -> true;
 
    public C0106(T var1) {
-      this.f_67249887 = (T)var1;
+      this.f_0ecdad4a = (T)var1;
    }
 
    @SafeVarargs
-   public final <E extends Enum<E>> C0106<T> m_10caee7d(C0102<E> var1, E... var2) {
-      EnumSet var3 = C0114.bootstrap<"call",0,1>(var2[0], var2);
-      this.f_67170b41 = () -> C0114.bootstrap<"call",1,1>(var3.contains(var1.m_e2691446()));
+   public final <E extends Enum<E>> C0106<T> m_2d6ca2bd(C0102<E> var1, E... var2) {
+      EnumSet var3 = EnumSet.of((E)var2[0], (E[])var2);
+      this.f_c357080b = () -> var3.contains(var1.m_284992ec());
       return this;
    }
 
    @SafeVarargs
-   public final <E extends Enum<E>> C0106<T> m_6da46a9c(C0102<E> var1, E... var2) {
-      EnumSet var3 = C0114.bootstrap<"call",0,1>(var2[0], var2);
-      this.f_67170b41 = () -> C0114.bootstrap<"call",1,1>(!var3.contains(var1.m_e2691446()));
+   public final <E extends Enum<E>> C0106<T> m_cb9291a5(C0102<E> var1, E... var2) {
+      EnumSet var3 = EnumSet.of((E)var2[0], (E[])var2);
+      this.f_c357080b = () -> !var3.contains(var1.m_284992ec());
       return this;
    }
 
-   public T m_95af3326() {
-      return this.f_67249887;
+   @Override
+   public T m_50ca8f08() {
+      return this.f_0ecdad4a;
    }
 
    @Override
    public T get() {
-      return this.f_67249887;
+      return this.f_0ecdad4a;
    }
 
-   public void m_98ca55f1(Object var1) {
-      this.f_67249887 = (T)var1;
+   @Override
+   public void m_a32b61ee(Object var1) {
+      this.f_0ecdad4a = (T)var1;
    }
 
-   public boolean m_4d9b139b() {
+   @Override
+   public boolean m_e0f7c666() {
       return true;
    }
 
-   public boolean m_fa0ec311() {
-      return this.f_67170b41.get();
+   @Override
+   public boolean m_9362a920() {
+      return this.f_c357080b.get();
    }
 }

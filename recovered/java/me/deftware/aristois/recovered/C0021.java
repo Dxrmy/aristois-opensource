@@ -1,20 +1,23 @@
 package me.deftware.aristois.recovered;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import me.deftware.aristois.services.Registry;
 import me.deftware.client.framework.command.types.AbstractPagedOutputCommand;
+import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
 
 public class C0021 extends AbstractPagedOutputCommand {
    public C0021() {
-      super(C0252.bootstrap<"get",12884901908>(), C0114.bootstrap<"call",0,1>(C0252.bootstrap<"get",12884901909>()));
+      super(C0266.m_b48a8bc4(), Message.of(C0266.m_b886ae1c()));
    }
 
    public List<Message> list() {
-      return C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>())
+      return Arrays.stream(Registry.values())
          .filter(Registry::isAvailable)
-         .map(var0 -> C0114.bootstrap<"call",0,1>(var0.getName()).style(C0114.bootstrap<"call",1,1>(DefaultColors.GRAY)))
-         .collect(C0114.bootstrap<"call",2,1>());
+         .map(var0 -> Message.of(var0.getName()).style(Appearance.of(DefaultColors.GRAY)))
+         .collect(Collectors.toList());
    }
 }

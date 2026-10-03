@@ -2,64 +2,68 @@ package me.deftware.aristois.recovered;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import me.deftware.aristois.services.IStateController;
 import me.deftware.client.framework.entity.types.main.MainEntityPlayer;
 import me.deftware.client.framework.entity.types.main.WindowClickAction;
+import me.deftware.client.framework.event.EventBus;
 import me.deftware.client.framework.event.EventHandler;
 import me.deftware.client.framework.event.events.EventUpdate;
 import me.deftware.client.framework.gui.ScreenRegistry;
 import me.deftware.client.framework.gui.screens.ContainerScreen;
 import me.deftware.client.framework.input.MinecraftKeyBind;
+import me.deftware.client.framework.input.Mouse;
 import me.deftware.client.framework.inventory.Inventory;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.item.ItemStack;
+import me.deftware.client.framework.minecraft.Minecraft;
 
 public class C0073 {
-   public static final int f_0ded9313 = 45;
-   public static final int f_82a0ecb2 = 0;
-   public static final C0073 f_021c3a01 = new C0073();
-   private final Map<String, Supplier<Boolean>> f_4873add4 = new HashMap<>();
+   public static final int f_8dddc863 = 45;
+   public static final int f_be706ebd = 0;
+   public static final C0073 f_98de3227 = new C0073();
+   private final Map<String, Supplier<Boolean>> f_e3acc1cd = new HashMap<>();
 
    private C0073() {
-      C0114.bootstrap<"call",0,1>(this.getClass(), this);
+      EventBus.registerClass(this.getClass(), this);
    }
 
    @EventHandler
-   private void m_4e99d40e(EventUpdate var1) {
-      this.f_4873add4.entrySet().removeIf(var0 -> var0.getValue().get());
+   private void m_3072cba8(EventUpdate var1) {
+      this.f_e3acc1cd.entrySet().removeIf(var0 -> var0.getValue().get());
    }
 
-   private void m_75575049(String var1, Supplier<Boolean> var2) {
-      this.f_4873add4.put(var1, var2);
+   private void m_dbe875a5(String var1, Supplier<Boolean> var2) {
+      this.f_e3acc1cd.put(var1, var2);
    }
 
-   private boolean m_7c2e2ce5(String var1) {
-      return this.f_4873add4.containsKey(var1);
+   private boolean m_828a75ae(String var1) {
+      return this.f_e3acc1cd.containsKey(var1);
    }
 
-   public static void m_29b7afc5(MainEntityPlayer var0, int var1) {
+   public static void m_3907084c(MainEntityPlayer var0, int var1) {
       var0.windowClick(0, var1, 1, WindowClickAction.THROW);
    }
 
-   public static C0073.anonymousdefault m_1f006740() {
+   public static C0073.anonymousdefault m_f76a4979() {
       return new C0073.anonymousdefault(WindowClickAction.PICKUP);
    }
 
-   public static C0073.anonymousdefault m_7bb9d6a5() {
+   public static C0073.anonymousdefault m_a796c7da() {
       return new C0073.anonymousdefault(WindowClickAction.QUICK_MOVE);
    }
 
-   public static C0073.anonymousboolean m_2fb75dc8() {
+   public static C0073.anonymousboolean m_72cafc8a() {
       return new C0073.anonymousboolean();
    }
 
-   public static C0073.anonymoustransient m_a5b3969c() {
+   public static C0073.anonymoustransient m_24e329e8() {
       return new C0073.anonymoustransient();
    }
 
-   public static int m_683053e7(int var0) {
+   public static int m_a73ee2be(int var0) {
       if (var0 == -1) {
          return -1;
       } else {
@@ -81,7 +85,7 @@ public class C0073 {
       }
    }
 
-   public static boolean m_d4923932(MainEntityPlayer var0, int var1) {
+   public static boolean m_9c54ac1f(MainEntityPlayer var0, int var1) {
       if (var1 > 8) {
          var1 -= 36;
       }
@@ -89,15 +93,15 @@ public class C0073 {
       return var0.getInventory().getCurrentItem() == var1;
    }
 
-   public static boolean m_7910452e(int var0) {
+   public static boolean m_b4168121(int var0) {
       return var0 <= 35;
    }
 
-   public static boolean m_bfeb26ed(int var0) {
+   public static boolean m_aa45d95d(int var0) {
       return var0 <= 8 || var0 >= 36 && var0 <= 44 || var0 == 45;
    }
 
-   public static ItemStack m_11453784(int var0) {
+   public static ItemStack m_8ae0fd29(int var0) {
       if (var0 == -1) {
          return null;
       } else {
@@ -105,48 +109,40 @@ public class C0073 {
             var0 -= 36;
          }
 
-         MainEntityPlayer var1 = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
+         MainEntityPlayer var1 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
          ItemStack var2 = var0 != 45 ? var1.getInventory().getStackInSlot(var0) : var1.getInventory().getHeldItem(true);
          return var2.isEmpty() ? null : var2;
       }
    }
 
-   public static boolean m_77eac350(Item var0) {
-      return ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer()))
-         .getInventory()
-         .getHeldItem(true)
-         .getItem()
-         .equals(var0);
+   public static boolean m_376d1241(Item var0) {
+      return Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).getInventory().getHeldItem(true).getItem().equals(var0);
    }
 
-   public static boolean m_85c25087(Item var0) {
-      return ((MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer()))
-         .getInventory()
-         .getHeldItem(false)
-         .getItem()
-         .equals(var0);
+   public static boolean m_3ef6130a(Item var0) {
+      return Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer()).getInventory().getHeldItem(false).getItem().equals(var0);
    }
 
-   public static boolean m_7bd36e66(Item var0) {
-      return C0114.bootstrap<"call",0,1>(var0) || C0114.bootstrap<"call",1,1>(var0);
+   public static boolean m_d3d286e7(Item var0) {
+      return m_3ef6130a(var0) || m_376d1241(var0);
    }
 
    public static class anonymousboolean extends C0073.anonymousthis<C0073.anonymousboolean> {
       public anonymousboolean() {
       }
 
-      public C0073.anonymousboolean m_b6c3bffd(boolean var1) {
-         if (!this.m_854ff3ba() || var1) {
-            if (this.f_77200b31 == -1 || this.f_77200b31 == 45) {
+      public C0073.anonymousboolean m_f55354b6(boolean var1) {
+         if (!this.m_e0f7c666() || var1) {
+            if (this.f_e2c62c1d == -1 || this.f_e2c62c1d == 45) {
                return this;
             }
 
-            if (this.f_77200b31 > 9) {
-               this.f_77200b31 -= 36;
+            if (this.f_e2c62c1d > 9) {
+               this.f_e2c62c1d -= 36;
             }
 
-            if (this.f_2164e2e0.getInventory().getCurrentItem() != this.f_77200b31) {
-               this.f_2164e2e0.getInventory().setCurrentItem(this.f_77200b31);
+            if (this.f_39772c86.getInventory().getCurrentItem() != this.f_e2c62c1d) {
+               this.f_39772c86.getInventory().setCurrentItem(this.f_e2c62c1d);
             }
          }
 
@@ -155,27 +151,27 @@ public class C0073 {
    }
 
    public static class anonymousdefault extends C0073.anonymousthis<C0073.anonymousdefault> {
-      protected final WindowClickAction f_5161ee06;
-      private int f_f09580d9 = 0;
-      private int f_ade3480c = 0;
+      protected final WindowClickAction f_58cd51bf;
+      private int f_d8c61f32 = 0;
+      private int f_a3309b3a = 0;
 
       public anonymousdefault(WindowClickAction var1) {
-         this.f_5161ee06 = var1;
+         this.f_58cd51bf = var1;
       }
 
-      public C0073.anonymousdefault m_7c2aa904(int var1) {
-         this.f_ade3480c = var1;
+      public C0073.anonymousdefault m_5f9623c5(int var1) {
+         this.f_a3309b3a = var1;
          return this;
       }
 
-      public C0073.anonymousdefault m_b3e81d93(boolean var1) {
-         if ((!this.m_3a7901e9() || var1) && this.f_17a099d3 != -1) {
-            boolean var2 = C0114.bootstrap<"call",0,1>(this.f_17a099d3) != null && C0114.bootstrap<"call",0,1>(this.f_7c90ec4b) != null;
-            this.f_530c5025.windowClick(this.f_f09580d9, this.f_17a099d3, this.f_ade3480c, this.f_5161ee06);
-            if (this.f_7c90ec4b != -1) {
-               this.f_530c5025.windowClick(this.f_f09580d9, this.f_7c90ec4b, this.f_ade3480c, this.f_5161ee06);
-               if (this.f_5161ee06 == WindowClickAction.PICKUP && var2) {
-                  this.f_530c5025.windowClick(this.f_f09580d9, this.f_17a099d3, this.f_ade3480c, this.f_5161ee06);
+      public C0073.anonymousdefault m_81af56ff(boolean var1) {
+         if ((!this.m_e0f7c666() || var1) && this.f_ba693ef2 != -1) {
+            boolean var2 = C0073.m_8ae0fd29(this.f_ba693ef2) != null && C0073.m_8ae0fd29(this.f_e2c62c1d) != null;
+            this.f_39772c86.windowClick(this.f_d8c61f32, this.f_ba693ef2, this.f_a3309b3a, this.f_58cd51bf);
+            if (this.f_e2c62c1d != -1) {
+               this.f_39772c86.windowClick(this.f_d8c61f32, this.f_e2c62c1d, this.f_a3309b3a, this.f_58cd51bf);
+               if (this.f_58cd51bf == WindowClickAction.PICKUP && var2) {
+                  this.f_39772c86.windowClick(this.f_d8c61f32, this.f_ba693ef2, this.f_a3309b3a, this.f_58cd51bf);
                }
             }
          }
@@ -183,97 +179,97 @@ public class C0073 {
          return this;
       }
 
-      public WindowClickAction m_77fb233e() {
-         return this.f_5161ee06;
+      public WindowClickAction m_22b60cb0() {
+         return this.f_58cd51bf;
       }
 
-      public int m_c61279d0() {
-         return this.f_f09580d9;
+      public int m_f065f6c5() {
+         return this.f_d8c61f32;
       }
 
-      public int m_44e76b30() {
-         return this.f_ade3480c;
+      public int m_9274e178() {
+         return this.f_a3309b3a;
       }
    }
 
    public abstract static class anonymousthis<T> {
-      protected final MainEntityPlayer f_886da0eb = (MainEntityPlayer)C0114.bootstrap<"call",1,1>(C0114.bootstrap<"call",0,1>()._getPlayer());
-      protected int f_597131a6 = C0114.bootstrap<"call",2,1>(this.f_886da0eb.getInventory().getCurrentItem());
-      protected int f_e7560fbe;
-      protected String f_e3417492 = C0114.bootstrap<"call",4,1>(C0114.bootstrap<"call",3,1>() * 1000.0);
-      protected int f_7adf340d = 9;
-      protected int f_1835a908 = 44;
-      protected int f_a23869ee = 5;
-      protected int f_29cfc9a3;
-      private long f_78180afb;
+      protected final MainEntityPlayer f_39772c86 = Objects.requireNonNull(Minecraft.getMinecraftGame()._getPlayer());
+      protected int f_ba693ef2 = C0073.m_a73ee2be(this.f_39772c86.getInventory().getCurrentItem());
+      protected int f_e2c62c1d;
+      protected String f_fe036814 = String.valueOf(Math.random() * 1000.0);
+      protected int f_c84c0824 = 9;
+      protected int f_f689e46e = 44;
+      protected int f_0faefd7a = 5;
+      protected int f_579c779f;
+      private long f_2f8ddeca;
 
       public anonymousthis() {
-         if (C0114.bootstrap<"call",0,1>().getScreen() instanceof ContainerScreen) {
-            Inventory var1 = ((ContainerScreen)C0114.bootstrap<"call",0,1>().getScreen()).getContainerInventory();
-            this.f_7adf340d = 27;
-            this.f_1835a908 = 62;
+         if (Minecraft.getMinecraftGame().getScreen() instanceof ContainerScreen) {
+            Inventory var1 = ((ContainerScreen)Minecraft.getMinecraftGame().getScreen()).getContainerInventory();
+            this.f_c84c0824 = 27;
+            this.f_f689e46e = 62;
             if (var1 != null && var1.isDouble()) {
-               this.f_7adf340d = 54;
-               this.f_1835a908 = 89;
+               this.f_c84c0824 = 54;
+               this.f_f689e46e = 89;
             }
          }
 
-         this.f_29cfc9a3 = this.f_1835a908 - this.f_7adf340d;
+         this.f_579c779f = this.f_f689e46e - this.f_c84c0824;
       }
 
-      public abstract T m_a4f37b43(boolean var1);
+      public abstract T m_68cf8155(boolean var1);
 
-      public T m_9c44985b() {
-         return this.m_a4f37b43(false);
+      public T m_ac6eac3b() {
+         return this.m_68cf8155(false);
       }
 
-      public T m_02202a91(Object var1) {
-         this.f_e3417492 = var1.getClass().getCanonicalName();
+      public T m_8c218980(Object var1) {
+         this.f_fe036814 = var1.getClass().getCanonicalName();
          return (T)this;
       }
 
-      public T m_cae968c1(int var1) {
-         this.f_597131a6 = var1;
+      public T m_e1463257(int var1) {
+         this.f_ba693ef2 = var1;
          return (T)this;
       }
 
-      public T m_2519e991(Item var1) {
-         this.f_597131a6 = C0114.bootstrap<"call",0,1>(this.f_886da0eb.getInventory().findItem(var1));
+      public T m_887f6e69(Item var1) {
+         this.f_ba693ef2 = C0073.m_a73ee2be(this.f_39772c86.getInventory().findItem(var1));
          return (T)this;
       }
 
-      public T m_24a9779c(Item var1) {
-         this.f_e7560fbe = C0114.bootstrap<"call",0,1>(this.f_886da0eb.getInventory().findItem(var1));
+      public T m_6a1482b0(Item var1) {
+         this.f_e2c62c1d = C0073.m_a73ee2be(this.f_39772c86.getInventory().findItem(var1));
          return (T)this;
       }
 
-      public T m_be4cca91(int var1) {
-         this.f_e7560fbe = var1;
+      public T m_7c42e94f(int var1) {
+         this.f_e2c62c1d = var1;
          return (T)this;
       }
 
-      public T m_da1aa1e7(int var1) {
-         this.f_597131a6 = 8 - var1;
+      public T m_9f5846d4(int var1) {
+         this.f_ba693ef2 = 8 - var1;
          return (T)this;
       }
 
-      public T m_9d27daf1(int var1) {
-         this.f_e7560fbe = 8 - var1;
+      public T m_68351bcd(int var1) {
+         this.f_e2c62c1d = 8 - var1;
          return (T)this;
       }
 
-      public T m_f60926af() {
-         return this.m_f53c4cf9(0, 9);
+      public T m_b252dc95() {
+         return this.m_c71879c9(0, 9);
       }
 
-      public T m_45f1651c() {
-         return this.m_f53c4cf9(0, 36);
+      public T m_298196c7() {
+         return this.m_c71879c9(0, 36);
       }
 
-      public T m_f53c4cf9(int var1, int var2) {
+      public T m_c71879c9(int var1, int var2) {
          for (int var3 = var1; var3 < var2; var3++) {
-            this.f_e7560fbe = C0114.bootstrap<"call",0,1>(var3);
-            if (this.f_886da0eb.getInventory().getStackInSlot(var3).isEmpty()) {
+            this.f_e2c62c1d = C0073.m_a73ee2be(var3);
+            if (this.f_39772c86.getInventory().getStackInSlot(var3).isEmpty()) {
                break;
             }
          }
@@ -281,33 +277,33 @@ public class C0073 {
          return (T)this;
       }
 
-      public T m_969af740() {
-         this.f_e7560fbe = C0114.bootstrap<"call",0,1>(this.f_886da0eb.getInventory().getCurrentItem());
+      public T m_50ca8f08() {
+         this.f_e2c62c1d = C0073.m_a73ee2be(this.f_39772c86.getInventory().getCurrentItem());
          return (T)this;
       }
 
-      public T m_ae915c73() {
-         this.f_e7560fbe = 45;
+      public T m_6a5ac614() {
+         this.f_e2c62c1d = 45;
          return (T)this;
       }
 
-      public T m_a805f849(long var1) {
-         this.f_78180afb = C0114.bootstrap<"call",1,1>() + var1;
-         return this.m_26ea2984(() -> C0114.bootstrap<"call",1,1>(this.f_78180afb < C0114.bootstrap<"call",0,1>()));
+      public T m_110eee12(long var1) {
+         this.f_2f8ddeca = System.currentTimeMillis() + var1;
+         return this.m_924c66cb(() -> this.f_2f8ddeca < System.currentTimeMillis());
       }
 
-      public boolean m_f3aeb46a() {
-         return C0114.bootstrap<"call",0,1>(C0073.f_021c3a01, this.f_e3417492);
+      public boolean m_e0f7c666() {
+         return C0073.f_98de3227.m_828a75ae(this.f_fe036814);
       }
 
-      public T m_26ea2984(Supplier<Boolean> var1) {
-         if (this.f_597131a6 != -1 && this.f_e7560fbe != -1 && !this.m_f3aeb46a()) {
-            C0114.bootstrap<"call",2,1>(C0073.f_021c3a01, this.f_e3417492, () -> {
+      public T m_924c66cb(Supplier<Boolean> var1) {
+         if (this.f_ba693ef2 != -1 && this.f_e2c62c1d != -1 && !this.m_e0f7c666()) {
+            C0073.f_98de3227.m_dbe875a5(this.f_fe036814, () -> {
                if ((Boolean)var1.get()) {
-                  this.m_a9b23bdd();
-                  return C0114.bootstrap<"call",1,1>(true);
+                  this.m_743d7fa3();
+                  return true;
                } else {
-                  return C0114.bootstrap<"call",1,1>(false);
+                  return false;
                }
             });
          }
@@ -315,113 +311,113 @@ public class C0073 {
          return (T)this;
       }
 
-      public T m_a9b23bdd() {
-         this.f_597131a6 = this.f_597131a6 ^ this.f_e7560fbe ^ (this.f_e7560fbe = this.f_597131a6);
-         this.m_a4f37b43(true);
+      public T m_743d7fa3() {
+         this.f_ba693ef2 = this.f_ba693ef2 ^ this.f_e2c62c1d ^ (this.f_e2c62c1d = this.f_ba693ef2);
+         this.m_68cf8155(true);
          return (T)this;
       }
 
-      public T m_d8426a02() {
-         this.f_597131a6 = C0114.bootstrap<"call",0,1>(this.f_597131a6);
-         this.f_e7560fbe = C0114.bootstrap<"call",0,1>(this.f_e7560fbe);
+      public T m_7fca7b89() {
+         this.f_ba693ef2 = C0073.m_a73ee2be(this.f_ba693ef2);
+         this.f_e2c62c1d = C0073.m_a73ee2be(this.f_e2c62c1d);
          return (T)this;
       }
 
-      public MainEntityPlayer m_5f3e9d40() {
-         return this.f_886da0eb;
+      public MainEntityPlayer m_f8aa77c5() {
+         return this.f_39772c86;
       }
 
-      public int m_457df919() {
-         return this.f_597131a6;
+      public int m_d612baa8() {
+         return this.f_ba693ef2;
       }
 
-      public int m_91941414() {
-         return this.f_e7560fbe;
+      public int m_eb304949() {
+         return this.f_e2c62c1d;
       }
 
-      public String m_ffd70b30() {
-         return this.f_e3417492;
+      public String m_6f1f396d() {
+         return this.f_fe036814;
       }
 
-      public int m_b9185c03() {
-         return this.f_7adf340d;
+      public int m_4a4817b8() {
+         return this.f_c84c0824;
       }
 
-      public int m_587fe280() {
-         return this.f_1835a908;
+      public int m_32f05cf1() {
+         return this.f_f689e46e;
       }
 
-      public int m_d5c84760() {
-         return this.f_a23869ee;
+      public int m_197b2fc8() {
+         return this.f_0faefd7a;
       }
 
-      public int m_905b82a8() {
-         return this.f_29cfc9a3;
+      public int m_0fe70f31() {
+         return this.f_579c779f;
       }
 
-      public long m_0fad3a68() {
-         return this.f_78180afb;
+      public long m_c7c6e660() {
+         return this.f_2f8ddeca;
       }
 
-      public void m_cb99593a(long var1) {
-         this.f_78180afb = var1;
+      public void m_e12f1e31(long var1) {
+         this.f_2f8ddeca = var1;
       }
    }
 
    public static class anonymoustransient extends C0073.anonymousthis<C0073.anonymoustransient> {
-      private Function<ItemStack, Boolean> f_b2d1f014 = var0 -> C0114.bootstrap<"call",1,1>(true);
-      private Runnable f_78a3c0d8;
+      private Function<ItemStack, Boolean> f_5110fc65 = var0 -> true;
+      private Runnable f_fb1ab51c;
 
       public anonymoustransient() {
       }
 
-      public C0073.anonymoustransient m_10ff8762(int var1) {
-         this.f_b2d1f014 = var2 -> C0114.bootstrap<"call",1,1>(this.f_b3bea76d.getFoodLevel() >= var1);
+      public C0073.anonymoustransient m_fb3f041e(int var1) {
+         this.f_5110fc65 = var2 -> this.f_39772c86.getFoodLevel() >= var1;
          return this;
       }
 
-      public C0073.anonymoustransient m_ea02cddd() {
-         IStateController var1 = C0114.bootstrap<"call",0,1>();
+      public C0073.anonymoustransient m_eb3bce89() {
+         IStateController var1 = IStateController.getInstance();
          if (var1 != null && var1.isControlling()) {
             var1.pause();
-            this.f_78a3c0d8 = var1::resume;
+            this.f_fb1ab51c = var1::resume;
          }
 
          return this;
       }
 
-      public C0073.anonymoustransient m_8f1104ef(boolean var1) {
-         if (!this.m_55d1c48f() || var1) {
-            if (this.f_596c008e > 9) {
-               this.f_596c008e -= 36;
+      public C0073.anonymoustransient m_a7413d75(boolean var1) {
+         if (!this.m_e0f7c666() || var1) {
+            if (this.f_ba693ef2 > 9) {
+               this.f_ba693ef2 -= 36;
             }
 
-            if (this.f_58d049fa > 9) {
-               this.f_58d049fa -= 36;
+            if (this.f_e2c62c1d > 9) {
+               this.f_e2c62c1d -= 36;
             }
 
-            this.f_b3bea76d.getInventory().setCurrentItem(this.f_58d049fa);
-            C0114.bootstrap<"call",0,1>(C0073.f_021c3a01, this.f_d9917285, () -> {
-               boolean var1x = this.f_b3bea76d.getInventory().getCurrentItem() != this.f_58d049fa;
-               ItemStack var2 = C0114.bootstrap<"call",0,1>(this.f_58d049fa);
-               if (!var1x && var2 != null && !var2.isEmpty() && !this.f_b2d1f014.apply(var2)) {
-                  if (!C0114.bootstrap<"call",2,1>()) {
+            this.f_39772c86.getInventory().setCurrentItem(this.f_e2c62c1d);
+            C0073.f_98de3227.m_dbe875a5(this.f_fe036814, () -> {
+               boolean var1x = this.f_39772c86.getInventory().getCurrentItem() != this.f_e2c62c1d;
+               ItemStack var2 = C0073.m_8ae0fd29(this.f_e2c62c1d);
+               if (!var1x && var2 != null && !var2.isEmpty() && !this.f_5110fc65.apply(var2)) {
+                  if (!C0217.m_51ce03a5()) {
                      if (ScreenRegistry.Chat.isOpen()) {
-                        C0114.bootstrap<"call",3,1>(1);
+                        Mouse.clickMouse(1);
                      } else {
                         MinecraftKeyBind.USE_ITEM.setPressed(true);
                      }
                   }
 
-                  return C0114.bootstrap<"call",1,1>(false);
+                  return false;
                } else {
                   MinecraftKeyBind.USE_ITEM.setPressed(false);
-                  this.f_b3bea76d.getInventory().setCurrentItem(this.f_596c008e);
-                  if (this.f_78a3c0d8 != null) {
-                     this.f_78a3c0d8.run();
+                  this.f_39772c86.getInventory().setCurrentItem(this.f_ba693ef2);
+                  if (this.f_fb1ab51c != null) {
+                     this.f_fb1ab51c.run();
                   }
 
-                  return C0114.bootstrap<"call",1,1>(true);
+                  return true;
                }
             });
          }
@@ -429,8 +425,8 @@ public class C0073 {
          return this;
       }
 
-      public void m_01f041a7(Runnable var1) {
-         this.f_78a3c0d8 = var1;
+      public void m_c162d659(Runnable var1) {
+         this.f_fb1ab51c = var1;
       }
    }
 }
