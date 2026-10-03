@@ -39,7 +39,8 @@ the live mavens, and drops the client where the EMC framework scans for mods
 The original in-repo installer packages (`libs/1.21.x-Aristois.zip`) still work
 too; `installer/install.py` just makes the process automatic and verifiable.
 
-Options: `--client donor`, `--game-dir <path>`, `--mc <version>`.
+Options: `--client donor`, `--game-dir <path>`, `--mc <version>`. Full build
+instructions and `make` targets are in [`BUILDING.md`](BUILDING.md).
 
 ## Recovering the client source
 

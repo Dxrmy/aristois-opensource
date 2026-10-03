@@ -6,6 +6,10 @@ build/
 *.jar
 !libs/*.jar
 !tools/*.jar
+# Tools downloaded on demand by the recovery pipeline (keep only cfr-0.152.jar).
+tools/asm-*.jar
+tools/vineflower*.jar
+tools/tiny-remapper-*.jar
 !gradle/wrapper/gradle-wrapper.jar
 !src/main/resources/META-INF/jars/*.jar
 libs/README.md
