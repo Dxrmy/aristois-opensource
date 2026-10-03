@@ -3,14 +3,14 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_437
+ *  net.minecraft.client.gui.screen.Screen
  */
 package me.deftware.client.framework.event.events;
 
 import lombok.Generated;
 import me.deftware.client.framework.event.events.EventRenderBase;
 import me.deftware.client.framework.gui.screens.MinecraftScreen;
-import net.minecraft.class_437;
+import net.minecraft.client.gui.screen.Screen;
 
 public class EventScreen
 extends EventRenderBase {

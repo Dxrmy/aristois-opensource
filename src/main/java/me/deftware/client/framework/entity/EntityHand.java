@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1268
+ *  net.minecraft.util.Hand
  */
 package me.deftware.client.framework.entity;
 
-import net.minecraft.class_1268;
+import net.minecraft.util.Hand;
 
 public enum EntityHand {
     MainHand,

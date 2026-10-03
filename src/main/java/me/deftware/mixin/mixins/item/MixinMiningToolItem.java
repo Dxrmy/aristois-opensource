@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1766
+ *  net.minecraft.item.MiningToolItem
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -11,7 +11,7 @@ package me.deftware.mixin.mixins.item;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.item.items.AttackItem;
 import me.deftware.mixin.mixins.item.MixinItem;
-import net.minecraft.class_1766;
+import net.minecraft.item.MiningToolItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

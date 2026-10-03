@@ -3,11 +3,11 @@
  * 
  * Could not load the following classes:
  *  com.google.common.base.Suppliers
- *  net.minecraft.class_1799
- *  net.minecraft.class_310
- *  net.minecraft.class_332
- *  net.minecraft.class_4587
- *  net.minecraft.class_4597$class_4598
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.VertexConsumerProvider$Immediate
  */
 package me.deftware.client.framework.render;
 
@@ -19,11 +19,11 @@ import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.render.gl.GLX;
 import me.deftware.client.framework.world.block.Block;
-import net.minecraft.class_1799;
-import net.minecraft.class_310;
-import net.minecraft.class_332;
-import net.minecraft.class_4587;
-import net.minecraft.class_4597;
+import net.minecraft.item.ItemStack;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumerProvider;
 
 public class ItemRendering {
     private static final ItemRendering INSTANCE = new ItemRendering();

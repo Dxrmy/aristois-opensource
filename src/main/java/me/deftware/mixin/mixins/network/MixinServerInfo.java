@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_642
- *  net.minecraft.class_642$class_9083
+ *  net.minecraft.client.network.ServerInfo
+ *  net.minecraft.client.network.ServerInfo$Status
  *  org.spongepowered.asm.mixin.Mixin
  */
 package me.deftware.mixin.mixins.network;
 
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.minecraft.ServerDetails;
-import net.minecraft.class_642;
+import net.minecraft.client.network.ServerInfo;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(value={class_642.class})

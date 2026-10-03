@@ -7,8 +7,8 @@
  *  com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService
  *  com.mojang.authlib.yggdrasil.YggdrasilEnvironment
  *  lombok.Generated
- *  net.minecraft.class_320
- *  net.minecraft.class_320$class_321
+ *  net.minecraft.client.session.Session
+ *  net.minecraft.client.session.Session$AccountType
  *  org.apache.commons.lang3.NotImplementedException
  */
 package me.deftware.client.framework.session;
@@ -25,7 +25,7 @@ import lombok.Generated;
 import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.session.AccountType;
 import me.deftware.client.framework.session.AuthEnvironment;
-import net.minecraft.class_320;
+import net.minecraft.client.session.Session;
 import org.apache.commons.lang3.NotImplementedException;
 
 public class AccountSession {

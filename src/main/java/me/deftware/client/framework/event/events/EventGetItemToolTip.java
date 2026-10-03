@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
+ *  net.minecraft.text.Text
  */
 package me.deftware.client.framework.event.events;
 
@@ -11,7 +11,7 @@ import java.util.function.Function;
 import me.deftware.client.framework.event.Event;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2561;
+import net.minecraft.text.Text;
 
 public class EventGetItemToolTip
 extends Event {

@@ -3,19 +3,19 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_243
- *  net.minecraft.class_3695
- *  net.minecraft.class_4184
- *  net.minecraft.class_4587
- *  net.minecraft.class_4597
- *  net.minecraft.class_4599
- *  net.minecraft.class_4604
- *  net.minecraft.class_761
- *  net.minecraft.class_898
- *  net.minecraft.class_9779
- *  net.minecraft.class_9909
- *  net.minecraft.class_9925
- *  net.minecraft.class_9958
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.util.profiler.Profiler
+ *  net.minecraft.client.render.Camera
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.VertexConsumerProvider
+ *  net.minecraft.client.render.BufferBuilderStorage
+ *  net.minecraft.client.render.Frustum
+ *  net.minecraft.client.render.WorldRenderer
+ *  net.minecraft.client.render.entity.EntityRenderDispatcher
+ *  net.minecraft.client.render.RenderTickCounter
+ *  net.minecraft.client.render.FrameGraphBuilder
+ *  net.minecraft.client.util.Handle
+ *  net.minecraft.client.render.Fog
  *  org.joml.Matrix4f
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
@@ -34,19 +34,19 @@ import lombok.Generated;
 import me.deftware.client.framework.event.events.EventWeather;
 import me.deftware.client.framework.render.WorldEntityRenderer;
 import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
-import net.minecraft.class_243;
-import net.minecraft.class_3695;
-import net.minecraft.class_4184;
-import net.minecraft.class_4587;
-import net.minecraft.class_4597;
-import net.minecraft.class_4599;
-import net.minecraft.class_4604;
-import net.minecraft.class_761;
-import net.minecraft.class_898;
-import net.minecraft.class_9779;
-import net.minecraft.class_9909;
-import net.minecraft.class_9925;
-import net.minecraft.class_9958;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.profiler.Profiler;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.BufferBuilderStorage;
+import net.minecraft.client.render.Frustum;
+import net.minecraft.client.render.WorldRenderer;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.RenderTickCounter;
+import net.minecraft.client.render.FrameGraphBuilder;
+import net.minecraft.client.util.Handle;
+import net.minecraft.client.render.Fog;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

@@ -6,25 +6,25 @@
  *  com.mojang.authlib.minecraft.UserApiService
  *  com.mojang.blaze3d.systems.RenderSystem
  *  lombok.Generated
- *  net.minecraft.class_1011
- *  net.minecraft.class_155
- *  net.minecraft.class_239
- *  net.minecraft.class_276
- *  net.minecraft.class_310
- *  net.minecraft.class_318
- *  net.minecraft.class_32$class_5143
- *  net.minecraft.class_320
- *  net.minecraft.class_3283
- *  net.minecraft.class_340
- *  net.minecraft.class_3965
- *  net.minecraft.class_3966
- *  net.minecraft.class_437
- *  net.minecraft.class_638
- *  net.minecraft.class_642
- *  net.minecraft.class_6683
- *  net.minecraft.class_6683$class_6684
- *  net.minecraft.class_6904
- *  net.minecraft.class_7853
+ *  net.minecraft.client.texture.NativeImage
+ *  net.minecraft.SharedConstants
+ *  net.minecraft.util.hit.HitResult
+ *  net.minecraft.client.gl.Framebuffer
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.util.ScreenshotRecorder
+ *  net.minecraft.world.level.storage.LevelStorage$Session
+ *  net.minecraft.client.session.Session
+ *  net.minecraft.resource.ResourcePackManager
+ *  net.minecraft.client.gui.hud.DebugHud
+ *  net.minecraft.util.hit.BlockHitResult
+ *  net.minecraft.util.hit.EntityHitResult
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.world.ClientWorld
+ *  net.minecraft.client.network.ServerInfo
+ *  net.minecraft.util.ModStatus
+ *  net.minecraft.util.ModStatus$Confidence
+ *  net.minecraft.server.SaveLoader
+ *  net.minecraft.client.session.ProfileKeys
  *  org.jetbrains.annotations.Nullable
  *  org.slf4j.Logger
  *  org.spongepowered.asm.mixin.Final
@@ -64,24 +64,24 @@ import me.deftware.client.framework.session.AccountSession;
 import me.deftware.client.framework.util.minecraft.BlockSwingResult;
 import me.deftware.client.framework.world.ClientWorld;
 import me.deftware.client.framework.world.WorldTimer;
-import net.minecraft.class_1011;
-import net.minecraft.class_155;
-import net.minecraft.class_239;
-import net.minecraft.class_276;
-import net.minecraft.class_310;
-import net.minecraft.class_318;
-import net.minecraft.class_32;
-import net.minecraft.class_320;
-import net.minecraft.class_3283;
-import net.minecraft.class_340;
-import net.minecraft.class_3965;
-import net.minecraft.class_3966;
-import net.minecraft.class_437;
-import net.minecraft.class_638;
-import net.minecraft.class_642;
-import net.minecraft.class_6683;
-import net.minecraft.class_6904;
-import net.minecraft.class_7853;
+import net.minecraft.client.texture.NativeImage;
+import net.minecraft.SharedConstants;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.client.gl.Framebuffer;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.util.ScreenshotRecorder;
+import net.minecraft.world.level.storage.LevelStorage;
+import net.minecraft.client.session.Session;
+import net.minecraft.resource.ResourcePackManager;
+import net.minecraft.client.gui.hud.DebugHud;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.network.ServerInfo;
+import net.minecraft.util.ModStatus;
+import net.minecraft.server.SaveLoader;
+import net.minecraft.client.session.ProfileKeys;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Final;

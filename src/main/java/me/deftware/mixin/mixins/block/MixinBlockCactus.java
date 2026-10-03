@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1922
- *  net.minecraft.class_2266
- *  net.minecraft.class_2338
- *  net.minecraft.class_259
- *  net.minecraft.class_265
- *  net.minecraft.class_2680
- *  net.minecraft.class_3726
+ *  net.minecraft.world.BlockView
+ *  net.minecraft.block.CactusBlock
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.shape.VoxelShapes
+ *  net.minecraft.util.shape.VoxelShape
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.block.ShapeContext
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -18,13 +18,13 @@ package me.deftware.mixin.mixins.block;
 
 import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
-import net.minecraft.class_1922;
-import net.minecraft.class_2266;
-import net.minecraft.class_2338;
-import net.minecraft.class_259;
-import net.minecraft.class_265;
-import net.minecraft.class_2680;
-import net.minecraft.class_3726;
+import net.minecraft.world.BlockView;
+import net.minecraft.block.CactusBlock;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

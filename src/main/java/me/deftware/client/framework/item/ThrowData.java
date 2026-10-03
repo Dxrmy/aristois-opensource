@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1672
+ *  net.minecraft.entity.EyeOfEnderEntity
  */
 package me.deftware.client.framework.item;
 
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_1672;
+import net.minecraft.entity.EyeOfEnderEntity;
 
 public class ThrowData {
     private final class_1672 entity;

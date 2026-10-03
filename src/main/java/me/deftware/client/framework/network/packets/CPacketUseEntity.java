@@ -2,20 +2,20 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1268
- *  net.minecraft.class_1297
- *  net.minecraft.class_2596
- *  net.minecraft.class_2824
+ *  net.minecraft.util.Hand
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket
  */
 package me.deftware.client.framework.network.packets;
 
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.network.PacketWrapper;
 import me.deftware.mixin.imp.IMixinPlayerInteractEntityC2SPacket;
-import net.minecraft.class_1268;
-import net.minecraft.class_1297;
-import net.minecraft.class_2596;
-import net.minecraft.class_2824;
+import net.minecraft.util.Hand;
+import net.minecraft.entity.Entity;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 
 public class CPacketUseEntity
 extends PacketWrapper {

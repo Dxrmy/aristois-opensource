@@ -2,18 +2,18 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1657
- *  net.minecraft.class_310
- *  net.minecraft.class_745
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.network.OtherClientPlayerEntity
  */
 package me.deftware.client.framework.entity.types.objects;
 
 import java.util.Objects;
-import net.minecraft.class_1297;
-import net.minecraft.class_1657;
-import net.minecraft.class_310;
-import net.minecraft.class_745;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.OtherClientPlayerEntity;
 
 public class ClonedPlayerMP
 extends class_745 {

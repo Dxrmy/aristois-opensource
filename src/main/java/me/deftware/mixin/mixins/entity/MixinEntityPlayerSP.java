@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1291
- *  net.minecraft.class_1297
- *  net.minecraft.class_1320
- *  net.minecraft.class_1702
- *  net.minecraft.class_310
- *  net.minecraft.class_634
- *  net.minecraft.class_6880
- *  net.minecraft.class_746
+ *  net.minecraft.entity.effect.StatusEffect
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.attribute.EntityAttribute
+ *  net.minecraft.entity.player.HungerManager
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.registry.entry.RegistryEntry
+ *  net.minecraft.client.network.ClientPlayerEntity
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -31,14 +31,14 @@ import me.deftware.client.framework.minecraft.Chat;
 import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
 import me.deftware.mixin.imp.IMixinEntityPlayerSP;
 import me.deftware.mixin.mixins.entity.MixinEntity;
-import net.minecraft.class_1291;
-import net.minecraft.class_1297;
-import net.minecraft.class_1320;
-import net.minecraft.class_1702;
-import net.minecraft.class_310;
-import net.minecraft.class_634;
-import net.minecraft.class_6880;
-import net.minecraft.class_746;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.player.HungerManager;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

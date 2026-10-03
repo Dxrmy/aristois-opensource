@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_8921
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.world.tick.TickManager
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -13,8 +13,8 @@
 package me.deftware.mixin.mixins.game;
 
 import me.deftware.client.framework.world.WorldTimer;
-import net.minecraft.class_310;
-import net.minecraft.class_8921;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.world.tick.TickManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

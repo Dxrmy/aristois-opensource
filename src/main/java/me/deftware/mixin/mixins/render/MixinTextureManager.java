@@ -3,8 +3,8 @@
  * 
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
- *  net.minecraft.class_2960
- *  net.minecraft.class_918
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.render.item.ItemRenderer
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.ModifyVariable
@@ -14,8 +14,8 @@ package me.deftware.mixin.mixins.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
-import net.minecraft.class_2960;
-import net.minecraft.class_918;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.render.item.ItemRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;

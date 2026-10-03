@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2596
- *  net.minecraft.class_310
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.network;
 
 import me.deftware.mixin.imp.IMixinNetworkManager;
-import net.minecraft.class_2596;
-import net.minecraft.class_310;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.client.MinecraftClient;
 
 public class PacketWrapper {
     protected class_2596<?> packet;

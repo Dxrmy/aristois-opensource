@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_10
- *  net.minecraft.class_1922
- *  net.minecraft.class_2338
- *  net.minecraft.class_259
- *  net.minecraft.class_265
- *  net.minecraft.class_3726
- *  net.minecraft.class_3830
- *  net.minecraft.class_4970$class_4971
- *  net.minecraft.class_7923
+ *  net.minecraft.entity.ai.pathing.NavigationType
+ *  net.minecraft.world.BlockView
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.shape.VoxelShapes
+ *  net.minecraft.util.shape.VoxelShape
+ *  net.minecraft.block.ShapeContext
+ *  net.minecraft.block.SweetBerryBushBlock
+ *  net.minecraft.block.AbstractBlock$AbstractBlockState
+ *  net.minecraft.registry.Registries
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -28,15 +28,15 @@ import me.deftware.client.framework.main.bootstrap.Bootstrap;
 import me.deftware.client.framework.math.BlockPosition;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.client.framework.world.block.BlockState;
-import net.minecraft.class_10;
-import net.minecraft.class_1922;
-import net.minecraft.class_2338;
-import net.minecraft.class_259;
-import net.minecraft.class_265;
-import net.minecraft.class_3726;
-import net.minecraft.class_3830;
-import net.minecraft.class_4970;
-import net.minecraft.class_7923;
+import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.world.BlockView;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.registry.Registries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

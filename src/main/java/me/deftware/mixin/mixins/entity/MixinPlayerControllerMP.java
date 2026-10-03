@@ -2,23 +2,23 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1268
- *  net.minecraft.class_1269
- *  net.minecraft.class_1297
- *  net.minecraft.class_1657
- *  net.minecraft.class_1747
- *  net.minecraft.class_1792
- *  net.minecraft.class_1799
- *  net.minecraft.class_1838
- *  net.minecraft.class_1937
- *  net.minecraft.class_2248
- *  net.minecraft.class_2338
- *  net.minecraft.class_2596
- *  net.minecraft.class_2680
- *  net.minecraft.class_2886
- *  net.minecraft.class_3966
- *  net.minecraft.class_634
- *  net.minecraft.class_636
+ *  net.minecraft.util.Hand
+ *  net.minecraft.util.ActionResult
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.item.BlockItem
+ *  net.minecraft.item.Item
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.item.ItemUsageContext
+ *  net.minecraft.world.World
+ *  net.minecraft.block.Block
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket
+ *  net.minecraft.util.hit.EntityHitResult
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.client.network.ClientPlayerInteractionManager
  *  org.apache.commons.lang3.mutable.MutableObject
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -42,23 +42,23 @@ import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.mixin.imp.IMixinPlayerControllerMP;
 import me.deftware.mixin.imp.IMixinPlayerInteractEntityC2SPacket;
-import net.minecraft.class_1268;
-import net.minecraft.class_1269;
-import net.minecraft.class_1297;
-import net.minecraft.class_1657;
-import net.minecraft.class_1747;
-import net.minecraft.class_1792;
-import net.minecraft.class_1799;
-import net.minecraft.class_1838;
-import net.minecraft.class_1937;
-import net.minecraft.class_2248;
-import net.minecraft.class_2338;
-import net.minecraft.class_2596;
-import net.minecraft.class_2680;
-import net.minecraft.class_2886;
-import net.minecraft.class_3966;
-import net.minecraft.class_634;
-import net.minecraft.class_636;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.world.World;
+import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.block.BlockState;
+import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.client.network.ClientPlayerInteractionManager;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1713
+ *  net.minecraft.screen.slot.SlotActionType
  */
 package me.deftware.client.framework.entity.types.main;
 
-import net.minecraft.class_1713;
+import net.minecraft.screen.slot.SlotActionType;
 
 public enum WindowClickAction {
     THROW(class_1713.field_7795),

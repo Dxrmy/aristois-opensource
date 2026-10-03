@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1536
- *  net.minecraft.class_310
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.projectile.FishingBobberEntity
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.entity.types.objects;
 
 import java.util.Objects;
 import me.deftware.client.framework.entity.Entity;
-import net.minecraft.class_1297;
-import net.minecraft.class_1536;
-import net.minecraft.class_310;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.FishingBobberEntity;
+import net.minecraft.client.MinecraftClient;
 
 public class EntityFishHook
 extends Entity {

@@ -8,7 +8,7 @@
  *  com.mojang.brigadier.arguments.IntegerArgumentType
  *  com.mojang.brigadier.arguments.StringArgumentType
  *  com.mojang.brigadier.context.CommandContext
- *  net.minecraft.class_2186
+ *  net.minecraft.command.argument.EntityArgumentType
  */
 package me.deftware.client.framework.command;
 
@@ -20,7 +20,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2186;
+import net.minecraft.command.argument.EntityArgumentType;
 
 @Deprecated
 public class CommandResult {

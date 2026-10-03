@@ -4,19 +4,19 @@
  * Could not load the following classes:
  *  it.unimi.dsi.fastutil.ints.Int2ObjectMap
  *  it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap
- *  net.minecraft.class_1297
- *  net.minecraft.class_1297$class_5529
- *  net.minecraft.class_1937
- *  net.minecraft.class_2246
- *  net.minecraft.class_2248
- *  net.minecraft.class_2338
- *  net.minecraft.class_2338$class_2339
- *  net.minecraft.class_2388
- *  net.minecraft.class_2394
- *  net.minecraft.class_2398
- *  net.minecraft.class_2680
- *  net.minecraft.class_638
- *  net.minecraft.class_8921
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.Entity$RemovalReason
+ *  net.minecraft.world.World
+ *  net.minecraft.block.Blocks
+ *  net.minecraft.block.Block
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.math.BlockPos$Mutable
+ *  net.minecraft.particle.BlockStateParticleEffect
+ *  net.minecraft.particle.ParticleEffect
+ *  net.minecraft.particle.ParticleTypes
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.client.world.ClientWorld
+ *  net.minecraft.world.tick.TickManager
  *  org.jetbrains.annotations.Nullable
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -37,17 +37,17 @@ import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
 import me.deftware.client.framework.world.ClientWorld;
 import me.deftware.mixin.mixins.world.MixinWorld;
-import net.minecraft.class_1297;
-import net.minecraft.class_1937;
-import net.minecraft.class_2246;
-import net.minecraft.class_2248;
-import net.minecraft.class_2338;
-import net.minecraft.class_2388;
-import net.minecraft.class_2394;
-import net.minecraft.class_2398;
-import net.minecraft.class_2680;
-import net.minecraft.class_638;
-import net.minecraft.class_8921;
+import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.particle.BlockStateParticleEffect;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.world.tick.TickManager;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

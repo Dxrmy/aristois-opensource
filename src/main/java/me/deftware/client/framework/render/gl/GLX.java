@@ -3,9 +3,9 @@
  * 
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
- *  net.minecraft.class_332
- *  net.minecraft.class_4587
- *  net.minecraft.class_7833
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.util.math.RotationAxis
  *  org.joml.Matrix4f
  *  org.joml.Matrix4fStack
  *  org.joml.Matrix4fc
@@ -17,9 +17,9 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import java.awt.Color;
 import java.util.StringJoiner;
 import java.util.function.Consumer;
-import net.minecraft.class_332;
-import net.minecraft.class_4587;
-import net.minecraft.class_7833;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix4f;
 import org.joml.Matrix4fStack;
 import org.joml.Matrix4fc;

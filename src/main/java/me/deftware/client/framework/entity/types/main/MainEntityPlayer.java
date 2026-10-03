@@ -2,24 +2,24 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1268
- *  net.minecraft.class_1269
- *  net.minecraft.class_1657
- *  net.minecraft.class_1664
- *  net.minecraft.class_1713
- *  net.minecraft.class_1799
- *  net.minecraft.class_2338
- *  net.minecraft.class_2350
- *  net.minecraft.class_243
- *  net.minecraft.class_2596
- *  net.minecraft.class_2846
- *  net.minecraft.class_2846$class_2847
- *  net.minecraft.class_2873
- *  net.minecraft.class_310
- *  net.minecraft.class_3965
- *  net.minecraft.class_634
- *  net.minecraft.class_744
- *  net.minecraft.class_746
+ *  net.minecraft.util.Hand
+ *  net.minecraft.util.ActionResult
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.entity.player.PlayerModelPart
+ *  net.minecraft.screen.slot.SlotActionType
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.math.Direction
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket
+ *  net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket$Action
+ *  net.minecraft.network.packet.c2s.play.CreativeInventoryActionC2SPacket
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.util.hit.BlockHitResult
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.client.input.Input
+ *  net.minecraft.client.network.ClientPlayerEntity
  */
 package me.deftware.client.framework.entity.types.main;
 
@@ -36,23 +36,23 @@ import me.deftware.client.framework.world.EnumFacing;
 import me.deftware.mixin.imp.IMixinEntityPlayerSP;
 import me.deftware.mixin.imp.IMixinEntityRenderer;
 import me.deftware.mixin.imp.IMixinPlayerControllerMP;
-import net.minecraft.class_1268;
-import net.minecraft.class_1269;
-import net.minecraft.class_1657;
-import net.minecraft.class_1664;
-import net.minecraft.class_1713;
-import net.minecraft.class_1799;
-import net.minecraft.class_2338;
-import net.minecraft.class_2350;
-import net.minecraft.class_243;
-import net.minecraft.class_2596;
-import net.minecraft.class_2846;
-import net.minecraft.class_2873;
-import net.minecraft.class_310;
-import net.minecraft.class_3965;
-import net.minecraft.class_634;
-import net.minecraft.class_744;
-import net.minecraft.class_746;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerModelPart;
+import net.minecraft.screen.slot.SlotActionType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
+import net.minecraft.network.packet.c2s.play.CreativeInventoryActionC2SPacket;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.client.input.Input;
+import net.minecraft.client.network.ClientPlayerEntity;
 
 public class MainEntityPlayer
 extends EntityPlayer {

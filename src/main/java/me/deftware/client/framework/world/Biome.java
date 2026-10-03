@@ -2,18 +2,18 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1959
- *  net.minecraft.class_2960
- *  net.minecraft.class_5321
- *  net.minecraft.class_6880
+ *  net.minecraft.world.biome.Biome
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.registry.RegistryKey
+ *  net.minecraft.registry.entry.RegistryEntry
  */
 package me.deftware.client.framework.world;
 
 import me.deftware.client.framework.world.gen.BiomeDecorator;
-import net.minecraft.class_1959;
-import net.minecraft.class_2960;
-import net.minecraft.class_5321;
-import net.minecraft.class_6880;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.util.Identifier;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.entry.RegistryEntry;
 
 public class Biome {
     private class_6880<class_1959> biome;

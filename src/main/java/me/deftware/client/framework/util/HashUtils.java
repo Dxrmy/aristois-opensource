@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.util;
 
@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import net.minecraft.class_310;
+import net.minecraft.client.MinecraftClient;
 
 public class HashUtils {
     private static final char[] hexCode = "0123456789ABCDEF".toCharArray();

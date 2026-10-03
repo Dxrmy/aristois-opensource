@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1661
+ *  net.minecraft.entity.player.PlayerInventory
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -11,7 +11,7 @@ package me.deftware.mixin.mixins.item;
 import java.util.function.Consumer;
 import me.deftware.client.framework.inventory.EntityInventory;
 import me.deftware.client.framework.item.ItemStack;
-import net.minecraft.class_1661;
+import net.minecraft.entity.player.PlayerInventory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

@@ -3,12 +3,12 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_320$class_321
+ *  net.minecraft.client.session.Session$AccountType
  */
 package me.deftware.client.framework.session;
 
 import lombok.Generated;
-import net.minecraft.class_320;
+import net.minecraft.client.session.Session;
 
 public enum AccountType {
     Legacy(class_320.class_321.field_1990),

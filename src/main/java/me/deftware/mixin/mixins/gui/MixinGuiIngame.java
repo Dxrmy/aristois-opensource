@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1657
- *  net.minecraft.class_2960
- *  net.minecraft.class_310
- *  net.minecraft.class_329
- *  net.minecraft.class_332
- *  net.minecraft.class_9779
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.hud.InGameHud
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.render.RenderTickCounter
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -24,13 +24,13 @@ import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
 import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_1297;
-import net.minecraft.class_1657;
-import net.minecraft.class_2960;
-import net.minecraft.class_310;
-import net.minecraft.class_329;
-import net.minecraft.class_332;
-import net.minecraft.class_9779;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderTickCounter;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

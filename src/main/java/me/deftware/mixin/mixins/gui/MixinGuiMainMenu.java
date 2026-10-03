@@ -2,9 +2,9 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_332
- *  net.minecraft.class_442
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.screen.TitleScreen
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -15,9 +15,9 @@ package me.deftware.mixin.mixins.gui;
 import me.deftware.client.framework.FrameworkConstants;
 import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
-import net.minecraft.class_310;
-import net.minecraft.class_332;
-import net.minecraft.class_442;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

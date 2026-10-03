@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.helper;
 
@@ -10,7 +10,7 @@ import me.deftware.client.framework.gui.GuiScreen;
 import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.shader.Shader;
 import me.deftware.mixin.imp.IMixinEntityRenderer;
-import net.minecraft.class_310;
+import net.minecraft.client.MinecraftClient;
 
 public class WindowHelper {
     public static long getWindowHandle() {

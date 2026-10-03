@@ -2,9 +2,9 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1672
- *  net.minecraft.class_2338
- *  net.minecraft.class_243
+ *  net.minecraft.entity.EyeOfEnderEntity
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.math.Vec3d
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -15,9 +15,9 @@ package me.deftware.mixin.mixins.entity;
 
 import me.deftware.client.framework.event.events.EventStructureLocation;
 import me.deftware.client.framework.item.ThrowData;
-import net.minecraft.class_1672;
-import net.minecraft.class_2338;
-import net.minecraft.class_243;
+import net.minecraft.entity.EyeOfEnderEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
+ *  net.minecraft.client.MinecraftClient
  *  org.lwjgl.BufferUtils
  *  org.lwjgl.glfw.GLFW
  */
@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import me.deftware.client.framework.helper.WindowHelper;
 import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.RenderStack;
-import net.minecraft.class_310;
+import net.minecraft.client.MinecraftClient;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFW;
 

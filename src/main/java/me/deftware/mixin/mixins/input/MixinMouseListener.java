@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_312
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.Mouse
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.injection.At
@@ -15,8 +15,8 @@ package me.deftware.mixin.mixins.input;
 import me.deftware.client.framework.event.events.EventKeyAction;
 import me.deftware.client.framework.event.events.EventMouseClick;
 import me.deftware.client.framework.input.Mouse;
-import net.minecraft.class_310;
-import net.minecraft.class_312;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Mouse;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1299
- *  net.minecraft.class_1299$class_1300
- *  net.minecraft.class_5321
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.EntityType
+ *  net.minecraft.entity.EntityType$Builder
+ *  net.minecraft.registry.RegistryKey
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Redirect
@@ -13,9 +13,9 @@
 package me.deftware.mixin.mixins.entity;
 
 import me.deftware.client.framework.registry.EntityRegistry;
-import net.minecraft.class_1297;
-import net.minecraft.class_1299;
-import net.minecraft.class_5321;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.registry.RegistryKey;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1792
- *  net.minecraft.class_2248
- *  net.minecraft.class_2960
- *  net.minecraft.class_310
- *  net.minecraft.class_3298
- *  net.minecraft.class_7923
+ *  net.minecraft.item.Item
+ *  net.minecraft.block.Block
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.resource.Resource
+ *  net.minecraft.registry.Registries
  */
 package me.deftware.client.framework.world.block;
 
@@ -22,12 +22,12 @@ import me.deftware.client.framework.item.items.BlockItem;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.ItemRendering;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_1792;
-import net.minecraft.class_2248;
-import net.minecraft.class_2960;
-import net.minecraft.class_310;
-import net.minecraft.class_3298;
-import net.minecraft.class_7923;
+import net.minecraft.item.Item;
+import net.minecraft.block.Block;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.resource.Resource;
+import net.minecraft.registry.Registries;
 
 public interface Block
 extends Itemizable,

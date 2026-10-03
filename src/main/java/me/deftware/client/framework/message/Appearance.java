@@ -2,24 +2,24 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_124
- *  net.minecraft.class_2558
- *  net.minecraft.class_2558$class_2559
- *  net.minecraft.class_2561
- *  net.minecraft.class_2568
- *  net.minecraft.class_2568$class_5247
- *  net.minecraft.class_2583
+ *  net.minecraft.util.Formatting
+ *  net.minecraft.text.ClickEvent
+ *  net.minecraft.text.ClickEvent$Action
+ *  net.minecraft.text.Text
+ *  net.minecraft.text.HoverEvent
+ *  net.minecraft.text.HoverEvent$Action
+ *  net.minecraft.text.Style
  */
 package me.deftware.client.framework.message;
 
 import java.util.ArrayList;
 import java.util.Optional;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_124;
-import net.minecraft.class_2558;
-import net.minecraft.class_2561;
-import net.minecraft.class_2568;
-import net.minecraft.class_2583;
+import net.minecraft.util.Formatting;
+import net.minecraft.text.ClickEvent;
+import net.minecraft.text.Text;
+import net.minecraft.text.HoverEvent;
+import net.minecraft.text.Style;
 
 public interface Appearance {
     public static final int OBFUSCATED = 1;

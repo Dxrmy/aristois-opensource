@@ -2,16 +2,16 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_10538
- *  net.minecraft.class_2960
+ *  net.minecraft.client.texture.PlayerSkinTextureDownloader
+ *  net.minecraft.util.Identifier
  */
 package me.deftware.client.framework.cosmetics;
 
 import java.io.File;
 import java.nio.file.Path;
 import me.deftware.client.framework.util.minecraft.MinecraftIdentifier;
-import net.minecraft.class_10538;
-import net.minecraft.class_2960;
+import net.minecraft.client.texture.PlayerSkinTextureDownloader;
+import net.minecraft.util.Identifier;
 
 public interface PlayerTexture {
     public MinecraftIdentifier getCapeTexture();

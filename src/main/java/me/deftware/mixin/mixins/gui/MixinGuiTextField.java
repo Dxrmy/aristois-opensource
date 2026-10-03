@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_327
- *  net.minecraft.class_332
- *  net.minecraft.class_342
- *  net.minecraft.class_5481
+ *  net.minecraft.client.font.TextRenderer
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.widget.TextFieldWidget
+ *  net.minecraft.text.OrderedText
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -22,10 +22,10 @@ import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import me.deftware.client.framework.gui.widgets.TextField;
 import me.deftware.mixin.mixins.gui.MixinClickableWidget;
-import net.minecraft.class_327;
-import net.minecraft.class_332;
-import net.minecraft.class_342;
-import net.minecraft.class_5481;
+import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.text.OrderedText;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1937
- *  net.minecraft.class_2586
- *  net.minecraft.class_2680
- *  net.minecraft.class_2818
+ *  net.minecraft.world.World
+ *  net.minecraft.block.entity.BlockEntity
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.world.chunk.WorldChunk
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -17,10 +17,10 @@ package me.deftware.mixin.mixins.world;
 
 import java.util.HashMap;
 import me.deftware.client.framework.world.World;
-import net.minecraft.class_1937;
-import net.minecraft.class_2586;
-import net.minecraft.class_2680;
-import net.minecraft.class_2818;
+import net.minecraft.world.World;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.BlockState;
+import net.minecraft.world.chunk.WorldChunk;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

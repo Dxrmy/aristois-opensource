@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1675
- *  net.minecraft.class_238
- *  net.minecraft.class_239
- *  net.minecraft.class_239$class_240
- *  net.minecraft.class_243
- *  net.minecraft.class_310
- *  net.minecraft.class_3959
- *  net.minecraft.class_3959$class_242
- *  net.minecraft.class_3959$class_3960
- *  net.minecraft.class_3966
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.projectile.ProjectileUtil
+ *  net.minecraft.util.math.Box
+ *  net.minecraft.util.hit.HitResult
+ *  net.minecraft.util.hit.HitResult$Type
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.world.RaycastContext
+ *  net.minecraft.world.RaycastContext$FluidHandling
+ *  net.minecraft.world.RaycastContext$ShapeType
+ *  net.minecraft.util.hit.EntityHitResult
  */
 package me.deftware.client.framework.world.ray;
 
@@ -21,14 +21,14 @@ import me.deftware.client.framework.math.Vector3;
 import me.deftware.client.framework.util.minecraft.EntitySwingResult;
 import me.deftware.client.framework.world.ray.RayProfile;
 import me.deftware.client.framework.world.ray.RayTrace;
-import net.minecraft.class_1297;
-import net.minecraft.class_1675;
-import net.minecraft.class_238;
-import net.minecraft.class_239;
-import net.minecraft.class_243;
-import net.minecraft.class_310;
-import net.minecraft.class_3959;
-import net.minecraft.class_3966;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.world.RaycastContext;
+import net.minecraft.util.hit.EntityHitResult;
 
 public class EntityRayTrace
 extends RayTrace<EntitySwingResult> {

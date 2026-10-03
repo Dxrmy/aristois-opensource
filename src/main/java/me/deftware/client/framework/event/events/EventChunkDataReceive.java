@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1923
- *  net.minecraft.class_2672
+ *  net.minecraft.util.math.ChunkPos
+ *  net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket
  */
 package me.deftware.client.framework.event.events;
 
 import me.deftware.client.framework.event.Event;
 import me.deftware.client.framework.math.ChunkPosition;
-import net.minecraft.class_1923;
-import net.minecraft.class_2672;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket;
 
 public class EventChunkDataReceive
 extends Event {

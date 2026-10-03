@@ -2,23 +2,23 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1937
- *  net.minecraft.class_1959
- *  net.minecraft.class_2338
- *  net.minecraft.class_239$class_240
- *  net.minecraft.class_243
- *  net.minecraft.class_2561
- *  net.minecraft.class_2586
- *  net.minecraft.class_310
- *  net.minecraft.class_3959
- *  net.minecraft.class_3959$class_242
- *  net.minecraft.class_3959$class_3960
- *  net.minecraft.class_424
- *  net.minecraft.class_437
- *  net.minecraft.class_5321
- *  net.minecraft.class_5562
- *  net.minecraft.class_638
- *  net.minecraft.class_6880
+ *  net.minecraft.world.World
+ *  net.minecraft.world.biome.Biome
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.hit.HitResult$Type
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.text.Text
+ *  net.minecraft.block.entity.BlockEntity
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.world.RaycastContext
+ *  net.minecraft.world.RaycastContext$FluidHandling
+ *  net.minecraft.world.RaycastContext$ShapeType
+ *  net.minecraft.client.gui.screen.MessageScreen
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.registry.RegistryKey
+ *  net.minecraft.world.chunk.BlockEntityTickInvoker
+ *  net.minecraft.client.world.ClientWorld
+ *  net.minecraft.registry.entry.RegistryEntry
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -38,21 +38,21 @@ import me.deftware.client.framework.world.Biome;
 import me.deftware.client.framework.world.World;
 import me.deftware.client.framework.world.block.BlockState;
 import me.deftware.client.framework.world.chunk.ChunkAccessor;
-import net.minecraft.class_1937;
-import net.minecraft.class_1959;
-import net.minecraft.class_2338;
-import net.minecraft.class_239;
-import net.minecraft.class_243;
-import net.minecraft.class_2561;
-import net.minecraft.class_2586;
-import net.minecraft.class_310;
-import net.minecraft.class_3959;
-import net.minecraft.class_424;
-import net.minecraft.class_437;
-import net.minecraft.class_5321;
-import net.minecraft.class_5562;
-import net.minecraft.class_638;
-import net.minecraft.class_6880;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.text.Text;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.world.RaycastContext;
+import net.minecraft.client.gui.screen.MessageScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.world.chunk.BlockEntityTickInvoker;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.registry.entry.RegistryEntry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

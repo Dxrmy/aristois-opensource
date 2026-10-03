@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1291
- *  net.minecraft.class_7923
+ *  net.minecraft.entity.effect.StatusEffect
+ *  net.minecraft.registry.Registries
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -11,8 +11,8 @@ package me.deftware.mixin.mixins.entity;
 
 import me.deftware.client.framework.entity.effect.Effect;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_1291;
-import net.minecraft.class_7923;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

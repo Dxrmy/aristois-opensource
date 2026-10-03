@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2596
+ *  net.minecraft.network.packet.Packet
  */
 package me.deftware.client.framework.network.packets;
 
 import me.deftware.client.framework.network.PacketWrapper;
-import net.minecraft.class_2596;
+import net.minecraft.network.packet.Packet;
 
 public class SPacketWorldTime
 extends PacketWrapper {

@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_310
- *  net.minecraft.class_5498
- *  net.minecraft.class_743
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.option.Perspective
+ *  net.minecraft.client.input.KeyboardInput
  */
 package me.deftware.client.framework.render.camera.entity;
 
@@ -13,10 +13,10 @@ import java.util.Objects;
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.render.camera.entity.CameraEntity;
 import me.deftware.client.framework.render.camera.entity.DummyInput;
-import net.minecraft.class_1297;
-import net.minecraft.class_310;
-import net.minecraft.class_5498;
-import net.minecraft.class_743;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.Perspective;
+import net.minecraft.client.input.KeyboardInput;
 
 public class CameraEntityMan {
     public static float speed = 0.25f;

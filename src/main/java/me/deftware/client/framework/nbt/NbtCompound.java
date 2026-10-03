@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2487
+ *  net.minecraft.nbt.NbtCompound
  */
 package me.deftware.client.framework.nbt;
 
 import me.deftware.client.framework.nbt.NbtList;
-import net.minecraft.class_2487;
+import net.minecraft.nbt.NbtCompound;
 
 public interface NbtCompound {
     public static NbtCompound create() {

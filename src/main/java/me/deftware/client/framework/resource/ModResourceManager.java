@@ -4,14 +4,14 @@
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
  *  lombok.Generated
- *  net.minecraft.class_10151
- *  net.minecraft.class_1060
- *  net.minecraft.class_156
- *  net.minecraft.class_2960
- *  net.minecraft.class_310
- *  net.minecraft.class_3262
- *  net.minecraft.class_3298
- *  net.minecraft.class_3300
+ *  net.minecraft.client.gl.ShaderLoader
+ *  net.minecraft.client.texture.TextureManager
+ *  net.minecraft.util.Util
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.resource.ResourcePack
+ *  net.minecraft.resource.Resource
+ *  net.minecraft.resource.ResourceManager
  */
 package me.deftware.client.framework.resource;
 
@@ -35,14 +35,14 @@ import java.util.zip.ZipFile;
 import lombok.Generated;
 import me.deftware.client.framework.main.EMCMod;
 import me.deftware.client.framework.resource.ModResource;
-import net.minecraft.class_10151;
-import net.minecraft.class_1060;
-import net.minecraft.class_156;
-import net.minecraft.class_2960;
-import net.minecraft.class_310;
-import net.minecraft.class_3262;
-import net.minecraft.class_3298;
-import net.minecraft.class_3300;
+import net.minecraft.client.gl.ShaderLoader;
+import net.minecraft.client.texture.TextureManager;
+import net.minecraft.util.Util;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.resource.ResourcePack;
+import net.minecraft.resource.Resource;
+import net.minecraft.resource.ResourceManager;
 
 public class ModResourceManager
 implements class_3300 {

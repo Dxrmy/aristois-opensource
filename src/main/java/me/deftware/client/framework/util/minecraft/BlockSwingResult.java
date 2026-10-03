@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2338
- *  net.minecraft.class_239
- *  net.minecraft.class_243
- *  net.minecraft.class_3965
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.hit.HitResult
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.util.hit.BlockHitResult
  */
 package me.deftware.client.framework.util.minecraft;
 
@@ -15,10 +15,10 @@ import me.deftware.client.framework.util.hitresult.CrosshairResult;
 import me.deftware.client.framework.world.ClientWorld;
 import me.deftware.client.framework.world.EnumFacing;
 import me.deftware.client.framework.world.block.Block;
-import net.minecraft.class_2338;
-import net.minecraft.class_239;
-import net.minecraft.class_243;
-import net.minecraft.class_3965;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.hit.BlockHitResult;
 
 public class BlockSwingResult
 extends CrosshairResult {

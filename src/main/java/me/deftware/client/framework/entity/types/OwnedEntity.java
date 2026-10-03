@@ -3,16 +3,16 @@
  * 
  * Could not load the following classes:
  *  javax.annotation.Nullable
- *  net.minecraft.class_1297
- *  net.minecraft.class_2487
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.nbt.NbtCompound
  */
 package me.deftware.client.framework.entity.types;
 
 import java.util.UUID;
 import javax.annotation.Nullable;
 import me.deftware.client.framework.entity.types.LivingEntity;
-import net.minecraft.class_1297;
-import net.minecraft.class_2487;
+import net.minecraft.entity.Entity;
+import net.minecraft.nbt.NbtCompound;
 
 public class OwnedEntity
 extends LivingEntity {

@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1764
- *  net.minecraft.class_1799
+ *  net.minecraft.item.CrossbowItem
+ *  net.minecraft.item.ItemStack
  *  org.apache.commons.lang3.mutable.MutableBoolean
  *  org.apache.commons.lang3.mutable.MutableFloat
  *  org.apache.commons.lang3.mutable.MutableInt
@@ -16,8 +16,8 @@ import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.item.items.ArmorItem;
 import me.deftware.client.framework.item.items.AttackItem;
-import net.minecraft.class_1764;
-import net.minecraft.class_1799;
+import net.minecraft.item.CrossbowItem;
+import net.minecraft.item.ItemStack;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;

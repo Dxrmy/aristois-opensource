@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1299
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.EntityType
  */
 package me.deftware.client.framework.registry;
 
@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.stream.Stream;
 import me.deftware.client.framework.entity.EntityCapsule;
 import me.deftware.client.framework.registry.IRegistry;
-import net.minecraft.class_1297;
-import net.minecraft.class_1299;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 
 public enum EntityRegistry implements IRegistry.IdentifiableRegistry<EntityCapsule, class_1299<? extends class_1297>>
 {

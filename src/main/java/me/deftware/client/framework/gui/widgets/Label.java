@@ -3,14 +3,14 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2561
- *  net.minecraft.class_310
- *  net.minecraft.class_327
- *  net.minecraft.class_332
- *  net.minecraft.class_364
- *  net.minecraft.class_4068
- *  net.minecraft.class_5348
- *  net.minecraft.class_5481
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.font.TextRenderer
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.Element
+ *  net.minecraft.client.gui.Drawable
+ *  net.minecraft.text.StringVisitable
+ *  net.minecraft.text.OrderedText
  */
 package me.deftware.client.framework.gui.widgets;
 
@@ -24,14 +24,14 @@ import lombok.Generated;
 import me.deftware.client.framework.gui.widgets.GenericComponent;
 import me.deftware.client.framework.gui.widgets.properties.Tooltipable;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2561;
-import net.minecraft.class_310;
-import net.minecraft.class_327;
-import net.minecraft.class_332;
-import net.minecraft.class_364;
-import net.minecraft.class_4068;
-import net.minecraft.class_5348;
-import net.minecraft.class_5481;
+import net.minecraft.text.Text;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.Element;
+import net.minecraft.client.gui.Drawable;
+import net.minecraft.text.StringVisitable;
+import net.minecraft.text.OrderedText;
 
 public class Label
 implements class_4068,

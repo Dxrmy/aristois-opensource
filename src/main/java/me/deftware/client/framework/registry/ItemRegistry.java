@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_7923
+ *  net.minecraft.registry.Registries
  */
 package me.deftware.client.framework.registry;
 
 import java.util.stream.Stream;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.registry.IRegistry;
-import net.minecraft.class_7923;
+import net.minecraft.registry.Registries;
 
 public enum ItemRegistry implements IRegistry.IdentifiableRegistry<Item, Void>
 {

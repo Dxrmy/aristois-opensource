@@ -3,12 +3,12 @@
  * 
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
- *  net.minecraft.class_308
+ *  net.minecraft.client.render.DiffuseLighting
  */
 package me.deftware.client.framework.helper;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.class_308;
+import net.minecraft.client.render.DiffuseLighting;
 
 public class GlStateHelper {
     public static void disableAlpha() {

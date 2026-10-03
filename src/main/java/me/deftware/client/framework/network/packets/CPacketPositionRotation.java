@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2596
- *  net.minecraft.class_2828$class_2830
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket$Full
  */
 package me.deftware.client.framework.network.packets;
 
 import me.deftware.client.framework.network.packets.CPacketPlayer;
-import net.minecraft.class_2596;
-import net.minecraft.class_2828;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class CPacketPositionRotation
 extends CPacketPlayer {

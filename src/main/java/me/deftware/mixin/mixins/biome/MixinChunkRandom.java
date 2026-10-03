@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2919
+ *  net.minecraft.util.math.random.ChunkRandom
  *  org.spongepowered.asm.mixin.Mixin
  */
 package me.deftware.mixin.mixins.biome;
 
 import me.deftware.client.framework.world.chunk.ChunkGenerationRandom;
-import net.minecraft.class_2919;
+import net.minecraft.util.math.random.ChunkRandom;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(value={class_2919.class})

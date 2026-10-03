@@ -2,22 +2,22 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2338
- *  net.minecraft.class_243
- *  net.minecraft.class_2626
- *  net.minecraft.class_2637
- *  net.minecraft.class_2663
- *  net.minecraft.class_2664
- *  net.minecraft.class_2672
- *  net.minecraft.class_310
- *  net.minecraft.class_4076
- *  net.minecraft.class_634
- *  net.minecraft.class_746
- *  net.minecraft.class_7469
- *  net.minecraft.class_7608
- *  net.minecraft.class_7610$class_7612
- *  net.minecraft.class_7637
- *  net.minecraft.class_7637$class_7816
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.network.packet.s2c.play.BlockUpdateS2CPacket
+ *  net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket
+ *  net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket
+ *  net.minecraft.network.packet.s2c.play.ExplosionS2CPacket
+ *  net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.util.math.ChunkSectionPos
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.client.network.ClientPlayerEntity
+ *  net.minecraft.network.message.MessageSignatureData
+ *  net.minecraft.network.message.MessageBody
+ *  net.minecraft.network.message.MessageChain$Packer
+ *  net.minecraft.network.message.LastSeenMessagesCollector
+ *  net.minecraft.network.message.LastSeenMessagesCollector$LastSeenMessages
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.Unique
@@ -39,21 +39,21 @@ import me.deftware.client.framework.network.NetworkHandler;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.client.framework.world.player.PlayerEntry;
 import me.deftware.mixin.mixins.network.ChunkDeltaAccessor;
-import net.minecraft.class_2338;
-import net.minecraft.class_243;
-import net.minecraft.class_2626;
-import net.minecraft.class_2637;
-import net.minecraft.class_2663;
-import net.minecraft.class_2664;
-import net.minecraft.class_2672;
-import net.minecraft.class_310;
-import net.minecraft.class_4076;
-import net.minecraft.class_634;
-import net.minecraft.class_746;
-import net.minecraft.class_7469;
-import net.minecraft.class_7608;
-import net.minecraft.class_7610;
-import net.minecraft.class_7637;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.network.packet.s2c.play.BlockUpdateS2CPacket;
+import net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket;
+import net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket;
+import net.minecraft.network.packet.s2c.play.ExplosionS2CPacket;
+import net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.util.math.ChunkSectionPos;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.network.message.MessageSignatureData;
+import net.minecraft.network.message.MessageBody;
+import net.minecraft.network.message.MessageChain;
+import net.minecraft.network.message.LastSeenMessagesCollector;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

@@ -6,17 +6,17 @@
  *  me.deftware.client.framework.global.types.BlockProperty
  *  me.deftware.client.framework.global.types.BlockPropertyManager
  *  me.deftware.client.framework.main.bootstrap.Bootstrap
- *  net.minecraft.class_1087
- *  net.minecraft.class_1920
- *  net.minecraft.class_1921
- *  net.minecraft.class_2248
- *  net.minecraft.class_2338
- *  net.minecraft.class_2680
- *  net.minecraft.class_4587
- *  net.minecraft.class_4588
- *  net.minecraft.class_5819
- *  net.minecraft.class_778
- *  net.minecraft.class_7923
+ *  net.minecraft.client.render.model.BakedModel
+ *  net.minecraft.world.BlockRenderView
+ *  net.minecraft.client.render.RenderLayer
+ *  net.minecraft.block.Block
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.VertexConsumer
+ *  net.minecraft.util.math.random.Random
+ *  net.minecraft.client.render.block.BlockModelRenderer
+ *  net.minecraft.registry.Registries
  *  net.minecraftforge.client.model.data.ModelData
  *  net.optifine.Config
  *  org.spongepowered.asm.mixin.Mixin
@@ -33,17 +33,17 @@ import me.deftware.client.framework.FrameworkConstants;
 import me.deftware.client.framework.global.types.BlockProperty;
 import me.deftware.client.framework.global.types.BlockPropertyManager;
 import me.deftware.client.framework.main.bootstrap.Bootstrap;
-import net.minecraft.class_1087;
-import net.minecraft.class_1920;
-import net.minecraft.class_1921;
-import net.minecraft.class_2248;
-import net.minecraft.class_2338;
-import net.minecraft.class_2680;
-import net.minecraft.class_4587;
-import net.minecraft.class_4588;
-import net.minecraft.class_5819;
-import net.minecraft.class_778;
-import net.minecraft.class_7923;
+import net.minecraft.client.render.model.BakedModel;
+import net.minecraft.world.BlockRenderView;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.client.render.block.BlockModelRenderer;
+import net.minecraft.registry.Registries;
 import net.minecraftforge.client.model.data.ModelData;
 import net.optifine.Config;
 import org.spongepowered.asm.mixin.Mixin;

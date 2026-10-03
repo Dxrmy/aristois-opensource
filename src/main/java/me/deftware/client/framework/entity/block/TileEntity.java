@@ -3,12 +3,12 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2586
- *  net.minecraft.class_2591
- *  net.minecraft.class_2611
- *  net.minecraft.class_2621
- *  net.minecraft.class_2960
- *  net.minecraft.class_5562
+ *  net.minecraft.block.entity.BlockEntity
+ *  net.minecraft.block.entity.BlockEntityType
+ *  net.minecraft.block.entity.EnderChestBlockEntity
+ *  net.minecraft.block.entity.LootableContainerBlockEntity
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.world.chunk.BlockEntityTickInvoker
  */
 package me.deftware.client.framework.entity.block;
 
@@ -19,12 +19,12 @@ import me.deftware.client.framework.entity.block.StorageEntity;
 import me.deftware.client.framework.math.BlockPosition;
 import me.deftware.client.framework.registry.BlockRegistry;
 import me.deftware.client.framework.world.block.Block;
-import net.minecraft.class_2586;
-import net.minecraft.class_2591;
-import net.minecraft.class_2611;
-import net.minecraft.class_2621;
-import net.minecraft.class_2960;
-import net.minecraft.class_5562;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.EnderChestBlockEntity;
+import net.minecraft.block.entity.LootableContainerBlockEntity;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.chunk.BlockEntityTickInvoker;
 
 public class TileEntity {
     protected final class_2586 entity;

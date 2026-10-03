@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1542
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.ItemEntity
  */
 package me.deftware.client.framework.entity.types.objects;
 
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.item.ItemStack;
-import net.minecraft.class_1297;
-import net.minecraft.class_1542;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.ItemEntity;
 
 public class ItemEntity
 extends Entity {

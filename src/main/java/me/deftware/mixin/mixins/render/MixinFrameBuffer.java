@@ -3,7 +3,7 @@
  * 
  * Could not load the following classes:
  *  com.mojang.blaze3d.platform.GlStateManager
- *  net.minecraft.class_276
+ *  net.minecraft.client.gl.Framebuffer
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.injection.At
@@ -13,7 +13,7 @@ package me.deftware.mixin.mixins.render;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import java.nio.IntBuffer;
-import net.minecraft.class_276;
+import net.minecraft.client.gl.Framebuffer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

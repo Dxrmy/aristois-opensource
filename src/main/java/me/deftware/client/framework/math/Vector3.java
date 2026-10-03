@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2382
- *  net.minecraft.class_243
+ *  net.minecraft.util.math.Vec3i
+ *  net.minecraft.util.math.Vec3d
  */
 package me.deftware.client.framework.math;
 
-import net.minecraft.class_2382;
-import net.minecraft.class_243;
+import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.math.Vec3d;
 
 public interface Vector3<T extends Number> {
     public T getX();

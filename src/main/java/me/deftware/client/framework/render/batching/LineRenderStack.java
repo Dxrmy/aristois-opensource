@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_243
+ *  net.minecraft.util.math.Vec3d
  */
 package me.deftware.client.framework.render.batching;
 
@@ -12,7 +12,7 @@ import me.deftware.client.framework.math.BlockPosition;
 import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_243;
+import net.minecraft.util.math.Vec3d;
 
 public class LineRenderStack
 extends RenderStack<LineRenderStack> {

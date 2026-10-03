@@ -3,11 +3,11 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2561
- *  net.minecraft.class_310
- *  net.minecraft.class_332
- *  net.minecraft.class_437
- *  net.minecraft.class_5348
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.text.StringVisitable
  */
 package me.deftware.client.framework.gui;
 
@@ -19,11 +19,11 @@ import me.deftware.client.framework.gui.widgets.Label;
 import me.deftware.client.framework.input.Mouse;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_2561;
-import net.minecraft.class_310;
-import net.minecraft.class_332;
-import net.minecraft.class_437;
-import net.minecraft.class_5348;
+import net.minecraft.text.Text;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.text.StringVisitable;
 
 public abstract class GuiScreen
 extends class_437

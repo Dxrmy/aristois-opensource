@@ -1,102 +1,29 @@
-apply plugin: 'java'
-apply plugin: 'maven-publish'
+plugins {
+    id 'fabric-loom' version '1.10-SNAPSHOT'
+}
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
-group = 'me.deftware'
 version = '17.0.0'
+group = 'me.deftware'
 
 repositories {
     mavenCentral()
     maven { url 'https://maven.fabricmc.net/' }
     maven { url 'https://jitpack.io/' }
     maven { url 'https://libraries.minecraft.net/' }
-    maven { url 'https://repo.impactclient.net/' }
     flatDir { dirs 'libs' }
 }
 
 dependencies {
-    // EMC Framework and Weaver (already in libs/)
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation fileTree(dir: 'libs', include: '*.jar')
-
-    // Minecraft (user must provide via local maven or loom)
-    // compileOnly 'com.mojang:minecraft:1.21.4'
-
-    // Fabric dependencies (for mixin support)
-    compileOnly "net.fabricmc:fabric-loader:0.16.10"
-    compileOnly "net.fabricmc:sponge-mixin:0.15.4+mixin.0.8.7"
-
-    // LWJGL (for NanoVG UI)
-    compileOnly "org.lwjgl:lwjgl:3.3.4"
-    compileOnly "org.lwjgl:lwjgl-glfw:3.3.4"
-    compileOnly "org.lwjgl:lwjgl-opengl:3.3.4"
-    compileOnly "org.lwjgl:lwjgl-nanovg:3.3.4"
-    compileOnly "org.lwjgl:lwjgl-stb:3.3.4"
-
-    // Network
-    implementation "io.netty:netty-codec-socks:4.1.76.Final"
-    implementation "io.netty:netty-handler-proxy:4.1.76.Final"
-
-    // Alt manager
-    implementation "com.thealtening.auth:auth:3.0.2-j9"
-
-    // Utilities
-    implementation "com.google.code.gson:gson:2.10.1"
-    implementation "com.google.guava:guava:31.1-jre"
-    implementation "org.apache.httpcomponents:httpclient:4.5.14"
-    implementation "org.apache.commons:commons-lang3:3.12.0"
-    implementation "org.reflections:reflections:0.10.2"
-    implementation "commons-io:commons-io:2.16.1"
-    implementation "org.apache.logging.log4j:log4j-core:2.24.1"
 }
 
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     it.options.release = 17
-}
-
-java {
-    withSourcesJar()
-    withJavadocJar()
-}
-
-jar {
-    manifest {
-        attributes(
-            'Main-Class': 'me.deftware.weaver.Main',
-            'Implementation-Title': 'EMC Framework',
-            'Implementation-Version': archiveVersion
-        )
-    }
-
-    // Include dependencies in the fat jar
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-task decompile(type: JavaExec) {
-    description = 'Decompile an Aristois JAR for source reconstruction'
-    group = 'build'
-
-    classpath = files("tools/cfr-0.152.jar")
-    mainClass = 'org.benf.cfr.Main'
-    args = [
-        "-Xmx2G",
-        project.findProperty('inputJar') ?: 'libs/EMC-F-v2-1.21.4.jar',
-        '--outputdir', 'src/main/java',
-        '--caseinsensitivefs', 'true',
-        '--hideutf', 'false',
-        '--override', 'true'
-    ]
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from components.java
-        }
-    }
 }

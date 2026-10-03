@@ -2,41 +2,41 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1747
- *  net.minecraft.class_1753
- *  net.minecraft.class_1764
- *  net.minecraft.class_1766
- *  net.minecraft.class_1771
- *  net.minecraft.class_1776
- *  net.minecraft.class_1787
- *  net.minecraft.class_1802
- *  net.minecraft.class_1803
- *  net.minecraft.class_1811
- *  net.minecraft.class_1812
- *  net.minecraft.class_1823
- *  net.minecraft.class_1828
- *  net.minecraft.class_1835
- *  net.minecraft.class_1840
+ *  net.minecraft.item.BlockItem
+ *  net.minecraft.item.BowItem
+ *  net.minecraft.item.CrossbowItem
+ *  net.minecraft.item.MiningToolItem
+ *  net.minecraft.item.EggItem
+ *  net.minecraft.item.EnderPearlItem
+ *  net.minecraft.item.FishingRodItem
+ *  net.minecraft.item.Items
+ *  net.minecraft.item.LingeringPotionItem
+ *  net.minecraft.item.RangedWeaponItem
+ *  net.minecraft.item.PotionItem
+ *  net.minecraft.item.SnowballItem
+ *  net.minecraft.item.SplashPotionItem
+ *  net.minecraft.item.TridentItem
+ *  net.minecraft.item.WritableBookItem
  */
 package me.deftware.client.framework.item;
 
 import java.util.function.Predicate;
 import me.deftware.client.framework.item.Item;
-import net.minecraft.class_1747;
-import net.minecraft.class_1753;
-import net.minecraft.class_1764;
-import net.minecraft.class_1766;
-import net.minecraft.class_1771;
-import net.minecraft.class_1776;
-import net.minecraft.class_1787;
-import net.minecraft.class_1802;
-import net.minecraft.class_1803;
-import net.minecraft.class_1811;
-import net.minecraft.class_1812;
-import net.minecraft.class_1823;
-import net.minecraft.class_1828;
-import net.minecraft.class_1835;
-import net.minecraft.class_1840;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.BowItem;
+import net.minecraft.item.CrossbowItem;
+import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.EggItem;
+import net.minecraft.item.EnderPearlItem;
+import net.minecraft.item.FishingRodItem;
+import net.minecraft.item.Items;
+import net.minecraft.item.LingeringPotionItem;
+import net.minecraft.item.RangedWeaponItem;
+import net.minecraft.item.PotionItem;
+import net.minecraft.item.SnowballItem;
+import net.minecraft.item.SplashPotionItem;
+import net.minecraft.item.TridentItem;
+import net.minecraft.item.WritableBookItem;
 
 public enum ItemTypes {
     Tool(item -> item instanceof class_1766),

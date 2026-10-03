@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_7172
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.option.SimpleOption
  */
 package me.deftware.client.framework.helper;
 
 import me.deftware.client.framework.main.bootstrap.Bootstrap;
-import net.minecraft.class_310;
-import net.minecraft.class_7172;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.SimpleOption;
 
 public class RenderHelper {
     private static class_7172<Boolean> aoMode = null;

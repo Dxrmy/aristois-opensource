@@ -2,22 +2,22 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_634
- *  net.minecraft.class_7469
- *  net.minecraft.class_7608
- *  net.minecraft.class_7637$class_7816
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.network.message.MessageSignatureData
+ *  net.minecraft.network.message.MessageBody
+ *  net.minecraft.network.message.LastSeenMessagesCollector$LastSeenMessages
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.network;
 
 import java.util.List;
 import me.deftware.client.framework.world.player.PlayerEntry;
-import net.minecraft.class_310;
-import net.minecraft.class_634;
-import net.minecraft.class_7469;
-import net.minecraft.class_7608;
-import net.minecraft.class_7637;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.network.message.MessageSignatureData;
+import net.minecraft.network.message.MessageBody;
+import net.minecraft.network.message.LastSeenMessagesCollector;
 import org.jetbrains.annotations.ApiStatus;
 
 public interface NetworkHandler {

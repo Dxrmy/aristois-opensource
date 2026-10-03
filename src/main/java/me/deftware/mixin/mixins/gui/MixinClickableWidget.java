@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_339
- *  net.minecraft.class_5481
+ *  net.minecraft.client.gui.widget.ClickableWidget
+ *  net.minecraft.text.OrderedText
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.Unique
@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import me.deftware.client.framework.gui.widgets.Component;
 import me.deftware.client.framework.gui.widgets.properties.Tooltipable;
-import net.minecraft.class_339;
-import net.minecraft.class_5481;
+import net.minecraft.client.gui.widget.ClickableWidget;
+import net.minecraft.text.OrderedText;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

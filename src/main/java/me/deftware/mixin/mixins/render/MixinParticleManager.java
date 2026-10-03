@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2394
- *  net.minecraft.class_2398
- *  net.minecraft.class_6880
- *  net.minecraft.class_702
- *  net.minecraft.class_703
- *  net.minecraft.class_7923
+ *  net.minecraft.particle.ParticleEffect
+ *  net.minecraft.particle.ParticleTypes
+ *  net.minecraft.registry.entry.RegistryEntry
+ *  net.minecraft.client.particle.ParticleManager
+ *  net.minecraft.client.particle.Particle
+ *  net.minecraft.registry.Registries
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -18,12 +18,12 @@ package me.deftware.mixin.mixins.render;
 
 import java.util.List;
 import me.deftware.client.framework.event.events.EventParticle;
-import net.minecraft.class_2394;
-import net.minecraft.class_2398;
-import net.minecraft.class_6880;
-import net.minecraft.class_702;
-import net.minecraft.class_703;
-import net.minecraft.class_7923;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.client.particle.ParticleManager;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.registry.Registries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

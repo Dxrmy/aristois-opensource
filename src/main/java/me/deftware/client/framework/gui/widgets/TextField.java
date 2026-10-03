@@ -2,18 +2,18 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_310
- *  net.minecraft.class_342
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.widget.TextFieldWidget
  */
 package me.deftware.client.framework.gui.widgets;
 
 import java.util.function.Predicate;
 import me.deftware.client.framework.gui.widgets.Component;
 import me.deftware.client.framework.gui.widgets.properties.Tooltipable;
-import net.minecraft.class_2561;
-import net.minecraft.class_310;
-import net.minecraft.class_342;
+import net.minecraft.text.Text;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 
 public interface TextField
 extends Component,

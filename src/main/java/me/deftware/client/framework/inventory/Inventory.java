@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1258
+ *  net.minecraft.inventory.DoubleInventory
  */
 package me.deftware.client.framework.inventory;
 
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.item.ItemStack;
-import net.minecraft.class_1258;
+import net.minecraft.inventory.DoubleInventory;
 
 public interface Inventory {
     public int getSize();

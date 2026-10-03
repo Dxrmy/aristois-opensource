@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2960
- *  net.minecraft.class_3298
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.resource.Resource
  */
 package me.deftware.client.framework.resource;
 
 import java.io.InputStream;
-import net.minecraft.class_2960;
-import net.minecraft.class_3298;
+import net.minecraft.util.Identifier;
+import net.minecraft.resource.Resource;
 
 public class ModResource
 extends class_3298 {

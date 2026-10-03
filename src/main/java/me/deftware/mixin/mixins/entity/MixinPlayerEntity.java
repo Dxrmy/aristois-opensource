@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1656
- *  net.minecraft.class_1657
- *  net.minecraft.class_2680
- *  net.minecraft.class_310
+ *  net.minecraft.entity.player.PlayerAbilities
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.client.MinecraftClient
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -20,10 +20,10 @@ import me.deftware.client.framework.event.events.EventBlockBreakingSpeed;
 import me.deftware.client.framework.event.events.EventSneakingCheck;
 import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
-import net.minecraft.class_1656;
-import net.minecraft.class_1657;
-import net.minecraft.class_2680;
-import net.minecraft.class_310;
+import net.minecraft.entity.player.PlayerAbilities;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -3,23 +3,23 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2596
- *  net.minecraft.class_2616
- *  net.minecraft.class_2684
- *  net.minecraft.class_2761
- *  net.minecraft.class_2797
- *  net.minecraft.class_2799
- *  net.minecraft.class_2815
- *  net.minecraft.class_2824
- *  net.minecraft.class_2827
- *  net.minecraft.class_2828
- *  net.minecraft.class_2828$class_2829
- *  net.minecraft.class_2828$class_2830
- *  net.minecraft.class_2828$class_2831
- *  net.minecraft.class_2828$class_5911
- *  net.minecraft.class_2848
- *  net.minecraft.class_3943
- *  net.minecraft.class_3944
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.s2c.play.EntityAnimationS2CPacket
+ *  net.minecraft.network.packet.s2c.play.EntityS2CPacket
+ *  net.minecraft.network.packet.s2c.play.WorldTimeUpdateS2CPacket
+ *  net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket
+ *  net.minecraft.network.packet.c2s.play.ClientStatusC2SPacket
+ *  net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket
+ *  net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket
+ *  net.minecraft.network.packet.c2s.common.KeepAliveC2SPacket
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket$PositionAndOnGround
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket$Full
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket$LookAndOnGround
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket$OnGroundOnly
+ *  net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket
+ *  net.minecraft.network.packet.s2c.play.SetTradeOffersS2CPacket
+ *  net.minecraft.network.packet.s2c.play.OpenScreenS2CPacket
  */
 package me.deftware.client.framework.network;
 
@@ -42,19 +42,19 @@ import me.deftware.client.framework.network.packets.SPacketEntity;
 import me.deftware.client.framework.network.packets.SPacketOpenScreen;
 import me.deftware.client.framework.network.packets.SPacketTradeOffers;
 import me.deftware.client.framework.network.packets.SPacketWorldTime;
-import net.minecraft.class_2596;
-import net.minecraft.class_2616;
-import net.minecraft.class_2684;
-import net.minecraft.class_2761;
-import net.minecraft.class_2797;
-import net.minecraft.class_2799;
-import net.minecraft.class_2815;
-import net.minecraft.class_2824;
-import net.minecraft.class_2827;
-import net.minecraft.class_2828;
-import net.minecraft.class_2848;
-import net.minecraft.class_3943;
-import net.minecraft.class_3944;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.EntityAnimationS2CPacket;
+import net.minecraft.network.packet.s2c.play.EntityS2CPacket;
+import net.minecraft.network.packet.s2c.play.WorldTimeUpdateS2CPacket;
+import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
+import net.minecraft.network.packet.c2s.play.ClientStatusC2SPacket;
+import net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket;
+import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
+import net.minecraft.network.packet.c2s.common.KeepAliveC2SPacket;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
+import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
+import net.minecraft.network.packet.s2c.play.SetTradeOffersS2CPacket;
+import net.minecraft.network.packet.s2c.play.OpenScreenS2CPacket;
 
 public class PacketRegistry {
     public static final PacketRegistry INSTANCE = new PacketRegistry();

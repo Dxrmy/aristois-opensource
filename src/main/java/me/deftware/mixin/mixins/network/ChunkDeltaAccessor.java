@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2637
- *  net.minecraft.class_2680
- *  net.minecraft.class_4076
+ *  net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.util.math.ChunkSectionPos
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.gen.Accessor
  */
 package me.deftware.mixin.mixins.network;
 
-import net.minecraft.class_2637;
-import net.minecraft.class_2680;
-import net.minecraft.class_4076;
+import net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket;
+import net.minecraft.block.BlockState;
+import net.minecraft.util.math.ChunkSectionPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 

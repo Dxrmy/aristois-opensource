@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2535
- *  net.minecraft.class_2547
- *  net.minecraft.class_2596
- *  net.minecraft.class_7648
+ *  net.minecraft.network.ClientConnection
+ *  net.minecraft.network.listener.PacketListener
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.PacketCallbacks
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.Unique
@@ -17,10 +17,10 @@ package me.deftware.mixin.mixins.network;
 import me.deftware.client.framework.event.events.EventPacketReceive;
 import me.deftware.client.framework.event.events.EventPacketSend;
 import me.deftware.mixin.imp.IMixinNetworkManager;
-import net.minecraft.class_2535;
-import net.minecraft.class_2547;
-import net.minecraft.class_2596;
-import net.minecraft.class_7648;
+import net.minecraft.network.ClientConnection;
+import net.minecraft.network.listener.PacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.PacketCallbacks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

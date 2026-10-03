@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1792
- *  net.minecraft.class_1799
- *  net.minecraft.class_1935
- *  net.minecraft.class_2487
- *  net.minecraft.class_310
- *  net.minecraft.class_5455
- *  net.minecraft.class_7225$class_7874
+ *  net.minecraft.item.Item
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.item.ItemConvertible
+ *  net.minecraft.nbt.NbtCompound
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.registry.DynamicRegistryManager
+ *  net.minecraft.registry.RegistryWrapper$WrapperLookup
  */
 package me.deftware.client.framework.item;
 
@@ -21,13 +21,13 @@ import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.nbt.NbtCompound;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.client.framework.world.block.BlockState;
-import net.minecraft.class_1792;
-import net.minecraft.class_1799;
-import net.minecraft.class_1935;
-import net.minecraft.class_2487;
-import net.minecraft.class_310;
-import net.minecraft.class_5455;
-import net.minecraft.class_7225;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.RegistryWrapper;
 
 public interface ItemStack {
     public static final ItemStack EMPTY = (ItemStack)class_1799.field_8037;

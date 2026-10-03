@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_4185
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.gui.widget.ButtonWidget
  */
 package me.deftware.client.framework.gui.widgets;
 
@@ -12,8 +12,8 @@ import me.deftware.client.framework.gui.widgets.Component;
 import me.deftware.client.framework.gui.widgets.properties.Nameable;
 import me.deftware.client.framework.gui.widgets.properties.Tooltipable;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2561;
-import net.minecraft.class_4185;
+import net.minecraft.text.Text;
+import net.minecraft.client.gui.widget.ButtonWidget;
 
 public interface Button
 extends Component,

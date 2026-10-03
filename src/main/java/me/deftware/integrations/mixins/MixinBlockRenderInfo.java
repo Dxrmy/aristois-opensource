@@ -4,12 +4,12 @@
  * Could not load the following classes:
  *  me.deftware.mixin.shared.BlockManagement
  *  net.fabricmc.fabric.impl.client.indigo.renderer.render.BlockRenderInfo
- *  net.minecraft.class_1920
- *  net.minecraft.class_1922
- *  net.minecraft.class_2248
- *  net.minecraft.class_2338
- *  net.minecraft.class_2350
- *  net.minecraft.class_2680
+ *  net.minecraft.world.BlockRenderView
+ *  net.minecraft.world.BlockView
+ *  net.minecraft.block.Block
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.math.Direction
+ *  net.minecraft.block.BlockState
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.injection.At
@@ -20,12 +20,12 @@ package me.deftware.integrations.mixins;
 import java.util.Optional;
 import me.deftware.mixin.shared.BlockManagement;
 import net.fabricmc.fabric.impl.client.indigo.renderer.render.BlockRenderInfo;
-import net.minecraft.class_1920;
-import net.minecraft.class_1922;
-import net.minecraft.class_2248;
-import net.minecraft.class_2338;
-import net.minecraft.class_2350;
-import net.minecraft.class_2680;
+import net.minecraft.world.BlockRenderView;
+import net.minecraft.world.BlockView;
+import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.block.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

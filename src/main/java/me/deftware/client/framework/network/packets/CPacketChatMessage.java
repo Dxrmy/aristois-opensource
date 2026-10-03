@@ -4,19 +4,19 @@
  * Could not load the following classes:
  *  com.mojang.brigadier.CommandDispatcher
  *  com.mojang.brigadier.ParseResults
- *  net.minecraft.class_2596
- *  net.minecraft.class_2792
- *  net.minecraft.class_2797
- *  net.minecraft.class_310
- *  net.minecraft.class_3515$class_7426
- *  net.minecraft.class_637
- *  net.minecraft.class_7450
- *  net.minecraft.class_7469
- *  net.minecraft.class_7472
- *  net.minecraft.class_7608
- *  net.minecraft.class_7637$class_7816
- *  net.minecraft.class_7644
- *  net.minecraft.class_9449
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.listener.ServerPlayPacketListener
+ *  net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.network.encryption.NetworkEncryptionUtils$SecureRandomUtil
+ *  net.minecraft.client.network.ClientCommandSource
+ *  net.minecraft.network.message.ArgumentSignatureDataMap
+ *  net.minecraft.network.message.MessageSignatureData
+ *  net.minecraft.network.packet.c2s.play.CommandExecutionC2SPacket
+ *  net.minecraft.network.message.MessageBody
+ *  net.minecraft.network.message.LastSeenMessagesCollector$LastSeenMessages
+ *  net.minecraft.command.argument.SignedArgumentList
+ *  net.minecraft.network.packet.c2s.play.ChatCommandSignedC2SPacket
  */
 package me.deftware.client.framework.network.packets;
 
@@ -25,19 +25,19 @@ import com.mojang.brigadier.ParseResults;
 import java.time.Instant;
 import me.deftware.client.framework.network.NetworkHandler;
 import me.deftware.client.framework.network.PacketWrapper;
-import net.minecraft.class_2596;
-import net.minecraft.class_2792;
-import net.minecraft.class_2797;
-import net.minecraft.class_310;
-import net.minecraft.class_3515;
-import net.minecraft.class_637;
-import net.minecraft.class_7450;
-import net.minecraft.class_7469;
-import net.minecraft.class_7472;
-import net.minecraft.class_7608;
-import net.minecraft.class_7637;
-import net.minecraft.class_7644;
-import net.minecraft.class_9449;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.listener.ServerPlayPacketListener;
+import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.network.encryption.NetworkEncryptionUtils;
+import net.minecraft.client.network.ClientCommandSource;
+import net.minecraft.network.message.ArgumentSignatureDataMap;
+import net.minecraft.network.message.MessageSignatureData;
+import net.minecraft.network.packet.c2s.play.CommandExecutionC2SPacket;
+import net.minecraft.network.message.MessageBody;
+import net.minecraft.network.message.LastSeenMessagesCollector;
+import net.minecraft.command.argument.SignedArgumentList;
+import net.minecraft.network.packet.c2s.play.ChatCommandSignedC2SPacket;
 
 public class CPacketChatMessage
 extends PacketWrapper {

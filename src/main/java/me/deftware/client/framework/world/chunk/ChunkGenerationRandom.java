@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2919
- *  net.minecraft.class_2919$class_6675
- *  net.minecraft.class_5819
+ *  net.minecraft.util.math.random.ChunkRandom
+ *  net.minecraft.util.math.random.ChunkRandom$RandomProvider
+ *  net.minecraft.util.math.random.Random
  */
 package me.deftware.client.framework.world.chunk;
 
 import me.deftware.client.framework.world.chunk.Randomizer;
-import net.minecraft.class_2919;
-import net.minecraft.class_5819;
+import net.minecraft.util.math.random.ChunkRandom;
+import net.minecraft.util.math.random.Random;
 
 public interface ChunkGenerationRandom
 extends Randomizer {

@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1309
- *  net.minecraft.class_1493
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.LivingEntity
+ *  net.minecraft.entity.passive.WolfEntity
  */
 package me.deftware.client.framework.entity.types.animals;
 
 import me.deftware.client.framework.entity.types.EntityPlayer;
 import me.deftware.client.framework.entity.types.OwnedEntity;
-import net.minecraft.class_1297;
-import net.minecraft.class_1309;
-import net.minecraft.class_1493;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.WolfEntity;
 
 public class WolfEntity
 extends OwnedEntity {

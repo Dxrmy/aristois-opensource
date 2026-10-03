@@ -3,7 +3,7 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_1297
+ *  net.minecraft.entity.Entity
  */
 package me.deftware.client.framework.event.events;
 
@@ -11,7 +11,7 @@ import lombok.Generated;
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.event.Event;
 import me.deftware.client.framework.world.ClientWorld;
-import net.minecraft.class_1297;
+import net.minecraft.entity.Entity;
 
 public class EventRenderPlayerModel
 extends Event {

@@ -3,23 +3,23 @@
  * 
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
- *  net.minecraft.class_10366
- *  net.minecraft.class_1297
- *  net.minecraft.class_1675
- *  net.minecraft.class_238
- *  net.minecraft.class_243
- *  net.minecraft.class_310
- *  net.minecraft.class_329
- *  net.minecraft.class_332
- *  net.minecraft.class_3966
- *  net.minecraft.class_4184
- *  net.minecraft.class_4587
- *  net.minecraft.class_4599
- *  net.minecraft.class_757
- *  net.minecraft.class_7833
- *  net.minecraft.class_9779
- *  net.minecraft.class_9920
- *  net.minecraft.class_9922
+ *  com.mojang.blaze3d.systems.ProjectionType
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.projectile.ProjectileUtil
+ *  net.minecraft.util.math.Box
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.hud.InGameHud
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.util.hit.EntityHitResult
+ *  net.minecraft.client.render.Camera
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.BufferBuilderStorage
+ *  net.minecraft.client.render.GameRenderer
+ *  net.minecraft.util.math.RotationAxis
+ *  net.minecraft.client.render.RenderTickCounter
+ *  net.minecraft.client.util.Pool
+ *  net.minecraft.client.util.ObjectAllocator
  *  org.joml.Matrix4f
  *  org.joml.Matrix4fc
  *  org.spongepowered.asm.mixin.Final
@@ -51,23 +51,23 @@ import me.deftware.client.framework.render.gl.GLX;
 import me.deftware.client.framework.render.shader.Shader;
 import me.deftware.mixin.imp.IMixinEntityRenderer;
 import me.deftware.mixin.mixins.render.MixinDrawContextInvoker;
-import net.minecraft.class_10366;
-import net.minecraft.class_1297;
-import net.minecraft.class_1675;
-import net.minecraft.class_238;
-import net.minecraft.class_243;
-import net.minecraft.class_310;
-import net.minecraft.class_329;
-import net.minecraft.class_332;
-import net.minecraft.class_3966;
-import net.minecraft.class_4184;
-import net.minecraft.class_4587;
-import net.minecraft.class_4599;
-import net.minecraft.class_757;
-import net.minecraft.class_7833;
-import net.minecraft.class_9779;
-import net.minecraft.class_9920;
-import net.minecraft.class_9922;
+import com.mojang.blaze3d.systems.ProjectionType;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.BufferBuilderStorage;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.util.math.RotationAxis;
+import net.minecraft.client.render.RenderTickCounter;
+import net.minecraft.client.util.Pool;
+import net.minecraft.client.util.ObjectAllocator;
 import org.joml.Matrix4f;
 import org.joml.Matrix4fc;
 import org.spongepowered.asm.mixin.Final;

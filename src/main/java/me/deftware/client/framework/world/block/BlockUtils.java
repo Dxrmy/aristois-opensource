@@ -2,25 +2,25 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2211
- *  net.minecraft.class_2248
- *  net.minecraft.class_2281
- *  net.minecraft.class_2338
- *  net.minecraft.class_2480
- *  net.minecraft.class_2482
- *  net.minecraft.class_2488
- *  net.minecraft.class_265
- *  net.minecraft.class_2667
- *  net.minecraft.class_2680
- *  net.minecraft.class_2769
- *  net.minecraft.class_2771
- *  net.minecraft.class_310
- *  net.minecraft.class_3611
- *  net.minecraft.class_3612
- *  net.minecraft.class_3736
- *  net.minecraft.class_4732$class_4733
- *  net.minecraft.class_5542
- *  net.minecraft.class_5689
+ *  net.minecraft.block.BambooBlock
+ *  net.minecraft.block.Block
+ *  net.minecraft.block.ChestBlock
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.block.ShulkerBoxBlock
+ *  net.minecraft.block.SlabBlock
+ *  net.minecraft.block.SnowBlock
+ *  net.minecraft.util.shape.VoxelShape
+ *  net.minecraft.block.PistonExtensionBlock
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.state.property.Property
+ *  net.minecraft.block.enums.SlabType
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.fluid.Fluid
+ *  net.minecraft.fluid.Fluids
+ *  net.minecraft.block.ScaffoldingBlock
+ *  net.minecraft.block.DoubleBlockProperties$Type
+ *  net.minecraft.block.AmethystClusterBlock
+ *  net.minecraft.block.PointedDripstoneBlock
  */
 package me.deftware.client.framework.world.block;
 
@@ -28,25 +28,25 @@ import me.deftware.client.framework.math.BlockPosition;
 import me.deftware.client.framework.world.EnumFacing;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.client.framework.world.block.BlockState;
-import net.minecraft.class_2211;
-import net.minecraft.class_2248;
-import net.minecraft.class_2281;
-import net.minecraft.class_2338;
-import net.minecraft.class_2480;
-import net.minecraft.class_2482;
-import net.minecraft.class_2488;
-import net.minecraft.class_265;
-import net.minecraft.class_2667;
-import net.minecraft.class_2680;
-import net.minecraft.class_2769;
-import net.minecraft.class_2771;
-import net.minecraft.class_310;
-import net.minecraft.class_3611;
-import net.minecraft.class_3612;
-import net.minecraft.class_3736;
-import net.minecraft.class_4732;
-import net.minecraft.class_5542;
-import net.minecraft.class_5689;
+import net.minecraft.block.BambooBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.ChestBlock;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.ShulkerBoxBlock;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.SnowBlock;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.block.PistonExtensionBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.state.property.Property;
+import net.minecraft.block.enums.SlabType;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.block.ScaffoldingBlock;
+import net.minecraft.block.DoubleBlockProperties;
+import net.minecraft.block.AmethystClusterBlock;
+import net.minecraft.block.PointedDripstoneBlock;
 
 public class BlockUtils {
     public static DoubleBlockType getDoubleBlockType(BlockPosition position) {

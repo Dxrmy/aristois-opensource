@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1747
+ *  net.minecraft.item.BlockItem
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -11,7 +11,7 @@ package me.deftware.mixin.mixins.item;
 import me.deftware.client.framework.item.items.BlockItem;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.mixin.mixins.item.MixinItem;
-import net.minecraft.class_1747;
+import net.minecraft.item.BlockItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

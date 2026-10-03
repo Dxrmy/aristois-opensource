@@ -2,18 +2,18 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2791
- *  net.minecraft.class_310
- *  net.minecraft.class_5539
- *  net.minecraft.class_5868
+ *  net.minecraft.world.chunk.Chunk
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.world.HeightLimitView
+ *  net.minecraft.world.gen.HeightContext
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.world.gen;
 
-import net.minecraft.class_2791;
-import net.minecraft.class_310;
-import net.minecraft.class_5539;
-import net.minecraft.class_5868;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.world.HeightLimitView;
+import net.minecraft.world.gen.HeightContext;
 import org.jetbrains.annotations.ApiStatus;
 
 public interface DecoratorContext {

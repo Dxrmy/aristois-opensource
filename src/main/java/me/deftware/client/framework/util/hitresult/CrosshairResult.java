@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_239
+ *  net.minecraft.util.hit.HitResult
  */
 package me.deftware.client.framework.util.hitresult;
 
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_239;
+import net.minecraft.util.hit.HitResult;
 
 public class CrosshairResult {
     protected class_239 hitResult;

@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1291
- *  net.minecraft.class_1293
- *  net.minecraft.class_1294
- *  net.minecraft.class_1309
- *  net.minecraft.class_6880
+ *  net.minecraft.entity.effect.StatusEffect
+ *  net.minecraft.entity.effect.StatusEffectInstance
+ *  net.minecraft.entity.effect.StatusEffects
+ *  net.minecraft.entity.LivingEntity
+ *  net.minecraft.registry.entry.RegistryEntry
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -25,11 +25,11 @@ import me.deftware.client.framework.event.events.EventIsPotionActive;
 import me.deftware.client.framework.global.GameKeys;
 import me.deftware.client.framework.global.GameMap;
 import me.deftware.mixin.imp.IMixinEntityLivingBase;
-import net.minecraft.class_1291;
-import net.minecraft.class_1293;
-import net.minecraft.class_1294;
-import net.minecraft.class_1309;
-import net.minecraft.class_6880;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.registry.entry.RegistryEntry;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_634
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.minecraft;
@@ -14,8 +14,8 @@ import me.deftware.client.framework.event.events.EventChatSend;
 import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_310;
-import net.minecraft.class_634;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
 import org.jetbrains.annotations.ApiStatus;
 
 public interface Chat {

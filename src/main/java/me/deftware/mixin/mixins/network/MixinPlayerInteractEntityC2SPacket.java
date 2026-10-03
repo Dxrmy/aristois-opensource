@@ -3,7 +3,7 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2824
+ *  net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -12,7 +12,7 @@ package me.deftware.mixin.mixins.network;
 import lombok.Generated;
 import me.deftware.client.framework.network.packets.CPacketUseEntity;
 import me.deftware.mixin.imp.IMixinPlayerInteractEntityC2SPacket;
-import net.minecraft.class_2824;
+import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

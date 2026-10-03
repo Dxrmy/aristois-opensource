@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1263
- *  net.minecraft.class_1733
+ *  net.minecraft.inventory.Inventory
+ *  net.minecraft.screen.ShulkerBoxScreenHandler
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -11,8 +11,8 @@
 package me.deftware.mixin.mixins.gui;
 
 import me.deftware.mixin.imp.IMixinShulkerBoxScreenHandler;
-import net.minecraft.class_1263;
-import net.minecraft.class_1733;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.screen.ShulkerBoxScreenHandler;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

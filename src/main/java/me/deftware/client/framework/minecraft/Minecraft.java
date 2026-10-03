@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_155
- *  net.minecraft.class_310
- *  net.minecraft.class_320
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.SharedConstants
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.session.Session
  *  org.jetbrains.annotations.ApiStatus$Internal
  *  org.jetbrains.annotations.Nullable
  */
@@ -28,10 +28,10 @@ import me.deftware.client.framework.session.AccountSession;
 import me.deftware.client.framework.util.minecraft.BlockSwingResult;
 import me.deftware.client.framework.world.ClientWorld;
 import me.deftware.client.framework.world.WorldTimer;
-import net.minecraft.class_1297;
-import net.minecraft.class_155;
-import net.minecraft.class_310;
-import net.minecraft.class_320;
+import net.minecraft.entity.Entity;
+import net.minecraft.SharedConstants;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.session.Session;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 

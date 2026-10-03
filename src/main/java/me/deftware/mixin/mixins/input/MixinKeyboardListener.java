@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_309
- *  net.minecraft.class_310
+ *  net.minecraft.client.Keyboard
+ *  net.minecraft.client.MinecraftClient
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -14,8 +14,8 @@ package me.deftware.mixin.mixins.input;
 import me.deftware.client.framework.event.events.EventCharacter;
 import me.deftware.client.framework.event.events.EventKeyAction;
 import me.deftware.client.framework.event.events.EventKeyActionRaw;
-import net.minecraft.class_309;
-import net.minecraft.class_310;
+import net.minecraft.client.Keyboard;
+import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

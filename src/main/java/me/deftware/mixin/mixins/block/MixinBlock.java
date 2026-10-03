@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1792
- *  net.minecraft.class_2248
- *  net.minecraft.class_2386
- *  net.minecraft.class_2492
- *  net.minecraft.class_4622
- *  net.minecraft.class_4970
- *  net.minecraft.class_4970$class_2251
- *  net.minecraft.class_7923
+ *  net.minecraft.item.Item
+ *  net.minecraft.block.Block
+ *  net.minecraft.block.IceBlock
+ *  net.minecraft.block.SoulSandBlock
+ *  net.minecraft.block.HoneyBlock
+ *  net.minecraft.block.AbstractBlock
+ *  net.minecraft.block.AbstractBlock$Settings
+ *  net.minecraft.registry.Registries
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -22,13 +22,13 @@ import me.deftware.client.framework.event.events.EventSlowdown;
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.world.block.Block;
-import net.minecraft.class_1792;
-import net.minecraft.class_2248;
-import net.minecraft.class_2386;
-import net.minecraft.class_2492;
-import net.minecraft.class_4622;
-import net.minecraft.class_4970;
-import net.minecraft.class_7923;
+import net.minecraft.item.Item;
+import net.minecraft.block.Block;
+import net.minecraft.block.IceBlock;
+import net.minecraft.block.SoulSandBlock;
+import net.minecraft.block.HoneyBlock;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.registry.Registries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

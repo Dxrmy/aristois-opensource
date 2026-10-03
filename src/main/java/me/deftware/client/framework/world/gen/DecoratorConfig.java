@@ -3,10 +3,10 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2893$class_2895
- *  net.minecraft.class_5819
- *  net.minecraft.class_6122
- *  net.minecraft.class_6793
+ *  net.minecraft.world.gen.GenerationStep$Feature
+ *  net.minecraft.util.math.random.Random
+ *  net.minecraft.world.gen.heightprovider.HeightProvider
+ *  net.minecraft.world.gen.placementmodifier.CountPlacementModifier
  */
 package me.deftware.client.framework.world.gen;
 
@@ -19,10 +19,10 @@ import me.deftware.client.framework.world.block.Block;
 import me.deftware.client.framework.world.chunk.Randomizer;
 import me.deftware.client.framework.world.gen.DecoratorContext;
 import me.deftware.mixin.mixins.biome.CountInvoker;
-import net.minecraft.class_2893;
-import net.minecraft.class_5819;
-import net.minecraft.class_6122;
-import net.minecraft.class_6793;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.gen.heightprovider.HeightProvider;
+import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 
 public class DecoratorConfig {
     private String id = "unknown";

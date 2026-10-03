@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1676
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.projectile.ProjectileEntity
  */
 package me.deftware.client.framework.entity.types.objects;
 
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_1297;
-import net.minecraft.class_1676;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 
 public class ProjectileEntity
 extends Entity {

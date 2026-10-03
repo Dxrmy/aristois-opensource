@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_239
- *  net.minecraft.class_239$class_240
- *  net.minecraft.class_310
- *  net.minecraft.class_3965
+ *  net.minecraft.util.hit.HitResult
+ *  net.minecraft.util.hit.HitResult$Type
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.util.hit.BlockHitResult
  */
 package me.deftware.client.framework.world.ray;
 
@@ -15,9 +15,9 @@ import me.deftware.client.framework.math.Vector3;
 import me.deftware.client.framework.util.minecraft.BlockSwingResult;
 import me.deftware.client.framework.world.ray.RayProfile;
 import me.deftware.client.framework.world.ray.RayTrace;
-import net.minecraft.class_239;
-import net.minecraft.class_310;
-import net.minecraft.class_3965;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.util.hit.BlockHitResult;
 
 public class BlockRayTrace
 extends RayTrace<BlockSwingResult> {

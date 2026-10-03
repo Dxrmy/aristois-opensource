@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1799
- *  net.minecraft.class_2596
- *  net.minecraft.class_2820
- *  net.minecraft.class_9262
- *  net.minecraft.class_9301
- *  net.minecraft.class_9334
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.c2s.play.BookUpdateC2SPacket
+ *  net.minecraft.text.RawFilteredPair
+ *  net.minecraft.component.type.WritableBookContentComponent
+ *  net.minecraft.component.DataComponentTypes
  */
 package me.deftware.client.framework.network.packets;
 
@@ -17,12 +17,12 @@ import java.util.Optional;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.item.ItemTypes;
 import me.deftware.client.framework.network.PacketWrapper;
-import net.minecraft.class_1799;
-import net.minecraft.class_2596;
-import net.minecraft.class_2820;
-import net.minecraft.class_9262;
-import net.minecraft.class_9301;
-import net.minecraft.class_9334;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.c2s.play.BookUpdateC2SPacket;
+import net.minecraft.text.RawFilteredPair;
+import net.minecraft.component.type.WritableBookContentComponent;
+import net.minecraft.component.DataComponentTypes;
 
 public class CPacketEditBook
 extends PacketWrapper {

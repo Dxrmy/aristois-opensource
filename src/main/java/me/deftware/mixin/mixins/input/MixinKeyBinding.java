@@ -2,16 +2,16 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_304
- *  net.minecraft.class_3675$class_306
+ *  net.minecraft.client.option.KeyBinding
+ *  net.minecraft.client.util.InputUtil$Key
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  */
 package me.deftware.mixin.mixins.input;
 
 import me.deftware.mixin.imp.IMixinKeyBinding;
-import net.minecraft.class_304;
-import net.minecraft.class_3675;
+import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.util.InputUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

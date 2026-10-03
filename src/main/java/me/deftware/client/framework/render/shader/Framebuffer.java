@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_276
- *  net.minecraft.class_310
+ *  net.minecraft.client.gl.Framebuffer
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.render.shader;
 
-import net.minecraft.class_276;
-import net.minecraft.class_310;
+import net.minecraft.client.gl.Framebuffer;
+import net.minecraft.client.MinecraftClient;
 
 public class Framebuffer {
     public static final Framebuffer Main = new Framebuffer(class_310.method_1551().method_1522());

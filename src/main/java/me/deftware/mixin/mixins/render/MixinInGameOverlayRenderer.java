@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1058
- *  net.minecraft.class_310
- *  net.minecraft.class_4587
- *  net.minecraft.class_4597
- *  net.minecraft.class_4603
+ *  net.minecraft.client.texture.Sprite
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.VertexConsumerProvider
+ *  net.minecraft.client.gui.hud.InGameOverlayRenderer
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -16,11 +16,11 @@
 package me.deftware.mixin.mixins.render;
 
 import me.deftware.client.framework.event.events.EventAnimation;
-import net.minecraft.class_1058;
-import net.minecraft.class_310;
-import net.minecraft.class_4587;
-import net.minecraft.class_4597;
-import net.minecraft.class_4603;
+import net.minecraft.client.texture.Sprite;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.gui.hud.InGameOverlayRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

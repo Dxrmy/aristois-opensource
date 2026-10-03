@@ -3,16 +3,16 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_276
- *  net.minecraft.class_279
- *  net.minecraft.class_279$class_9961
- *  net.minecraft.class_283
- *  net.minecraft.class_284
- *  net.minecraft.class_2960
- *  net.minecraft.class_310
- *  net.minecraft.class_6367
- *  net.minecraft.class_9925
- *  net.minecraft.class_9960
+ *  net.minecraft.client.gl.Framebuffer
+ *  net.minecraft.client.gl.PostEffectProcessor
+ *  net.minecraft.client.gl.PostEffectProcessor$FramebufferSet
+ *  net.minecraft.client.gl.PostEffectPass
+ *  net.minecraft.client.gl.GlUniform
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gl.SimpleFramebuffer
+ *  net.minecraft.client.util.Handle
+ *  net.minecraft.client.render.DefaultFramebufferSet
  */
 package me.deftware.client.framework.render.shader;
 
@@ -25,15 +25,15 @@ import me.deftware.client.framework.render.shader.Framebuffer;
 import me.deftware.client.framework.resource.ModResourceManager;
 import me.deftware.client.framework.util.minecraft.MinecraftIdentifier;
 import me.deftware.mixin.mixins.shader.PostEffectProcessorAccessor;
-import net.minecraft.class_276;
-import net.minecraft.class_279;
-import net.minecraft.class_283;
-import net.minecraft.class_284;
-import net.minecraft.class_2960;
-import net.minecraft.class_310;
-import net.minecraft.class_6367;
-import net.minecraft.class_9925;
-import net.minecraft.class_9960;
+import net.minecraft.client.gl.Framebuffer;
+import net.minecraft.client.gl.PostEffectProcessor;
+import net.minecraft.client.gl.PostEffectPass;
+import net.minecraft.client.gl.GlUniform;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.SimpleFramebuffer;
+import net.minecraft.client.util.Handle;
+import net.minecraft.client.render.DefaultFramebufferSet;
 
 public class Shader {
     private class_279 shaderEffect;

@@ -3,11 +3,11 @@
  * 
  * Could not load the following classes:
  *  com.mojang.authlib.GameProfile
- *  net.minecraft.class_2960
- *  net.minecraft.class_638
- *  net.minecraft.class_640
- *  net.minecraft.class_742
- *  net.minecraft.class_8685
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.world.ClientWorld
+ *  net.minecraft.client.network.PlayerListEntry
+ *  net.minecraft.client.network.AbstractClientPlayerEntity
+ *  net.minecraft.client.util.SkinTextures
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.Unique
@@ -27,11 +27,11 @@ import me.deftware.client.framework.event.events.EventFovModifier;
 import me.deftware.client.framework.event.events.EventSpectator;
 import me.deftware.client.framework.util.minecraft.MinecraftIdentifier;
 import me.deftware.mixin.imp.IMixinAbstractClientPlayer;
-import net.minecraft.class_2960;
-import net.minecraft.class_638;
-import net.minecraft.class_640;
-import net.minecraft.class_742;
-import net.minecraft.class_8685;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.network.PlayerListEntry;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
+import net.minecraft.client.util.SkinTextures;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_3675$class_306
+ *  net.minecraft.client.util.InputUtil$Key
  */
 package me.deftware.mixin.imp;
 
-import net.minecraft.class_3675;
+import net.minecraft.client.util.InputUtil;
 
 public interface IMixinKeyBinding {
     public void emcSetPressed(boolean var1);

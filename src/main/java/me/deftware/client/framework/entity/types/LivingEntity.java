@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1268
- *  net.minecraft.class_1293
- *  net.minecraft.class_1297
- *  net.minecraft.class_1309
+ *  net.minecraft.util.Hand
+ *  net.minecraft.entity.effect.StatusEffectInstance
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.LivingEntity
  */
 package me.deftware.client.framework.entity.types;
 
@@ -17,10 +17,10 @@ import me.deftware.client.framework.entity.effect.Effect;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.mixin.imp.IMixinEntity;
 import me.deftware.mixin.imp.IMixinEntityLivingBase;
-import net.minecraft.class_1268;
-import net.minecraft.class_1293;
-import net.minecraft.class_1297;
-import net.minecraft.class_1309;
+import net.minecraft.util.Hand;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class LivingEntity
 extends Entity {

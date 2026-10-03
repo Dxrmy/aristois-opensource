@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2248
- *  net.minecraft.class_259
+ *  net.minecraft.block.Block
+ *  net.minecraft.util.shape.VoxelShapes
  */
 package me.deftware.client.framework.math;
 
 import me.deftware.client.framework.math.BoundingBox;
-import net.minecraft.class_2248;
-import net.minecraft.class_259;
+import net.minecraft.block.Block;
+import net.minecraft.util.shape.VoxelShapes;
 
 public interface Voxel {
     public BoundingBox getBoundingBox();

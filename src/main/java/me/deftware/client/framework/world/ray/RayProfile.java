@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_3959$class_242
- *  net.minecraft.class_3959$class_3960
+ *  net.minecraft.world.RaycastContext$FluidHandling
+ *  net.minecraft.world.RaycastContext$ShapeType
  */
 package me.deftware.client.framework.world.ray;
 
-import net.minecraft.class_3959;
+import net.minecraft.world.RaycastContext;
 
 public enum RayProfile {
     Block(class_3959.class_3960.field_17559, class_3959.class_242.field_1348),

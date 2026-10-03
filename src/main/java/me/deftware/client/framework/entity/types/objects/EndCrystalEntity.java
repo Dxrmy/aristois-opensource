@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_243
- *  net.minecraft.class_9892
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.world.explosion.ExplosionImpl
  */
 package me.deftware.client.framework.entity.types.objects;
 
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_1297;
-import net.minecraft.class_243;
-import net.minecraft.class_9892;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.explosion.ExplosionImpl;
 
 public class EndCrystalEntity
 extends Entity {

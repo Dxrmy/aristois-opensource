@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1263
- *  net.minecraft.class_1703
- *  net.minecraft.class_1707
- *  net.minecraft.class_1735
- *  net.minecraft.class_310
- *  net.minecraft.class_481
- *  net.minecraft.class_490
+ *  net.minecraft.inventory.Inventory
+ *  net.minecraft.screen.ScreenHandler
+ *  net.minecraft.screen.GenericContainerScreenHandler
+ *  net.minecraft.screen.slot.Slot
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen
+ *  net.minecraft.client.gui.screen.ingame.InventoryScreen
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.gui.screens;
@@ -18,13 +18,13 @@ import me.deftware.client.framework.inventory.Inventory;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.message.Message;
 import me.deftware.mixin.imp.IMixinShulkerBoxScreenHandler;
-import net.minecraft.class_1263;
-import net.minecraft.class_1703;
-import net.minecraft.class_1707;
-import net.minecraft.class_1735;
-import net.minecraft.class_310;
-import net.minecraft.class_481;
-import net.minecraft.class_490;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.GenericContainerScreenHandler;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
+import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import org.jetbrains.annotations.ApiStatus;
 
 public interface ContainerScreen

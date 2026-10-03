@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_332
- *  net.minecraft.class_4267$class_4270
- *  net.minecraft.class_642
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.screen.multiplayer.MultiplayerServerListWidget$ServerEntry
+ *  net.minecraft.client.network.ServerInfo
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -17,10 +17,10 @@ package me.deftware.mixin.mixins.network;
 
 import me.deftware.client.framework.event.events.EventServerPinged;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2561;
-import net.minecraft.class_332;
-import net.minecraft.class_4267;
-import net.minecraft.class_642;
+import net.minecraft.text.Text;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.multiplayer.MultiplayerServerListWidget;
+import net.minecraft.client.network.ServerInfo;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

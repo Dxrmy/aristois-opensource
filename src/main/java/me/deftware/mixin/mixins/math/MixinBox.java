@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_238
- *  net.minecraft.class_243
+ *  net.minecraft.util.math.Box
+ *  net.minecraft.util.math.Vec3d
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -12,8 +12,8 @@ package me.deftware.mixin.mixins.math;
 import java.util.Optional;
 import me.deftware.client.framework.math.BoundingBox;
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_238;
-import net.minecraft.class_243;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

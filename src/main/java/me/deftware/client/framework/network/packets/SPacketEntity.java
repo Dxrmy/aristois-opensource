@@ -3,10 +3,10 @@
  * 
  * Could not load the following classes:
  *  javax.annotation.Nullable
- *  net.minecraft.class_1937
- *  net.minecraft.class_2596
- *  net.minecraft.class_2684
- *  net.minecraft.class_310
+ *  net.minecraft.world.World
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.s2c.play.EntityS2CPacket
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.network.packets;
 
@@ -14,10 +14,10 @@ import javax.annotation.Nullable;
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.network.PacketWrapper;
 import me.deftware.client.framework.world.ClientWorld;
-import net.minecraft.class_1937;
-import net.minecraft.class_2596;
-import net.minecraft.class_2684;
-import net.minecraft.class_310;
+import net.minecraft.world.World;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.EntityS2CPacket;
+import net.minecraft.client.MinecraftClient;
 
 public class SPacketEntity
 extends PacketWrapper {

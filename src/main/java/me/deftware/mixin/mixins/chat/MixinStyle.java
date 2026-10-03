@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2583
+ *  net.minecraft.text.Style
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -11,7 +11,7 @@
 package me.deftware.mixin.mixins.chat;
 
 import me.deftware.client.framework.message.Appearance;
-import net.minecraft.class_2583;
+import net.minecraft.text.Style;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

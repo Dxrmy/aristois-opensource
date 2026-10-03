@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1309
- *  net.minecraft.class_1657
- *  net.minecraft.class_310
- *  net.minecraft.class_332
- *  net.minecraft.class_437
- *  net.minecraft.class_490
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.LivingEntity
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.gui.screen.ingame.InventoryScreen
  */
 package me.deftware.client.framework.entity.types;
 
@@ -21,13 +21,13 @@ import me.deftware.client.framework.inventory.EntityInventory;
 import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.gl.GLX;
 import me.deftware.mixin.imp.IMixinEntityLivingBase;
-import net.minecraft.class_1297;
-import net.minecraft.class_1309;
-import net.minecraft.class_1657;
-import net.minecraft.class_310;
-import net.minecraft.class_332;
-import net.minecraft.class_437;
-import net.minecraft.class_490;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 
 public class EntityPlayer
 extends LivingEntity {

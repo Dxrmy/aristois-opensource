@@ -2,20 +2,20 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_310
- *  net.minecraft.class_327
- *  net.minecraft.class_5348
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.font.TextRenderer
+ *  net.minecraft.text.StringVisitable
  */
 package me.deftware.client.framework.fonts;
 
 import java.util.Objects;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_2561;
-import net.minecraft.class_310;
-import net.minecraft.class_327;
-import net.minecraft.class_5348;
+import net.minecraft.text.Text;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.font.TextRenderer;
+import net.minecraft.text.StringVisitable;
 
 public class FontRenderer {
     public static void drawString(GLX context, Message text, int x, int y, int color) {

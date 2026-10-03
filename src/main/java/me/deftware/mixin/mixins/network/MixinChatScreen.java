@@ -2,9 +2,9 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_408
- *  net.minecraft.class_634
- *  net.minecraft.class_746
+ *  net.minecraft.client.gui.screen.ChatScreen
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.client.network.ClientPlayerEntity
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Redirect
@@ -13,9 +13,9 @@ package me.deftware.mixin.mixins.network;
 
 import me.deftware.client.framework.event.events.EventChatSend;
 import me.deftware.client.framework.minecraft.Chat;
-import net.minecraft.class_408;
-import net.minecraft.class_634;
-import net.minecraft.class_746;
+import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

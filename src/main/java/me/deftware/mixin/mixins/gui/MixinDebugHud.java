@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_340
+ *  net.minecraft.client.gui.hud.DebugHud
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -13,7 +13,7 @@ package me.deftware.mixin.mixins.gui;
 import java.util.List;
 import java.util.function.Function;
 import me.deftware.client.framework.minecraft.Minecraft;
-import net.minecraft.class_340;
+import net.minecraft.client.gui.hud.DebugHud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

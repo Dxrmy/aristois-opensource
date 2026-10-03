@@ -2,26 +2,26 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1308
- *  net.minecraft.class_1309
- *  net.minecraft.class_1428
- *  net.minecraft.class_1480
- *  net.minecraft.class_1493
- *  net.minecraft.class_1498
- *  net.minecraft.class_1511
- *  net.minecraft.class_1542
- *  net.minecraft.class_1569
- *  net.minecraft.class_1657
- *  net.minecraft.class_1676
- *  net.minecraft.class_1690
- *  net.minecraft.class_243
- *  net.minecraft.class_2487
- *  net.minecraft.class_310
- *  net.minecraft.class_4050
- *  net.minecraft.class_634
- *  net.minecraft.class_742
- *  net.minecraft.class_8685
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.mob.MobEntity
+ *  net.minecraft.entity.LivingEntity
+ *  net.minecraft.entity.passive.ChickenEntity
+ *  net.minecraft.entity.mob.WaterCreatureEntity
+ *  net.minecraft.entity.passive.WolfEntity
+ *  net.minecraft.entity.passive.HorseEntity
+ *  net.minecraft.entity.decoration.EndCrystalEntity
+ *  net.minecraft.entity.ItemEntity
+ *  net.minecraft.entity.mob.Monster
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.entity.projectile.ProjectileEntity
+ *  net.minecraft.entity.vehicle.BoatEntity
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.nbt.NbtCompound
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.entity.EntityPose
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.client.network.AbstractClientPlayerEntity
+ *  net.minecraft.client.util.SkinTextures
  */
 package me.deftware.client.framework.entity;
 
@@ -56,26 +56,26 @@ import me.deftware.mixin.imp.IMixinAbstractClientPlayer;
 import me.deftware.mixin.imp.IMixinEntity;
 import me.deftware.mixin.imp.IMixinEntityLivingBase;
 import me.deftware.mixin.imp.IMixinNetworkPlayerInfo;
-import net.minecraft.class_1297;
-import net.minecraft.class_1308;
-import net.minecraft.class_1309;
-import net.minecraft.class_1428;
-import net.minecraft.class_1480;
-import net.minecraft.class_1493;
-import net.minecraft.class_1498;
-import net.minecraft.class_1511;
-import net.minecraft.class_1542;
-import net.minecraft.class_1569;
-import net.minecraft.class_1657;
-import net.minecraft.class_1676;
-import net.minecraft.class_1690;
-import net.minecraft.class_243;
-import net.minecraft.class_2487;
-import net.minecraft.class_310;
-import net.minecraft.class_4050;
-import net.minecraft.class_634;
-import net.minecraft.class_742;
-import net.minecraft.class_8685;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.mob.WaterCreatureEntity;
+import net.minecraft.entity.passive.WolfEntity;
+import net.minecraft.entity.passive.HorseEntity;
+import net.minecraft.entity.decoration.EndCrystalEntity;
+import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.mob.Monster;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.vehicle.BoatEntity;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.EntityPose;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
+import net.minecraft.client.util.SkinTextures;
 
 public class Entity {
     private List<ItemStack> armourItems = Collections.emptyList();

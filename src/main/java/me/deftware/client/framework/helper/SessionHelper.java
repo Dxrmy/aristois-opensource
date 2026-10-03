@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
+ *  net.minecraft.client.MinecraftClient
  */
 package me.deftware.client.framework.helper;
 
 import java.util.UUID;
-import net.minecraft.class_310;
+import net.minecraft.client.MinecraftClient;
 
 public class SessionHelper {
     public static String getSessionId() {

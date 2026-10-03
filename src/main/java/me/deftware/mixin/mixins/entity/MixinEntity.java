@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_238
- *  net.minecraft.class_243
- *  net.minecraft.class_2680
- *  net.minecraft.class_2784
- *  net.minecraft.class_310
- *  net.minecraft.class_9787
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.util.math.Box
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.world.border.WorldBorder
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.world.dimension.PortalManager
  *  org.jetbrains.annotations.Nullable
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -34,13 +34,13 @@ import me.deftware.client.framework.math.Vector3;
 import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
 import me.deftware.client.framework.world.ClientWorld;
 import me.deftware.mixin.imp.IMixinEntity;
-import net.minecraft.class_1297;
-import net.minecraft.class_238;
-import net.minecraft.class_243;
-import net.minecraft.class_2680;
-import net.minecraft.class_2784;
-import net.minecraft.class_310;
-import net.minecraft.class_9787;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.block.BlockState;
+import net.minecraft.world.border.WorldBorder;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.world.dimension.PortalManager;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

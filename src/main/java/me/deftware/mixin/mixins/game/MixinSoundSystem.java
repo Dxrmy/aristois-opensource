@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1113
- *  net.minecraft.class_1140
- *  net.minecraft.class_1144
- *  net.minecraft.class_2561
+ *  net.minecraft.client.sound.SoundInstance
+ *  net.minecraft.client.sound.SoundSystem
+ *  net.minecraft.client.sound.SoundManager
+ *  net.minecraft.text.Text
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -17,10 +17,10 @@ package me.deftware.mixin.mixins.game;
 
 import me.deftware.client.framework.event.events.EventSound;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_1113;
-import net.minecraft.class_1140;
-import net.minecraft.class_1144;
-import net.minecraft.class_2561;
+import net.minecraft.client.sound.SoundInstance;
+import net.minecraft.client.sound.SoundSystem;
+import net.minecraft.client.sound.SoundManager;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

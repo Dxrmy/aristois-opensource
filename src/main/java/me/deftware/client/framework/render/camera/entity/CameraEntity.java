@@ -3,29 +3,29 @@
  * 
  * Could not load the following classes:
  *  com.mojang.authlib.GameProfile
- *  net.minecraft.class_1297
- *  net.minecraft.class_1297$class_5529
- *  net.minecraft.class_1702
- *  net.minecraft.class_243
- *  net.minecraft.class_310
- *  net.minecraft.class_638
- *  net.minecraft.class_743
- *  net.minecraft.class_744
- *  net.minecraft.class_745
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.Entity$RemovalReason
+ *  net.minecraft.entity.player.HungerManager
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.world.ClientWorld
+ *  net.minecraft.client.input.KeyboardInput
+ *  net.minecraft.client.input.Input
+ *  net.minecraft.client.network.OtherClientPlayerEntity
  */
 package me.deftware.client.framework.render.camera.entity;
 
 import com.mojang.authlib.GameProfile;
 import java.util.Objects;
 import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
-import net.minecraft.class_1297;
-import net.minecraft.class_1702;
-import net.minecraft.class_243;
-import net.minecraft.class_310;
-import net.minecraft.class_638;
-import net.minecraft.class_743;
-import net.minecraft.class_744;
-import net.minecraft.class_745;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.HungerManager;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.input.KeyboardInput;
+import net.minecraft.client.input.Input;
+import net.minecraft.client.network.OtherClientPlayerEntity;
 
 public class CameraEntity
 extends class_745 {

@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_2625
- *  net.minecraft.class_7743
- *  net.minecraft.class_8242
+ *  net.minecraft.text.Text
+ *  net.minecraft.block.entity.SignBlockEntity
+ *  net.minecraft.client.gui.screen.ingame.AbstractSignEditScreen
+ *  net.minecraft.block.entity.SignText
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -15,10 +15,10 @@ package me.deftware.mixin.mixins.gui;
 import me.deftware.client.framework.gui.screens.SignEditScreen;
 import me.deftware.client.framework.message.Message;
 import me.deftware.mixin.mixins.gui.MixinGuiScreen;
-import net.minecraft.class_2561;
-import net.minecraft.class_2625;
-import net.minecraft.class_7743;
-import net.minecraft.class_8242;
+import net.minecraft.text.Text;
+import net.minecraft.block.entity.SignBlockEntity;
+import net.minecraft.client.gui.screen.ingame.AbstractSignEditScreen;
+import net.minecraft.block.entity.SignText;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

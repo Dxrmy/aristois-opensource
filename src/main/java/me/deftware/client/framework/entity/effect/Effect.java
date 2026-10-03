@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1291
- *  net.minecraft.class_6880
- *  net.minecraft.class_7923
+ *  net.minecraft.entity.effect.StatusEffect
+ *  net.minecraft.registry.entry.RegistryEntry
+ *  net.minecraft.registry.Registries
  */
 package me.deftware.client.framework.entity.effect;
 
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.registry.Identifiable;
-import net.minecraft.class_1291;
-import net.minecraft.class_6880;
-import net.minecraft.class_7923;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.Registries;
 
 public interface Effect
 extends Identifiable {

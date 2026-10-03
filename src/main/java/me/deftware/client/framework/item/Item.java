@@ -3,12 +3,12 @@
  * 
  * Could not load the following classes:
  *  com.google.common.util.concurrent.AtomicDouble
- *  net.minecraft.class_1322
- *  net.minecraft.class_1792
- *  net.minecraft.class_2960
- *  net.minecraft.class_9285
- *  net.minecraft.class_9285$class_9287
- *  net.minecraft.class_9334
+ *  net.minecraft.entity.attribute.EntityAttributeModifier
+ *  net.minecraft.item.Item
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.component.type.AttributeModifiersComponent
+ *  net.minecraft.component.type.AttributeModifiersComponent$Entry
+ *  net.minecraft.component.DataComponentTypes
  */
 package me.deftware.client.framework.item;
 
@@ -22,11 +22,11 @@ import me.deftware.client.framework.item.Itemizable;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.ItemRendering;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_1322;
-import net.minecraft.class_1792;
-import net.minecraft.class_2960;
-import net.minecraft.class_9285;
-import net.minecraft.class_9334;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+import net.minecraft.component.type.AttributeModifiersComponent;
+import net.minecraft.component.DataComponentTypes;
 
 public interface Item
 extends Itemizable,

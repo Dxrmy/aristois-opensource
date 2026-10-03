@@ -4,9 +4,9 @@
  * Could not load the following classes:
  *  com.mojang.brigadier.arguments.ArgumentType
  *  com.mojang.brigadier.builder.LiteralArgumentBuilder
- *  net.minecraft.class_2170
- *  net.minecraft.class_2172
- *  net.minecraft.class_2186
+ *  net.minecraft.server.command.CommandManager
+ *  net.minecraft.command.CommandSource
+ *  net.minecraft.command.argument.EntityArgumentType
  */
 package me.deftware.client.framework.command;
 
@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import me.deftware.client.framework.command.CommandResult;
-import net.minecraft.class_2170;
-import net.minecraft.class_2172;
-import net.minecraft.class_2186;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.command.CommandSource;
+import net.minecraft.command.argument.EntityArgumentType;
 
 public class CommandBuilder<T> {
     private LiteralArgumentBuilder<class_2172> builder;

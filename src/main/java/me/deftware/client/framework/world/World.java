@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2586
+ *  net.minecraft.block.entity.BlockEntity
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.world;
@@ -16,7 +16,7 @@ import me.deftware.client.framework.world.Biome;
 import me.deftware.client.framework.world.block.Block;
 import me.deftware.client.framework.world.block.BlockState;
 import me.deftware.client.framework.world.chunk.ChunkAccessor;
-import net.minecraft.class_2586;
+import net.minecraft.block.entity.BlockEntity;
 import org.jetbrains.annotations.ApiStatus;
 
 public interface World {

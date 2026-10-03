@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_303$class_7590
- *  net.minecraft.class_338
- *  net.minecraft.class_7469
- *  net.minecraft.class_7591
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.gui.hud.ChatHudLine$Visible
+ *  net.minecraft.client.gui.hud.ChatHud
+ *  net.minecraft.network.message.MessageSignatureData
+ *  net.minecraft.client.gui.hud.MessageIndicator
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.function.Function;
 import me.deftware.client.framework.message.GameChat;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2561;
-import net.minecraft.class_303;
-import net.minecraft.class_338;
-import net.minecraft.class_7469;
-import net.minecraft.class_7591;
+import net.minecraft.text.Text;
+import net.minecraft.client.gui.hud.ChatHudLine;
+import net.minecraft.client.gui.hud.ChatHud;
+import net.minecraft.network.message.MessageSignatureData;
+import net.minecraft.client.gui.hud.MessageIndicator;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

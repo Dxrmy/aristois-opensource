@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2338
+ *  net.minecraft.util.math.BlockPos
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -11,7 +11,7 @@ package me.deftware.mixin.mixins.math;
 import me.deftware.client.framework.math.BlockPosition;
 import me.deftware.client.framework.world.EnumFacing;
 import me.deftware.mixin.mixins.math.MixinVector3i;
-import net.minecraft.class_2338;
+import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2818
- *  net.minecraft.class_631$class_3681
+ *  net.minecraft.world.chunk.WorldChunk
+ *  net.minecraft.client.world.ClientChunkManager$ClientChunkMap
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.At$Shift
@@ -14,8 +14,8 @@ package me.deftware.mixin.mixins.world;
 
 import me.deftware.client.framework.event.events.EventChunk;
 import me.deftware.client.framework.world.chunk.ChunkAccessor;
-import net.minecraft.class_2818;
-import net.minecraft.class_631;
+import net.minecraft.world.chunk.WorldChunk;
+import net.minecraft.client.world.ClientChunkManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

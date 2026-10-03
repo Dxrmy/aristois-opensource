@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1923
+ *  net.minecraft.util.math.ChunkPos
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -10,7 +10,7 @@ package me.deftware.mixin.mixins.math;
 
 import me.deftware.client.framework.math.BlockPosition;
 import me.deftware.client.framework.math.ChunkPosition;
-import net.minecraft.class_1923;
+import net.minecraft.util.math.ChunkPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

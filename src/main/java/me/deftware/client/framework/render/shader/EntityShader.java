@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_4597$class_4598
- *  net.minecraft.class_4618
+ *  net.minecraft.client.render.VertexConsumerProvider$Immediate
+ *  net.minecraft.client.render.OutlineVertexConsumerProvider
  */
 package me.deftware.client.framework.render.shader;
 
@@ -13,8 +13,8 @@ import java.util.function.Predicate;
 import me.deftware.client.framework.render.shader.Shader;
 import me.deftware.client.framework.resource.ModResourceManager;
 import me.deftware.client.framework.util.minecraft.MinecraftIdentifier;
-import net.minecraft.class_4597;
-import net.minecraft.class_4618;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.OutlineVertexConsumerProvider;
 
 public class EntityShader
 extends Shader {

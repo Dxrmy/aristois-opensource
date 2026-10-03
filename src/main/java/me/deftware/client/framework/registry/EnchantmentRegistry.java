@@ -2,20 +2,20 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1887
- *  net.minecraft.class_2378
- *  net.minecraft.class_310
- *  net.minecraft.class_5321
- *  net.minecraft.class_5455
- *  net.minecraft.class_638
- *  net.minecraft.class_6880
- *  net.minecraft.class_7225$class_7226
- *  net.minecraft.class_7871
- *  net.minecraft.class_7924
- *  net.minecraft.class_9331
- *  net.minecraft.class_9698
- *  net.minecraft.class_9701
- *  net.minecraft.class_9723
+ *  net.minecraft.enchantment.Enchantment
+ *  net.minecraft.registry.Registry
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.registry.RegistryKey
+ *  net.minecraft.registry.DynamicRegistryManager
+ *  net.minecraft.client.world.ClientWorld
+ *  net.minecraft.registry.entry.RegistryEntry
+ *  net.minecraft.registry.RegistryWrapper$Impl
+ *  net.minecraft.registry.RegistryEntryLookup
+ *  net.minecraft.registry.RegistryKeys
+ *  net.minecraft.component.ComponentType
+ *  net.minecraft.enchantment.effect.EnchantmentEffectEntry
+ *  net.minecraft.component.EnchantmentEffectComponentTypes
+ *  net.minecraft.enchantment.effect.EnchantmentValueEffect
  */
 package me.deftware.client.framework.registry;
 
@@ -26,20 +26,20 @@ import java.util.stream.Stream;
 import me.deftware.client.framework.item.Enchantment;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.registry.IRegistry;
-import net.minecraft.class_1887;
-import net.minecraft.class_2378;
-import net.minecraft.class_310;
-import net.minecraft.class_5321;
-import net.minecraft.class_5455;
-import net.minecraft.class_638;
-import net.minecraft.class_6880;
-import net.minecraft.class_7225;
-import net.minecraft.class_7871;
-import net.minecraft.class_7924;
-import net.minecraft.class_9331;
-import net.minecraft.class_9698;
-import net.minecraft.class_9701;
-import net.minecraft.class_9723;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.registry.Registry;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryEntryLookup;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.component.ComponentType;
+import net.minecraft.enchantment.effect.EnchantmentEffectEntry;
+import net.minecraft.component.EnchantmentEffectComponentTypes;
+import net.minecraft.enchantment.effect.EnchantmentValueEffect;
 
 public enum EnchantmentRegistry implements IRegistry.IdentifiableRegistry<Enchantment, Void>
 {

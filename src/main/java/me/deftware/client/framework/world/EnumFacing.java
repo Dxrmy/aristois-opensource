@@ -2,12 +2,12 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2350
+ *  net.minecraft.util.math.Direction
  */
 package me.deftware.client.framework.world;
 
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_2350;
+import net.minecraft.util.math.Direction;
 
 public enum EnumFacing {
     DOWN(class_2350.field_11033),

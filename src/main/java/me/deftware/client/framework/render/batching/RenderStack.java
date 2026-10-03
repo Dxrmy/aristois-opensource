@@ -4,19 +4,19 @@
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
  *  lombok.Generated
- *  net.minecraft.class_10142
- *  net.minecraft.class_10156
- *  net.minecraft.class_10366
- *  net.minecraft.class_1041
- *  net.minecraft.class_286
- *  net.minecraft.class_287
- *  net.minecraft.class_289
- *  net.minecraft.class_290
- *  net.minecraft.class_293
- *  net.minecraft.class_293$class_5596
- *  net.minecraft.class_310
- *  net.minecraft.class_5944
- *  net.minecraft.class_9801
+ *  net.minecraft.client.gl.ShaderProgramKeys
+ *  net.minecraft.client.gl.ShaderProgramKey
+ *  com.mojang.blaze3d.systems.ProjectionType
+ *  net.minecraft.client.util.Window
+ *  net.minecraft.client.render.BufferRenderer
+ *  net.minecraft.client.render.BufferBuilder
+ *  net.minecraft.client.render.Tessellator
+ *  net.minecraft.client.render.VertexFormats
+ *  net.minecraft.client.render.VertexFormat
+ *  net.minecraft.client.render.VertexFormat$DrawMode
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gl.ShaderProgram
+ *  net.minecraft.client.render.BuiltBuffer
  *  org.joml.Matrix4f
  *  org.joml.Matrix4fStack
  */
@@ -29,18 +29,18 @@ import lombok.Generated;
 import me.deftware.client.framework.main.bootstrap.Bootstrap;
 import me.deftware.client.framework.render.batching.VertexConstructor;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_10142;
-import net.minecraft.class_10156;
-import net.minecraft.class_10366;
-import net.minecraft.class_1041;
-import net.minecraft.class_286;
-import net.minecraft.class_287;
-import net.minecraft.class_289;
-import net.minecraft.class_290;
-import net.minecraft.class_293;
-import net.minecraft.class_310;
-import net.minecraft.class_5944;
-import net.minecraft.class_9801;
+import net.minecraft.client.gl.ShaderProgramKeys;
+import net.minecraft.client.gl.ShaderProgramKey;
+import com.mojang.blaze3d.systems.ProjectionType;
+import net.minecraft.client.util.Window;
+import net.minecraft.client.render.BufferRenderer;
+import net.minecraft.client.render.BufferBuilder;
+import net.minecraft.client.render.Tessellator;
+import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.render.VertexFormat;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.ShaderProgram;
+import net.minecraft.client.render.BuiltBuffer;
 import org.joml.Matrix4f;
 import org.joml.Matrix4fStack;
 

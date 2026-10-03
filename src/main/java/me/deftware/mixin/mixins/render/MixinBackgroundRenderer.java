@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_4184
- *  net.minecraft.class_758
- *  net.minecraft.class_758$class_4596
- *  net.minecraft.class_9958
+ *  net.minecraft.client.render.Camera
+ *  net.minecraft.client.render.BackgroundRenderer
+ *  net.minecraft.client.render.BackgroundRenderer$FogType
+ *  net.minecraft.client.render.Fog
  *  org.joml.Vector4f
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
@@ -16,9 +16,9 @@
 package me.deftware.mixin.mixins.render;
 
 import me.deftware.client.framework.event.events.EventFogRender;
-import net.minecraft.class_4184;
-import net.minecraft.class_758;
-import net.minecraft.class_9958;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.BackgroundRenderer;
+import net.minecraft.client.render.Fog;
 import org.joml.Vector4f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

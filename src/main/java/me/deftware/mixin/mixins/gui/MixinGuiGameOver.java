@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_418
+ *  net.minecraft.client.gui.screen.DeathScreen
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -11,7 +11,7 @@
 package me.deftware.mixin.mixins.gui;
 
 import me.deftware.client.framework.event.events.EventGameOver;
-import net.minecraft.class_418;
+import net.minecraft.client.gui.screen.DeathScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

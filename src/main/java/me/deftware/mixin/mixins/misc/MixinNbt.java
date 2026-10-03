@@ -2,9 +2,9 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2487
- *  net.minecraft.class_2499
- *  net.minecraft.class_2520
+ *  net.minecraft.nbt.NbtCompound
+ *  net.minecraft.nbt.NbtList
+ *  net.minecraft.nbt.NbtElement
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -12,9 +12,9 @@ package me.deftware.mixin.mixins.misc;
 
 import me.deftware.client.framework.nbt.NbtCompound;
 import me.deftware.client.framework.nbt.NbtList;
-import net.minecraft.class_2487;
-import net.minecraft.class_2499;
-import net.minecraft.class_2520;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
+import net.minecraft.nbt.NbtElement;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

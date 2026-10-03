@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_287
+ *  net.minecraft.client.render.BufferBuilder
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.ModifyVariable
@@ -11,7 +11,7 @@ package me.deftware.mixin.mixins.render;
 
 import me.deftware.client.framework.global.types.BlockPropertyManager;
 import me.deftware.client.framework.main.bootstrap.Bootstrap;
-import net.minecraft.class_287;
+import net.minecraft.client.render.BufferBuilder;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;

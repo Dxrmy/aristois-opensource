@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1703
- *  net.minecraft.class_1735
- *  net.minecraft.class_332
- *  net.minecraft.class_437
- *  net.minecraft.class_465
+ *  net.minecraft.screen.ScreenHandler
+ *  net.minecraft.screen.slot.Slot
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.gui.screen.ingame.HandledScreen
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -20,11 +20,11 @@ import me.deftware.client.framework.gui.screens.ContainerScreen;
 import me.deftware.client.framework.inventory.Inventory;
 import me.deftware.client.framework.message.Message;
 import me.deftware.mixin.mixins.gui.MixinGuiScreen;
-import net.minecraft.class_1703;
-import net.minecraft.class_1735;
-import net.minecraft.class_332;
-import net.minecraft.class_437;
-import net.minecraft.class_465;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

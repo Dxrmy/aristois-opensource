@@ -3,35 +3,35 @@
  * 
  * Could not load the following classes:
  *  com.mojang.blaze3d.platform.GlStateManager
- *  com.mojang.blaze3d.platform.GlStateManager$class_4534
- *  com.mojang.blaze3d.platform.GlStateManager$class_4535
+ *  com.mojang.blaze3d.platform.GlStateManager$DstFactor
+ *  com.mojang.blaze3d.platform.GlStateManager$SrcFactor
  *  com.mojang.blaze3d.systems.RenderSystem
  *  com.moulberry.mixinconstraints.annotations.IfModAbsent
  *  net.fabricmc.loader.api.FabricLoader
- *  net.minecraft.class_1041
- *  net.minecraft.class_1297
- *  net.minecraft.class_2586
- *  net.minecraft.class_276
- *  net.minecraft.class_279$class_9961
- *  net.minecraft.class_310
- *  net.minecraft.class_3528
- *  net.minecraft.class_3695
- *  net.minecraft.class_4184
- *  net.minecraft.class_4587
- *  net.minecraft.class_4597
- *  net.minecraft.class_4599
- *  net.minecraft.class_4604
- *  net.minecraft.class_4618
- *  net.minecraft.class_757
- *  net.minecraft.class_761
- *  net.minecraft.class_824
- *  net.minecraft.class_9779
- *  net.minecraft.class_9909
- *  net.minecraft.class_9916
- *  net.minecraft.class_9922
- *  net.minecraft.class_9925
- *  net.minecraft.class_9958
- *  net.minecraft.class_9960
+ *  net.minecraft.client.util.Window
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.block.entity.BlockEntity
+ *  net.minecraft.client.gl.Framebuffer
+ *  net.minecraft.client.gl.PostEffectProcessor$FramebufferSet
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.util.Lazy
+ *  net.minecraft.util.profiler.Profiler
+ *  net.minecraft.client.render.Camera
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.VertexConsumerProvider
+ *  net.minecraft.client.render.BufferBuilderStorage
+ *  net.minecraft.client.render.Frustum
+ *  net.minecraft.client.render.OutlineVertexConsumerProvider
+ *  net.minecraft.client.render.GameRenderer
+ *  net.minecraft.client.render.WorldRenderer
+ *  net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher
+ *  net.minecraft.client.render.RenderTickCounter
+ *  net.minecraft.client.render.FrameGraphBuilder
+ *  net.minecraft.client.render.RenderPass
+ *  net.minecraft.client.util.ObjectAllocator
+ *  net.minecraft.client.util.Handle
+ *  net.minecraft.client.render.Fog
+ *  net.minecraft.client.render.DefaultFramebufferSet
  *  org.joml.Matrix4f
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
@@ -55,30 +55,30 @@ import me.deftware.client.framework.render.shader.Shader;
 import me.deftware.client.framework.world.ClientWorld;
 import me.deftware.client.framework.world.block.Block;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.class_1041;
-import net.minecraft.class_1297;
-import net.minecraft.class_2586;
-import net.minecraft.class_276;
-import net.minecraft.class_279;
-import net.minecraft.class_310;
-import net.minecraft.class_3528;
-import net.minecraft.class_3695;
-import net.minecraft.class_4184;
-import net.minecraft.class_4587;
-import net.minecraft.class_4597;
-import net.minecraft.class_4599;
-import net.minecraft.class_4604;
-import net.minecraft.class_4618;
-import net.minecraft.class_757;
-import net.minecraft.class_761;
-import net.minecraft.class_824;
-import net.minecraft.class_9779;
-import net.minecraft.class_9909;
-import net.minecraft.class_9916;
-import net.minecraft.class_9922;
-import net.minecraft.class_9925;
-import net.minecraft.class_9958;
-import net.minecraft.class_9960;
+import net.minecraft.client.util.Window;
+import net.minecraft.entity.Entity;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.gl.Framebuffer;
+import net.minecraft.client.gl.PostEffectProcessor;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.util.Lazy;
+import net.minecraft.util.profiler.Profiler;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.BufferBuilderStorage;
+import net.minecraft.client.render.Frustum;
+import net.minecraft.client.render.OutlineVertexConsumerProvider;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.WorldRenderer;
+import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
+import net.minecraft.client.render.RenderTickCounter;
+import net.minecraft.client.render.FrameGraphBuilder;
+import net.minecraft.client.render.RenderPass;
+import net.minecraft.client.util.ObjectAllocator;
+import net.minecraft.client.util.Handle;
+import net.minecraft.client.render.Fog;
+import net.minecraft.client.render.DefaultFramebufferSet;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

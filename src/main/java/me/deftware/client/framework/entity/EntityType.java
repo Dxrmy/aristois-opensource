@@ -2,142 +2,142 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1296
- *  net.minecraft.class_1297
- *  net.minecraft.class_1307
- *  net.minecraft.class_1308
- *  net.minecraft.class_1309
- *  net.minecraft.class_1420
- *  net.minecraft.class_1421
- *  net.minecraft.class_1422
- *  net.minecraft.class_1427
- *  net.minecraft.class_1428
- *  net.minecraft.class_1429
- *  net.minecraft.class_1430
- *  net.minecraft.class_1433
- *  net.minecraft.class_1438
- *  net.minecraft.class_1439
- *  net.minecraft.class_1452
- *  net.minecraft.class_1453
- *  net.minecraft.class_1454
- *  net.minecraft.class_1456
- *  net.minecraft.class_1463
- *  net.minecraft.class_1472
- *  net.minecraft.class_1473
- *  net.minecraft.class_1477
- *  net.minecraft.class_1480
- *  net.minecraft.class_1481
- *  net.minecraft.class_1493
- *  net.minecraft.class_1495
- *  net.minecraft.class_1498
- *  net.minecraft.class_1500
- *  net.minecraft.class_1501
- *  net.minecraft.class_1510
- *  net.minecraft.class_1528
- *  net.minecraft.class_1542
- *  net.minecraft.class_1545
- *  net.minecraft.class_1548
- *  net.minecraft.class_1549
- *  net.minecraft.class_1550
- *  net.minecraft.class_1551
- *  net.minecraft.class_1559
- *  net.minecraft.class_1560
- *  net.minecraft.class_1564
- *  net.minecraft.class_1570
- *  net.minecraft.class_1571
- *  net.minecraft.class_1576
- *  net.minecraft.class_1577
- *  net.minecraft.class_1581
- *  net.minecraft.class_1589
- *  net.minecraft.class_1590
- *  net.minecraft.class_1593
- *  net.minecraft.class_1606
- *  net.minecraft.class_1613
- *  net.minecraft.class_1614
- *  net.minecraft.class_1621
- *  net.minecraft.class_1627
- *  net.minecraft.class_1628
- *  net.minecraft.class_1632
- *  net.minecraft.class_1634
- *  net.minecraft.class_1639
- *  net.minecraft.class_1640
- *  net.minecraft.class_1642
- *  net.minecraft.class_1646
- *  net.minecraft.class_1657
- *  net.minecraft.class_1676
- *  net.minecraft.class_3701
- *  net.minecraft.class_745
- *  net.minecraft.class_746
+ *  net.minecraft.entity.passive.PassiveEntity
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.mob.FlyingEntity
+ *  net.minecraft.entity.mob.MobEntity
+ *  net.minecraft.entity.LivingEntity
+ *  net.minecraft.entity.passive.BatEntity
+ *  net.minecraft.entity.mob.AmbientEntity
+ *  net.minecraft.entity.passive.FishEntity
+ *  net.minecraft.entity.passive.GolemEntity
+ *  net.minecraft.entity.passive.ChickenEntity
+ *  net.minecraft.entity.passive.AnimalEntity
+ *  net.minecraft.entity.passive.CowEntity
+ *  net.minecraft.entity.passive.DolphinEntity
+ *  net.minecraft.entity.passive.MooshroomEntity
+ *  net.minecraft.entity.passive.IronGolemEntity
+ *  net.minecraft.entity.passive.PigEntity
+ *  net.minecraft.entity.passive.ParrotEntity
+ *  net.minecraft.entity.passive.PufferfishEntity
+ *  net.minecraft.entity.passive.PolarBearEntity
+ *  net.minecraft.entity.passive.RabbitEntity
+ *  net.minecraft.entity.passive.SheepEntity
+ *  net.minecraft.entity.passive.SnowGolemEntity
+ *  net.minecraft.entity.passive.SquidEntity
+ *  net.minecraft.entity.mob.WaterCreatureEntity
+ *  net.minecraft.entity.passive.TurtleEntity
+ *  net.minecraft.entity.passive.WolfEntity
+ *  net.minecraft.entity.passive.DonkeyEntity
+ *  net.minecraft.entity.passive.HorseEntity
+ *  net.minecraft.entity.passive.MuleEntity
+ *  net.minecraft.entity.passive.LlamaEntity
+ *  net.minecraft.entity.boss.dragon.EnderDragonEntity
+ *  net.minecraft.entity.boss.WitherEntity
+ *  net.minecraft.entity.ItemEntity
+ *  net.minecraft.entity.mob.BlazeEntity
+ *  net.minecraft.entity.mob.CreeperEntity
+ *  net.minecraft.entity.mob.CaveSpiderEntity
+ *  net.minecraft.entity.mob.ElderGuardianEntity
+ *  net.minecraft.entity.mob.DrownedEntity
+ *  net.minecraft.entity.mob.EndermiteEntity
+ *  net.minecraft.entity.mob.EndermanEntity
+ *  net.minecraft.entity.mob.EvokerEntity
+ *  net.minecraft.entity.mob.GiantEntity
+ *  net.minecraft.entity.mob.GhastEntity
+ *  net.minecraft.entity.mob.HuskEntity
+ *  net.minecraft.entity.mob.GuardianEntity
+ *  net.minecraft.entity.mob.IllusionerEntity
+ *  net.minecraft.entity.mob.MagmaCubeEntity
+ *  net.minecraft.entity.mob.ZombifiedPiglinEntity
+ *  net.minecraft.entity.mob.PhantomEntity
+ *  net.minecraft.entity.mob.ShulkerEntity
+ *  net.minecraft.entity.mob.SkeletonEntity
+ *  net.minecraft.entity.mob.SilverfishEntity
+ *  net.minecraft.entity.mob.SlimeEntity
+ *  net.minecraft.entity.mob.StrayEntity
+ *  net.minecraft.entity.mob.SpiderEntity
+ *  net.minecraft.entity.mob.VindicatorEntity
+ *  net.minecraft.entity.mob.VexEntity
+ *  net.minecraft.entity.mob.WitherSkeletonEntity
+ *  net.minecraft.entity.mob.WitchEntity
+ *  net.minecraft.entity.mob.ZombieEntity
+ *  net.minecraft.entity.passive.VillagerEntity
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.entity.projectile.ProjectileEntity
+ *  net.minecraft.entity.passive.OcelotEntity
+ *  net.minecraft.client.network.OtherClientPlayerEntity
+ *  net.minecraft.client.network.ClientPlayerEntity
  */
 package me.deftware.client.framework.entity;
 
 import me.deftware.client.framework.entity.Entity;
-import net.minecraft.class_1296;
-import net.minecraft.class_1297;
-import net.minecraft.class_1307;
-import net.minecraft.class_1308;
-import net.minecraft.class_1309;
-import net.minecraft.class_1420;
-import net.minecraft.class_1421;
-import net.minecraft.class_1422;
-import net.minecraft.class_1427;
-import net.minecraft.class_1428;
-import net.minecraft.class_1429;
-import net.minecraft.class_1430;
-import net.minecraft.class_1433;
-import net.minecraft.class_1438;
-import net.minecraft.class_1439;
-import net.minecraft.class_1452;
-import net.minecraft.class_1453;
-import net.minecraft.class_1454;
-import net.minecraft.class_1456;
-import net.minecraft.class_1463;
-import net.minecraft.class_1472;
-import net.minecraft.class_1473;
-import net.minecraft.class_1477;
-import net.minecraft.class_1480;
-import net.minecraft.class_1481;
-import net.minecraft.class_1493;
-import net.minecraft.class_1495;
-import net.minecraft.class_1498;
-import net.minecraft.class_1500;
-import net.minecraft.class_1501;
-import net.minecraft.class_1510;
-import net.minecraft.class_1528;
-import net.minecraft.class_1542;
-import net.minecraft.class_1545;
-import net.minecraft.class_1548;
-import net.minecraft.class_1549;
-import net.minecraft.class_1550;
-import net.minecraft.class_1551;
-import net.minecraft.class_1559;
-import net.minecraft.class_1560;
-import net.minecraft.class_1564;
-import net.minecraft.class_1570;
-import net.minecraft.class_1571;
-import net.minecraft.class_1576;
-import net.minecraft.class_1577;
-import net.minecraft.class_1581;
-import net.minecraft.class_1589;
-import net.minecraft.class_1590;
-import net.minecraft.class_1593;
-import net.minecraft.class_1606;
-import net.minecraft.class_1613;
-import net.minecraft.class_1614;
-import net.minecraft.class_1621;
-import net.minecraft.class_1627;
-import net.minecraft.class_1628;
-import net.minecraft.class_1632;
-import net.minecraft.class_1634;
-import net.minecraft.class_1639;
-import net.minecraft.class_1640;
-import net.minecraft.class_1642;
-import net.minecraft.class_1646;
-import net.minecraft.class_1657;
-import net.minecraft.class_1676;
-import net.minecraft.class_3701;
-import net.minecraft.class_745;
-import net.minecraft.class_746;
+import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.mob.FlyingEntity;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.BatEntity;
+import net.minecraft.entity.mob.AmbientEntity;
+import net.minecraft.entity.passive.FishEntity;
+import net.minecraft.entity.passive.GolemEntity;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.passive.DolphinEntity;
+import net.minecraft.entity.passive.MooshroomEntity;
+import net.minecraft.entity.passive.IronGolemEntity;
+import net.minecraft.entity.passive.PigEntity;
+import net.minecraft.entity.passive.ParrotEntity;
+import net.minecraft.entity.passive.PufferfishEntity;
+import net.minecraft.entity.passive.PolarBearEntity;
+import net.minecraft.entity.passive.RabbitEntity;
+import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.entity.passive.SnowGolemEntity;
+import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.entity.mob.WaterCreatureEntity;
+import net.minecraft.entity.passive.TurtleEntity;
+import net.minecraft.entity.passive.WolfEntity;
+import net.minecraft.entity.passive.DonkeyEntity;
+import net.minecraft.entity.passive.HorseEntity;
+import net.minecraft.entity.passive.MuleEntity;
+import net.minecraft.entity.passive.LlamaEntity;
+import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.entity.boss.WitherEntity;
+import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.mob.BlazeEntity;
+import net.minecraft.entity.mob.CreeperEntity;
+import net.minecraft.entity.mob.CaveSpiderEntity;
+import net.minecraft.entity.mob.ElderGuardianEntity;
+import net.minecraft.entity.mob.DrownedEntity;
+import net.minecraft.entity.mob.EndermiteEntity;
+import net.minecraft.entity.mob.EndermanEntity;
+import net.minecraft.entity.mob.EvokerEntity;
+import net.minecraft.entity.mob.GiantEntity;
+import net.minecraft.entity.mob.GhastEntity;
+import net.minecraft.entity.mob.HuskEntity;
+import net.minecraft.entity.mob.GuardianEntity;
+import net.minecraft.entity.mob.IllusionerEntity;
+import net.minecraft.entity.mob.MagmaCubeEntity;
+import net.minecraft.entity.mob.ZombifiedPiglinEntity;
+import net.minecraft.entity.mob.PhantomEntity;
+import net.minecraft.entity.mob.ShulkerEntity;
+import net.minecraft.entity.mob.SkeletonEntity;
+import net.minecraft.entity.mob.SilverfishEntity;
+import net.minecraft.entity.mob.SlimeEntity;
+import net.minecraft.entity.mob.StrayEntity;
+import net.minecraft.entity.mob.SpiderEntity;
+import net.minecraft.entity.mob.VindicatorEntity;
+import net.minecraft.entity.mob.VexEntity;
+import net.minecraft.entity.mob.WitherSkeletonEntity;
+import net.minecraft.entity.mob.WitchEntity;
+import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.passive.OcelotEntity;
+import net.minecraft.client.network.OtherClientPlayerEntity;
+import net.minecraft.client.network.ClientPlayerEntity;
 
 public enum EntityType {
     ENTITY_PLAYER_SP,

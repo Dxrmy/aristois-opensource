@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1060
- *  net.minecraft.class_310
- *  net.minecraft.class_425
- *  net.minecraft.class_437
+ *  net.minecraft.client.texture.TextureManager
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.screen.SplashOverlay
+ *  net.minecraft.client.gui.screen.Screen
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -18,10 +18,10 @@ package me.deftware.mixin.mixins.render;
 
 import me.deftware.client.framework.main.EMCMod;
 import me.deftware.client.framework.main.bootstrap.Bootstrap;
-import net.minecraft.class_1060;
-import net.minecraft.class_310;
-import net.minecraft.class_425;
-import net.minecraft.class_437;
+import net.minecraft.client.texture.TextureManager;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.SplashOverlay;
+import net.minecraft.client.gui.screen.Screen;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

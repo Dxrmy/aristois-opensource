@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_744
+ *  net.minecraft.client.input.Input
  */
 package me.deftware.client.framework.render.camera.entity;
 
-import net.minecraft.class_744;
+import net.minecraft.client.input.Input;
 
 public class DummyInput
 extends class_744 {

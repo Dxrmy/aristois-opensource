@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_243
- *  net.minecraft.class_3959
+ *  net.minecraft.util.math.Vec3d
+ *  net.minecraft.world.RaycastContext
  */
 package me.deftware.client.framework.world.ray;
 
@@ -11,8 +11,8 @@ import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.math.Vector3;
 import me.deftware.client.framework.util.hitresult.CrosshairResult;
 import me.deftware.client.framework.world.ray.RayProfile;
-import net.minecraft.class_243;
-import net.minecraft.class_3959;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.RaycastContext;
 
 public abstract class RayTrace<T extends CrosshairResult> {
     protected final Vector3<Double> start;

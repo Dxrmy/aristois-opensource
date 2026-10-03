@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2586
- *  net.minecraft.class_5562
+ *  net.minecraft.block.entity.BlockEntity
+ *  net.minecraft.world.chunk.BlockEntityTickInvoker
  */
 package me.deftware.client.framework.entity.block;
 
 import me.deftware.client.framework.entity.block.StorageEntity;
-import net.minecraft.class_2586;
-import net.minecraft.class_5562;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.world.chunk.BlockEntityTickInvoker;
 
 public class BarrelEntity
 extends StorageEntity {

@@ -4,12 +4,12 @@
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
  *  lombok.Generated
- *  net.minecraft.class_10142
- *  net.minecraft.class_10156
- *  net.minecraft.class_2583
- *  net.minecraft.class_290
- *  net.minecraft.class_293
- *  net.minecraft.class_5251
+ *  net.minecraft.client.gl.ShaderProgramKeys
+ *  net.minecraft.client.gl.ShaderProgramKey
+ *  net.minecraft.text.Style
+ *  net.minecraft.client.render.VertexFormats
+ *  net.minecraft.client.render.VertexFormat
+ *  net.minecraft.text.TextColor
  */
 package me.deftware.client.framework.render.batching.font;
 
@@ -24,12 +24,12 @@ import me.deftware.client.framework.registry.font.IFontProvider;
 import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.batching.VertexConstructor;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_10142;
-import net.minecraft.class_10156;
-import net.minecraft.class_2583;
-import net.minecraft.class_290;
-import net.minecraft.class_293;
-import net.minecraft.class_5251;
+import net.minecraft.client.gl.ShaderProgramKeys;
+import net.minecraft.client.gl.ShaderProgramKey;
+import net.minecraft.text.Style;
+import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.render.VertexFormat;
+import net.minecraft.text.TextColor;
 
 public class FontRenderStack
 extends RenderStack<FontRenderStack> {

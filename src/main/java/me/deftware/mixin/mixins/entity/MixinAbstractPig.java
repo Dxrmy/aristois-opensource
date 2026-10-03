@@ -2,7 +2,7 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1452
+ *  net.minecraft.entity.passive.PigEntity
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Inject
@@ -11,7 +11,7 @@
 package me.deftware.mixin.mixins.entity;
 
 import me.deftware.client.framework.event.events.EventSaddleCheck;
-import net.minecraft.class_1452;
+import net.minecraft.entity.passive.PigEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

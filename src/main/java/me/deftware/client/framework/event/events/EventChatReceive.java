@@ -2,18 +2,18 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2556$class_7602
- *  net.minecraft.class_2561
- *  net.minecraft.class_7471
+ *  net.minecraft.network.message.MessageType$Parameters
+ *  net.minecraft.text.Text
+ *  net.minecraft.network.message.SignedMessage
  */
 package me.deftware.client.framework.event.events;
 
 import java.util.UUID;
 import me.deftware.client.framework.event.Event;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_2556;
-import net.minecraft.class_2561;
-import net.minecraft.class_7471;
+import net.minecraft.network.message.MessageType;
+import net.minecraft.text.Text;
+import net.minecraft.network.message.SignedMessage;
 
 public class EventChatReceive
 extends Event {

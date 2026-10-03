@@ -2,22 +2,22 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_412
- *  net.minecraft.class_437
- *  net.minecraft.class_500
- *  net.minecraft.class_639
- *  net.minecraft.class_642
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.screen.multiplayer.ConnectScreen
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
+ *  net.minecraft.client.network.ServerAddress
+ *  net.minecraft.client.network.ServerInfo
  */
 package me.deftware.client.framework.gui.screens;
 
 import me.deftware.client.framework.minecraft.ServerDetails;
-import net.minecraft.class_310;
-import net.minecraft.class_412;
-import net.minecraft.class_437;
-import net.minecraft.class_500;
-import net.minecraft.class_639;
-import net.minecraft.class_642;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.multiplayer.ConnectScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
+import net.minecraft.client.network.ServerAddress;
+import net.minecraft.client.network.ServerInfo;
 
 public interface ConnectingScreen {
     public static void _connect(ServerDetails server) {

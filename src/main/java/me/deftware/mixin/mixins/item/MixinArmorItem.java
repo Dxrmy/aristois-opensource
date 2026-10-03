@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1738
- *  net.minecraft.class_1741
- *  net.minecraft.class_1792$class_1793
- *  net.minecraft.class_8051
+ *  net.minecraft.item.ArmorItem
+ *  net.minecraft.item.equipment.ArmorMaterial
+ *  net.minecraft.item.Item$Settings
+ *  net.minecraft.item.equipment.EquipmentType
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -16,10 +16,10 @@ package me.deftware.mixin.mixins.item;
 
 import me.deftware.client.framework.item.items.ArmorItem;
 import me.deftware.mixin.mixins.item.MixinItem;
-import net.minecraft.class_1738;
-import net.minecraft.class_1741;
-import net.minecraft.class_1792;
-import net.minecraft.class_8051;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.equipment.EquipmentType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

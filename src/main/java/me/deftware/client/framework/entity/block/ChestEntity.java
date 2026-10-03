@@ -2,24 +2,24 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2281
- *  net.minecraft.class_2586
- *  net.minecraft.class_2611
- *  net.minecraft.class_2646
- *  net.minecraft.class_2680
- *  net.minecraft.class_4732$class_4733
- *  net.minecraft.class_5562
+ *  net.minecraft.block.ChestBlock
+ *  net.minecraft.block.entity.BlockEntity
+ *  net.minecraft.block.entity.EnderChestBlockEntity
+ *  net.minecraft.block.entity.TrappedChestBlockEntity
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.block.DoubleBlockProperties$Type
+ *  net.minecraft.world.chunk.BlockEntityTickInvoker
  */
 package me.deftware.client.framework.entity.block;
 
 import me.deftware.client.framework.entity.block.StorageEntity;
-import net.minecraft.class_2281;
-import net.minecraft.class_2586;
-import net.minecraft.class_2611;
-import net.minecraft.class_2646;
-import net.minecraft.class_2680;
-import net.minecraft.class_4732;
-import net.minecraft.class_5562;
+import net.minecraft.block.ChestBlock;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.EnderChestBlockEntity;
+import net.minecraft.block.entity.TrappedChestBlockEntity;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.DoubleBlockProperties;
+import net.minecraft.world.chunk.BlockEntityTickInvoker;
 
 public class ChestEntity
 extends StorageEntity {

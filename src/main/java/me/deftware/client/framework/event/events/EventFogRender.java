@@ -3,15 +3,15 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_4184
- *  net.minecraft.class_758$class_4596
+ *  net.minecraft.client.render.Camera
+ *  net.minecraft.client.render.BackgroundRenderer$FogType
  */
 package me.deftware.client.framework.event.events;
 
 import lombok.Generated;
 import me.deftware.client.framework.event.Event;
-import net.minecraft.class_4184;
-import net.minecraft.class_758;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.BackgroundRenderer;
 
 public class EventFogRender
 extends Event {

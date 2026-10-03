@@ -3,20 +3,20 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2561
- *  net.minecraft.class_310
- *  net.minecraft.class_408
- *  net.minecraft.class_418
- *  net.minecraft.class_419
- *  net.minecraft.class_429
- *  net.minecraft.class_4325
- *  net.minecraft.class_433
- *  net.minecraft.class_437
- *  net.minecraft.class_442
- *  net.minecraft.class_465
- *  net.minecraft.class_500
- *  net.minecraft.class_525
- *  net.minecraft.class_526
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.screen.ChatScreen
+ *  net.minecraft.client.gui.screen.DeathScreen
+ *  net.minecraft.client.gui.screen.DisconnectedScreen
+ *  net.minecraft.client.gui.screen.option.OptionsScreen
+ *  net.minecraft.client.realms.gui.screen.RealmsMainScreen
+ *  net.minecraft.client.gui.screen.GameMenuScreen
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.gui.screen.TitleScreen
+ *  net.minecraft.client.gui.screen.ingame.HandledScreen
+ *  net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
+ *  net.minecraft.client.gui.screen.world.CreateWorldScreen
+ *  net.minecraft.client.gui.screen.world.SelectWorldScreen
  */
 package me.deftware.client.framework.gui;
 
@@ -25,20 +25,20 @@ import java.util.Optional;
 import lombok.Generated;
 import me.deftware.client.framework.gui.screens.MinecraftScreen;
 import me.deftware.client.framework.minecraft.Minecraft;
-import net.minecraft.class_2561;
-import net.minecraft.class_310;
-import net.minecraft.class_408;
-import net.minecraft.class_418;
-import net.minecraft.class_419;
-import net.minecraft.class_429;
-import net.minecraft.class_4325;
-import net.minecraft.class_433;
-import net.minecraft.class_437;
-import net.minecraft.class_442;
-import net.minecraft.class_465;
-import net.minecraft.class_500;
-import net.minecraft.class_525;
-import net.minecraft.class_526;
+import net.minecraft.text.Text;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.gui.screen.DeathScreen;
+import net.minecraft.client.gui.screen.DisconnectedScreen;
+import net.minecraft.client.gui.screen.option.OptionsScreen;
+import net.minecraft.client.realms.gui.screen.RealmsMainScreen;
+import net.minecraft.client.gui.screen.GameMenuScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
+import net.minecraft.client.gui.screen.world.CreateWorldScreen;
+import net.minecraft.client.gui.screen.world.SelectWorldScreen;
 
 public enum ScreenRegistry {
     Multiplayer(class_500.class),

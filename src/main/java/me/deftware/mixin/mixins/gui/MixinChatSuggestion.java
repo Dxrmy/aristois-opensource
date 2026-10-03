@@ -5,12 +5,12 @@
  *  com.mojang.brigadier.CommandDispatcher
  *  com.mojang.brigadier.ParseResults
  *  com.mojang.brigadier.StringReader
- *  net.minecraft.class_2172
- *  net.minecraft.class_342
- *  net.minecraft.class_408
- *  net.minecraft.class_437
- *  net.minecraft.class_4717
- *  net.minecraft.class_637
+ *  net.minecraft.command.CommandSource
+ *  net.minecraft.client.gui.widget.TextFieldWidget
+ *  net.minecraft.client.gui.screen.ChatScreen
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.gui.screen.ChatInputSuggestor
+ *  net.minecraft.client.network.ClientCommandSource
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -24,12 +24,12 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.StringReader;
 import me.deftware.client.framework.command.CommandRegister;
-import net.minecraft.class_2172;
-import net.minecraft.class_342;
-import net.minecraft.class_408;
-import net.minecraft.class_437;
-import net.minecraft.class_4717;
-import net.minecraft.class_637;
+import net.minecraft.command.CommandSource;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.ChatInputSuggestor;
+import net.minecraft.client.network.ClientCommandSource;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

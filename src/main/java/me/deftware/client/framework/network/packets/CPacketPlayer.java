@@ -2,16 +2,16 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2596
- *  net.minecraft.class_2828
- *  net.minecraft.class_2828$class_5911
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket
+ *  net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket$OnGroundOnly
  */
 package me.deftware.client.framework.network.packets;
 
 import me.deftware.client.framework.network.PacketWrapper;
 import me.deftware.mixin.imp.IMixinCPacketPlayer;
-import net.minecraft.class_2596;
-import net.minecraft.class_2828;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class CPacketPlayer
 extends PacketWrapper {

@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1792
- *  net.minecraft.class_4174
- *  net.minecraft.class_7923
- *  net.minecraft.class_9334
+ *  net.minecraft.item.Item
+ *  net.minecraft.component.type.FoodComponent
+ *  net.minecraft.registry.Registries
+ *  net.minecraft.component.DataComponentTypes
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  */
@@ -13,10 +13,10 @@ package me.deftware.mixin.mixins.item;
 
 import me.deftware.client.framework.item.Item;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_1792;
-import net.minecraft.class_4174;
-import net.minecraft.class_7923;
-import net.minecraft.class_9334;
+import net.minecraft.item.Item;
+import net.minecraft.component.type.FoodComponent;
+import net.minecraft.registry.Registries;
+import net.minecraft.component.DataComponentTypes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

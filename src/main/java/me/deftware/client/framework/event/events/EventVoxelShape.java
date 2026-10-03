@@ -2,18 +2,18 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_238
- *  net.minecraft.class_259
- *  net.minecraft.class_265
+ *  net.minecraft.util.math.Box
+ *  net.minecraft.util.shape.VoxelShapes
+ *  net.minecraft.util.shape.VoxelShape
  */
 package me.deftware.client.framework.event.events;
 
 import me.deftware.client.framework.event.Event;
 import me.deftware.client.framework.math.BoundingBox;
 import me.deftware.client.framework.world.block.Block;
-import net.minecraft.class_238;
-import net.minecraft.class_259;
-import net.minecraft.class_265;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.util.shape.VoxelShape;
 
 public class EventVoxelShape
 extends Event {

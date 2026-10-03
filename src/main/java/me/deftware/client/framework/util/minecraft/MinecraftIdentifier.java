@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2960
+ *  net.minecraft.util.Identifier
  */
 package me.deftware.client.framework.util.minecraft;
 
-import net.minecraft.class_2960;
+import net.minecraft.util.Identifier;
 
 public class MinecraftIdentifier
 extends class_2960 {

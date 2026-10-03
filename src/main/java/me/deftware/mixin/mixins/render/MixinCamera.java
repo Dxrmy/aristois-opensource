@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_310
- *  net.minecraft.class_4184
- *  net.minecraft.class_5636
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.render.Camera
+ *  net.minecraft.block.enums.CameraSubmersionType
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -19,10 +19,10 @@ import me.deftware.client.framework.event.events.EventCameraClip;
 import me.deftware.client.framework.math.Vector3;
 import me.deftware.client.framework.render.camera.GameCamera;
 import me.deftware.client.framework.render.camera.entity.CameraEntityMan;
-import net.minecraft.class_1297;
-import net.minecraft.class_310;
-import net.minecraft.class_4184;
-import net.minecraft.class_5636;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.Camera;
+import net.minecraft.block.enums.CameraSubmersionType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

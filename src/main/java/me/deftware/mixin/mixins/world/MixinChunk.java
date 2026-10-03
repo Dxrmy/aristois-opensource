@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2818
+ *  net.minecraft.world.chunk.WorldChunk
  *  org.spongepowered.asm.mixin.Mixin
  */
 package me.deftware.mixin.mixins.world;
 
 import me.deftware.client.framework.world.chunk.ChunkAccessor;
 import me.deftware.client.framework.world.chunk.SectionAccessor;
-import net.minecraft.class_2818;
+import net.minecraft.world.chunk.WorldChunk;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(value={class_2818.class})

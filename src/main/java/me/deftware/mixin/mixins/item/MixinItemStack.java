@@ -3,20 +3,20 @@
  * 
  * Could not load the following classes:
  *  it.unimi.dsi.fastutil.objects.Object2IntMap$Entry
- *  net.minecraft.class_1657
- *  net.minecraft.class_1792$class_9635
- *  net.minecraft.class_1799
- *  net.minecraft.class_1836
- *  net.minecraft.class_1844
- *  net.minecraft.class_1887
- *  net.minecraft.class_1890
- *  net.minecraft.class_2561
- *  net.minecraft.class_2680
- *  net.minecraft.class_5321
- *  net.minecraft.class_6880
- *  net.minecraft.class_9304
- *  net.minecraft.class_9304$class_9305
- *  net.minecraft.class_9334
+ *  net.minecraft.entity.player.PlayerEntity
+ *  net.minecraft.item.Item$TooltipContext
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.item.tooltip.TooltipType
+ *  net.minecraft.component.type.PotionContentsComponent
+ *  net.minecraft.enchantment.Enchantment
+ *  net.minecraft.enchantment.EnchantmentHelper
+ *  net.minecraft.text.Text
+ *  net.minecraft.block.BlockState
+ *  net.minecraft.registry.RegistryKey
+ *  net.minecraft.registry.entry.RegistryEntry
+ *  net.minecraft.component.type.ItemEnchantmentsComponent
+ *  net.minecraft.component.type.ItemEnchantmentsComponent$Builder
+ *  net.minecraft.component.DataComponentTypes
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Unique
  *  org.spongepowered.asm.mixin.injection.At
@@ -40,19 +40,19 @@ import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.registry.EnchantmentRegistry;
 import me.deftware.client.framework.world.block.BlockState;
-import net.minecraft.class_1657;
-import net.minecraft.class_1792;
-import net.minecraft.class_1799;
-import net.minecraft.class_1836;
-import net.minecraft.class_1844;
-import net.minecraft.class_1887;
-import net.minecraft.class_1890;
-import net.minecraft.class_2561;
-import net.minecraft.class_2680;
-import net.minecraft.class_5321;
-import net.minecraft.class_6880;
-import net.minecraft.class_9304;
-import net.minecraft.class_9334;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.component.type.PotionContentsComponent;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.text.Text;
+import net.minecraft.block.BlockState;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.component.DataComponentTypes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

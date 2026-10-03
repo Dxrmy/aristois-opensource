@@ -4,10 +4,10 @@
  * Could not load the following classes:
  *  com.mojang.blaze3d.systems.RenderSystem
  *  lombok.Generated
- *  net.minecraft.class_10142
- *  net.minecraft.class_10156
- *  net.minecraft.class_290
- *  net.minecraft.class_293
+ *  net.minecraft.client.gl.ShaderProgramKeys
+ *  net.minecraft.client.gl.ShaderProgramKey
+ *  net.minecraft.client.render.VertexFormats
+ *  net.minecraft.client.render.VertexFormat
  *  org.slf4j.Logger
  *  org.slf4j.LoggerFactory
  */
@@ -24,10 +24,10 @@ import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.batching.VertexConstructor;
 import me.deftware.client.framework.render.gl.GLX;
 import me.deftware.client.framework.render.texture.GlTexture;
-import net.minecraft.class_10142;
-import net.minecraft.class_10156;
-import net.minecraft.class_290;
-import net.minecraft.class_293;
+import net.minecraft.client.gl.ShaderProgramKeys;
+import net.minecraft.client.gl.ShaderProgramKey;
+import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.render.VertexFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

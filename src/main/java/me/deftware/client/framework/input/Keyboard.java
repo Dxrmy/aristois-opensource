@@ -2,20 +2,20 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_156
- *  net.minecraft.class_310
- *  net.minecraft.class_3675
- *  net.minecraft.class_437
+ *  net.minecraft.util.Util
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.util.InputUtil
+ *  net.minecraft.client.gui.screen.Screen
  *  org.lwjgl.glfw.GLFW
  */
 package me.deftware.client.framework.input;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
-import net.minecraft.class_156;
-import net.minecraft.class_310;
-import net.minecraft.class_3675;
-import net.minecraft.class_437;
+import net.minecraft.util.Util;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFW;
 
 public class Keyboard {

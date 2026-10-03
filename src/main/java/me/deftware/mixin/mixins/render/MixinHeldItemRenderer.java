@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1799
- *  net.minecraft.class_4587
- *  net.minecraft.class_4597
- *  net.minecraft.class_759
- *  net.minecraft.class_898
- *  net.minecraft.class_9292
- *  net.minecraft.class_9292$class_9293
- *  net.minecraft.class_9334
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.client.util.math.MatrixStack
+ *  net.minecraft.client.render.VertexConsumerProvider
+ *  net.minecraft.client.render.item.HeldItemRenderer
+ *  net.minecraft.client.render.entity.EntityRenderDispatcher
+ *  net.minecraft.component.type.MapDecorationsComponent
+ *  net.minecraft.component.type.MapDecorationsComponent$Decoration
+ *  net.minecraft.component.DataComponentTypes
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -23,13 +23,13 @@ package me.deftware.mixin.mixins.render;
 import java.util.Map;
 import me.deftware.client.framework.event.events.EventStructureLocation;
 import me.deftware.client.framework.math.Vector3;
-import net.minecraft.class_1799;
-import net.minecraft.class_4587;
-import net.minecraft.class_4597;
-import net.minecraft.class_759;
-import net.minecraft.class_898;
-import net.minecraft.class_9292;
-import net.minecraft.class_9334;
+import net.minecraft.item.ItemStack;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.item.HeldItemRenderer;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.component.type.MapDecorationsComponent;
+import net.minecraft.component.DataComponentTypes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

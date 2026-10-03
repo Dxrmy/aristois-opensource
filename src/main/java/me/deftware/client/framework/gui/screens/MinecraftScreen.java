@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2561
- *  net.minecraft.class_2596
- *  net.minecraft.class_2815
- *  net.minecraft.class_310
- *  net.minecraft.class_437
- *  net.minecraft.class_5481
- *  net.minecraft.class_746
- *  net.minecraft.class_8001
+ *  net.minecraft.text.Text
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.text.OrderedText
+ *  net.minecraft.client.network.ClientPlayerEntity
+ *  net.minecraft.client.gui.tooltip.HoveredTooltipPositioner
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.gui.screens;
@@ -23,14 +23,14 @@ import me.deftware.client.framework.gui.screens.GenericScreen;
 import me.deftware.client.framework.gui.widgets.GenericComponent;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_2561;
-import net.minecraft.class_2596;
-import net.minecraft.class_2815;
-import net.minecraft.class_310;
-import net.minecraft.class_437;
-import net.minecraft.class_5481;
-import net.minecraft.class_746;
-import net.minecraft.class_8001;
+import net.minecraft.text.Text;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.text.OrderedText;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.gui.tooltip.HoveredTooltipPositioner;
 import org.jetbrains.annotations.ApiStatus;
 
 public interface MinecraftScreen

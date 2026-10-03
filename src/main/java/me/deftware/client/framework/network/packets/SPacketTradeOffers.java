@@ -5,10 +5,10 @@
  *  com.google.gson.JsonArray
  *  com.google.gson.JsonElement
  *  com.google.gson.JsonObject
- *  net.minecraft.class_1799
- *  net.minecraft.class_1914
- *  net.minecraft.class_2596
- *  net.minecraft.class_3943
+ *  net.minecraft.item.ItemStack
+ *  net.minecraft.village.TradeOffer
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.s2c.play.SetTradeOffersS2CPacket
  */
 package me.deftware.client.framework.network.packets;
 
@@ -17,10 +17,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import me.deftware.client.framework.item.ItemStack;
 import me.deftware.client.framework.network.PacketWrapper;
-import net.minecraft.class_1799;
-import net.minecraft.class_1914;
-import net.minecraft.class_2596;
-import net.minecraft.class_3943;
+import net.minecraft.item.ItemStack;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.SetTradeOffersS2CPacket;
 
 public class SPacketTradeOffers
 extends PacketWrapper {

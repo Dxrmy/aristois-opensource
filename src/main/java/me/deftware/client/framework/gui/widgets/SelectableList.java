@@ -3,12 +3,12 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_310
- *  net.minecraft.class_332
- *  net.minecraft.class_350
- *  net.minecraft.class_350$class_351
- *  net.minecraft.class_5481
- *  net.minecraft.class_6382
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.widget.EntryListWidget
+ *  net.minecraft.client.gui.widget.EntryListWidget$Entry
+ *  net.minecraft.text.OrderedText
+ *  net.minecraft.client.gui.screen.narration.NarrationMessageBuilder
  */
 package me.deftware.client.framework.gui.widgets;
 
@@ -21,11 +21,11 @@ import me.deftware.client.framework.gui.widgets.GenericComponent;
 import me.deftware.client.framework.gui.widgets.properties.Tooltipable;
 import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_310;
-import net.minecraft.class_332;
-import net.minecraft.class_350;
-import net.minecraft.class_5481;
-import net.minecraft.class_6382;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.widget.EntryListWidget;
+import net.minecraft.text.OrderedText;
+import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
 
 public class SelectableList<T extends ListItem>
 extends class_350<ItemEntry>

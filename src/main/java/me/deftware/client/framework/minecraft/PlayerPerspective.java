@@ -2,11 +2,11 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_5498
+ *  net.minecraft.client.option.Perspective
  */
 package me.deftware.client.framework.minecraft;
 
-import net.minecraft.class_5498;
+import net.minecraft.client.option.Perspective;
 
 public enum PlayerPerspective {
     FIRST_PERSON(class_5498.field_26664),

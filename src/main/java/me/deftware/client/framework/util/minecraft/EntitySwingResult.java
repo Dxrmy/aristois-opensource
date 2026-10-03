@@ -2,16 +2,16 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_239
- *  net.minecraft.class_3966
+ *  net.minecraft.util.hit.HitResult
+ *  net.minecraft.util.hit.EntityHitResult
  */
 package me.deftware.client.framework.util.minecraft;
 
 import me.deftware.client.framework.entity.Entity;
 import me.deftware.client.framework.util.hitresult.CrosshairResult;
 import me.deftware.client.framework.world.ClientWorld;
-import net.minecraft.class_239;
-import net.minecraft.class_3966;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.hit.EntityHitResult;
 
 public class EntitySwingResult
 extends CrosshairResult {

@@ -2,17 +2,17 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2338
- *  net.minecraft.class_5819
- *  net.minecraft.class_5857
+ *  net.minecraft.util.math.BlockPos
+ *  net.minecraft.util.math.random.Random
+ *  net.minecraft.world.gen.placementmodifier.AbstractCountPlacementModifier
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.gen.Invoker
  */
 package me.deftware.mixin.mixins.biome;
 
-import net.minecraft.class_2338;
-import net.minecraft.class_5819;
-import net.minecraft.class_5857;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.gen.placementmodifier.AbstractCountPlacementModifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 

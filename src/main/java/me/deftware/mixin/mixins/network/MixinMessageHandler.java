@@ -3,14 +3,14 @@
  * 
  * Could not load the following classes:
  *  com.mojang.authlib.GameProfile
- *  net.minecraft.class_2556$class_7602
- *  net.minecraft.class_2561
- *  net.minecraft.class_338
- *  net.minecraft.class_7469
- *  net.minecraft.class_7471
- *  net.minecraft.class_7591
- *  net.minecraft.class_7594
- *  net.minecraft.class_7595
+ *  net.minecraft.network.message.MessageType$Parameters
+ *  net.minecraft.text.Text
+ *  net.minecraft.client.gui.hud.ChatHud
+ *  net.minecraft.network.message.MessageSignatureData
+ *  net.minecraft.network.message.SignedMessage
+ *  net.minecraft.client.gui.hud.MessageIndicator
+ *  net.minecraft.client.network.message.MessageHandler
+ *  net.minecraft.client.network.message.MessageTrustStatus
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
  *  org.spongepowered.asm.mixin.Unique
@@ -24,14 +24,14 @@ package me.deftware.mixin.mixins.network;
 import com.mojang.authlib.GameProfile;
 import java.time.Instant;
 import me.deftware.client.framework.event.events.EventChatReceive;
-import net.minecraft.class_2556;
-import net.minecraft.class_2561;
-import net.minecraft.class_338;
-import net.minecraft.class_7469;
-import net.minecraft.class_7471;
-import net.minecraft.class_7591;
-import net.minecraft.class_7594;
-import net.minecraft.class_7595;
+import net.minecraft.network.message.MessageType;
+import net.minecraft.text.Text;
+import net.minecraft.client.gui.hud.ChatHud;
+import net.minecraft.network.message.MessageSignatureData;
+import net.minecraft.network.message.SignedMessage;
+import net.minecraft.client.gui.hud.MessageIndicator;
+import net.minecraft.client.network.message.MessageHandler;
+import net.minecraft.client.network.message.MessageTrustStatus;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

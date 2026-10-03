@@ -2,8 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2794
- *  net.minecraft.class_5868
+ *  net.minecraft.world.gen.chunk.ChunkGenerator
+ *  net.minecraft.world.gen.HeightContext
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Mutable
@@ -13,8 +13,8 @@
  */
 package me.deftware.mixin.mixins.biome;
 
-import net.minecraft.class_2794;
-import net.minecraft.class_5868;
+import net.minecraft.world.gen.chunk.ChunkGenerator;
+import net.minecraft.world.gen.HeightContext;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;

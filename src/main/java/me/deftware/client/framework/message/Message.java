@@ -3,12 +3,12 @@
  * 
  * Could not load the following classes:
  *  com.mojang.brigadier.Message
- *  net.minecraft.class_2561
- *  net.minecraft.class_2583
- *  net.minecraft.class_2588
- *  net.minecraft.class_5250
- *  net.minecraft.class_7417
- *  net.minecraft.class_8828
+ *  net.minecraft.text.Text
+ *  net.minecraft.text.Style
+ *  net.minecraft.text.TranslatableTextContent
+ *  net.minecraft.text.MutableText
+ *  net.minecraft.text.TextContent
+ *  net.minecraft.text.PlainTextContent
  */
 package me.deftware.client.framework.message;
 
@@ -17,12 +17,12 @@ import java.util.function.BiFunction;
 import me.deftware.client.framework.message.Appearance;
 import me.deftware.client.framework.message.DefaultColors;
 import me.deftware.client.framework.minecraft.Minecraft;
-import net.minecraft.class_2561;
-import net.minecraft.class_2583;
-import net.minecraft.class_2588;
-import net.minecraft.class_5250;
-import net.minecraft.class_7417;
-import net.minecraft.class_8828;
+import net.minecraft.text.Text;
+import net.minecraft.text.Style;
+import net.minecraft.text.TranslatableTextContent;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.TextContent;
+import net.minecraft.text.PlainTextContent;
 
 public interface Message
 extends com.mojang.brigadier.Message {

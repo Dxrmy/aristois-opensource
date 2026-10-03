@@ -2,14 +2,14 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2596
- *  net.minecraft.class_3944
+ *  net.minecraft.network.packet.Packet
+ *  net.minecraft.network.packet.s2c.play.OpenScreenS2CPacket
  */
 package me.deftware.client.framework.network.packets;
 
 import me.deftware.client.framework.network.PacketWrapper;
-import net.minecraft.class_2596;
-import net.minecraft.class_3944;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.OpenScreenS2CPacket;
 
 public class SPacketOpenScreen
 extends PacketWrapper {

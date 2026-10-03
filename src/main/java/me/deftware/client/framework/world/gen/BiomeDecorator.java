@@ -3,7 +3,7 @@
  * 
  * Could not load the following classes:
  *  lombok.Generated
- *  net.minecraft.class_2960
+ *  net.minecraft.util.Identifier
  *  org.jetbrains.annotations.ApiStatus$Internal
  */
 package me.deftware.client.framework.world.gen;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.Generated;
 import me.deftware.client.framework.world.gen.DecoratorConfig;
-import net.minecraft.class_2960;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.ApiStatus;
 
 public class BiomeDecorator {

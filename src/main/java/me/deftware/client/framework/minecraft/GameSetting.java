@@ -2,15 +2,15 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_310
- *  net.minecraft.class_7172
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.option.SimpleOption
  */
 package me.deftware.client.framework.minecraft;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import net.minecraft.class_310;
-import net.minecraft.class_7172;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.SimpleOption;
 
 public abstract class GameSetting<T> {
     public static GameSetting<Integer> VIEW_DISTANCE = GameSetting.getSimpleOption(class_310.method_1551().field_1690.method_42503());

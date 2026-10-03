@@ -7,9 +7,9 @@
  *  com.mojang.brigadier.tree.CommandNode
  *  com.mojang.brigadier.tree.LiteralCommandNode
  *  com.mojang.brigadier.tree.RootCommandNode
- *  net.minecraft.class_2172
- *  net.minecraft.class_310
- *  net.minecraft.class_634
+ *  net.minecraft.command.CommandSource
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
  */
 package me.deftware.client.framework.command;
 
@@ -23,9 +23,9 @@ import java.util.Map;
 import me.deftware.client.framework.command.CommandBuilder;
 import me.deftware.client.framework.command.EMCModCommand;
 import me.deftware.client.framework.main.bootstrap.Bootstrap;
-import net.minecraft.class_2172;
-import net.minecraft.class_310;
-import net.minecraft.class_634;
+import net.minecraft.command.CommandSource;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
 
 public class CommandRegister {
     private static CommandDispatcher<class_2172> dispatcher = new CommandDispatcher();

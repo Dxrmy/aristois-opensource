@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1297
- *  net.minecraft.class_1299
- *  net.minecraft.class_1937
- *  net.minecraft.class_2960
- *  net.minecraft.class_310
- *  net.minecraft.class_3730
- *  net.minecraft.class_7923
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.EntityType
+ *  net.minecraft.world.World
+ *  net.minecraft.util.Identifier
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.entity.SpawnReason
+ *  net.minecraft.registry.Registries
  */
 package me.deftware.client.framework.entity;
 
@@ -20,13 +20,13 @@ import me.deftware.client.framework.message.Message;
 import me.deftware.client.framework.registry.Identifiable;
 import me.deftware.client.framework.render.gl.GLX;
 import me.deftware.client.framework.util.minecraft.MinecraftIdentifier;
-import net.minecraft.class_1297;
-import net.minecraft.class_1299;
-import net.minecraft.class_1937;
-import net.minecraft.class_2960;
-import net.minecraft.class_310;
-import net.minecraft.class_3730;
-import net.minecraft.class_7923;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.registry.Registries;
 
 public class EntityCapsule
 implements SelectableList.ListItem,

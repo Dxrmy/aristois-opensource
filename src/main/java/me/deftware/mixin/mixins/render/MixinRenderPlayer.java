@@ -2,9 +2,9 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1007
- *  net.minecraft.class_742
- *  net.minecraft.class_8685
+ *  net.minecraft.client.render.entity.PlayerEntityRenderer
+ *  net.minecraft.client.network.AbstractClientPlayerEntity
+ *  net.minecraft.client.util.SkinTextures
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.injection.At
  *  org.spongepowered.asm.mixin.injection.Redirect
@@ -13,9 +13,9 @@ package me.deftware.mixin.mixins.render;
 
 import me.deftware.client.framework.event.events.EventSetModelVisibilities;
 import me.deftware.mixin.imp.IMixinAbstractClientPlayer;
-import net.minecraft.class_1007;
-import net.minecraft.class_742;
-import net.minecraft.class_8685;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
+import net.minecraft.client.util.SkinTextures;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

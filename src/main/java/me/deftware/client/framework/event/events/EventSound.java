@@ -2,13 +2,13 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_1113
+ *  net.minecraft.client.sound.SoundInstance
  */
 package me.deftware.client.framework.event.events;
 
 import me.deftware.client.framework.event.Event;
 import me.deftware.client.framework.message.Message;
-import net.minecraft.class_1113;
+import net.minecraft.client.sound.SoundInstance;
 
 public class EventSound
 extends Event {

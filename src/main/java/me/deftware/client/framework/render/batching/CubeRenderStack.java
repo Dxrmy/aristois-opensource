@@ -2,10 +2,10 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_238
- *  net.minecraft.class_286
- *  net.minecraft.class_293$class_5596
- *  net.minecraft.class_9801
+ *  net.minecraft.util.math.Box
+ *  net.minecraft.client.render.BufferRenderer
+ *  net.minecraft.client.render.VertexFormat$DrawMode
+ *  net.minecraft.client.render.BuiltBuffer
  */
 package me.deftware.client.framework.render.batching;
 
@@ -13,10 +13,10 @@ import me.deftware.client.framework.math.BoundingBox;
 import me.deftware.client.framework.minecraft.Minecraft;
 import me.deftware.client.framework.render.batching.RenderStack;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_238;
-import net.minecraft.class_286;
-import net.minecraft.class_293;
-import net.minecraft.class_9801;
+import net.minecraft.util.math.Box;
+import net.minecraft.client.render.BufferRenderer;
+import net.minecraft.client.render.VertexFormat;
+import net.minecraft.client.render.BuiltBuffer;
 
 public class CubeRenderStack
 extends RenderStack<CubeRenderStack> {

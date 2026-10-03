@@ -2,19 +2,19 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  net.minecraft.class_2558
- *  net.minecraft.class_2558$class_2559
- *  net.minecraft.class_2561
- *  net.minecraft.class_2583
- *  net.minecraft.class_310
- *  net.minecraft.class_332
- *  net.minecraft.class_364
- *  net.minecraft.class_4068
- *  net.minecraft.class_437
- *  net.minecraft.class_465
- *  net.minecraft.class_5481
- *  net.minecraft.class_634
- *  net.minecraft.class_637
+ *  net.minecraft.text.ClickEvent
+ *  net.minecraft.text.ClickEvent$Action
+ *  net.minecraft.text.Text
+ *  net.minecraft.text.Style
+ *  net.minecraft.client.MinecraftClient
+ *  net.minecraft.client.gui.DrawContext
+ *  net.minecraft.client.gui.Element
+ *  net.minecraft.client.gui.Drawable
+ *  net.minecraft.client.gui.screen.Screen
+ *  net.minecraft.client.gui.screen.ingame.HandledScreen
+ *  net.minecraft.text.OrderedText
+ *  net.minecraft.client.network.ClientPlayNetworkHandler
+ *  net.minecraft.client.network.ClientCommandSource
  *  org.spongepowered.asm.mixin.Final
  *  org.spongepowered.asm.mixin.Mixin
  *  org.spongepowered.asm.mixin.Shadow
@@ -35,18 +35,18 @@ import me.deftware.client.framework.gui.widgets.GenericComponent;
 import me.deftware.client.framework.gui.widgets.NativeComponent;
 import me.deftware.client.framework.gui.widgets.properties.Tooltipable;
 import me.deftware.client.framework.render.gl.GLX;
-import net.minecraft.class_2558;
-import net.minecraft.class_2561;
-import net.minecraft.class_2583;
-import net.minecraft.class_310;
-import net.minecraft.class_332;
-import net.minecraft.class_364;
-import net.minecraft.class_4068;
-import net.minecraft.class_437;
-import net.minecraft.class_465;
-import net.minecraft.class_5481;
-import net.minecraft.class_634;
-import net.minecraft.class_637;
+import net.minecraft.text.ClickEvent;
+import net.minecraft.text.Text;
+import net.minecraft.text.Style;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.Element;
+import net.minecraft.client.gui.Drawable;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.text.OrderedText;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.client.network.ClientCommandSource;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
