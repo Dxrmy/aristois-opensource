@@ -1,9 +1,0 @@
-Summary for C:\Users\kmric\Documents\aristois-opensource\libs\aristois-452.jar
-Decompiled with CFR 0.152
-
-
-me.deftware.aristois.main.Validator
-----------------------------
-
-getVersions()
-  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once

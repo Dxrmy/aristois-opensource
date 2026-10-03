@@ -1,174 +1,119 @@
 #!/usr/bin/env python3
 """
-Aristois Deobfuscation Pipeline
-Usage: python deobfuscate.py --jar aristois-latest.jar --output ./src/main/java
+Aristois client recovery pipeline (orchestrator).
+
+The old version of this script expected a `tools/tiny-remapper-*.jar` and a
+hand-written `mappings/aristois-mappings.tiny`, neither of which ever existed in
+this repository, so it could never run. This rewrite drives the pipeline that
+actually works against the recovered client jar:
+
+    recover_client.py   recover real class names + build a name map
+    tools/Remap.java    rename every invalid class/field/method (ASM)
+    tools/vineflower.jar decompile the remapped classes to Java
+
+Usage:
+    python3 scripts/deobfuscate.py --jar libs/aristois-452.jar \
+        --out recovered/java --work /root/aristois-work
+
+Prerequisites (downloaded automatically if absent):
+    tools/vineflower.jar
+    tools/asm-*.jar
 """
 
 import argparse
 import os
+import shutil
 import subprocess
 import sys
-import shutil
-from pathlib import Path
+import urllib.request
 
-CFR_JAR = "tools/cfr-0.152.jar"
-TINY_REMAPPER = "tools/tiny-remapper-0.9.0.jar"
-MAPPINGS = "mappings/aristois-mappings.tiny"
-
-
-def check_java():
-    """Verify Java 17+ is available."""
-    try:
-        result = subprocess.run(
-            ["java", "-version"],
-            capture_output=True, text=True
-        )
-        version_line = result.stderr.split("\n")[0]
-        print(f"[+] Java: {version_line}")
-    except FileNotFoundError:
-        print("[!] Java not found. Install JDK 17+.")
-        sys.exit(1)
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TOOLS = os.path.join(REPO, "tools")
+VINEFLOWER = os.path.join(TOOLS, "vineflower.jar")
+VINEFLOWER_URL = ("https://github.com/Vineflower/vineflower/releases/download/"
+                  "1.10.1/vineflower-1.10.1.jar")
+ASM_VERSION = "9.7.1"
+ASM_MODULES = ["asm", "asm-commons", "asm-tree", "asm-util", "asm-analysis"]
+ASM_CP = os.pathsep.join(
+    os.path.join(TOOLS, f"{m}-{ASM_VERSION}.jar") for m in ASM_MODULES
+)
 
 
-def decompile(jar_path, output_dir):
-    """First-pass decompilation with CFR."""
-    print(f"[*] Decompiling {jar_path} -> {output_dir}")
-    os.makedirs(output_dir, exist_ok=True)
-
-    cmd = [
-        "java", "-jar", CFR_JAR,
-        jar_path,
-        "--outputdir", output_dir,
-        "--silent", "false",
-        "--renameillegalidentifiers", "true",
-        "--caseinsensitivefs", "true",
-        "--aexagg", "true",
-        "--hideutf", "false",
-        "--removeinnerclasssynthetics", "true",
-    ]
-    subprocess.run(cmd, check=True)
-    print("[+] Decompilation complete")
+def run(cmd, **kw):
+    print("[*]", " ".join(str(c) for c in cmd))
+    subprocess.run(cmd, check=True, **kw)
 
 
-def remap(decomp_dir, output_dir):
-    """Apply deobfuscation mappings to decompiled source."""
-    if not os.path.exists(MAPPINGS):
-        print("[!] No mappings file found — skipping remap phase")
-        print("[*] You can contribute mappings by adding to mappings/aristois-mappings.tiny")
-        # Still copy decompiled source forward
-        if os.path.exists(output_dir):
-            shutil.rmtree(output_dir)
-        shutil.copytree(decomp_dir, output_dir)
-        return
-
-    print(f"[*] Applying mappings: {MAPPINGS}")
-    os.makedirs(output_dir, exist_ok=True)
-
-    cmd = [
-        "java", "-jar", TINY_REMAPPER,
-        "--input", decomp_dir,
-        "--output", output_dir,
-        "--mapping", MAPPINGS,
-    ]
-    subprocess.run(cmd, check=True)
-    print("[+] Remapping complete")
+def ensure_tools():
+    if not os.path.exists(VINEFLOWER):
+        print(f"[*] Downloading Vineflower -> {VINEFLOWER}")
+        urllib.request.urlretrieve(VINEFLOWER_URL, VINEFLOWER)
+    for m in ASM_MODULES:
+        jar = os.path.join(TOOLS, f"{m}-{ASM_VERSION}.jar")
+        if not os.path.exists(jar):
+            url = (f"https://repo1.maven.org/maven2/org/ow2/asm/{m}/"
+                   f"{ASM_VERSION}/{m}-{ASM_VERSION}.jar")
+            print(f"[*] Downloading {m} -> {jar}")
+            urllib.request.urlretrieve(url, jar)
 
 
-def strip_paywalls(src_dir):
-    """Remove premium/paywall checks from decompiled source."""
-    print("[*] Stripping paywall/API-key validation calls...")
-    paywall_patterns = [
-        "isPremium",
-        "isLoggedIn",
-        "hasActiveSubscription",
-        "licenseKey",
-        "apiKey",
-        "validateLicense",
-        "PremiumUser",
-        "paidUser",
-        "checkSubscription",
-        "ARISTOIS_API",
-        "pastebin.com/",  # config hosting
-        "discord.gg/invite/",  # invite validation
-    ]
-
-    modified_count = 0
-    for root, dirs, files in os.walk(src_dir):
-        for file in files:
-            if not file.endswith(".java"):
-                continue
-            path = os.path.join(root, file)
-            original = open(path, "r", encoding="utf-8", errors="replace").read()
-            modified = original
-
-            for pattern in paywall_patterns:
-                if pattern in modified:
-                    # Replace paywall checks with pass-through true/available
-                    modified = modified.replace(
-                        f"return this.{pattern}()",
-                        "return true  /* paywall stripped */"
-                    )
-                    modified = modified.replace(
-                        f"return {pattern}()",
-                        "return true  /* paywall stripped */"
-                    )
-                    modified = modified.replace(
-                        f".{pattern}()",
-                        "/* paywall-stripped */"
-                    )
-
-            # Remove API endpoint constants
-            modified = modified.replace(
-                'private static final String API_URL',
-                '// [STRIPPED] private static final String API_URL'
-            )
-            modified = modified.replace(
-                'private static final String LICENSE_SERVER',
-                '// [STRIPPED] private static final String LICENSE_SERVER'
-            )
-
-            if modified != original:
-                open(path, "w", encoding="utf-8").write(modified)
-                modified_count += 1
-
-    print(f"[+] Stripped paywall checks in {modified_count} files")
+def build_remapper():
+    """Compile tools/Remap.java (Java 17 bytecode) into TOOLS."""
+    class_file = os.path.join(TOOLS, "Remap.class")
+    if os.path.exists(class_file):
+        os.remove(class_file)
+    run(["javac", "--release", "17", "-cp", ASM_CP, "-d", TOOLS,
+         os.path.join(TOOLS, "Remap.java")])
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Aristois deobfuscation pipeline")
-    parser.add_argument("--jar", required=True, help="Path to Aristois JAR")
-    parser.add_argument("--output", default="./src/main/java", help="Output directory for source")
-    parser.add_argument("--skip-paywall", action="store_true", help="Skip paywall stripping")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--jar", default=os.path.join(REPO, "libs", "aristois-452.jar"))
+    ap.add_argument("--out", default=os.path.join(REPO, "recovered", "java"))
+    ap.add_argument("--work", default="/tmp/aristois-work")
+    ap.add_argument("--keep-raw", action="store_true",
+                    help="keep the remapped .class tree (default: delete it)")
+    args = ap.parse_args()
 
-    jar_path = os.path.abspath(args.jar)
-    output_dir = os.path.abspath(args.output)
-    decomp_dir = output_dir + "_raw"
-
-    if not os.path.exists(jar_path):
-        print(f"[!] JAR not found: {jar_path}")
+    if not os.path.exists(args.jar):
+        print(f"[!] jar not found: {args.jar}")
         sys.exit(1)
 
-    check_java()
+    ensure_tools()
 
-    cleanup_dirs = [decomp_dir, output_dir]
-    for d in cleanup_dirs:
-        if os.path.exists(d):
-            shutil.rmtree(d)
+    classes = os.path.join(args.work, "staging", "classes")
+    remapped = os.path.join(args.work, "staging", "remapped")
+    for d in (classes, remapped):
+        shutil.rmtree(d, ignore_errors=True)
 
-    decompile(jar_path, decomp_dir)
-    remap(decomp_dir, output_dir)
+    # 1. Recover names + extract classes with new paths, writing the name maps.
+    run([sys.executable, os.path.join(REPO, "scripts", "recover_client.py"),
+         "--jar", args.jar,
+         "--out-classes", classes,
+         "--out-map", os.path.join(REPO, "mappings", "aristois-class-map.json"),
+         "--out-map-txt", os.path.join(REPO, "mappings", "aristois-class-map.txt")])
 
-    if not args.skip_paywall:
-        strip_paywalls(output_dir)
+    # 2. Rewrite bytecode names.
+    build_remapper()
+    run(["java", "-Xmx768m", "-cp", TOOLS + os.pathsep + ASM_CP, "Remap",
+         classes, remapped,
+         os.path.join(REPO, "mappings", "aristois-class-map.txt")])
 
-    # Clean up raw decompilation
-    if os.path.exists(decomp_dir):
-        shutil.rmtree(decomp_dir)
+    # 3. Decompile.
+    shutil.rmtree(args.out, ignore_errors=True)
+    os.makedirs(args.out, exist_ok=True)
+    run(["java", "-Xmx1500m", "-jar", VINEFLOWER,
+         "-dgs=1", "-hdc=0", "-asc=1", "-rsy=1", "-lit=1",
+         remapped, args.out])
 
-    print(f"\n[✓] Pipeline complete. Output: {output_dir}")
-    print("[*] Run 'gradle build' to verify compilation")
-    print("[*] Contribute mappings in mappings/aristois-mappings.tiny")
+    if not args.keep_raw:
+        shutil.rmtree(remapped, ignore_errors=True)
+
+    n = sum(len(files) for _r, _d, files in os.walk(args.out)
+            for f in files if f.endswith(".java"))
+    print(f"\n[+] Done. {n} Java files -> {args.out}")
+    print("[!] The recovered modules still use an invokedynamic method-handle")
+    print("    dispatcher; see docs/DEOBFUSCATION.md before expecting a compile.")
 
 
 if __name__ == "__main__":

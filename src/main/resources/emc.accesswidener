@@ -1,0 +1,5 @@
+accessWidener	v1	intermediary
+extendable	class	net/minecraft/class_1799
+extendable	class	net/minecraft/class_2960
+accessible	class	net/minecraft/class_631$class_3681
+accessible	method	net/minecraft/class_2960	<init>	(Ljava/lang/String;Ljava/lang/String;)V

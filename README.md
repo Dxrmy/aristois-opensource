@@ -1,70 +1,99 @@
-# Aristois Open-Source Project
+# Aristois Community Edition
 
-> *Community reconstruction of Aristois Minecraft utility client from available artifacts.*
+> Community tooling, recovery work and an installer for the Aristois Minecraft
+> utility client.
 
-## Current Status
+## Status (2026-10)
 
-**Framework decompiled ✓** — The EMC-Framework-v2 (446 classes) that Aristois ran on top of has been successfully decompiled and reconstructed.
+Aristois **stopped shipping client updates** (last client build: **v546**,
+2025-01-12; last EMC framework: **17.0.0-1.21.5**, 2025-03-26), but the
+production maven at **`https://maven.aristois.net` is still online** and serving
+every artifact. That means the last released version can still be installed and
+run today, and this project provides a reproducible installer for it.
 
-**Client modules missing ✗** — The actual Aristois client modules (hacks, click GUI, module system) were stored at `maven.aristois.net` which is now defunct. The original devs did not publish the client source code before shutdown.
+| Piece | Where it is now |
+|-------|-----------------|
+| Client (free) | `me.deftware:aristois:latest-<mc>` — v546, `All Rights Reserved` |
+| Client (donor) | `me.deftware:aristois-d:latest-<mc>` — v546 |
+| EMC framework | `me.deftware:EMC-F-v2:latest-<mc>` — MIT |
+| Weaver / loader | `me.deftware:weaver:1.0.2` under `/emc/` |
 
-**Available artifacts:**
-- `libs/EMC-F-v2-1.21.4.jar` — Full EMC framework, 446 classes → **decompiled** to `src/main/java/`
-- `libs/weaver-1.0.2.jar` — Weaver mod loader → **decompiled** to `src/main/java/me/deftware/weaver/`
-- `libs/integrations-1.21.4.jar` — OptiFine/Sodium compat → **decompiled**
+> **Rights:** the client is proprietary. This repo's MIT license covers the
+> **tooling and the EMC framework**, not the client. See `NOTICE`.
 
-**What's needed from the community:**
-- Reconstruct the actual Aristois client modules from scratch using the EMC Framework API
-- Submit pull requests with module implementations (KillAura, Scaffold, ESP, ClickGUI, etc.)
-- Contribute to the deobfuscation mapping file at `mappings/aristois-mappings.tiny`
-
-## Building
+## Install the last version
 
 ```bash
-# Requires: JDK 17+, Minecraft 1.21.4 client jar
-./gradlew build
+python3 installer/install.py --mc 1.21.4 --verify      # check every artifact
+python3 installer/install.py --mc 1.21.4               # install
 ```
 
-## Repository Structure
+This writes `.minecraft/versions/1.21.4-Aristois/`, downloads every library from
+the live mavens, and drops the client where the EMC framework scans for mods
+(`libraries/EMC/1.21.4/`). Then:
+
+1. Open the Minecraft launcher.
+2. Installations → New → Version → `1.21.4-Aristois` → Create.
+3. Launch.
+
+The original in-repo installer packages (`libs/1.21.x-Aristois.zip`) still work
+too; `installer/install.py` just makes the process automatic and verifiable.
+
+Options: `--client donor`, `--game-dir <path>`, `--mc <version>`.
+
+## Recovering the client source
+
+`libs/aristois-452.jar` (and any client jar) can be turned into Java with the
+recovery pipeline. The client is obfuscated with a method-handle
+`invokedynamic` dispatcher, so the output is readable but not yet compilable.
+
+```bash
+python3 scripts/deobfuscate.py --jar libs/aristois-452.jar --out recovered/java
+```
+
+Pipeline:
+
+1. `scripts/recover_client.py` — recovers real class names (many ZIP entries are
+   blank) and builds a name map (`mappings/aristois-class-map.*`).
+2. `tools/Remap.java` — ASM remapper that renames every invalid
+   class/field/method to valid Java names.
+3. Vineflower — decompiles the remapped classes.
+
+Output lives in [`recovered/`](recovered/) (508 Java files for v452). See
+[`docs/DEOBFUSCATION.md`](docs/DEOBFUSCATION.md) for the obfuscation scheme and
+the remaining `invokedynamic` resolution step needed to compile it.
+
+## Repository layout
 
 ```
 aristois-opensource/
-├── build.gradle
-├── settings.gradle
-├── src/main/java/me/deftware/  ← decompiled framework source
-│   ├── client/framework/       ← EMC Framework (270+ classes)
-│   ├── weaver/                 ← Mod loader
-│   └── integrations/           ← OptiFine/Sodium compat
-├── libs/                       ← Original JARs (for reference)
-├── mappings/                   ← Deobfuscation mappings (community contributed)
+├── installer/install.py        # working launcher-profile installer
 ├── scripts/
-│   ├── deobfuscate.py          ← Pipeline for processing Aristois JARs
-│   └── check_mappings.py       ← Mapping validation utility
-└── tools/
-    └── cfr-0.152.jar           ← Decompiler
+│   ├── deobfuscate.py          # recovery orchestrator
+│   ├── recover_client.py       # name recovery + extraction
+│   └── check_mappings.py
+├── tools/
+│   ├── Remap.java              # ASM class/member renaming
+│   └── cfr-0.152.jar
+├── mappings/                   # recovered name maps + yarn->mojmap
+├── recovered/                  # decompiled client (reference only)
+├── src/main/java/              # EMC framework / weaver / integrations source
+├── src/main/resources/         # genuine EMC fabric.mod.json + mixins + AW
+└── libs/                       # recovered reference artifacts
 ```
 
-## How to Contribute
+## Building the framework
 
-### If you have an Aristois client JAR backup
-Run the decompile pipeline:
+`src/main/java` contains the decompiled **EMC framework** (MIT), the weaver and
+integrations. It is a Fabric project. Building needs Minecraft 1.21.4 via Loom
+and **~8 GB+ of RAM** (Loom decompiles Minecraft):
+
 ```bash
-python scripts/deobfuscate.py --jar path/to/aristois-client.jar
+./gradlew build
 ```
-
-### If you want to help rebuild the client
-Study the EMC Framework API in `src/main/java/me/deftware/client/framework/` and implement:
-- Module system hooks (event based)
-- GUI screens using NanoVG
-- Network packet interception
-- World rendering modifications
-
-## License
-
-MIT — This project is a community reconstruction. The original Aristois team retains rights to their work. This is NOT affiliated with or endorsed by the original Aristois developers.
 
 ## Credits
 
-- **Original Aristois Team** (me.deftware) — 9 years of development, EMC Framework
-- **CFR Decompiler** — leibnitz
-- **Community Contributors** — Everyone submitting code, mappings, and fixes
+* Original Aristois / EMC team (deftware) — the framework and client.
+* CFR and Vineflower — decompilers.
+* The EMC maven for still serving the artifacts.

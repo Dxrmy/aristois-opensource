@@ -4,6 +4,7 @@ Mapping checker utility — validates aristois-mappings.tiny format
 and reports coverage stats.
 """
 
+import os
 import sys
 import re
 from collections import defaultdict
@@ -46,5 +47,4 @@ def validate():
 
 
 if __name__ == "__main__":
-    import os
     validate()

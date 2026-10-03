@@ -1,6 +1,7 @@
-import os, json
+import os, json, sys
 
-proj_dir = r'C:\Users\kmric\Documents\aristois-opensource'
+# Portable: resolve paths relative to the repository root (parent of this file).
+proj_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 mapping_file = os.path.join(proj_dir, 'mappings', 'class_to_mojmap.json')
 
 with open(mapping_file, 'r') as f:

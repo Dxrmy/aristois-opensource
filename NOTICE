@@ -1,0 +1,34 @@
+NOTICE
+======
+
+This repository contains work of mixed provenance. The MIT license in LICENSE
+applies ONLY to original material authored by the community contributors:
+
+  * installer/
+  * scripts/
+  * tools/Remap.java
+  * docs/
+  * mappings/*.json  (generated name maps)
+  * repository documentation
+
+The following are NOT covered by the MIT license and remain the property of
+their respective authors:
+
+1. The Aristois client (jar and decompiled source under recovered/, and the
+   reference jars in libs/). Original copyright notice:
+
+       Copyright (C) Aristois 2018 - 2023
+       All Rights Reserved
+
+   It is included here for interoperability, study and preservation only, and
+   must not be redistributed, rehosted or relicensed without permission from the
+   rights holder.
+
+2. The EMC framework (me.deftware.client.framework.*, me.deftware.mixin.*).
+   The upstream project declares the MIT license and publishes its sources at
+   https://gitlab.com/EMC-Framework/EMC.
+
+3. Bundled third-party components (ASM, CFR, Vineflower, Noto Sans under the
+   SIL Open Font License, etc.) keep their own licenses.
+
+If you are a rights holder and want content removed, open an issue.

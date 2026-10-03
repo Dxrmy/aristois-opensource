@@ -20,7 +20,10 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    implementation fileTree(dir: 'libs', include: '*.jar')
+
+    // NOTE: the framework, weaver and integrations are compiled from source in
+    // src/main/java. Do NOT add libs/*.jar here: it duplicates those classes and
+    // also drags in the proprietary client jar. libs/ is reference material only.
 }
 
 tasks.withType(JavaCompile).configureEach {

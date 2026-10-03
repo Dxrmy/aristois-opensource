@@ -1,45 +1,39 @@
-# Contributing to Aristois Community Edition
+# Contributing
 
-## How to Contribute
+Thanks for helping keep Aristois usable and studyable. Please read `NOTICE`
+first — the client is proprietary, so contributed **tooling, mappings and
+documentation** are welcome, but do not relicense or rehost the client itself.
 
-### Mapping Contributions (Highest Priority)
+## Highest-value work
 
-The obfuscated JAR contains thousands of renamed classes, fields, and methods. We need the community to help identify them.
+### 1. Resolve the `invokedynamic` dispatcher
 
-**Format (Tiny v2):**
-```
-c obfuscated/ClassName net/aristois/RealName
-\tf field_a fieldValue I
-\tm method_a (Ljava/lang/String;)V methodName
-```
+The recovered client source does not compile because calls were replaced by
+method-handle `invokedynamic` instructions. Implementing the resolver described
+in `docs/DEOBFUSCATION.md` (`tools/ResolveIndy.java`) is the single biggest win.
 
-Add entries to `mappings/aristois-mappings.tiny` and submit a PR.
+### 2. Name mappings
 
-### Code Contributions
+The obfuscated classes are named `me/deftware/aristois/recovered/C####`. Give
+them real names by editing `mappings/aristois-class-map.json` (and the derived
+`.txt`), then re-run the pipeline. Display names, setting names and descriptions
+often survive as string constants, which makes identification easier.
 
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/your-thing`)
-3. Make your changes
-4. Ensure it builds (`./gradlew build`)
-5. Submit a PR
+### 3. Installer / version support
 
-### Code Style
+`installer/install.py` currently targets Fabric-based versions. Test more
+Minecraft versions and report which artifacts resolve.
 
-- Follow the original codebase conventions (inferred from decompiled output)
-- No tabs — 4 spaces
-- No trailing whitespace
-- Use descriptive variable names in NEW code (mapped code retains original naming until remapped)
+## Workflow
 
-### Paywall Stripping
+1. Fork and branch (`git checkout -b feature/thing`).
+2. Keep the source buildable where possible (`./gradlew build` for the
+   framework). Note: Loom needs ~8 GB RAM.
+3. Use 4 spaces; no tabs; no trailing whitespace.
+4. Open a PR describing what you changed and how you tested it.
 
-If you find a license check that survived the pipeline, open an issue with the class name and line number.
+## What not to do
 
-## What NOT to Do
-
-- Don't bundle the original JAR in commits
-- Don't re-add paywalls or API key gates
-- Don't claim affiliation with the original Aristois team
-
-## Recognition
-
-All contributors will be listed in the README. Mapping contributors especially — this project lives or dies on class recognition.
+* Do not commit the client jars (they are already referenced, not bundled).
+* Do not re-add paywalls, license checks or API-key gates.
+* Do not claim affiliation with the original Aristois team.

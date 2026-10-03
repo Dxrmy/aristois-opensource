@@ -1,33 +1,31 @@
 {
   "schemaVersion": 1,
-  "id": "aristois",
-  "version": "${version}",
-  "name": "Aristois Community Edition",
-  "description": "Community-driven open-source continuation of the Aristois Minecraft utility client",
+  "id": "emc",
+  "name": "EMC Framework",
+  "description": "Provides an API for EMC with Fabric",
+  "version": "17.0.0",
+  "environment": "client",
   "authors": [
-    "Aristois Community Contributors"
+    "deftware"
   ],
   "contact": {
-    "sources": "https://github.com/your-org/aristois-opensource"
+    "homepage": "https://emc-framework.gitlab.io/",
+    "sources": "https://gitlab.com/EMC-Framework/EMC"
+  },
+  "depends": {
+    "java": "\u003e\u003d21"
   },
   "license": "MIT",
-  "icon": "assets/aristois/icon.png",
-  "environment": "client",
-  "entrypoints": {
-    "main": [
-      "net.aristois.AristoisMod"
-    ],
-    "client": [
-      "net.aristois.AristoisClient"
-    ]
-  },
   "mixins": [
-    "aristois.mixins.json"
+    "mixins.emc.json"
   ],
-  "accessWidener": "aristois.accesswidener",
-  "depends": {
-    "fabricloader": ">=0.15.0",
-    "minecraft": ">=1.20.4",
-    "fabric-api": ">=0.91.0"
-  }
+  "accessWidener": "emc.accesswidener",
+  "jars": [
+    {
+      "file": "META-INF/jars/integrations-1.21.4+build.1.jar"
+    },
+    {
+      "file": "META-INF/jars/mixinconstraints-1.0.1.jar"
+    }
+  ]
 }
