@@ -63,6 +63,25 @@ Output lives in [`recovered/`](recovered/) (508 Java files for v452). See
 [`docs/DEOBFUSCATION.md`](docs/DEOBFUSCATION.md) for the obfuscation scheme and
 the remaining `invokedynamic` resolution step needed to compile it.
 
+## Clean-room client (MIT)
+
+The client itself can only be open source if it is **original code**. This repo
+ships a clean-room client built on the MIT EMC framework:
+
+```
+src/main/java/org/aristois/client/   # Module system, settings, example modules
+```
+
+```bash
+./gradlew emcClientJar     # -> build/emc/aristois-community-client.jar
+```
+
+Drop the jar into `<game>/libraries/EMC/<mc-version>/` and EMC loads it. See
+[`docs/CLIENT.md`](docs/CLIENT.md) for the API and how to add modules.
+
+The proprietary client under `recovered/` is **reference only** and is not part
+of the MIT-licensed client.
+
 ## Repository layout
 
 ```

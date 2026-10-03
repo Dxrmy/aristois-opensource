@@ -1,0 +1,9 @@
+{
+  "name": "Aristois Community",
+  "website": "https://github.com/Dxrmy/aristois-opensource",
+  "author": "Aristois Community Contributors",
+  "minVersion": "16.0.0",
+  "version": 1,
+  "main": "org.aristois.client.AristoisClient",
+  "scheme": 4
+}

@@ -30,3 +30,25 @@ tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     it.options.release = 17
 }
+
+// Packages the clean-room client (org.aristois.client + client.json) as a
+// standalone EMC mod jar. Drop the result into
+//   <game>/libraries/EMC/<mc-version>/
+// and the EMC framework will discover and load it.
+tasks.register('emcClientJar', Jar) {
+    group = 'aristois'
+    description = 'Builds the loadable EMC client jar (org.aristois.client)'
+    archiveBaseName = 'aristois-community-client'
+    destinationDirectory = layout.buildDirectory.dir('emc')
+
+    from(sourceSets.main.output) {
+        include 'org/aristois/client/**'
+        include 'assets/aristois/**'
+        include 'client.json'
+    }
+
+    doLast {
+        logger.lifecycle("EMC client jar -> ${archiveFile.get().asFile}")
+        logger.lifecycle("Copy it to <game>/libraries/EMC/<minecraft-version>/")
+    }
+}
